@@ -26,15 +26,6 @@ xhr.onreadystatechange = function(){
                 <td>${paq[i].profesor}</td>
                 </tr>
             `
-            if(arrNombres.indexOf(paq[i].curso) == -1){
-                arrNombres.push(paq[i].curso);
-            }
         }
-        console.log(arrNombres.length)
-        for(var i = 0; i<arrNombres.length;i++){
-            console.log(arrNombres[i]);
-        }
-        
-
     }
 }
