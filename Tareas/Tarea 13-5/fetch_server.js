@@ -1,4 +1,3 @@
-//var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 let xhr = new XMLHttpRequest;
 const url ='http://losvilos.ucn.cl//tongoy/g.php?&sala=-1&curso=-1&profesor=120&semestre=14&semestrec=-1&carrera=-1&area=-1'
 xhr.open('GET',url,true)
@@ -12,7 +11,6 @@ xhr.onreadystatechange = function(){
         let res = document.querySelector('#res');
         res.innerHTML = '';
 
-        var arrNombres = [];
         for(var i=0;i<paq.length;i++){
             res.innerHTML += `
                 <tr>
