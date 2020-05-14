@@ -27,15 +27,13 @@ function auth(username,password){
 
 function get_cursos(username,semestre){
     const url = 'http://losvilos.ucn.cl/tongoy/cp.php'
+    let queryString = '?u='+username+'&s='+semestre;
 
-    fetch(url, {
-    method: 'GET',
-    credentials: 'include', 
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
-    },
-    body: 'u='+username+'&s='+semestre,
+    const urlQuery=url+queryString;
+
+    fetch(urlQuery,{
+        method:'GET',
+        credentials:'include'
     })
     .then(response => response.json())
     .then(data => {
@@ -48,9 +46,10 @@ function get_cursos(username,semestre){
         }
     })
 }
-rut='algo';
-pass='algo';
-semestre='algo'; //ojo que no se como funciona el id de semestre
+rut='rut';
+pass='pass';
+semestre='semestre'
 
 auth(rut,pass);//este funca
-get_cursos(rut,semestre);//este nop
+
+get_cursos(rut,semestre);//este casi casi
