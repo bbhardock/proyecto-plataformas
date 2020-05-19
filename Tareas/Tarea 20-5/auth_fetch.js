@@ -1,14 +1,14 @@
-const fetch = require("node-fetch");
 
 function auth(username,password){
-    const url = 'http://losvilos.ucn.cl/tongoy/a.php?op=auth'
-
+    const url = 'https://losvilos.ucn.cl/tongoy/a.php?op=auth'
+    
     fetch(url, {
     method: 'POST',
     credentials: 'include', 
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': 'file:///C:/Users/nicol/Documents/GitHub/proyecto-plataformas/Tareas/Tarea%2020-5/login.html'
     },
     body: 'u='+username+'&p='+password,
     })
@@ -46,10 +46,11 @@ function get_cursos(username,semestre){
         }
     })
 }
-rut='rut';
-pass='pass';
-semestre='semestre'
+document.getElementById("Ingresar").addEventListener("submit", function(e){
+    const user = document.getElementById("usuario");
+    const pass = document.getElementById("password");
 
-auth(rut,pass);//este funca
+    auth(user,pass);
 
-get_cursos(rut,semestre);//este casi casi
+    e.preventDefault();
+});
