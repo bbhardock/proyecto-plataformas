@@ -4,13 +4,7 @@ function auth(username,password){
     
     fetch(url, {
     method: 'POST',
-    credentials: 'include', 
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Accept': 'application/json',
-        'Access-Control-Allow-Origin': 'file:///C:/Users/nicol/Documents/GitHub/proyecto-plataformas/Tareas/Tarea%2020-5/login.html'
-    },
-    body: 'u='+username+'&p='+password,
+    body: 'u='+username+'&p='+password
     })
     .then(response => response.json())
     .then(data => {
@@ -46,11 +40,14 @@ function get_cursos(username,semestre){
         }
     })
 }
-document.getElementById("Ingresar").addEventListener("submit", function(e){
-    const user = document.getElementById("usuario");
-    const pass = document.getElementById("password");
+var formulario = document.getElementById("Ingresar");
+formulario.addEventListener("submit", function(e){   
+    
+    var datos = new FormData(formulario);
+
+    var user = datos.get('user');
+    var pass = datos.get('pass');
 
     auth(user,pass);
-
     e.preventDefault();
 });
