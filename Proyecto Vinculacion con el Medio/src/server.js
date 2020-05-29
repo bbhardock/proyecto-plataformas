@@ -4,19 +4,21 @@ import config from './config.json';
 //import apiRoutes from './routes/api';
 import MethodOverride from 'method-override';
 import CookieParser from 'cookie-parser';
-
 import Pg from 'pg';
 import BodyParser from 'body-parser';
 import ConnectPg from 'connect-pg-simple';
 import Passport from 'passport';
 import Session from 'express-session';
-//import authRoutes from './routes/auth';
+import authRoutes from './routes/auth';
 import user from './models/user';
+//import cors from "cors";
 
 const app = express();
-
+var passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
 
 
 app.use(express.static(path.join(__dirname, 'static')));
@@ -38,12 +40,29 @@ app.use(Session({
 }));
 
 
-app.use(Passport.initialize());
-app.use(Passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
-Passport.use(user.createStrategy());
-Passport.serializeUser(user.serializeUser());
-Passport.deserializeUser(user.deserializeUser());
+passport.use(new LocalStrategy({
+  usernameField: 'username',
+  passwordField: 'password'
+},
+  (username, password, done) => {
+    console.log("Login process:", username);
+    return connection.one("SELECT rutusuario" +
+      "FROM usuario " +
+      "WHERE rutusuario=$1", [username])
+      .then((result) => {
+        return done(null, username);
+      })
+      .catch((err) => {
+        console.log("/login: " + err);
+        return done(null, false, { message: 'Usuario no registrado en plataforma' });
+      });
+  }));
+
+passport.serializeUser(user.serializeUser());
+passport.deserializeUser(user.deserializeUser());
 
 const isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
@@ -71,7 +90,8 @@ app.get('/ayudantia',isAuthenticated,(req,res)=>{
   res.render('ayudantia');
 })
 
-//app.use(`/auth`, authRoutes);
+
+app.use(`/auth`, authRoutes);
 //app.use(`/api`, isAuthenticated , apiRoutes); 
 
 let port = 3000;
