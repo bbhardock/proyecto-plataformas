@@ -9,9 +9,6 @@ login = () =>{
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
         if (xhr.response.status === "ok") {
-            console.log(xhr.response)
-            console.log(xhr.status)
-            console.log(xhr.response.headers)
             swal({
                 title: 'Éxito!',
                 icon: 'success',
@@ -19,8 +16,18 @@ login = () =>{
                 button: 'Entrar'
             })
             .then(() => {
-                console.log("Yei")
-                //window.open('login', '_self');
+                console.log("Yei");
+                let formData2 = `u=${rut}&p=${password}`;
+                let xhr2 = new XMLHttpRequest();
+                xhr2.open('post', 'http://losvilos.ucn.cl/tongoy/cp.php?u=19032849k&s=14', true);
+                xhr2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr2.responseType = 'json';
+                xhr2.addEventListener('load', () => {
+                    console.log(xhr2.response);
+                    console.log(xhr2.responseText);
+                    console.log(xhr2.response.message);
+                });
+                xhr2.send();
             });
         } else {
             swal({
