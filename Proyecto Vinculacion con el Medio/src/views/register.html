@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Registrar Academico</title>
+        <link href="../static/css/registrar.css" rel="stylesheet"> 
+    </head>
+    <body>
+        <div class="login-box">
+            <img class="logo" src="../static/images/logo.png">
+            <h2>Registro de Academico</h2>
+            <form id = "Ingresar">
+
+                <label for="username">Usuario</label>
+                <input maxlength="9" type="text" placeholder="Ingrese su RUT (Sin puntos ni guiones)" required="">
+
+                <label for="name">Nombre</label>
+                <input type="text" placeholder="Ingrese su Nombre" required="">
+
+                <label for="telefono">Teléfono</label>
+                <input maxlength="12" minlength="8" type="text" placeholder="Numero telefonico" required="">
+
+                <label for="correo">Correo</label>
+                <input type="text" placeholder="Ingrese su correo" required="">
+
+                <input type="submit" value="Registrar">
+
+                <p> Si quieres volver al Inicio click en <a href="#">Inicio</a></p>
+                <p>¿Ya estas registrado? <a href="login.html">Click aqui</a></p>
+            </form>
+        </div>
+        <input type = "submit" value = "Inicio">
+    </body>
+
+</html>
