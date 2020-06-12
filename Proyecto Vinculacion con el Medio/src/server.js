@@ -49,9 +49,9 @@ passport.use(new LocalStrategy({
 },
   (username, password, done) => {
     console.log("Login process:", username);
-    return connection.one("SELECT rutusuario" +
-      "FROM usuario " +
-      "WHERE rutusuario=$1", [username])
+    return connection.one("SELECT rut" +
+      "FROM usuarios " +
+      "WHERE rut=$1", [username])
       .then((result) => {
         return done(null, username);
       })
