@@ -76,8 +76,8 @@ const isAuthenticated = (req, res, next) => {
 app.get('/',(req,res)=>{
     res.render('login');
 })
-app.get('/list',(req,res)=>{
-    res.render('tabla');
+app.get('/register',(req,res)=>{
+    res.render('register');
 })
 app.get('/editCategoria/:id',isAuthenticated,(req,res)=>{
     res.render('FormCategoria',{id:req.params.id});
