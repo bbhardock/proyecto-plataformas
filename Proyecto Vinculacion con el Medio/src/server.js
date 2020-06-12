@@ -19,8 +19,8 @@ var passport = require('passport'),
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
-
+app.use(express.static('/static/css'))
+app.use(express.static('/static/images'));
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(MethodOverride());
 app.use(BodyParser.urlencoded({ extended: false }));
@@ -76,19 +76,15 @@ const isAuthenticated = (req, res, next) => {
 app.get('/',(req,res)=>{
     res.render('login');
 })
-app.get('/list',(req,res)=>{
-    res.render('tabla');
+app.get('/register',(req,res)=>{
+    res.render('register');
 })
+
+/*
 app.get('/editCategoria/:id',isAuthenticated,(req,res)=>{
     res.render('FormCategoria',{id:req.params.id});
 })
-
-app.get('/compras',isAuthenticated,(req,res)=>{
-  res.render('ventas');
-})
-app.get('/ayudantia',isAuthenticated,(req,res)=>{
-  res.render('ayudantia');
-})
+*/
 
 
 app.use(`/auth`, authRoutes);
