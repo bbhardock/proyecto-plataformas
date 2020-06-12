@@ -79,16 +79,12 @@ app.get('/',(req,res)=>{
 app.get('/register',(req,res)=>{
     res.render('register');
 })
+
+/*
 app.get('/editCategoria/:id',isAuthenticated,(req,res)=>{
     res.render('FormCategoria',{id:req.params.id});
 })
-
-app.get('/compras',isAuthenticated,(req,res)=>{
-  res.render('ventas');
-})
-app.get('/ayudantia',isAuthenticated,(req,res)=>{
-  res.render('ayudantia');
-})
+*/
 
 
 app.use(`/auth`, authRoutes);
