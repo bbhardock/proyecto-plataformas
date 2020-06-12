@@ -19,8 +19,8 @@ var passport = require('passport'),
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
-
+app.use(express.static('/static/css'))
+app.use(express.static('/static/images'));
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(MethodOverride());
 app.use(BodyParser.urlencoded({ extended: false }));
