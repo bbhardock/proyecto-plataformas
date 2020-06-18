@@ -12,13 +12,13 @@
             <form id = "Ingresar">
 
                 <label for="username">Usuario</label>
-                <input maxlength="9" type="text" placeholder="Ingrese su RUT (Sin puntos ni guiones)" required="">
+                <input maxlength="9" type="text" placeholder="Ingrese su RUT (Sin puntos ni guiones)" required="[0-9kK]+">
 
                 <label for="name">Nombre</label>
                 <input type="text" placeholder="Ingrese su Nombre" required="">
 
                 <label for="telefono">Teléfono</label>
-                <input maxlength="12" minlength="8" type="text" placeholder="Numero telefonico" required="">
+                <input maxlength="12" minlength="8" type="text" placeholder="Numero telefonico" required="([+]{0,1}[0-9]+)">
 
                 <label for="correo">Correo Electrónico</label>
                 <input type="text" placeholder="Ingrese su correo" required="">
@@ -29,7 +29,6 @@
                 <p>¿Ya estas registrado? <a href="/">Click aqui</a></p>
             </form>
         </div>
-        <input type = "submit" value = "Inicio">
     </body>
 
 </html>
