@@ -7,13 +7,14 @@ body{
 .login-box{
     margin: 100px auto;
     width: 50%;
-    height: 620px;
+    height: auto;
     max-width: 340px;
     background: #F3F3F3;
     padding: 70px 30px;
     border: 1px solid rgba(0,0,0,0.2);
     box-sizing: border-box;
     border-radius: 5%;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
 }
 .login-box .logo{
     width: 100px;
@@ -28,7 +29,7 @@ body{
     padding: 0 0 20px;
     text-align: center;
     color: rgba(0,0,0,0.3);
-    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
+    
 }
 .login-box label {
     margin: 0;
@@ -36,12 +37,10 @@ body{
     font-weight: bold;
     color: rgba(0,0,0,0.7);
     display: block;
-    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
 }
 .login-box input{
     width: 100%;
     margin-bottom: 20px;
-    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
 }
 .login-box input[type="text"],
 .login-box input[type="password"] {
@@ -63,6 +62,8 @@ body{
     font-size: 18px;
     border-radius: 20px;
     opacity: 0.9;
+    z-index: 10;
+    top: 1000px;
 }
 .login-box input[type="submit"]:hover{
     opacity: 1;
@@ -85,4 +86,23 @@ body{
 
 }.login-box a:hover{
     color: black;
+}
+
+.password {
+    display: none;
+}
+
+.login-box input[type="checkbox"]{
+    width: auto;
+    cursor: pointer;
+}
+.login-box label{
+    display: inline-flex;
+    justify-content: flex-start;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#btn-pass:checked ~ .password{
+    display: block;
 }
