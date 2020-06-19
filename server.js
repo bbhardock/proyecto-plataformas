@@ -91,5 +91,9 @@ app.get('/dashboard', (req, res) =>{
     res.render('dashboard')
 })
 
+app.get('/adminUser', (req,res) =>{
+    res.render('adminUser')
+})
+
 
 app.listen(3000)

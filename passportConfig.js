@@ -37,6 +37,9 @@ function initialize(passport){
                         });
                     }
                     //LOGUEA CON CONTRASEÑA INTERNA
+                    else if(user.tipo_contrato='H'){
+                        
+                    }
                     
                 }else{
                     return done(null,false,{message: "Usuario no existe"})
