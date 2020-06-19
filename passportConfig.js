@@ -28,21 +28,27 @@ function initialize(passport){
                             }
                             //console.log(JSON.parse(body))
                             const loginStatus =JSON.parse(body).status
-                            if(loginStatus=='ok' && user.estado=='A'){
-                                return done(null, user)
+                            if(loginStatus=='ok'){
+                                if(user.estado=='A'){
+                                    return done(null, user)                                    
+                                }else if(user.estado=='P'){
+                                    return done(null,false,{message: "El usuario está pendiente de aprobación por la administración, por favor verificar"})
+                                }else{
+                                    return done(null,false,{messsage: "Se le ha denegado el acceso al usuario por la administración"})
+                                }
                             }
                             else{
-                                return done(null,false,{message: "Login incorrecto o no se ha aprobado su registro por la administración"})
+                                return done(null,false,{message: "Contraseña incorrecta"})
                             }
                         });
                     }
                     //LOGUEA CON CONTRASEÑA INTERNA
                     else if(user.tipo_contrato='H'){
-                        
+
                     }
                     
                 }else{
-                    return done(null,false,{message: "Usuario no existe"})
+                    return done(null,false,{message: "RUT indicado no está registrado"})
                 }
             }
         );

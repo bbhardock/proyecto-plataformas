@@ -95,5 +95,4 @@ app.get('/adminUser', (req,res) =>{
     res.render('adminUser')
 })
 
-
 app.listen(3000)
