@@ -86,6 +86,10 @@ app.post('/login', passport.authenticate('local', {
     //,failureFlash: true
 })
 )
+app.get('/logout', (req,res) => {
+    req.logOut()
+    res.redirect('/')
+})
 
 app.get('/dashboard', (req, res) =>{
     res.render('dashboard')

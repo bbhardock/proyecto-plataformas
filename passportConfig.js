@@ -13,7 +13,7 @@ function initialize(passport){
 
                 if(results.rows.length > 0){
                     const user = results.rows[0]
-                    //LOGUEA CON EL TONGOY
+                    //LOGUEA CON TONGOY
                     if(user.tipo_contrato='C'){
                         const options = {
                             url:'http://losvilos.ucn.cl/tongoy/a.php?op=auth',
