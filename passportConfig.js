@@ -14,7 +14,7 @@ function initialize(passport){
                 if(results.rows.length > 0){
                     const user = results.rows[0]
                     //LOGUEA CON TONGOY
-                    if(user.tipo_contrato='C'){
+                    if(user.tipo_contrato =='C'){
                         const options = {
                             url:'http://losvilos.ucn.cl/tongoy/a.php?op=auth',
                             form:{
@@ -43,10 +43,24 @@ function initialize(passport){
                         });
                     }
                     //LOGUEA CON CONTRASEÑA INTERNA
-                    else if(user.tipo_contrato='H'){
-
+                    else if(user.tipo_contrato =='H'){
+                        bcrypt.compare(password, user.pass, (err,isMatch) => {
+                            if(err){
+                                throw err;
+                            }
+                            if(isMatch){
+                                if(user.estado == 'A'){
+                                    return done(null,user);                                    
+                                }else if(user.estado == 'P'){
+                                    return done(null,false,{message: "El usuario está pendiente de aprobación por la administración, por favor verificar"})
+                                }else{
+                                    return done(null,false,{messsage: "Se le ha denegado el acceso al usuario por la administración"})
+                                }
+                            }else{
+                                return done(null,false,{message: "Contraseña incorrecta"})
+                            }
+                        })
                     }
-                    
                 }else{
                     return done(null,false,{message: "RUT indicado no está registrado"})
                 }
