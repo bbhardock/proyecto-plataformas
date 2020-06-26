@@ -44,8 +44,10 @@ app.get('/registro', (req,res) =>{
     res.render('registro')
 })
 //sería bueno tener validación de formulario abajo (especialmente para el rut)
-app.post('/registro',(req,res) =>{
+app.post('/registro', async (req,res) =>{
     let {rut,nombre,telefono,email} = req.body
+    let hashPassword = await bcrypt.hash(req.body.contraseña,10)
+    //console.log(req.body)
     //ahora revisamos si existe jejeee
     pool.query(
         `SELECT * from usuarios
@@ -57,20 +59,36 @@ app.post('/registro',(req,res) =>{
                 console.log("Usuario ya existe")
                 res.render('registro')
             }else{
-                pool.query(
-                    `INSERT INTO usuarios(rut,nombre,telefono,correo_electronico,estado,es_admin)
-                    VALUES($1,$2,$3,$4,$5,$6)
-                    RETURNING id_code`,
-                    [rut,nombre,telefono,email,'P','N'],
-                    (err,results) => {
-                        if(err){
-                            throw err
+                if(req.body.honorario != 'on'){
+                    pool.query(
+                        `INSERT INTO usuarios(rut,nombre,telefono,correo_electronico,estado,es_admin,tipo_contrato)
+                        VALUES($1,$2,$3,$4,$5,$6,$7)
+                        RETURNING id_code`,
+                        [rut,nombre,telefono,email,'P','N','C'],
+                        (err,results) => {
+                            if(err){
+                                throw err
+                            }
+                            console.log(results.rows);
+                            //req.flash('sucess_msg',"Registrado")
+                            res.redirect('login')
                         }
-                        console.log(results.rows);
-                        //req.flash('sucess_msg',"Registrado")
-                        res.redirect('login')
-                    }
                 )
+                }else{
+                    pool.query(
+                        `INSERT INTO usuarios(rut,nombre,telefono,correo_electronico,estado,es_admin,tipo_contrato,pass)
+                        VALUES($1,$2,$3,$4,$5,$6,$7,$8)
+                        RETURNING id_code`,
+                        [rut,nombre,telefono,email,'P','N','H',hashPassword],
+                        (err,results) => {
+                            if(err){
+                                throw err
+                            }
+                            console.log(results.rows)
+                            res.redirect('login')
+                        }
+                    )
+                }
             }
         }
     )
