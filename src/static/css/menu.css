@@ -7,7 +7,7 @@
     margin-top: 3px;
 }
 header .title{
-    margin-top: 10px;
+    margin-top: 4px;
     margin-left: 15px;
     float: left;
     font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
@@ -49,13 +49,13 @@ header label:hover{
     text-decoration: none;
 }
 
-@media (max-width:925px){
+@media (max-width:1000px){
     header label {
         display: block;
     }
     .menu {
         position: absolute;
-        background: teal;
+        background:  rgba(24, 30, 82, 1);
         top: 50px;
         width: 70%;
         margin-left: -70%;
