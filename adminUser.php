@@ -1,3 +1,10 @@
+<?php
+    require "session_check.php";
+    if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
+        header("Location: dashboard.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang = "es">
     <head>
