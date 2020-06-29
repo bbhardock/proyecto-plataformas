@@ -1,6 +1,6 @@
 <?php
     require "session_check.php";
-    require "header_dashboard.php";
+    require "header.php";
     if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
         header("Location: dashboard.php");
         exit();
