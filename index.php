@@ -4,8 +4,7 @@
         header("Location: dashboard.php");
         exit();
     }
+    require "header.php";
 ?>
 Hola
-<p><a href="login.php">Login</a></p>
-<p><a href="registro.php">Registro</a></p>
 

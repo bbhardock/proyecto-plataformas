@@ -1,3 +1,11 @@
+<?php
+    require "session_check.php";
+    require "header_dashboard.php";
+    if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
+        header("Location: dashboard.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang = "es">
     <head>
@@ -9,23 +17,6 @@
         <link rel="stylesheet" href="static/css/Styles.css?v1.3">
     </head>
     <body>
-        <header>
-            <div class="contenedor">
-                <img class="logo" src="static/images/logo.png" alt="">
-                <h2 class="title">Vinculación con el medio</h2>
-
-                <input type = "checkbox" id = "btn-menu">
-                <label class = "icon-menu" for="btn-menu"></label>
-                
-                <nav class="menu">
-                    <ul>
-                        <li><a href="">Todas las actividades</a></li>
-                        <li><a href="">Administración de usuarios</a></li>
-                        <li><a href="/logout">Cerrar Sesión</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
         <section class="main">
             <div class="containerTitle">
                 <div class="container row col-md-12">
