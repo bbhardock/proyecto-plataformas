@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Registrar Academico</title>
-        <link href="static/css/registrar.css" rel="stylesheet">
+        <link href="static/css/registrar.css?v1.2" rel="stylesheet">
     </head>
     <body>
         <div class="login-box">
