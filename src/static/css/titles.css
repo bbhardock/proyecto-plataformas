@@ -1,0 +1,9 @@
+.containerTitle .container{
+    padding: 10px;
+    background: rgba(24, 30, 82, 0.85);
+    color: lightgrey;
+    border-radius: 10px;
+}
+.containerTitle .container h2{
+    padding: 10px;
+}

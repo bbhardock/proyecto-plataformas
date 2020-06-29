@@ -1,53 +1,45 @@
-.contenedorT{
-    background-color: rgb(255, 255, 255,0.8);
-}
-.contenedorT table{
+
+table{
     margin: auto;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: center;
-    border-collapse: collapse;
-    width: 90%;
 }
 th,td{
     padding: 20px;
 }
-thead{
-    background-color: rgb(0, 128, 128, 0.8);
-    border-bottom: solid 5px teal;
+.tableA thead{
+    background-color: rgb(0, 128, 128, 0.7);
+    border-bottom: solid 3px rgb(0, 128, 128,0.8);
+    color: white;
+}
+.tableP thead{
+    background-color: rgb(255, 165, 0,0.8);
+    border-bottom: solid 3px  rgb(255, 165, 0,0.9);
     color: white;
 }
 tr:nth-child(even){
     background-color: #ddd;
 }
-tr:hover td{
-    background-color: rgb(0, 128, 128, 0.5);
-    color: white;
-}
 
-.contenedorT h3{
-    text-align: center;
-    margin-bottom: 20px;
-    color: rgb(0, 0, 0,0.8); 
-}
-
-.contenedorT input[type="submit"]{
+input[type="submit"]{
     margin-left: 20%;
     margin-bottom: 20px;
     border: none;
     outline: none;
     width: 20%;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 10px;
     color: #fff;
-    background: linear-gradient(#2CA162,#32895A);
     opacity: 0.9;
+    background: rgb(0, 128, 128,0.8);
 }
 
-@media (max-width:925px){
-    .bodyT{
-        justify-content: center;
-    }
+#add:hover{
+    background: linear-gradient(rgb(1, 124, 1),rgb(2, 173, 11));
+}
+#pop:hover{
+    background: linear-gradient(rgb(255, 0, 0,1),rgb(255, 0, 0,0.8));
 }

@@ -1,0 +1,18 @@
+@import url(forms.css);
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0,0,0,0.2);
+
+}
+.form-box{
+    margin: 80px auto;
+    width: 80%;
+    height: auto;
+    max-width: 1000px;
+    background: #F3F3F3;
+    padding: 70px 30px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    border-radius: 2%;
+}

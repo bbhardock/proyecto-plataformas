@@ -117,4 +117,8 @@ app.get('/adminUser', (req,res) =>{
     res.render('adminUser')
 })
 
+app.get('/activitie', (req,res) =>{
+    res.render('activitie')
+})
+
 app.listen(3000)

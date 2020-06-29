@@ -6,7 +6,7 @@
     margin-left: 10px;
     margin-top: 3px;
 }
-.title{
+header .title{
     margin-top: 10px;
     margin-left: 15px;
     float: left;
@@ -20,8 +20,8 @@
 header label{
     float: right;
     display: none;
-    font-size: 36px;
-    margin: 5px 5px;
+    font-size: 24px;
+    margin: 8px 5px;
 }
 
 header label:hover{
@@ -44,7 +44,7 @@ header label:hover{
 }
 .menu li a{
     display: block;
-    padding: 15px 15px;
+    padding: 13px 15px;
     color: rgb(255, 255, 255, 0.8);
     text-decoration: none;
 }
@@ -60,6 +60,7 @@ header label:hover{
         width: 70%;
         margin-left: -70%;
         transition: all 0.5s;
+        z-index: 300;
     }
     .menu ul{
         flex-direction: column;
