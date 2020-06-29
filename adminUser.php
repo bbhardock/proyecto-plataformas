@@ -6,7 +6,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css">
+        <link rel="stylesheet" href="static/css/Styles.css?v1.3">
     </head>
     <body>
         <header>
@@ -34,45 +34,33 @@
             </div>
             <div class="container col-md-12 row">
                 <div class="table-responsive col-sm-12 col-md-6">
-                    <table class="table table-bordered table-hover tableA">
+                    <table class="table tableA">
                         <thead>
                             <th>ID</th>
                             <th>RUT</th>
                             <th>Nombre</th>
                             <th>Correo</th>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody style="cursor:pointer">
+                            <tr onclick="selection(this,1)">
                                 <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="check[]" value="1" id="chk1">1
-                                        </label>
-                                    </div>
+                                    <input type="checkbox" name="check[]" value="1" id="chk1">
                                 </td>
                                 <td>198640913</td>
                                 <td>Nicolas Sepulveda Valdivia</td>
                                 <td>nicolas.sepulveda@alumnos.ucn.cl</td>
                             </tr>
-                            <tr>
+                            <tr onclick="selection(this,2)">
                                 <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="check[]" value="2" id="chk1">2
-                                        </label>
-                                    </div>
+                                    <input type="checkbox" name="check[]" value="2" id="chk2">      
                                 </td>
                                 <td>198640913</td>
                                 <td>Nicolas Sepulveda Valdivia</td>
                                 <td>nicolas.sepulveda@alumnos.ucn.cl</td>
                             </tr>
-                            <tr>
+                            <tr onclick="selection(this,3)">
                                 <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="check[]" value="3" id="chk1">3
-                                        </label>
-                                    </div>
+                                    <input type="checkbox" name="check[]" value="3" id="chk3">
                                 </td>
                                 <td>198640913</td>
                                 <td>Nicolas Sepulveda Valdivia</td>
@@ -139,7 +127,22 @@
         </section>
         <footer class="footer">
             <img class="logo" src="static/images/logo.png" alt="">
-        </footer> 
+        </footer>
+        <script>
+            function selection(tr,value){
+                $(function(){
+                    if($("#chk"+value).is("checked") == "checked"){                      
+                        $("#chk"+value).removeAttr("checked");
+                        $(tr).css("background-color","#FFFFFF");
+                    }
+                    else{
+                        $("#chk"+value).attr("checked","true");
+                        $("#chk"+value).prop("checked","true");
+                        $(tr).css("background-color","#BEDAE8");
+                    }
+                })
+            }
+        </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
