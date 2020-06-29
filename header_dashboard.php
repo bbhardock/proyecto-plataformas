@@ -21,10 +21,10 @@
                     <ul>
                         <?php
                             if($_SESSION['user_admin_status']=='S'){
+                                echo '<li><a href="/dashboard.php">Todas las actividades</a></li>';
                                 echo '<li><a href="/adminUser.php">Administración de usuarios</a></li>';
-                                echo '<li><a href="#">Todas las actividades</a></li>';
                             }else{
-                                echo '<li><a href="#">Mis Actividades</a></li>';
+                                echo '<li><a href="/dashboard.php">Mis Actividades</a></li>';
                             }
                         ?>
                         <li><a href="/includes/logout.inc.php">Cerrar Sesión</a></li>

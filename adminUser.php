@@ -1,5 +1,6 @@
 <?php
     require "session_check.php";
+    require "header_dashboard.php";
     if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
         header("Location: dashboard.php");
         exit();
@@ -16,9 +17,6 @@
         <link rel="stylesheet" href="static/css/Styles.css">
     </head>
     <body>
-        <?php
-            require "header_dashboard.php";
-        ?>
         <section class="main">
             <div class="containerTitle">
                 <div class="container row col-md-12">
@@ -130,9 +128,9 @@
                 </div>
             </div>
         </section>
-        <footer class="footer">
-            <img class="logo" src="static/images/logo.png" alt="">
-        </footer> 
+        <?php
+            require 'footer_dashboard.php'
+        ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

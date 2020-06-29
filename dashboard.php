@@ -5,5 +5,17 @@
         header("Location: index.php");
         exit();
     }
-    echo "<p>"."Hola ".$_SESSION['user_name']."! Rut: ".$_SESSION['user_rut']."</p>";
 ?>
+<!DOCTYPE html>
+<html lang = "es">
+    <body>
+        <?php
+            if(isset($_GET['login']) && $_GET['login'] == 'success'){
+                echo "<p>"."Hola ".$_SESSION['user_name']."! Rut: ".$_SESSION['user_rut']."</p>";
+            }
+        ?>
+        <p> Esta es la vista principal, donde se ven las actividades </p>
+    </body>
+    <?php
+        require 'footer_dashboard.php'
+    ?>
