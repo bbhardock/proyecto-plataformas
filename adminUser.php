@@ -16,23 +16,9 @@
         <link rel="stylesheet" href="static/css/Styles.css">
     </head>
     <body>
-        <header>
-            <div class="contenedor">
-                <img class="logo" src="static/images/logo.png" alt="">
-                <h2 class="title">Vinculación con el medio</h2>
-
-                <input type = "checkbox" id = "btn-menu">
-                <label class = "icon-menu" for="btn-menu"></label>
-                
-                <nav class="menu">
-                    <ul>
-                        <li><a href="">Todas las actividades</a></li>
-                        <li><a href="">Administración de usuarios</a></li>
-                        <li><a href="/logout">Cerrar Sesión</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <?php
+            require "header_dashboard.php";
+        ?>
         <section class="main">
             <div class="containerTitle">
                 <div class="container row col-md-12">
