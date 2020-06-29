@@ -20,14 +20,19 @@
                 <nav class="menu">
                     <ul>
                         <?php
-                            if($_SESSION['user_admin_status']=='S'){
+                            if(!isset($_SESSION['user_id'])){
+                                echo '<li><a href="/login.php">Iniciar Sesión</a></li>';
+                                echo '<li><a href="/registro.php">Registro</a></li>';    
+                            }
+                            else if($_SESSION['user_admin_status']=='S'){
                                 echo '<li><a href="/dashboard.php">Todas las actividades</a></li>';
                                 echo '<li><a href="/adminUser.php">Administración de usuarios</a></li>';
+                                echo '<li><a href="/includes/logout.inc.php">Cerrar Sesión</a></li>';
                             }else{
                                 echo '<li><a href="/dashboard.php">Mis Actividades</a></li>';
+                                echo '<li><a href="/includes/logout.inc.php">Cerrar Sesión</a></li>';
                             }
                         ?>
-                        <li><a href="/includes/logout.inc.php">Cerrar Sesión</a></li>
                     </ul>
                 </nav>
             </div>
