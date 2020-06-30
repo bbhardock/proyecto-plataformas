@@ -1,13 +1,14 @@
 <?php
     require "session_check.php";
     require "header.php";
-    if(!isset($_SESSION['user_id'])){
-        header("Location: index.php");
+    if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
+        header("Location: dashboard.php");
         exit();
     }
 ?>
 <!DOCTYPE html>
-<html lang = "es"><head>
+<html lang = "es">
+    <head>
         <meta charset="utf-8" />
         <title>Manejo de Usuarios</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
@@ -16,12 +17,6 @@
         <link rel="stylesheet" href="static/css/Styles.css?v1.4">
     </head>
     <body>
-        <?php
-            if(isset($_GET['login']) && $_GET['login'] == 'success'){
-                echo "<p>"."Hola ".$_SESSION['user_name']."! Rut: ".$_SESSION['user_rut']."</p>";
-            }
-        ?>
-        <p> Esta es la vista principal, donde se ven las actividades </p>
         <section class="main">
             <div class="containerTitle">
                 <div class="container row col-md-12">
