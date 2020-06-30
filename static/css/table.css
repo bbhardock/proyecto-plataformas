@@ -6,7 +6,7 @@ table{
     text-align: center;
 }
 th,td{
-    padding: 20px;
+    padding: 10px;
 }
 .tableA thead{
     background-color: rgb(0, 128, 128, 0.7);

@@ -1,6 +1,6 @@
 <?php
     require "session_check.php";
-    require "header_dashboard.php";
+    require "header.php";
     if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
         header("Location: dashboard.php");
         exit();
@@ -71,38 +71,26 @@
                             <th>Nombre</th>
                             <th>Correo</th>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody style="cursor:pointer">
+                            <tr onclick="selectionP(this,1)">
                                 <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="check[]" value="1" id="chk1">1
-                                        </label>
-                                    </div>
+                                    <input type="checkbox" name="checkP[]" value="1" id="chkP1">
                                 </td>
                                 <td>198640913</td>
                                 <td>Nicolas Sepulveda Valdivia</td>
                                 <td>nicolas.sepulveda@alumnos.ucn.cl</td>
                             </tr>
-                            <tr>
+                            <tr onclick="selectionP(this,2)">
                                 <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="check[]" value="2" id="chk2">2
-                                        </label>
-                                    </div>
+                                    <input type="checkbox" name="checkP[]" value="2" id="chkP2">      
                                 </td>
                                 <td>198640913</td>
                                 <td>Nicolas Sepulveda Valdivia</td>
                                 <td>nicolas.sepulveda@alumnos.ucn.cl</td>
                             </tr>
-                            <tr>
+                            <tr onclick="selectionP(this,3)">
                                 <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="check[]" value="3" id="chk3">3
-                                        </label>
-                                    </div>
+                                    <input type="checkbox" name="checkP[]" value="3" id="chkP3">
                                 </td>
                                 <td>198640913</td>
                                 <td>Nicolas Sepulveda Valdivia</td>
@@ -111,7 +99,7 @@
                         </tbody>
                     </table>
                     <h3>Solicitudes de ingreso</h3>
-                    <input type="submit" value="Agregar" id="add">
+                    <input type="submit" value="Agregar" name="addP" id="add">
                     <input type="submit" value="Eliminar" id="pop">
                 </div>
             </div>
@@ -122,7 +110,7 @@
         <script>
             function selection(tr,value){
                 $(function(){
-                    if($("#chk"+value).is("checked") == "checked"){                      
+                    if($("#chk"+value).attr("checked") == "checked"){                      
                         $("#chk"+value).removeAttr("checked");
                         $(tr).css("background-color","#FFFFFF");
                     }
@@ -132,6 +120,27 @@
                         $(tr).css("background-color","#BEDAE8");
                     }
                 })
+            }
+        </script>
+        <script>
+            function selectionP(tr,value){
+                $(function(){
+                    if($("#chkP"+value).attr("checked") == "checked"){                      
+                        $("#chkP"+value).removeAttr("checked");
+                        $(tr).css("background-color","#FFFFFF");
+                    }
+                    else{
+                        $("#chkP"+value).attr("checked","true");
+                        $("#chkP"+value).prop("checked","true");
+                        $(tr).css("background-color","#BEDAE8");
+                    }
+                })
+            }
+        </script>
+        <script>
+            if(isset($_REQUEST["addP"])){
+                $checkes = $_REQUEST["checkP"];
+                echo checkes[2];
             }
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
