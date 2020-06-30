@@ -11,13 +11,13 @@ function obtenerUsuariosPermitidos(){
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         $rows = array();
-        while($r = mysqli_fetch_assoc($result))  {
+        while($r = mysqli_fetch_assoc($result)){
             $rows[] = $r;
             //rows es una matriz tipo rows[0]['rut']
         }
         $JSONrespuesta = json_encode($rows);
         return $JSONrespuesta; 
-    } 
+    }
 }
 function obtenerUsuariosPendientes(){
     require 'databaseHandler.inc.php';
@@ -34,7 +34,9 @@ function obtenerUsuariosPendientes(){
         }
         $JSONrespuesta = json_encode($rows);
         return $JSONrespuesta; 
-    }   
+    } 
 }
-obtenerUsuariosPermitidos();
-obtenerUsuariosPendientes();
+/*
+header("Location: ../index.php"); //redirige para que no se acceda a este archivo
+exit();
+*/

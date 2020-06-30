@@ -33,30 +33,22 @@
                             <th>Correo</th>
                         </thead>
                         <tbody style="cursor:pointer">
-                            <tr onclick="selection(this,1)">
-                                <td>
-                                    <input type="checkbox" name="check[]" value="1" id="chk1">
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
-                            <tr onclick="selection(this,2)">
-                                <td>
-                                    <input type="checkbox" name="check[]" value="2" id="chk2">      
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
-                            <tr onclick="selection(this,3)">
-                                <td>
-                                    <input type="checkbox" name="check[]" value="3" id="chk3">
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
+                            <?php
+                                require 'includes/queries.inc.php';
+                                $json_decoded = json_decode(obtenerUsuariosPermitidos());
+                                $indice = 1;
+                                foreach($json_decoded as $result){
+                                echo'<tr onclick="selection(this,'.$indice.')">
+                                    <td>
+                                        <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
+                                    </td>
+                                    <td>'.$result->rut.'</td>
+                                    <td>'.$result->nombre.'</td>
+                                    <td>'.$result->correo_electronico.'</td>
+                                    </tr>   ';
+                                }
+                                $indice = $indice+1;
+                            ?>
                         </tbody>
                     </table>
                     <h3>Usuarios admitidos</h3>
@@ -72,30 +64,22 @@
                             <th>Correo</th>
                         </thead>
                         <tbody style="cursor:pointer">
-                            <tr onclick="selectionP(this,1)">
-                                <td>
-                                    <input type="checkbox" name="checkP[]" value="1" id="chkP1">
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
-                            <tr onclick="selectionP(this,2)">
-                                <td>
-                                    <input type="checkbox" name="checkP[]" value="2" id="chkP2">      
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
-                            <tr onclick="selectionP(this,3)">
-                                <td>
-                                    <input type="checkbox" name="checkP[]" value="3" id="chkP3">
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
+                            <?php
+                                require 'includes/queries.inc.php';
+                                $json_decoded = json_decode(obtenerUsuariosPendientes());
+                                $indice = 1;
+                                foreach($json_decoded as $result){
+                                echo'<tr onclick="selection(this,'.$indice.')">
+                                    <td>
+                                        <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
+                                    </td>
+                                    <td>'.$result->rut.'</td>
+                                    <td>'.$result->nombre.'</td>
+                                    <td>'.$result->correo_electronico.'</td>
+                                    </tr>   ';
+                                }
+                                $indice = $indice+1;
+                            ?>
                         </tbody>
                     </table>
                     <h3>Solicitudes de ingreso</h3>

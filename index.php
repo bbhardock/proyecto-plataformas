@@ -6,5 +6,4 @@
     }
     require "header.php";
 ?>
-Hola
 

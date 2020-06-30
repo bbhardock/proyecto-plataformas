@@ -21,11 +21,10 @@
                 echo "<p>"."Hola ".$_SESSION['user_name']."! Rut: ".$_SESSION['user_rut']."</p>";
             }
         ?>
-        <p> Esta es la vista principal, donde se ven las actividades </p>
         <section class="main">
             <div class="containerTitle">
                 <div class="container row col-md-12">
-                    <h2>Administración de usuarios</h2>
+                    <h2>Todas las actividades</h2>
                 </div>
             </div>
             <div class="container row col-md-12">
