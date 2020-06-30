@@ -65,7 +65,6 @@
                         </thead>
                         <tbody style="cursor:pointer">
                             <?php
-                                require 'includes/queries.inc.php';
                                 $json_decoded = json_decode(obtenerUsuariosPendientes());
                                 $indice = 1;
                                 foreach($json_decoded as $result){
