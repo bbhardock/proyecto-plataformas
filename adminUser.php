@@ -68,9 +68,9 @@
                                 $json_decoded = json_decode(obtenerUsuariosPendientes());
                                 $indice = 1;
                                 foreach($json_decoded as $result){
-                                    echo'<tr onclick="selection(this,'.$indice.')">
+                                    echo'<tr onclick="selectionP(this,'.$indice.')">
                                         <td>
-                                            <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
+                                            <input type="checkbox" name="checkP[]" value="'.$indice.'" id="chkP'.$indice.'">
                                         </td>
                                         <td>'.$result->rut.'</td>
                                         <td>'.$result->nombre.'</td>
