@@ -41,22 +41,6 @@
                                 <td>Nicolas Sepulveda Valdivia</td>
                                 <td>nicolas.sepulveda@alumnos.ucn.cl</td>
                             </tr>
-                            <tr onclick="selection(this,2)">
-                                <td>
-                                    <input type="checkbox" name="check[]" value="2" id="chk2">      
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
-                            <tr onclick="selection(this,3)">
-                                <td>
-                                    <input type="checkbox" name="check[]" value="3" id="chk3">
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
                         </tbody>
                     </table>
                     <h3>Usuarios admitidos</h3>
@@ -75,22 +59,6 @@
                             <tr onclick="selectionP(this,1)">
                                 <td>
                                     <input type="checkbox" name="checkP[]" value="1" id="chkP1">
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
-                            <tr onclick="selectionP(this,2)">
-                                <td>
-                                    <input type="checkbox" name="checkP[]" value="2" id="chkP2">      
-                                </td>
-                                <td>198640913</td>
-                                <td>Nicolas Sepulveda Valdivia</td>
-                                <td>nicolas.sepulveda@alumnos.ucn.cl</td>
-                            </tr>
-                            <tr onclick="selectionP(this,3)">
-                                <td>
-                                    <input type="checkbox" name="checkP[]" value="3" id="chkP3">
                                 </td>
                                 <td>198640913</td>
                                 <td>Nicolas Sepulveda Valdivia</td>
@@ -144,7 +112,7 @@
             }
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     </body>
 </html>
