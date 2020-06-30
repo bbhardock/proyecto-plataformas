@@ -38,16 +38,16 @@
                                 $json_decoded = json_decode(obtenerUsuariosPermitidos());
                                 $indice = 1;
                                 foreach($json_decoded as $result){
-                                echo'<tr onclick="selection(this,'.$indice.')">
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
-                                    </td>
-                                    <td>'.$result->rut.'</td>
-                                    <td>'.$result->nombre.'</td>
-                                    <td>'.$result->correo_electronico.'</td>
-                                    </tr>   ';
+                                    echo'<tr onclick="selection(this,'.$indice.')">
+                                        <td>
+                                            <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
+                                        </td>
+                                        <td>'.$result->rut.'</td>
+                                        <td>'.$result->nombre.'</td>
+                                        <td>'.$result->correo_electronico.'</td>
+                                        </tr>   ';
+                                    $indice++;
                                 }
-                                $indice = $indice+1;
                             ?>
                         </tbody>
                     </table>
@@ -68,16 +68,16 @@
                                 $json_decoded = json_decode(obtenerUsuariosPendientes());
                                 $indice = 1;
                                 foreach($json_decoded as $result){
-                                echo'<tr onclick="selection(this,'.$indice.')">
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
-                                    </td>
-                                    <td>'.$result->rut.'</td>
-                                    <td>'.$result->nombre.'</td>
-                                    <td>'.$result->correo_electronico.'</td>
-                                    </tr>   ';
+                                    echo'<tr onclick="selection(this,'.$indice.')">
+                                        <td>
+                                            <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
+                                        </td>
+                                        <td>'.$result->rut.'</td>
+                                        <td>'.$result->nombre.'</td>
+                                        <td>'.$result->correo_electronico.'</td>
+                                        </tr>   ';
+                                    $indice++;
                                 }
-                                $indice = $indice+1;
                             ?>
                         </tbody>
                     </table>
