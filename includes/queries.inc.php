@@ -36,6 +36,17 @@ function obtenerUsuariosPendientes(){
         return $JSONrespuesta; 
     } 
 }
+function permitirAccesoUsuario($idUsuario){
+    require 'databaseHandler.inc.php';
+    $sql = "UPDATE usuarios SET estado='A' WHERE id_code=?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return null;
+    }else{
+        mysqli_stmt_bind_param($stmt,"i",$idUsuario);
+        mysqli_stmt_execute($stmt);
+    }
+}
 /*
 header("Location: ../index.php"); //redirige para que no se acceda a este archivo
 exit();

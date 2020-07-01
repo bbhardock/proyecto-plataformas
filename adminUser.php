@@ -1,6 +1,7 @@
 <?php
     require "session_check.php";
     require "header.php";
+    require 'includes/queries.inc.php';
     if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
         header("Location: dashboard.php");
         exit();
@@ -28,7 +29,7 @@
                     <div class="container">
                         <h3>Usuarios admitidos</h3>
                     </div>
-                    <form method="post" action="">
+                    <form method="post">
                         <div class="table-responsive">
                             <table class="table tableA">
                                 <thead>
@@ -39,7 +40,6 @@
                                 </thead>
                                 <tbody style="cursor:pointer">
                                     <?php
-                                        require 'includes/queries.inc.php';
                                         $json_decoded = json_decode(obtenerUsuariosPermitidos());
                                         foreach($json_decoded as $result){
                                             echo'<tr onclick="selection(this,'.$result->id_code.')">
@@ -63,7 +63,7 @@
                     <div class="container">
                         <h3>Solicitudes de ingreso</h3>
                     </div>
-                    <form method="post" action="acceso.php">
+                    <form method="post">
                         <div class="table-responsive ">
                             <table class="table table-bordered table-hover tableP">
                                 <thead>
@@ -130,6 +130,16 @@
                 })
             }
         </script>
+        <?php
+        if(isset($_POST['checkP'])){
+            foreach($_POST['checkP'] as $valor){
+                permitirAccesoUsuario($valor);
+            }
+            //refresca la pagina usando html
+            $secondsWait = 0;
+            echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
+        }
+        ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
