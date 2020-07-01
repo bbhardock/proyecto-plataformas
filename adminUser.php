@@ -25,6 +25,9 @@
             </div>
             <div class="container col-md-12 row">
                 <div class="table-responsive col-sm-12 col-md-6">
+                    <div class="container">
+                        <h3>Usuarios admitidos</h3>
+                    </div>
                     <table class="table tableA">
                         <thead>
                             <th>ID</th>
@@ -40,7 +43,7 @@
                                 foreach($json_decoded as $result){
                                     echo'<tr onclick="selection(this,'.$indice.')">
                                         <td>
-                                            <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
+                                            <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">'.$indice.'
                                         </td>
                                         <td>'.$result->rut.'</td>
                                         <td>'.$result->nombre.'</td>
@@ -51,11 +54,13 @@
                             ?>
                         </tbody>
                     </table>
-                    <h3>Usuarios admitidos</h3>
                     <input type="submit" value="Agregar" id="add">
                     <input type="submit" value="Eliminar" id="pop">
                 </div>
                 <div class="table-responsive col-sm-12 col-md-6">
+                    <div class="container">
+                        <h3>Solicitudes de ingreso</h3>
+                    </div>
                     <table class="table table-bordered table-hover tableP">
                         <thead>
                             <th>ID</th>
@@ -70,7 +75,7 @@
                                 foreach($json_decoded as $result){
                                     echo'<tr onclick="selectionP(this,'.$indice.')">
                                         <td>
-                                            <input type="checkbox" name="checkP[]" value="'.$indice.'" id="chkP'.$indice.'">
+                                            <input type="checkbox" name="checkP[]" value="'.$indice.'" id="chkP'.$indice.'">'.$indice.'
                                         </td>
                                         <td>'.$result->rut.'</td>
                                         <td>'.$result->nombre.'</td>
@@ -81,7 +86,6 @@
                             ?>
                         </tbody>
                     </table>
-                    <h3>Solicitudes de ingreso</h3>
                     <input type="submit" value="Permitir acceso" name="addP" id="add">
                     <input type="submit" value="No permitir" id="pop">
                 </div>
