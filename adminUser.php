@@ -66,7 +66,7 @@
                         <tbody style="cursor:pointer">
                             <?php
                                 $json_decoded = json_decode(obtenerUsuariosPendientes());
-                                //$indice = 1;
+                                $indice = 1;
                                 foreach($json_decoded as $result){
                                     echo'<tr onclick="selectionP(this,'.$indice.')">
                                         <td>
