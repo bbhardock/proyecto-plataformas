@@ -14,7 +14,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.3">
+        <link rel="stylesheet" href="static/css/Styles.css?v1.6">
     </head>
     <body>
         <section class="main">
@@ -66,7 +66,7 @@
                         <tbody style="cursor:pointer">
                             <?php
                                 $json_decoded = json_decode(obtenerUsuariosPendientes());
-                                //$indice = 1;
+                                $indice = 1;
                                 foreach($json_decoded as $result){
                                     echo'<tr onclick="selectionP(this,'.$indice.')">
                                         <td>
@@ -82,8 +82,8 @@
                         </tbody>
                     </table>
                     <h3>Solicitudes de ingreso</h3>
-                    <input type="submit" value="Agregar" name="addP" id="add">
-                    <input type="submit" value="Eliminar" id="pop">
+                    <input type="submit" value="Permitir acceso" name="addP" id="add">
+                    <input type="submit" value="No permitir" id="pop">
                 </div>
             </div>
         </section>
@@ -110,20 +110,21 @@
                 $(function(){
                     if($("#chkP"+value).attr("checked") == "checked"){                      
                         $("#chkP"+value).removeAttr("checked");
+                        $("#chkP"+value).prop('checked',false);
                         $(tr).css("background-color","#FFFFFF");
                     }
                     else{
-                        $("#chkP"+value).attr("checked","true");
-                        $("#chkP"+value).prop("checked","true");
+                        $("#chkP"+value).attr("checked",true);
+                        $("#chkP"+value).prop("checked",true);
                         $(tr).css("background-color","#BEDAE8");
                     }
                 })
             }
         </script>
         <script>
-            if(isset($_REQUEST["addP"])){
+            if(isset($_POST["addP"])){
                 $checkes = $_REQUEST["checkP"];
-                echo checkes[2];
+                echo $checkes[2];
             }
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
