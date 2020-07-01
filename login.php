@@ -56,7 +56,7 @@
                 }else if(isset($_GET['signup'])){
                     if($_GET['signup'] == "success"){
                         echo '  <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <strong>>Registro exitoso.</strong>
+                                    <strong>Registro exitoso.</strong>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
