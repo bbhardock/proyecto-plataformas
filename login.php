@@ -33,21 +33,21 @@
                                 </div>';
                     }if($cod_error == "usuarioPendiente"){
                         echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>>El usuario está pendiente!</strong> espere a ser aceptado.
+                                    <strong>El usuario está pendiente!</strong> espere a ser aceptado.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>';
                     }if($cod_error == "usuarioDenegado"){
                         echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>>Se le ha denegado el acceso</strong> al usuario.
+                                    <strong>Se le ha denegado el acceso</strong> al usuario.
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>';
                     }if($cod_error == "nouser"){
                         echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    El usuario no ha <strong>>sido registrado.</strong>
+                                    El usuario no ha <strong>sido registrado.</strong>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

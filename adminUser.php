@@ -90,7 +90,7 @@
                             </table>
                         </div>
                         <input type="submit" value="Permitir acceso" name="addP" id="add">
-                        <input type="submit" value="No permitir" id="pop">
+                        <input type="submit" value="No permitir" name="removeP" id="pop">
                     </form>                        
                 </div>     
             </div>
@@ -131,13 +131,15 @@
             }
         </script>
         <?php
-        if(isset($_POST['checkP'])){
-            foreach($_POST['checkP'] as $valor){
-                permitirAccesoUsuario($valor);
+        if(isset($_POST['addP'])){
+            if(isset($_POST['checkP'])){
+                foreach($_POST['checkP'] as $valor){
+                    permitirAccesoUsuario($valor);
+                }
+                //refresca la pagina usando html
+                $secondsWait = 0;
+                echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
-            //refresca la pagina usando html
-            $secondsWait = 0;
-            echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
         }
         ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
