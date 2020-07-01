@@ -14,7 +14,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.6">
+        <link rel="stylesheet" href="static/css/Styles.css?v1.7">
     </head>
     <body>
         <section class="main">
@@ -24,67 +24,75 @@
                 </div>
             </div>
             <div class="container col-md-12 row">
-                <div class="table-responsive col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6">
                     <div class="container">
                         <h3>Usuarios admitidos</h3>
                     </div>
-                    <table class="table tableA">
-                        <thead>
-                            <th>ID</th>
-                            <th>RUT</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                        </thead>
-                        <tbody style="cursor:pointer">
-                            <?php
-                                require 'includes/queries.inc.php';
-                                $json_decoded = json_decode(obtenerUsuariosPermitidos());
-                                foreach($json_decoded as $result){
-                                    echo'<tr onclick="selection(this,'.$result->id_code.')">
-                                        <td>
-                                            <input type="checkbox" name="check[]" value="'.$result->id_code.'" id="chk'.$result->id_code.'">
-                                        </td>
-                                        <td>'.$result->rut.'</td>
-                                        <td>'.$result->nombre.'</td>
-                                        <td>'.$result->correo_electronico.'</td>
-                                        </tr>   ';
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                    <input type="submit" value="Agregar" id="add">
-                    <input type="submit" value="Eliminar" id="pop">
+                    <form method="post" action="">
+                        <div class="table-responsive">
+                            <table class="table tableA">
+                                <thead>
+                                    <th>ID</th>
+                                    <th>RUT</th>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                </thead>
+                                <tbody style="cursor:pointer">
+                                    <?php
+                                        require 'includes/queries.inc.php';
+                                        $json_decoded = json_decode(obtenerUsuariosPermitidos());
+                                        foreach($json_decoded as $result){
+                                            echo'<tr onclick="selection(this,'.$result->id_code.')">
+                                                <td>
+                                                    <input type="checkbox" name="check[]" value="'.$result->id_code.'" id="chk'.$result->id_code.'">
+                                                </td>
+                                                <td>'.$result->rut.'</td>
+                                                <td>'.$result->nombre.'</td>
+                                                <td>'.$result->correo_electronico.'</td>
+                                                </tr>';
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>        
+                        <input type="submit" value="Agregar" id="add">
+                        <input type="submit" value="Eliminar" id="pop">       
+                    </form>          
                 </div>
-                <div class="table-responsive col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6">
                     <div class="container">
                         <h3>Solicitudes de ingreso</h3>
                     </div>
-                    <table class="table table-bordered table-hover tableP">
-                        <thead>
-                            <th>ID</th>
-                            <th>RUT</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                        </thead>
-                        <tbody style="cursor:pointer">
-                            <?php
-                                $json_decoded = json_decode(obtenerUsuariosPendientes());
-                                foreach($json_decoded as $result){
-                                    echo'<tr onclick="selectionP(this,'.$result->id_code.')">
-                                        <td>
-                                            <input type="checkbox" name="checkP[]" value="'.$result->id_code.'" id="chkP'.$result->id_code.'">
-                                        </td>
-                                        <td>'.$result->rut.'</td>
-                                        <td>'.$result->nombre.'</td>
-                                        <td>'.$result->correo_electronico.'</td>
-                                        </tr>   ';
-                                }
-                            ?>
-                        </tbody>
-                    </table>
-                    <input type="submit" value="Permitir acceso" name="addP" id="add">
-                    <input type="submit" value="No permitir" id="pop">
-                </div>
+                    <form method="post" action="acceso.php">
+                        <div class="table-responsive ">
+                            <table class="table table-bordered table-hover tableP">
+                                <thead>
+                                    <th>ID</th>
+                                    <th>RUT</th>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                </thead>
+                                <tbody style="cursor:pointer">
+                                    <?php
+                                        $json_decoded = json_decode(obtenerUsuariosPendientes());
+                                        foreach($json_decoded as $result){
+                                            echo'<tr onclick="selectionP(this,'.$result->id_code.')">
+                                                <td>
+                                                    <input type="checkbox" name="checkP[]" value="'.$result->id_code.'" id="chkP'.$result->id_code.'">
+                                                </td>
+                                                <td>'.$result->rut.'</td>
+                                                <td>'.$result->nombre.'</td>
+                                                <td>'.$result->correo_electronico.'</td>
+                                                </tr>';
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <input type="submit" value="Permitir acceso" name="addP" id="add">
+                        <input type="submit" value="No permitir" id="pop">
+                    </form>                        
+                </div>     
             </div>
         </section>
         <footer class="footer">
@@ -120,12 +128,6 @@
                         $(tr).css("background-color","#BEDAE8");
                     }
                 })
-            }
-        </script>
-        <script>
-            if(isset($_POST["addP"])){
-                $checkes = $_REQUEST["checkP"];
-                echo $checkes[2];
             }
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
