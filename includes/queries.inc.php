@@ -1,7 +1,7 @@
 <?php
 function obtenerUsuariosPermitidos(){
     require 'databaseHandler.inc.php';
-    $sql = "SELECT rut,nombre,correo_electronico FROM usuarios WHERE estado='A'";
+    $sql = "SELECT id_code,rut,nombre,correo_electronico FROM usuarios WHERE estado='A'";
     $stmt = mysqli_stmt_init($conn);
     $respuesta = new \stdClass();
     $JSONrespuesta;
@@ -21,7 +21,7 @@ function obtenerUsuariosPermitidos(){
 }
 function obtenerUsuariosPendientes(){
     require 'databaseHandler.inc.php';
-    $sql = "SELECT rut,nombre,correo_electronico FROM usuarios WHERE estado='P'";
+    $sql = "SELECT id_code,rut,nombre,correo_electronico FROM usuarios WHERE estado='P'";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         return null;

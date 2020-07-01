@@ -36,17 +36,15 @@
                             <?php
                                 require 'includes/queries.inc.php';
                                 $json_decoded = json_decode(obtenerUsuariosPermitidos());
-                                $indice = 1;
                                 foreach($json_decoded as $result){
-                                    echo'<tr onclick="selection(this,'.$indice.')">
+                                    echo'<tr onclick="selection(this,'.$result->id_code.')">
                                         <td>
-                                            <input type="checkbox" name="check[]" value="'.$indice.'" id="chk'.$indice.'">
+                                            <input type="checkbox" name="check[]" value="'.$result->id_code.'" id="chk'.$result->id_code.'">
                                         </td>
                                         <td>'.$result->rut.'</td>
                                         <td>'.$result->nombre.'</td>
                                         <td>'.$result->correo_electronico.'</td>
                                         </tr>   ';
-                                    $indice++;
                                 }
                             ?>
                         </tbody>
@@ -66,17 +64,15 @@
                         <tbody style="cursor:pointer">
                             <?php
                                 $json_decoded = json_decode(obtenerUsuariosPendientes());
-                                $indice = 1;
                                 foreach($json_decoded as $result){
-                                    echo'<tr onclick="selectionP(this,'.$indice.')">
+                                    echo'<tr onclick="selectionP(this,'.$result->id_code.')">
                                         <td>
-                                            <input type="checkbox" name="checkP[]" value="'.$indice.'" id="chkP'.$indice.'">
+                                            <input type="checkbox" name="checkP[]" value="'.$result->id_code.'" id="chkP'.$result->id_code.'">
                                         </td>
                                         <td>'.$result->rut.'</td>
                                         <td>'.$result->nombre.'</td>
                                         <td>'.$result->correo_electronico.'</td>
                                         </tr>   ';
-                                    $indice++;
                                 }
                             ?>
                         </tbody>
