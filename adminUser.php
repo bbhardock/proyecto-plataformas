@@ -95,11 +95,12 @@
                 $(function(){
                     if($("#chk"+value).attr("checked") == "checked"){                      
                         $("#chk"+value).removeAttr("checked");
+                        $("#chk"+value).prop("checked",false);
                         $(tr).css("background-color","#FFFFFF");
                     }
                     else{
-                        $("#chk"+value).attr("checked","true");
-                        $("#chk"+value).prop("checked","true");
+                        $("#chk"+value).attr("checked",true);
+                        $("#chk"+value).prop("checked",true);
                         $(tr).css("background-color","#BEDAE8");
                     }
                 })
