@@ -1,7 +1,7 @@
 <?php
 function obtenerUsuariosPermitidos(){
     require 'databaseHandler.inc.php';
-    $sql = "SELECT id_code,rut,nombre,correo_electronico FROM usuarios WHERE estado='A'";
+    $sql = "SELECT id_code,rut,nombre,correo_electronico,es_admin FROM usuarios WHERE estado='A'";
     $stmt = mysqli_stmt_init($conn);
     $respuesta = new \stdClass();
     $JSONrespuesta;
