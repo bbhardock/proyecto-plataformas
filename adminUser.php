@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="container col-md-12 row">
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-7">
                     <div class="container">
                         <h3>Usuarios admitidos</h3>
                     </div>
@@ -64,7 +64,7 @@
                         <input type="submit" class ="btn btn-danger" value="Eliminar" name="btn-pop">       
                     </form>      
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-5">
                     <div class="container">
                         <h3>Solicitudes de ingreso</h3>
                     </div>
