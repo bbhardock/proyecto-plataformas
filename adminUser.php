@@ -37,7 +37,7 @@
                                     <th>RUT</th>
                                     <th>Nombre</th>
                                     <th>Correo</th>
-                                    <th>Es Admin</th>
+                                    <th>¿Es Admin?</th>
                                 </thead>
                                 <tbody style="cursor:pointer">
                                     <?php
@@ -51,6 +51,7 @@
                                                 <td>'.$result->rut.'</td>
                                                 <td>'.$result->nombre.'</td>
                                                 <td>'.$result->correo_electronico.'</td>
+                                                <td>'.($result->es_admin == 'S' ? "Sí" : "No").'</td>
                                                 </tr>';
                                                 $indice++;
                                         }
