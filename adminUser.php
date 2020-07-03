@@ -31,7 +31,7 @@
                     </div>
                     <form method="post">
                         <div class="table-responsive">
-                            <table class="table tableA">
+                            <table class="table table-bordered tableA">
                                 <thead>
                                     <th>ID</th>
                                     <th>RUT</th>
@@ -69,7 +69,7 @@
                     </div>
                     <form method="post">
                         <div class="table-responsive ">
-                            <table class="table table-bordered table-hover tableP">
+                            <table class="table table-bordered tableP">
                                 <thead>
                                     <th>ID</th>
                                     <th>RUT</th>
