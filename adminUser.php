@@ -57,10 +57,10 @@
                                 </tbody>
                             </table>
                         </div>        
-                        <input type="submit" class ="btn btn-primary" value="Hacer Admin" id="btn-admin">
-                        <input type="submit" class ="btn btn-primary" value="Quitar Admin" id="btn-no-admin">
-                        <input type="submit" class ="btn btn-danger" value="Eliminar" id="btn-pop">       
-                    </form>          
+                        <input type="submit" class ="btn btn-primary" value="Hacer Admin" name="btn-admin">
+                        <input type="submit" class ="btn btn-primary" value="Quitar Admin" name="btn-no-admin">
+                        <input type="submit" class ="btn btn-danger" value="Eliminar" name="btn-pop">       
+                    </form>      
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="container">
@@ -146,7 +146,7 @@
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        else if(isset($_POST['btn-denied'])){
+        if(isset($_POST['btn-denied'])){
             if(isset($_POST['checkP'])){
                 foreach($_POST['checkP'] as $valor){
                     denegarAccesoUsuario($valor);
@@ -155,7 +155,7 @@
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        else if(isset($_POST['btn-admin'])){
+        if(isset($_POST['btn-admin'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
                     hacerAdminUsuarioPermitido($valor);
@@ -164,7 +164,7 @@
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        else if(isset($_POST['btn-no-admin'])){
+        if(isset($_POST['btn-no-admin'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
                     deshacerAdminUsuarioPermitido($valor);
@@ -173,7 +173,7 @@
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        else if(isset($_POST['btn-pop'])){
+        if(isset($_POST['btn-pop'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
                     denegarAccesoUsuario($valor);
