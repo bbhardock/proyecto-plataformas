@@ -47,6 +47,39 @@ function permitirAccesoUsuario($idUsuario){
         mysqli_stmt_execute($stmt);
     }
 }
+function denegarAccesoUsuario($idUsuario){
+    require 'databaseHandler.inc.php';
+    $sql = "UPDATE usuarios SET estado='D' WHERE id_code=?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return null;
+    }else{
+        mysqli_stmt_bind_param($stmt,"i",$idUsuario);
+        mysqli_stmt_execute($stmt);
+    }
+}
+function hacerAdminUsuarioPermitido($idUsuario){
+    require 'databaseHandler.inc.php';
+    $sql = "UPDATE usuarios SET es_admin='S' WHERE id_code=?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return null;
+    }else{
+        mysqli_stmt_bind_param($stmt,"i",$idUsuario);
+        mysqli_stmt_execute($stmt);
+    }
+}
+function deshacerAdminUsuarioPermitido($idUsuario){
+    require 'databaseHandler.inc.php';
+    $sql = "UPDATE usuarios SET es_admin='N' WHERE id_code=?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return null;
+    }else{
+        mysqli_stmt_bind_param($stmt,"i",$idUsuario);
+        mysqli_stmt_execute($stmt);
+    }
+}
 /*
 header("Location: ../index.php"); //redirige para que no se acceda a este archivo
 exit();

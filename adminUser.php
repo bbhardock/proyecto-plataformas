@@ -146,37 +146,37 @@
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        if(isset($_POST['btn-denied'])){
+        else if(isset($_POST['btn-denied'])){
             if(isset($_POST['checkP'])){
                 foreach($_POST['checkP'] as $valor){
-
+                    denegarAccesoUsuario($valor);
                 }
                 $secondsWait = 0;
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        if(isset($_POST['btn-admin'])){
+        else if(isset($_POST['btn-admin'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
-
+                    hacerAdminUsuarioPermitido($valor);
                 }
                 $secondsWait = 0;
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        if(isset($_POST['btn-no-admin'])){
+        else if(isset($_POST['btn-no-admin'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
-
+                    deshacerAdminUsuarioPermitido($valor);
                 }
                 $secondsWait = 0;
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }
         }
-        if(isset($_POST['btn-pop'])){
+        else if(isset($_POST['btn-pop'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
-
+                    denegarAccesoUsuario($valor);
                 }
                 $secondsWait = 0;
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
