@@ -15,7 +15,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.7">
+        <link rel="stylesheet" href="static/css/Styles.css?v2.0">
     </head>
     <body>
         <section class="main">
@@ -40,23 +40,26 @@
                                 </thead>
                                 <tbody style="cursor:pointer">
                                     <?php
+                                        $indice = 1;
                                         $json_decoded = json_decode(obtenerUsuariosPermitidos());
                                         foreach($json_decoded as $result){
                                             echo'<tr onclick="selection(this,'.$result->id_code.')">
                                                 <td>
-                                                    <input type="checkbox" name="check[]" value="'.$result->id_code.'" id="chk'.$result->id_code.'">
+                                                    <input type="checkbox" class="hidden" name="check[]" value="'.$result->id_code.'" id="chk'.$result->id_code.'">'.$indice.'
                                                 </td>
                                                 <td>'.$result->rut.'</td>
                                                 <td>'.$result->nombre.'</td>
                                                 <td>'.$result->correo_electronico.'</td>
                                                 </tr>';
+                                                $indice++;
                                         }
                                     ?>
                                 </tbody>
                             </table>
                         </div>        
-                        <input type="submit" value="Agregar" id="add">
-                        <input type="submit" value="Eliminar" id="pop">       
+                        <input type="submit" class ="btn btn-primary" value="Hacer Admin" id="btn-admin">
+                        <input type="submit" class ="btn btn-primary" value="Quitar Admin" id="btn-no-admin">
+                        <input type="submit" class ="btn btn-danger" value="Eliminar" id="btn-pop">       
                     </form>          
                 </div>
                 <div class="col-sm-12 col-md-6">
@@ -74,23 +77,25 @@
                                 </thead>
                                 <tbody style="cursor:pointer">
                                     <?php
+                                        $indice = 1;
                                         $json_decoded = json_decode(obtenerUsuariosPendientes());
                                         foreach($json_decoded as $result){
                                             echo'<tr onclick="selectionP(this,'.$result->id_code.')">
                                                 <td>
-                                                    <input type="checkbox" name="checkP[]" value="'.$result->id_code.'" id="chkP'.$result->id_code.'">
+                                                    <input type="checkbox" class="hidden" name="checkP[]" value="'.$result->id_code.'" id="chkP'.$result->id_code.'">'.$indice.'
                                                 </td>
                                                 <td>'.$result->rut.'</td>
                                                 <td>'.$result->nombre.'</td>
                                                 <td>'.$result->correo_electronico.'</td>
                                                 </tr>';
+                                                $indice++;
                                         }
                                     ?>
                                 </tbody>
                             </table>
                         </div>
-                        <input type="submit" value="Permitir acceso" name="addP" id="add">
-                        <input type="submit" value="No permitir" name="removeP" id="pop">
+                        <input type="submit" class ="btn btn-success" value="Permitir acceso" name="btn-access">
+                        <input type="submit" class ="btn btn-danger" value="No permitir" name="btn-denied">        
                     </form>                        
                 </div>     
             </div>
@@ -131,12 +136,48 @@
             }
         </script>
         <?php
-        if(isset($_POST['addP'])){
+        if(isset($_POST['btn-access'])){
             if(isset($_POST['checkP'])){
                 foreach($_POST['checkP'] as $valor){
                     permitirAccesoUsuario($valor);
                 }
                 //refresca la pagina usando html
+                $secondsWait = 0;
+                echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
+            }
+        }
+        if(isset($_POST['btn-denied'])){
+            if(isset($_POST['checkP'])){
+                foreach($_POST['checkP'] as $valor){
+
+                }
+                $secondsWait = 0;
+                echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
+            }
+        }
+        if(isset($_POST['btn-admin'])){
+            if(isset($_POST['check'])){
+                foreach($_POST['check'] as $valor){
+
+                }
+                $secondsWait = 0;
+                echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
+            }
+        }
+        if(isset($_POST['btn-no-admin'])){
+            if(isset($_POST['check'])){
+                foreach($_POST['check'] as $valor){
+
+                }
+                $secondsWait = 0;
+                echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
+            }
+        }
+        if(isset($_POST['btn-pop'])){
+            if(isset($_POST['check'])){
+                foreach($_POST['check'] as $valor){
+
+                }
                 $secondsWait = 0;
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
             }

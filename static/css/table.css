@@ -18,7 +18,6 @@ th,td{
     border-bottom: solid 3px  rgb(255, 165, 0,0.9);
     color: white;
 }
-
 input[type="submit"]{
     display: inline-flex;
     justify-content: center;
@@ -33,11 +32,4 @@ input[type="submit"]{
     color: #fff;
     opacity: 0.9;
     background: rgb(0, 128, 128,0.8);
-}
-
-#add:hover{
-    background: linear-gradient(rgb(1, 124, 1),rgb(2, 173, 11));
-}
-#pop:hover{
-    background: linear-gradient(rgb(255, 0, 0,1),rgb(255, 0, 0,0.8));
 }
