@@ -37,6 +37,7 @@
                                     <th>RUT</th>
                                     <th>Nombre</th>
                                     <th>Correo</th>
+                                    <th>Es Admin</th>
                                 </thead>
                                 <tbody style="cursor:pointer">
                                     <?php
