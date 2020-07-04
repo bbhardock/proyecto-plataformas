@@ -1,0 +1,8 @@
+.btn-izq{
+    display: flex;
+    justify-content: start;
+}
+.btn-der{
+    display: flex;
+    justify-content: end;
+}

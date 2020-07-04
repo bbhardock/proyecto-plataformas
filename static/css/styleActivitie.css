@@ -1,18 +1,39 @@
-@import url(forms.css);
+@import url(buttons.css);
 body{
     margin: 0;
     padding: 0;
-    background-color: rgba(0,0,0,0.2);
+    background: rgba(24, 30, 82, 0.5);
 
 }
-.form-box{
-    margin: 80px auto;
-    width: 80%;
-    height: auto;
-    max-width: 1000px;
-    background: #F3F3F3;
-    padding: 70px 30px;
-    border: 1px solid rgba(0,0,0,0.2);
-    box-sizing: border-box;
-    border-radius: 2%;
+.container-Form{
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(211, 211, 211,0.8);
+}
+
+.container-Title{
+    padding: 10px;
+    background: rgba(24, 30, 82, 0.8);
+    color: white;
+    border-radius: 10px;
+    
+}
+.form-group{
+    margin-top: 10px;
+}
+.need-reunion{
+    display: none;
+}
+#meeting-yes:checked ~ .need-reunion{
+    margin-top: 10px;
+    display: block;
+}
+.container .btn-izq{
+    display: flex;
+    justify-content: left;
+}
+.container .btn-der{
+    display: flex;
+    justify-content: right;
 }
