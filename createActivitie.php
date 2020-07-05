@@ -102,28 +102,28 @@
               <input type="text" class="form-control" id="place-activity" placeholder="Lugar de la actividad">
             </div>
             <div class="form-group ">
-              <label for="organize-activity">Organización o Unidad que organiza la actividad:</label>
+              <label for="organize-activity">Organización o Unidad organizadora :</label>
               <input type="text" class="form-control" id="organize-activity" placeholder="Nombre de la organización o unidad organizadora">
             </div> 
             <div class="form-group ">
-              <label for="sponsor-activity">Organización o Unidad que auspicia la actividad:</label>
+              <label for="sponsor-activity">Organización o Unidad auspiciadora:</label>
               <input type="text" class="form-control" id="sponsor-activity" placeholder="Nombre de la organización o unidad auspiciadora">
             </div>
             <div class="form-group ">
-              <label for="patrocina-activity">Organización o Unidad que patrocina la actividad:</label>
+              <label for="patrocina-activity">Organización o Unidad patrocinacinadora:</label>
               <input type="text" class="form-control" id="patrocina-activity" placeholder="Nombre de la organización o unidad patrocinadora">
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
-                <label for="start-date">Fecha de inicio de la actividad:</label>
+                <label for="start-date">Fecha de inicio:</label>
                 <input type="date" class="form-control" id="start-date" placeholder="dd/mm/yyyy">
               </div>
               <div class="form-group col-md-4">
-                <label for="end-date">Fecha de termino de la actividad:</label>
+                <label for="end-date">Fecha de termino:</label>
                 <input type="date" class="form-control" id="end-date" placeholder="dd/mm/yyyy">
               </div>
               <div class="form-group col-md-4">
-                <label for="number-participants">Numero aproximado de participantes:</label>
+                <label for="number-participants">Cantidad aproximada de participantes:</label>
                 <input type="number" class="form-control" id="number-participants" placeholder="Cantidad aproximada de participantes">
               </div>
             </div>
