@@ -12,9 +12,9 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width = device-width, user-scalable = no">
-      <title>Document</title>
+      <title>Crear una Actividad</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v1.11">
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v1.12">
   </head>
   <body>
     <section class="main">
@@ -53,15 +53,15 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="logistic-support">Apoyo en la logística:</label>
-                <select multiple="true" class="form-control" id="logistic-support" aria-describedby="selectHelp">>
-                  <option value="-Vacio">-Vacio-</option>
-                  <option value="Pendón FAMED">Pendón FAMED</option>
-                  <option value="Pendón C. Enfermería">Pendón C. Enfermería</option>
-                  <option value="Pendón C. Kinesiología">Pendón C. Kinesiología</option>
-                  <option value="Pendón C. Medicina">Pendón C. Medicina</option>
-                  <option value="Pendón C. Nutrición">Pendón C. Nutrición</option>
-                  <option value="Constancia Impresa">Constancia Impresa</option>
-                  <option value="Constancia Digital">Constancia Digital</option>    
+                <select multiple="true" class="form-control"  id="logistic-support" aria-describedby="selectHelp">
+                  <option>-Ninguno-</option>
+                  <option>Pendón FAMED</option>
+                  <option>Pendón C. Enfermería</option>
+                  <option>Pendón C. Kinesiología</option>
+                  <option>Pendón C. Medicina</option>
+                  <option>Pendón C. Nutrición</option>
+                  <option>Constancia Impresa</option>
+                  <option>Constancia Digital</option>    
                 </select>
                 <small id="selectHelp" class="form-text text-muted">Para seleccionar mas de un valor presione ctrl+click.</small>
               </div>
@@ -88,7 +88,7 @@
                       </div>                    
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2" checked>
+                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2">
                       <label class="form-check-label" for="meeting-no">
                         No
                       </label>
@@ -106,12 +106,12 @@
               <input type="text" class="form-control" id="organize-activity" placeholder="Nombre de la organización o unidad organizadora">
             </div> 
             <div class="form-group ">
-              <label for="sponsor-activitie">Organización o Unidad que auspicia la actividad:</label>
-              <input type="text" class="form-control" id="sponsor-activitie" placeholder="Nombre de la organización o unidad auspiciadora">
+              <label for="sponsor-activity">Organización o Unidad que auspicia la actividad:</label>
+              <input type="text" class="form-control" id="sponsor-activity" placeholder="Nombre de la organización o unidad auspiciadora">
             </div>
             <div class="form-group ">
-              <label for="patrocina-activitie">Organización o Unidad que patrocina la actividad:</label>
-              <input type="text" class="form-control" id="patrocina-activitie" placeholder="Nombre de la organización o unidad patrocinadora">
+              <label for="patrocina-activity">Organización o Unidad que patrocina la actividad:</label>
+              <input type="text" class="form-control" id="patrocina-activity" placeholder="Nombre de la organización o unidad patrocinadora">
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
@@ -142,12 +142,16 @@
                 <option>Otro</option>
               </select>
             </div>
+            <div class="form-group ">
+              <label for="other-activity">Si eligio en tipo de actividad "Otro", indicar cual es:</label>
+              <input type="text" class="form-control" id="other-activity" placeholder="Nombre del tipo de actividad deseada">
+            </div>
             <fieldset class="form-group">
               <div class="row">
                 <legend class="col-form-label col-sm-5">¿Requiere apoyo de la Departamento de Comunicación y Admisión de la UCN?</legend>
                 <div class="col-sm-7">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="btn-radio1" id="support-yes" value="3"checked>
+                    <input class="form-check-input" type="radio" name="btn-radio1" id="support-yes" value="3">
                     <label class="form-check-label" for="support-yes">
                       Si
                     </label>
@@ -190,15 +194,15 @@
               </div>
             </div>
             <div class="container">
-              <input type="submit" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
-              <input type="submit" class = "btn btn-success btn-md btn-der" value="Crear">
+              <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
+              <input type="button" class = "btn btn-primary btn-md btn-der" value="Crear">
             </div>
           </form>
         </div>
       </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>

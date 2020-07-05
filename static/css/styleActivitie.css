@@ -30,10 +30,13 @@ body{
     display: block;
 }
 .container .btn-izq{
-    display: flex;
-    justify-content: left;
+    margin: 15px;
+    float: left;
 }
 .container .btn-der{
-    display: flex;
-    justify-content: right;
+    margin: 15px;
+    float: right;
+}
+.mul-select{
+    width: 100%;
 }
