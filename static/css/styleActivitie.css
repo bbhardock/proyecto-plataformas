@@ -9,7 +9,6 @@ body{
     margin: 15px auto;
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid rgb(211, 211, 211,0.8);
 }
 
 .container-Title{
@@ -36,7 +35,4 @@ body{
 .container .btn-der{
     margin: 15px;
     float: right;
-}
-.mul-select{
-    width: 100%;
 }

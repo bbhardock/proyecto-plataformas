@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.4">
+        <link rel="stylesheet" href="static/css/Styles.css?v1.9">
     </head>
     <body>
         <?php
@@ -28,72 +28,123 @@
                 </div>
             </div>
             <div class="container row col-md-12">
-                <div class="table-responsive ">
-                    <table class="table tableA">
-                        <thead>
-                            <th>ID</th>
-                            <th>RUT</th>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Estado</th>
-                            <th>Indicador de Impacto</th>
-                            <th>Tipo</th>
-                            <th>Requiere reunion</th>
-                            <th>Fecha reunion</th>
-                            <th>Lugar</th>
-                            <th>Organización que organiza</th>
-                            <th>Organización que auspicia</th>
-                            <th>Organización que patrocina</th>
-                            <th>Cierre numero definitivo partes</th>
-                            <th>Cierre porcentaje de cumplimiento impacto</th>
-                            <th>Cierre de evidencias</th>
-                            <th>Cierre con link de noticia</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ID</td>
-                                <td>RUT</td>
-                                <td>Nombre</td>
-                                <td>Correo</td>
-                                <td>Estado</td>
-                                <td>Indicador de Impacto</td>
-                                <td>Tipo</td>
-                                <td>Requiere reunion</td>
-                                <td>Fecha reunion</td>
-                                <td>Lugar</td>
-                                <td>Organización que organiza</td>
-                                <td>Organización que auspicia</td>
-                                <td>Organización que patrocina</td>
-                                <td>Cierre numero definitivo partes</td>
-                                <td>Cierre porcentaje de cumplimiento impacto</td>
-                                <td>Cierre de evidencias</td>
-                                <td>Cierre con link de noticia</td>
-                            </tr>
-                            <tr>
-                                <td>ID</td>
-                                <td>RUT</td>
-                                <td>Nombre</td>
-                                <td>Correo</td>
-                                <td>Estado</td>
-                                <td>Indicador de Impacto</td>
-                                <td>Tipo</td>
-                                <td>Requiere reunion</td>
-                                <td>Fecha reunion</td>
-                                <td>Lugar</td>
-                                <td>Organización que organiza</td>
-                                <td>Organización que auspicia</td>
-                                <td>Organización que patrocina</td>
-                                <td>Cierre numero definitivo partes</td>
-                                <td>Cierre porcentaje de cumplimiento impacto</td>
-                                <td>Cierre de evidencias</td>
-                                <td>Cierre con link de noticia</td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
+                <div class="col-md-12">        
+                    <form action="" class="form-inline">
+                        <label class="my-1 mr-2" for="type-activity">Tipo de actividad</label>
+                        <select class="custom-select my-1 mr-sm-2" id="type-activity">
+                            <option>-Vacio-</option>
+                            <option>Congreso</option>
+                            <option>Jornada</option>
+                            <option>Feria</option>
+                            <option>Charla</option>
+                            <option>Taller</option>
+                            <option>Curso</option>
+                            <option>Explo UCN</option>
+                            <option>Diplomado</option>
+                            <option>Otro</option>
+                        </select>
+                        <label for="end-date" class="my-1 mr-2">Primera fecha:</label>
+                        <input type="date" class="form-control  my-1 mr-sm-2" id="end-date" placeholder="dd/mm/yyyy">
+                        <label for="end-date" class="my-1 mr-2">Segunda fecha:</label>
+                        <input type="date" class="form-control  my-1 mr-sm-2" id="end-date" placeholder="dd/mm/yyyy">
+                        <label for="name" class="my-1 mr-2">Nombre academico:</label>
+                        <input type="text" class="form-control my-1 mr-sm-2" id="name" placeholder="Nombre Academico">
+                        <label class="my-1 mr-2" for="state-activity">Estado:</label>
+                        <select class="custom-select my-1 mr-sm-2" id="state-activity">
+                            <option>-Vacio-</option>
+                            <option>Aceptado</option>
+                            <option>Pendiente</option>
+                            <option>Cerrado</option>
+                        </select>
+                        <label class="my-1 mr-2" for="meeting-require">Requiere reuniòn:</label>
+                        <select class="custom-select my-1 mr-sm-2" id="meeting-require">
+                            <option>-Vacio-</option>
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                        <label class="my-1 mr-2" for="meeting-require">Nombre de la Organizadora(ideal sacar datos de BD):</label>
+                        <select class="custom-select my-1 mr-sm-2" id="meeting-require">
+                            <option>-Vacio-</option>
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                        <div class="table-responsive ">
+                            <table class="table tableA">
+                                <thead>
+                                    <th>ID</th>
+                                    <th>RUT</th>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Estado</th>
+                                    <th>Indicador de Impacto</th>
+                                    <th>Tipo</th>
+                                    <th>Requiere reunion</th>
+                                    <th>Fecha reunion</th>
+                                    <th>Lugar</th>
+                                    <th>Organización que organiza</th>
+                                    <th>Organización que auspicia</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>RUT</td>
+                                        <td>Nombre</td>
+                                        <td>Correo</td>
+                                        <td>Estado</td>
+                                        <td>Indicador de Impacto</td>
+                                        <td>Tipo</td>
+                                        <td>Requiere reunion</td>
+                                        <td>Fecha reunion</td>
+                                        <td>Lugar</td>
+                                        <td>Organización que organiza</td>
+                                        <td>Organización que auspicia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>RUT</td>
+                                        <td>Nombre</td>
+                                        <td>Correo</td>
+                                        <td>Estado</td>
+                                        <td>Indicador de Impacto</td>
+                                        <td>Tipo</td>
+                                        <td>Requiere reunion</td>
+                                        <td>Fecha reunion</td>
+                                        <td>Lugar</td>
+                                        <td>Organización que organiza</td>
+                                        <td>Organización que auspicia</td>
+                                    </tr>                           
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="form-row">
+                            <div class="btn-izq col-md-12">
+                                <input type="submit" class = "btn btn-primary btn-md btn-izq" value="Generar reporte">
+                                <input type="submit" class = "btn btn-warning btn-md btn-izq" value="Editar">
+                                <input type="submit" class = "btn btn-success btn-md btn-der" value="Agregar actividad">
+                                <input type="submit" class = "btn btn-success btn-md btn-der" value="Cerrar actividad">
+                                <input type="submit" class = "btn btn-danger btn-md btn-der" value="Eliminar">
+                            </div>
+                        </div>
+                    </form>  
+                </div>  
             </div>    
-        </section>   
+        </section>
+        <script>
+            function selection(tr,value){
+                $(function(){
+                    if($("#chk"+value).attr("checked") == "checked"){                      
+                        $("#chk"+value).removeAttr("checked");
+                        $("#chk"+value).prop("checked",false);
+                        $(tr).css("background-color","#FFFFFF");
+                    }
+                    else{
+                        $("#chk"+value).attr("checked",true);
+                        $("#chk"+value).prop("checked",true);
+                        $(tr).css("background-color","#BEDAE8");
+                    }
+                })
+            }
+        </script>   
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

@@ -18,7 +18,7 @@
   </head>
   <body>
     <section class="main">
-      <div class="container container-Form row">
+      <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
           <form action="">
             <div class="container row">
