@@ -9,6 +9,7 @@ body{
     margin: 15px auto;
     padding: 10px;
     border-radius: 5px;
+    width: 70%;
 }
 
 .container-Title{
@@ -28,11 +29,12 @@ body{
     margin-top: 10px;
     display: block;
 }
+
 .container .btn-izq{
-    margin: 15px;
-    float: left;
+    justify-content: center;
+    width: 90%;
 }
 .container .btn-der{
-    margin: 15px;
-    float: right;
+    justify-content: center;
+    width: 90%;
 }

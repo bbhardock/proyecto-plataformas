@@ -30,6 +30,18 @@
             <div class="container row col-md-12">
                 <div class="col-md-12">        
                     <form action="" class="form-inline">
+                        <label for="area">Area de interes:</label>
+                        <select class="form-control" id="area">
+                            <option>-Vacio-</option>
+                            <option>Vinculación Académica de pre y postgrado</option>
+                            <option>Vinculación Artística, Cultural, Patrimonial y Calidad de Vida</option>
+                            <option>Vinculación Medio Productivo y de Servicio</option>
+                            <option>Vinculación Vocacion Socual y Comunitaria</option>
+                            <option>Vinculación Medio Público y Ciudadanía</option>
+                            <option>Vinculación con Sector Escolar</option>
+                            <option>Vinculación para la Internacionalización</option>
+                            <option>Vinculación con Egresados</option>
+                        </select>
                         <label class="my-1 mr-2" for="type-activity">Tipo de actividad</label>
                         <select class="custom-select my-1 mr-sm-2" id="type-activity">
                             <option>-Vacio-</option>
@@ -43,10 +55,6 @@
                             <option>Diplomado</option>
                             <option>Otro</option>
                         </select>
-                        <label for="end-date" class="my-1 mr-2">Primera fecha:</label>
-                        <input type="date" class="form-control  my-1 mr-sm-2" id="end-date" placeholder="dd/mm/yyyy">
-                        <label for="end-date" class="my-1 mr-2">Segunda fecha:</label>
-                        <input type="date" class="form-control  my-1 mr-sm-2" id="end-date" placeholder="dd/mm/yyyy">
                         <label for="name" class="my-1 mr-2">Nombre academico:</label>
                         <input type="text" class="form-control my-1 mr-sm-2" id="name" placeholder="Nombre Academico">
                         <label class="my-1 mr-2" for="state-activity">Estado:</label>
@@ -55,18 +63,6 @@
                             <option>Aceptado</option>
                             <option>Pendiente</option>
                             <option>Cerrado</option>
-                        </select>
-                        <label class="my-1 mr-2" for="meeting-require">Requiere reuniòn:</label>
-                        <select class="custom-select my-1 mr-sm-2" id="meeting-require">
-                            <option>-Vacio-</option>
-                            <option>Si</option>
-                            <option>No</option>
-                        </select>
-                        <label class="my-1 mr-2" for="meeting-require">Nombre de la Organizadora(ideal sacar datos de BD):</label>
-                        <select class="custom-select my-1 mr-sm-2" id="meeting-require">
-                            <option>-Vacio-</option>
-                            <option>Si</option>
-                            <option>No</option>
                         </select>
                         <div class="table-responsive ">
                             <table class="table tableA">
