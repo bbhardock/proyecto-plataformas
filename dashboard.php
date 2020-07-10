@@ -24,7 +24,13 @@
         <section class="main">
             <div class="containerTitle">
                 <div class="container row col-md-12">
-                    <h2>Todas las actividades</h2>
+                    <?php
+                    if($_SESSION['user_admin_status']=='S'){
+                        echo "<h2>Todas las actividades</h2>";
+                    }else{
+                        echo "<h2>Mis Actividades</h2>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="container row col-md-12">
