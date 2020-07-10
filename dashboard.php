@@ -12,8 +12,8 @@
         <title>Manejo de Usuarios</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/css/fontello.css?v1.1">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.10">
+        <link rel="stylesheet" href="static/css/fontello.css?v1.3">
+        <link rel="stylesheet" href="static/css/Styles.css?v1.13">
     </head>
     <body>
         <?php
@@ -92,26 +92,16 @@
                                         <td>Correo</td>
                                         <td>Estado</td>
                                         <td>Indicador de Impacto</td>
-                                        <td><label for="" class="icon-search"></label></td>
-                                        <td><a href="" class="icon-search">Ver</a></td>
-                                        <td><a href="">Ayuda</a></td>
-                                        <td><a href="">Cerrar</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>RUT</td>
-                                        <td>Nombre</td>
-                                        <td>Correo</td>
-                                        <td>Estado</td>
-                                        <td>Indicador de Impacto</td>
-                                        <td>Tipo</td>
-                                        <td><a href="">Ver</a></td>
-                                        <td><a href="">Reporte</a></td>
-                                    </tr>                           
+                                        <td>tipo</td>
+                                        <td><a href="Help.php" class="icon-search">Ver</a></td>
+                                        <td><a href="" class="icon-form">Ayuda</a></td>
+                                        <td><a href="closeActivitie.php" class="icon-form">Cerrar</a></td>
+                                    </tr>                    
                                 </tbody>
                             </table>
                         </div>
-                        <input type="input" class="btn btn-success btn-lg" value="Reporte">
+                        
+                        <button class="btn btn-success btn-lg icon-file-excel">Reporte</button>
                     </form>  
                 </div>  
             </div>    

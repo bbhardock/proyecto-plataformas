@@ -26,3 +26,7 @@ input[type="submit"]{
     opacity: 0.9;
     background: rgb(0, 128, 128,0.8);
 }
+
+button{
+    margin: 10px;
+}

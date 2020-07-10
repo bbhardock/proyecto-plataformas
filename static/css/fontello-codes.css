@@ -1,3 +1,5 @@
 
 .icon-search:before { content: '\e800'; } /* '' */
+.icon-form:before { content: '\e801'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-file-excel:before { content: '\f1c3'; } /* '' */
