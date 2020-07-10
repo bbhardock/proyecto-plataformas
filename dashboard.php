@@ -12,7 +12,7 @@
         <title>Manejo de Usuarios</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/css/fontello.css">
+        <link rel="stylesheet" href="static/css/fontello.css?v1.1">
         <link rel="stylesheet" href="static/css/Styles.css?v1.10">
     </head>
     <body>
