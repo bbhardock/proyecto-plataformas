@@ -1,5 +1,5 @@
 <?php
-    require "session_check.php";
+    session_start();
     require "header.php";
     if(!isset($_SESSION['user_id'])){
         header("Location: index.php");
@@ -106,6 +106,9 @@
                 </div>  
             </div>    
         </section>
+        <?php
+            require 'footer.php';
+        ?>
         <script>
             function selection(tr,value){
                 $(function(){
