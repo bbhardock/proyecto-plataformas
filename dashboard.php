@@ -16,11 +16,6 @@
         <link rel="stylesheet" href="static/css/Styles.css?v1.13">
     </head>
     <body>
-        <?php
-            if(isset($_GET['login']) && $_GET['login'] == 'success'){
-                echo "<p>"."Hola ".$_SESSION['user_name']."! Rut: ".$_SESSION['user_rut']."</p>";
-            }
-        ?>
         <section class="main">
             <div class="containerTitle">
                 <div class="container row col-md-12">
@@ -90,12 +85,12 @@
                                         <td>RUT</td>
                                         <td>Nombre</td>
                                         <td>Correo</td>
-                                        <td>Estado</td>
-                                        <td>Indicador de Impacto</td>
-                                        <td>tipo</td>
-                                        <td><a href="Help.php" class="icon-search">Ver</a></td>
+                                        <td>Sí</td>
+                                        <td>No</td>
+                                        <td>No</td>
+                                        <td><a href="help.php" class="icon-search">Ver</a></td>
                                         <td><a href="" class="icon-form">Ayuda</a></td>
-                                        <td><a href="closeActivitie.php" class="icon-form">Cerrar</a></td>
+                                        <td><a href="closeActivity.php" class="icon-form">Cerrar</a></td>
                                     </tr>                    
                                 </tbody>
                             </table>

@@ -46,7 +46,7 @@ if (isset($_POST['login-submit'])){
                         $_SESSION[user_name]= $row['nombre'];
                         $_SESSION[user_admin_status]= $row['es_admin'];
                         
-                        header("Location: ../dashboard.php?login=success");
+                        header("Location: ../dashboard.php");
                         exit();
                     }else{
                         header("Location: ../login.php?error=passincorrecta");
@@ -64,7 +64,7 @@ if (isset($_POST['login-submit'])){
                         $_SESSION[user_name]= $row['nombre'];
                         $_SESSION[user_admin_status]= $row['es_admin'];
     
-                        header("Location: ../dashboard.php?login=success");
+                        header("Location: ../dashboard.php");
                         exit();
                     }
                 }
