@@ -1,0 +1,24 @@
+.footer .logo{
+    width: 120px;
+    height: 70px;
+    float: right;
+}
+.footer .acreditacion{
+    width: 350px;
+    height: 90px;
+    float: left;
+}
+.footer{
+    margin: auto;
+    padding: 20px 100px;
+    width: 100%;
+    color: rgb(26, 25, 25,0.5);
+    background: linear-gradient(rgb(255, 255, 255),rgb(211, 211, 211,0.5) );
+    border-top: lightslategrey;
+}
+.footer h5{
+    font-size: 20px;
+}
+.footer h6{
+    font-size: 15px;
+}

@@ -15,7 +15,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css?v2.0">
+        <link rel="stylesheet" href="static/css/Styles.css?v2.6">
     </head>
     <body>
         <section class="main">
@@ -26,9 +26,9 @@
             </div>
             <div class="container col-md-12 row">
                 <div class="col-sm-12 col-md-7">
-                    <div class="container">
+                    <div class="subtitle">
                         <h3>Usuarios admitidos</h3>
-                    </div>
+                    </div>  
                     <form method="post">
                         <div class="table-responsive">
                             <table class="table table-bordered tableA">
@@ -65,9 +65,9 @@
                     </form>      
                 </div>
                 <div class="col-sm-12 col-md-5">
-                    <div class="container">
+                    <div class="subtitle">
                         <h3>Solicitudes de ingreso</h3>
-                    </div>
+                    </div>  
                     <form method="post">
                         <div class="table-responsive ">
                             <table class="table table-bordered tableP">
@@ -102,9 +102,9 @@
                 </div>     
             </div>
         </section>
-        <footer class="footer">
-            <img class="logo" src="static/images/logo.png" alt="">
-        </footer>
+        <?php
+            require 'footer.php';
+        ?>
         <script>
             function selection(tr,value){
                 $(function(){
