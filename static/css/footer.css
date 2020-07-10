@@ -1,12 +1,15 @@
 .footer .logo{
     width: 120px;
     height: 70px;
-    float: right;
+    display: inline-flex;
+    justify-content: start;
 }
 .footer .acreditacion{
+    right: 100px;
     width: 350px;
     height: 90px;
-    float: left;
+    display: inline-flex;
+    justify-content: start;
 }
 .footer{
     margin: auto;
@@ -15,6 +18,9 @@
     color: rgb(26, 25, 25,0.5);
     background: linear-gradient(rgb(255, 255, 255),rgb(211, 211, 211,0.5) );
     border-top: lightslategrey;
+}
+.footer .contacto{
+    top: 40px;
 }
 .footer h5{
     font-size: 20px;
