@@ -96,18 +96,7 @@
                                         <td><a href="" class="icon-search">Ver</a></td>
                                         <td><a href="">Ayuda</a></td>
                                         <td><a href="">Cerrar</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>RUT</td>
-                                        <td>Nombre</td>
-                                        <td>Correo</td>
-                                        <td>Estado</td>
-                                        <td>Indicador de Impacto</td>
-                                        <td>Tipo</td>
-                                        <td><a href="">Ver</a></td>
-                                        <td><a href="">Reporte</a></td>
-                                    </tr>                           
+                                    </tr>                      
                                 </tbody>
                             </table>
                         </div>
