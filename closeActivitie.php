@@ -1,5 +1,5 @@
 <?php
-    require "session_check.php";
+    session_start();
     require "header.php";
     require 'includes/queries.inc.php';
     if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
