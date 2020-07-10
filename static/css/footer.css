@@ -1,18 +1,14 @@
-.footer .logo{
-    width: 120px;
-    height: 70px;
-    display: inline-flex;
-    justify-content: start;
-}
+
 .footer .acreditacion{
     right: 100px;
-    width: 350px;
+    width: 400px;
     height: 90px;
     display: inline-flex;
     justify-content: start;
 }
 .footer{
     margin: auto;
+    height: auto;
     padding: 20px 100px;
     width: 100%;
     color: rgb(26, 25, 25,0.5);

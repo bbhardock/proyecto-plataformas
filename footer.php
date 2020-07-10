@@ -1,10 +1,9 @@
-<footer class="footer ">
+<footer class="footer">
     <div class="row">
-        <div class="col-md-6">
-            <img class="logo" src="static/images/medicinaucn.png" alt="">
-            <img class="acreditacion" src="static/images/acreditacion_sin_fondo.png" alt="">
+        <div class="col-sm-12 col-md-6">
+            <img class="acreditacion" src="static/images/medi_acreditacion.png" alt="">
         </div>         
-        <div class="contacto col-md-6">            
+        <div class="contacto col-sm-12 col-md-6">            
             <h6>Actividades relacionadas a la facultad de medicina</h6>
             <h6><strong>Contactos Sede Coquimbo:</strong></h6>
         </div>   
