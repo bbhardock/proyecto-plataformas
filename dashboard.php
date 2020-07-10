@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.9">
+        <link rel="stylesheet" href="static/css/Styles.css?v1.10">
     </head>
     <body>
         <?php
@@ -65,20 +65,17 @@
                             <option>Cerrado</option>
                         </select>
                         <div class="table-responsive ">
-                            <table class="table tableA">
+                            <table class="table table-bordered tableA">
                                 <thead>
-                                    <th>ID</th>
-                                    <th>RUT</th>
-                                    <th>Nombre</th>
-                                    <th>Correo</th>
-                                    <th>Estado</th>
-                                    <th>Indicador de Impacto</th>
-                                    <th>Tipo</th>
-                                    <th>Requiere reunion</th>
-                                    <th>Fecha reunion</th>
-                                    <th>Lugar</th>
-                                    <th>Organización que organiza</th>
-                                    <th>Organización que auspicia</th>
+                                    <th>Codigo</th>
+                                    <th>Responsable</th>
+                                    <th>Nombre Actvidad</th>
+                                    <th>Fecha Ejecución</th>
+                                    <th>En proceso</th>
+                                    <th>No evaluada</th>
+                                    <th>Evaluada</th>
+                                    <th>Ver actividad</th>
+                                    <th>Crear Reporte</th>
                                 </thead>
                                 <tbody>
                                     <tr>
@@ -89,11 +86,8 @@
                                         <td>Estado</td>
                                         <td>Indicador de Impacto</td>
                                         <td>Tipo</td>
-                                        <td>Requiere reunion</td>
-                                        <td>Fecha reunion</td>
-                                        <td>Lugar</td>
-                                        <td>Organización que organiza</td>
-                                        <td>Organización que auspicia</td>
+                                        <td><a href="">Ver</a></td>
+                                        <td><a href="">Reporte</a></td>
                                     </tr>
                                     <tr>
                                         <td>ID</td>
@@ -103,23 +97,11 @@
                                         <td>Estado</td>
                                         <td>Indicador de Impacto</td>
                                         <td>Tipo</td>
-                                        <td>Requiere reunion</td>
-                                        <td>Fecha reunion</td>
-                                        <td>Lugar</td>
-                                        <td>Organización que organiza</td>
-                                        <td>Organización que auspicia</td>
+                                        <td><a href="">Ver</a></td>
+                                        <td><a href="">Reporte</a></td>
                                     </tr>                           
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="form-row">
-                            <div class="btn-izq col-md-12">
-                                <input type="submit" class = "btn btn-primary btn-md btn-izq" value="Generar reporte">
-                                <input type="submit" class = "btn btn-warning btn-md btn-izq" value="Editar">
-                                <input type="submit" class = "btn btn-success btn-md btn-der" value="Agregar actividad">
-                                <input type="submit" class = "btn btn-success btn-md btn-der" value="Cerrar actividad">
-                                <input type="submit" class = "btn btn-danger btn-md btn-der" value="Eliminar">
-                            </div>
                         </div>
                     </form>  
                 </div>  
