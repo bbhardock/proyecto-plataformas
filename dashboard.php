@@ -70,12 +70,16 @@
                                     <tr>      
                                         <th rowspan="2">Codigo</th>
                                         <th rowspan="2">Responsable</th>
-                                        <th rowspan="2">Nombre Actvidad</th>
+                                        <th rowspan="2">Nombre Actividad</th>
                                         <th rowspan="2">Fecha Ejecución</th>
                                         <th colspan="3">Estado</th>
                                         <th rowspan="2">Ver actividad</th>
-                                        <th rowspan="2">Solicitar ayuda</th>
-                                        <th rowspan="2">Cerrar Actividad</th>
+                                        <?php
+                                        if($_SESSION['user_admin_status']=='N'){
+                                            echo '<th rowspan="2">Solicitar ayuda</th>';
+                                            echo '<th rowspan="2">Cerrar Actividad</th>';
+                                        }
+                                        ?>
                                     </tr>
                                     <tr>     
                                         <th>En proceso</th>
@@ -86,21 +90,28 @@
                                 <tbody>
                                     <tr>
                                         <td>ID</td>
-                                        <td>RUT</td>
                                         <td>Nombre</td>
-                                        <td>Correo</td>
+                                        <td>Nombre Actividad</td>
+                                        <td>Fecha</td>
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-cancel square-cancel"></div></td>
                                         <td><a href="help.php?id=id_act&ver=true" class="icon-search">Ver</a></td>
-                                        <td><a href="help.php?id=id_act&crearayuda=true" class="icon-form">Ayuda</a></td>
-                                        <td><a href="closeActivity.php" class="icon-form">Cerrar</a></td>
+                                        <?php
+                                        if($_SESSION['user_admin_status']=='N'){
+                                            echo '<td><a href="help.php?id=id_act&ver=false" class="icon-form">Ayuda</a></td>';
+                                            echo '<td><a href="closeActivity.php?id=id_act" class="icon-form">Cerrar</a></td>';
+                                        }
+                                        ?>
                                     </tr>                    
                                 </tbody>
                             </table>
                         </div>
-                        
-                        <button class="btn btn-success btn-lg icon-file-excel">Reporte</button>
+                        <?php
+                            if($_SESSION['user_admin_status']=='S'){
+                                echo '<button class="btn btn-success btn-lg icon-file-excel">Reporte</button>';
+                            }
+                        ?>
                     </form>  
                 </div>  
             </div>    
