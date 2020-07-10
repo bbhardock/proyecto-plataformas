@@ -81,7 +81,8 @@
                                     <th>No evaluada</th>
                                     <th>Evaluada</th>
                                     <th>Ver actividad</th>
-                                    <th>Crear Reporte</th>
+                                    <th>Pedir ayuda</th>
+                                    <th>Cerrar Actividad</th>
                                 </thead>
                                 <tbody>
                                     <tr>
@@ -91,9 +92,10 @@
                                         <td>Correo</td>
                                         <td>Estado</td>
                                         <td>Indicador de Impacto</td>
-                                        <td>Tipo</td>
-                                        <td><a href="">Ver</a></td>
-                                        <td><a href="">Reporte</a></td>
+                                        <td><label for="" class="icon-search"></label></td>
+                                        <td><a href="" class="icon-search">Ver</a></td>
+                                        <td><a href="">Ayuda</a></td>
+                                        <td><a href="">Cerrar</a></td>
                                     </tr>
                                     <tr>
                                         <td>ID</td>
@@ -109,6 +111,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <input type="input" class="btn btn-success btn-lg" value="Reporte">
                     </form>  
                 </div>  
             </div>    
