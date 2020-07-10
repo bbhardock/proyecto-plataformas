@@ -1,5 +1,8 @@
 
 .icon-search:before { content: '\e800'; } /* '' */
 .icon-form:before { content: '\e801'; } /* '' */
+.icon-ok:before { content: '\e802'; } /* '' */
+.icon-cancel:before { content: '\e803'; } /* '' */
+.icon-filter:before { content: '\f0b0'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
 .icon-file-excel:before { content: '\f1c3'; } /* '' */

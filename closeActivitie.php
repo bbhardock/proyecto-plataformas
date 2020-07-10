@@ -73,9 +73,13 @@
                         <label for="files-activity">Adjuntar las fotos de la actividad</label>
                         <input type="file" class="form-control-file" name="files-activity[]" id="file-activity" multiple="">
                     </div>
-                    <div class="container">
-                        <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
-                        <input type="button" class = "btn btn-primary btn-md btn-der" value="Cerrar actividad">
+                    <div class="container row">
+                        <div class="col-sm-12 col-md-6">
+                            <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <input type="button" class = "btn btn-primary btn-md btn-der" value="Cerrar actividad">
+                        </div>
                     </div>
                 </form>
             </div>

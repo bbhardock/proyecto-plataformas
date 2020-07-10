@@ -12,8 +12,8 @@
         <title>Manejo de Usuarios</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/css/fontello.css?v1.3">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.13">
+        <link rel="stylesheet" href="static/css/fontello.css?v1.6">
+        <link rel="stylesheet" href="static/css/Styles.css?v2.3">
     </head>
     <body>
         <?php
@@ -61,8 +61,6 @@
                             <option>Diplomado</option>
                             <option>Otro</option>
                         </select>
-                        <label for="name" class="my-1 mr-2">Nombre academico:</label>
-                        <input type="text" class="form-control my-1 mr-sm-2" id="name" placeholder="Nombre Academico">
                         <label class="my-1 mr-2" for="state-activity">Estado:</label>
                         <select class="custom-select my-1 mr-sm-2" id="state-activity">
                             <option>-Vacio-</option>
@@ -70,19 +68,25 @@
                             <option>Pendiente</option>
                             <option>Cerrado</option>
                         </select>
+                        <button class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
                         <div class="table-responsive ">
-                            <table class="table table-bordered tableA">
+                            <table class="table-bordered tableA">
                                 <thead>
-                                    <th>Codigo</th>
-                                    <th>Responsable</th>
-                                    <th>Nombre Actvidad</th>
-                                    <th>Fecha Ejecución</th>
-                                    <th>En proceso</th>
-                                    <th>No evaluada</th>
-                                    <th>Evaluada</th>
-                                    <th>Ver actividad</th>
-                                    <th>Pedir ayuda</th>
-                                    <th>Cerrar Actividad</th>
+                                    <tr>      
+                                        <th rowspan="2">Codigo</th>
+                                        <th rowspan="2">Responsable</th>
+                                        <th rowspan="2">Nombre Actvidad</th>
+                                        <th rowspan="2">Fecha Ejecución</th>
+                                        <th colspan="3">Estado</th>
+                                        <th rowspan="2">Ver actividad</th>
+                                        <th rowspan="2">Solicitar ayuda</th>
+                                        <th rowspan="2">Cerrar Actividad</th>
+                                    </tr>
+                                    <tr>     
+                                        <th>En proceso</th>
+                                        <th>No evaluada</th>
+                                        <th>Evaluada</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
@@ -90,9 +94,9 @@
                                         <td>RUT</td>
                                         <td>Nombre</td>
                                         <td>Correo</td>
-                                        <td>Estado</td>
-                                        <td>Indicador de Impacto</td>
-                                        <td>tipo</td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>
                                         <td><a href="Help.php" class="icon-search">Ver</a></td>
                                         <td><a href="" class="icon-form">Ayuda</a></td>
                                         <td><a href="closeActivitie.php" class="icon-form">Cerrar</a></td>

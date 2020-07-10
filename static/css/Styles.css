@@ -1,5 +1,5 @@
-@import url(menu.css);
-@import url(table.css);
+@import url(menu.css?v1.0);
+@import url(table.css?v1.4);
 @import url(titles.css);
 @import url(buttons.css?v1.0);
 
@@ -50,4 +50,18 @@ h3{
 
 .form-group{
     margin-top: 10px;
+}
+.square-ok{
+    margin: auto;
+    background: rgb(2, 163, 2);
+    border-radius: 10px;
+    color: white;
+    width: 60%;
+}
+.square-cancel{
+    margin: auto;
+    background: red;
+    border-radius: 10px;
+    color: white;
+    width: 60%;
 }

@@ -1,13 +1,9 @@
 .container .btn-izq{
     margin: 15px;
-    display: flex;
-    justify-content: left;
     float: left;
 }
 .container .btn-der{
     margin: 15px;
-    display: flex;
-    justify-content: right;
     float: right;
 }
 

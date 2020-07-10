@@ -1,4 +1,4 @@
-@import url(buttons.css);
+@import url(buttons.css?v1.1);
 body{
     margin: 0;
     padding: 0;
@@ -30,11 +30,3 @@ body{
     display: block;
 }
 
-.container .btn-izq{
-    justify-content: center;
-    width: 90%;
-}
-.container .btn-der{
-    justify-content: center;
-    width: 90%;
-}
