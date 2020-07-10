@@ -73,7 +73,7 @@
                                     <th>Nombre Actvidad</th>
                                     <th>Fecha Ejecución</th>
                                     <th>En proceso</th>
-                                    <th>No evaluada</th>
+                                    <th>Ejecutada y no evaluada</th>
                                     <th>Evaluada</th>
                                     <th>Ver actividad</th>
                                     <th>Pedir ayuda</th>
@@ -88,8 +88,8 @@
                                         <td>Sí</td>
                                         <td>No</td>
                                         <td>No</td>
-                                        <td><a href="help.php" class="icon-search">Ver</a></td>
-                                        <td><a href="" class="icon-form">Ayuda</a></td>
+                                        <td><a href="help.php?id=id_act&ver=true" class="icon-search">Ver</a></td>
+                                        <td><a href="help.php?id=id_act&crearayuda=true" class="icon-form">Ayuda</a></td>
                                         <td><a href="closeActivity.php" class="icon-form">Cerrar</a></td>
                                     </tr>                    
                                 </tbody>
