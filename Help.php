@@ -6,6 +6,10 @@
         header("Location: dashboard.php");
         exit();
     }
+    $modo="";
+    if(isset($_GET['modo'])){
+      $modo = $_GET['modo'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +27,14 @@
           <form action="">
             <div class="container row">
               <div class="col-md-12 container-Title">
-                <h2>Solicitar ayuda</h2>
+                <?php
+                  if($modo == 'ver'){
+                    echo "<h2>Ver actividad</h2>";
+                  }
+                  else if($modo == 'ingresar'){
+                    echo "<h2>Ingresar formulario de ayuda</h2>";
+                  }
+                ?>
                 <small>Detalles de la actividad</small>
               </div>
             </div>
@@ -159,7 +170,14 @@
           <form action="">
             <div class="container row">
               <div class="col-md-12 container-Title">
-                <h2>Solicitar ayuda</h2>
+                <?php
+                    if($modo == 'ver'){
+                      echo "<h2>Ver actividad</h2>";
+                    }
+                    else if($modo == 'ingresar'){
+                      echo "<h2>Ingresar formulario de ayuda</h2>";
+                    }
+                ?>
                 <small>Solicitud a Vinculación con el Medio</small>
               </div>
             </div>
