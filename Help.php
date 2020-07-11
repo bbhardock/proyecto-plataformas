@@ -165,7 +165,7 @@
               <div class="col-md-12 container">
                 <?php
                     if($modo == 'ver'){
-                      echo "<h2>Ver actividad Ingresada en SIVCM-FACMED</h2>";
+                      echo "<h2>Ver Solicitud de Ayuda Ingresada en SIVCM-FACMED</h2>";
                     }
                     else if($modo == 'ingresar'){
                       echo "<h2>Ingresar formulario de ayuda</h2>";
