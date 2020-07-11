@@ -14,7 +14,7 @@
       <meta name="viewport" content="width = device-width, user-scalable = no">
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v1.15">
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v1.16">
   </head>
   <body>
     <section class="main">
@@ -26,7 +26,19 @@
                 <h2>Solicitar ayuda</h2>
               </div>
             </div>
-            <fieldset disabled>          
+            <fieldset disabled>         
+              <div class="form-group">
+                <label for="code-activity">Código de Actividad:</label>
+                <input type="text" class="form-control" id="code-activity" placeholder="Escriba el código de la actividad">
+              </div>        
+              <div class="form-group">
+                <label for="name-activity">Nombre de Actividad:</label>
+                <input type="text" class="form-control" id="name-activity" placeholder="Escriba el nombre de la actividad">
+              </div>              
+              <div class="form-group">
+                <label for="unity">Unidad:</label>
+                <input type="text" class="form-control" id="unity">
+              </div>     
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="coordinador">Coordinador de la actividad:</label>
@@ -46,13 +58,17 @@
                   <label for="end-date">Fecha de termino:</label>
                   <input type="date" class="form-control" id="end-date" placeholder="dd/mm/yyyy">
                 </div>
-              </div>          
+              </div>       
               <div class="form-group">
-                <label for="name-activity">Nombre de Actividad:</label>
-                <input type="text" class="form-control" id="name-activity" placeholder="Escriba el nombre de la actividad">
-              </div>
+                <label for="service">Servicio:</label>
+                <input type="text" class="form-control" id="service">
+              </div>         
               <div class="form-group">
-                <label for="area">Area de interes:</label>
+                <label for="product">Producto:</label>
+                <input type="text" class="form-control" id="product">
+              </div>              
+              <div class="form-group">
+                <label for="area">Area de Vinculación:</label>
                 <select class="form-control" id="area">
                   <option>-Vacio-</option>
                   <option>Vinculación Académica de pre y postgrado</option>
@@ -64,10 +80,6 @@
                   <option>Vinculación para la Internacionalización</option>
                   <option>Vinculación con Egresados</option>
                 </select>
-              </div>
-              <div class="form-group ">
-                <label for="place-activity">Lugar de la actividad:</label>
-                <input type="text" class="form-control" id="place-activity" placeholder="Lugar de la actividad">
               </div>
               <div class="form-group">
                 <label for="area">Tipos de Impactos:</label>
@@ -100,7 +112,43 @@
                     <option>17) Alianzas para lograr los objetivos</option>
                   </optgroup>   
                 </select>
-              </div> 
+              </div>
+              <label for="beneficiario-interno">Listado de Beneficiarios Internos:</label>
+              <div class="table-responsive">
+                <table class="table table-bordered" id="beneficiario-interno">
+                    <thead>
+                      <th>Tipo Público</th>
+                      <th>Beneficiarios directos</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+              </div>
+              <label for="beneficiario-externo">Listado de Beneficiarios Externos:</label>
+              <div class="table-responsive">
+                <table class="table table-bordered" id="beneficiario-externo">
+                    <thead>
+                      <th>Tipo Público</th>
+                      <th>Beneficiarios directos</th>
+                      <th>Beneficiarios indirectos</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+              </div>
+              <label for="socios-estrategicos">Listado de Socios estratégicos:</label>
+              <div class="table-responsive">
+                <table class="table table-bordered" id="socios-estrategicos">
+                    <thead>
+                      <th>Socio estratégico</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+              </div>
             </fieldset>
             <div class="form-group">
               <label for="objective-activity">Objetivo de la Actividad:</label>
