@@ -14,7 +14,7 @@
       <meta name="viewport" content="width = device-width, user-scalable = no">
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v1.16">
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.0">
   </head>
   <body>
     <section class="main">
@@ -24,6 +24,7 @@
             <div class="container row">
               <div class="col-md-12 container-Title">
                 <h2>Solicitar ayuda</h2>
+                <small>Detalles de la actividad</small>
               </div>
             </div>
             <fieldset disabled>         
@@ -150,6 +151,18 @@
                 </table>
               </div>
             </fieldset>
+          </form> 
+        </div>
+      </div>
+      <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
+        <div class="col-md-12">
+          <form action="">
+            <div class="container row">
+              <div class="col-md-12 container-Title">
+                <h2>Solicitar ayuda</h2>
+                <small>Solicitud a Vinculación con el Medio</small>
+              </div>
+            </div>
             <div class="form-group">
               <label for="objective-activity">Objetivo de la Actividad:</label>
               <input type="text" class="form-control" id="objective-activity" placeholder="Escriba el objetivo de la actividad">
@@ -278,7 +291,7 @@
                 <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
               </div>
               <div class="col-sm-12 col-md-6">
-                <input type="button" class = "btn btn-primary btn-md btn-der" value="Crear">
+                <input type="button" class = "btn btn-primary btn-md btn-der" value="Solicitar">
               </div>
             </div>
           </form>

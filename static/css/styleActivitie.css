@@ -1,4 +1,6 @@
-@import url(buttons.css?v1.3);
+@import url(buttons.css?v1.4);
+@import url(titles.css?1.0);
+
 body{
     margin: 0;
     padding: 0;
@@ -10,14 +12,6 @@ body{
     padding: 10px;
     border-radius: 5px;
     width: 70%;
-}
-
-.container-Title{
-    padding: 10px;
-    background: rgba(24, 30, 82, 0.8);
-    color: white;
-    border-radius: 10px;
-    
 }
 .form-group{
     margin-top: 10px;
