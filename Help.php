@@ -25,8 +25,8 @@
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
           <form action="">
-            <div class="container row">
-              <div class="col-md-12 container-Title">
+            <div class="container-Title row">
+              <div class="container col-md-12 ">
                 <h2>Ver actividad Ingresada en SIVCM-UCN</h2>
                 <small>Detalles de la actividad</small>
               </div>
@@ -161,8 +161,8 @@
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
           <form action="">
-          <div class=" container-Title row">
-              <div class="col-md-12 container">
+            <div class=" container-Title row">
+              <div class="container col-md-12">
                 <?php
                     if($modo == 'ver'){
                       echo "<h2>Ver Solicitud de Ayuda Ingresada en SIVCM-FACMED</h2>";
@@ -317,7 +317,7 @@
                 </div>'; 
               }else if($modo == 'ver'){
                 echo '
-                <div class="col-sm-12 col-md-6">
+                <div class="col-md-12">
                   <input type="button" class = "btn btn-danger btn-md btn-izq" value="Volver">
                 </div>'; 
               }
