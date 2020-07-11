@@ -19,7 +19,7 @@
     </head>
     <body>
         <section class="main">
-            <div class="containerTitle">
+            <div class="container-Title">
                 <div class="container row col-md-12">
                     <h2>Administración de usuarios</h2>
                 </div>

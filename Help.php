@@ -21,8 +21,8 @@
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
           <form action="">
-            <div class="container row">
-              <div class="col-md-12 container-Title">
+            <div class=" container-Title row">
+              <div class="col-md-12 container">
                 <h2>Solicitar ayuda</h2>
                 <small>Detalles de la actividad</small>
               </div>
@@ -157,8 +157,8 @@
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
           <form action="">
-            <div class="container row">
-              <div class="col-md-12 container-Title">
+          <div class=" container-Title row">
+              <div class="col-md-12 container">
                 <h2>Solicitar ayuda</h2>
                 <small>Solicitud a Vinculación con el Medio</small>
               </div>
