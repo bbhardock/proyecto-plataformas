@@ -308,8 +308,8 @@
             <?php
               if($modo == 'ingresar'){
                 echo '<div class="container row">
-                  <div class="col-sm-12 col-md-6">
-                    <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
+                  <div class="col-sm-12 col-md-6"> 
+                    <a class = "btn btn-danger btn-md btn-izq" href="dashboard.php">Cancelar</a>
                   </div>
                   <div class="col-sm-12 col-md-6">
                     <input type="button" class = "btn btn-primary btn-md btn-der" value="Solicitar">
@@ -318,7 +318,7 @@
               }else if($modo == 'ver'){
                 echo '
                 <div class="col-md-12">
-                  <input type="button" class = "btn btn-danger btn-md btn-izq" value="Volver">
+                  <a class = "btn btn-danger btn-md btn-izq" href="dashboard.php">Volver</a>
                 </div>'; 
               }
             ?>
