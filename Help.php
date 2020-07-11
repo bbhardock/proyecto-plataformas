@@ -160,7 +160,7 @@
       </div>
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
-          <form action="">
+        <form action="includes/ingresoAyuda.inc.php" method="POST" id = "Ingresar_Ayuda">
             <div class=" container-Title row">
               <div class="container col-md-12">
                 <?php
@@ -312,7 +312,7 @@
                     <a class = "btn btn-danger btn-md btn-izq" href="dashboard.php">Cancelar</a>
                   </div>
                   <div class="col-sm-12 col-md-6">
-                    <input type="button" class = "btn btn-primary btn-md btn-der" value="Solicitar">
+                    <input type="submit" class = "btn btn-primary btn-md btn-der" value="Solicitar" name="registrar-ayuda-submit">
                   </div>
                 </div>'; 
               }else if($modo == 'ver'){
