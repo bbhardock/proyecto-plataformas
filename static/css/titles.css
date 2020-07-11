@@ -1,4 +1,4 @@
-.container-Title{
+.container-Title .container{
     padding: 10px;
     background: rgba(24, 30, 82, 0.85);
     color: lightgrey;
@@ -8,6 +8,7 @@
     padding: 10px;
 }
 .container-Title small{
+    padding: 10px;
     color: rgba(211, 211, 211, 0.7);
 }
 .subtitle h3{

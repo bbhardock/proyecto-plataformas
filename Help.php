@@ -161,8 +161,8 @@
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
           <form action="">
-            <div class="container row">
-              <div class="col-md-12 container-Title">
+          <div class=" container-Title row">
+              <div class="col-md-12 container">
                 <?php
                     if($modo == 'ver'){
                       echo "<h2>Ver actividad Ingresada en SIVCM-FACMED</h2>";
