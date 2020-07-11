@@ -174,6 +174,7 @@
                 <small>Solicitud a Vinculación con el Medio</small>
               </div>
             </div>
+            <fieldset disabled>
             <div class="form-group">
               <label for="objective-activity">Objetivo de la Actividad:</label>
               <input type="text" class="form-control" id="objective-activity" placeholder="Escriba el objetivo de la actividad">
@@ -269,34 +270,36 @@
                 </div>                          
               </div>   
             </fieldset>   
-            <div class="form-row">
-              <div class="form-group col-md-4">
-                <label for="suplie-bandejas">Cantidad de bandejas necesarias:</label>
-                <input type="number" class="form-control" id="suplie-bandejas" placeholder="Número de bandejas">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="suplie-bandejas">Cantidad de bandejas necesarias:</label>
+                  <input type="number" class="form-control" id="suplie-bandejas" placeholder="Número de bandejas">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="suplie-tapetes">Cantidad de tapetes necesarios:</label>
+                  <input type="number" class="form-control" id="suplie-tapetes" placeholder="Número de tapetes">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="suplie-sillas">Cantidad de sillas necesarias:</label>
+                  <input type="number" class="form-control" id="suplie-sillas" placeholder="Número de sillas">
+                </div>
               </div>
-              <div class="form-group col-md-4">
-                <label for="suplie-tapetes">Cantidad de tapetes necesarios:</label>
-                <input type="number" class="form-control" id="suplie-tapetes" placeholder="Número de tapetes">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="suplie-paneles">Cantidad de paneles necesarios:</label>
+                  <input type="number" class="form-control" id="suplie-paneles" placeholder="Número de paneles">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="suplie-toldos">Cantidad de toldos necesarios:</label>
+                  <input type="number" class="form-control" id="suplie-toldos" placeholder="Número de toldos">
+                </div>
+              </div>     
+              <div class="form-group">
+                <label for="suplie-otros">Otro:</label>
+                <textarea class="form-control" id="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite"></textarea>
               </div>
-              <div class="form-group col-md-4">
-                <label for="suplie-sillas">Cantidad de sillas necesarias:</label>
-                <input type="number" class="form-control" id="suplie-sillas" placeholder="Número de sillas">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="suplie-paneles">Cantidad de paneles necesarios:</label>
-                <input type="number" class="form-control" id="suplie-paneles" placeholder="Número de paneles">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="suplie-toldos">Cantidad de toldos necesarios:</label>
-                <input type="number" class="form-control" id="suplie-toldos" placeholder="Número de toldos">
-              </div>
-            </div>     
-            <div class="form-group">
-              <label for="suplie-otros">Otro:</label>
-              <textarea class="form-control" id="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite"></textarea>
-            </div>
+            </fieldset>
+
             <div class="container row">
               <div class="col-sm-12 col-md-6">
                 <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
