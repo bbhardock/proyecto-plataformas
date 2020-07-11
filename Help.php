@@ -315,6 +315,11 @@
                     <input type="button" class = "btn btn-primary btn-md btn-der" value="Solicitar">
                   </div>
                 </div>'; 
+              }else if($modo == 'ver'){
+                echo '
+                <div class="col-sm-12 col-md-6">
+                  <input type="button" class = "btn btn-danger btn-md btn-izq" value="Volver">
+                </div>'; 
               }
             ?>
           </form>
