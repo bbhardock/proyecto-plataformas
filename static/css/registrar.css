@@ -103,6 +103,6 @@ body{
     cursor: pointer;
 }
 
-.form-group .form-check input[type="radio"]:checked ~ .password{
+.login-box input[type="checkbox"]:checked ~ .password{
     display: block;
 }
