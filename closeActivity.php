@@ -2,7 +2,7 @@
     session_start();
     require "header.php";
     require 'includes/queries.inc.php';
-    if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
+    if(!isset($_SESSION['user_id'])){
         header("Location: dashboard.php");
         exit();
     }
