@@ -2,7 +2,7 @@
     session_start();
     require "header.php";
     require 'includes/queries.inc.php';
-    if(!isset($_SESSION['user_id'])){
+    if(!isset($_SESSION['user_id']) || !isset($_GET['modo'])){
         header("Location: dashboard.php");
         exit();
     }
@@ -174,7 +174,13 @@
                 <small>Solicitud a Vinculación con el Medio</small>
               </div>
             </div>
-            <fieldset disabled>
+            <?php
+              if($modo == 'ver'){
+                echo "<fieldset disabled>";
+              }else if($modo == 'ingresar'){
+                echo "<fieldset>";
+              }
+            ?>
             <div class="form-group">
               <label for="objective-activity">Objetivo de la Actividad:</label>
               <input type="text" class="form-control" id="objective-activity" placeholder="Escriba el objetivo de la actividad">
@@ -299,15 +305,18 @@
                 <textarea class="form-control" id="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite"></textarea>
               </div>
             </fieldset>
-
-            <div class="container row">
-              <div class="col-sm-12 col-md-6">
-                <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
-              </div>
-              <div class="col-sm-12 col-md-6">
-                <input type="button" class = "btn btn-primary btn-md btn-der" value="Solicitar">
-              </div>
-            </div>
+            <?php
+              if($modo == 'ingresar'){
+                echo '<div class="container row">
+                  <div class="col-sm-12 col-md-6">
+                    <input type="button" class = "btn btn-danger btn-md btn-izq" value="Cancelar">
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <input type="button" class = "btn btn-primary btn-md btn-der" value="Solicitar">
+                  </div>
+                </div>'; 
+              }
+            ?>
           </form>
         </div>
       </div>
