@@ -27,14 +27,7 @@
           <form action="">
             <div class="container row">
               <div class="col-md-12 container-Title">
-                <?php
-                  if($modo == 'ver'){
-                    echo "<h2>Ver actividad</h2>";
-                  }
-                  else if($modo == 'ingresar'){
-                    echo "<h2>Ingresar formulario de ayuda</h2>";
-                  }
-                ?>
+                <h2>Ver actividad Ingresada en SIVCM-UCN</h2>
                 <small>Detalles de la actividad</small>
               </div>
             </div>
@@ -172,7 +165,7 @@
               <div class="col-md-12 container-Title">
                 <?php
                     if($modo == 'ver'){
-                      echo "<h2>Ver actividad</h2>";
+                      echo "<h2>Ver actividad Ingresada en SIVCM-FACMED</h2>";
                     }
                     else if($modo == 'ingresar'){
                       echo "<h2>Ingresar formulario de ayuda</h2>";
