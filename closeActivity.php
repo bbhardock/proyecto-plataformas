@@ -21,8 +21,8 @@
         <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
             <div class="col-md-12">
                 <form action="" enctype="multipart/form-data">
-                    <div class="container row">
-                        <div class="col-md-12 container-Title">
+                    <div class="container-Title row">
+                        <div class="container col-md-12">
                             <h2>Cerrar una actividad</h2>
                         </div>
                     </div>
