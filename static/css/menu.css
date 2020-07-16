@@ -30,6 +30,7 @@ header label:hover{
 }
 
 .menu ul{
+    height: auto;
     margin: 0;
     list-style: none;
     padding: 0;
@@ -44,7 +45,7 @@ header label:hover{
 }
 .menu li a{
     display: block;
-    padding: 13px 15px;
+    padding: 12px 15px;
     color: rgb(255, 255, 255, 0.8);
     text-decoration: none;
 }

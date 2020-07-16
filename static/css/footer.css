@@ -1,32 +1,38 @@
 
-.footer .acreditacion{
-    right: 100px;
-    width: 400px;
-    height: 90px;
-    display: inline-flex;
-    justify-content: start;
-}
 .footer{
-    margin: auto;
-    height: auto;
+    height: 120px;
     padding: 20px 100px;
     width: 100%;
-    color: rgb(26, 25, 25,0.5);
+    color: rgba(58, 43, 43, 0.5);
     background: linear-gradient(rgb(255, 255, 255),rgb(211, 211, 211,0.5) );
     border-top: lightslategrey;
 }
+.footer .acreditacion{
+    width: 400px;
+    height: 90px;
+}
 .footer .contacto{
-    top: 40px;
+    top: 10px;
 }
 .footer h5{
-    font-size: 20px;
+    font-size: 13px;
 }
 .footer h6{
-    font-size: 15px;
+    font-size: 12px;
+}
+@media(max-width:1000px){
+    .footer{
+        height: 300px;
+    }
+    .footer .acreditacion{
+        width: 350px;
+        height: 80px;
+    }
 }
 
 @media(max-width:600px){
-    .footer{
-        padding: auto;
+    .footer .acreditacion{
+        width: 280px;
+        height: 60px;
     }
 }
