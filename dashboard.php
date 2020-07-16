@@ -59,9 +59,9 @@
                         <label class="my-1 mr-2" for="state-activity">Estado:</label>
                         <select class="custom-select my-1 mr-sm-2" id="state-activity">
                             <option>-Vacio-</option>
-                            <option>Aceptado</option>
-                            <option>Pendiente</option>
-                            <option>Cerrado</option>
+                            <option>En Proceso</option>
+                            <option>No evaluada</option>
+                            <option>Evaluada</option>
                         </select>
                         <button class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
                         <div class="table-responsive ">
@@ -83,7 +83,7 @@
                                     </tr>
                                     <tr>     
                                         <th>En proceso</th>
-                                        <th>No evaluada</th>
+                                        <th>Ejecutada y no evaluada</th>
                                         <th>Evaluada</th>
                                     </tr>
                                 </thead>
