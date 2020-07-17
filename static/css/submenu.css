@@ -1,0 +1,35 @@
+#form2, .submenu input[type="radio"]{
+    display: none;
+}
+.containerSubmenu{
+    margin-top: 50px;
+    width: 100%;
+    background-color: lightgrey;
+    height: 100%;
+    border-radius: 10px;
+}
+.submenu ul{
+    list-style: none;
+    padding: 0;
+}
+.submenu li{
+    margin: 20px auto;
+}
+.submenu label:hover{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline blue; 
+}
+
+@media(max-width:990px){
+    .containerSubmenu{
+        margin: 5px auto;
+    }
+    .submenu ul{
+        margin: auto;
+        display: flex;
+    }
+    .submenu li{
+        margin: 20px auto;
+    }
+}
