@@ -178,7 +178,7 @@
         if(isset($_POST['btn-pop'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
-                    denegarAccesoUsuario($valor);
+                    eliminarUsuario($valor);
                 }
                 $secondsWait = 0;
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';

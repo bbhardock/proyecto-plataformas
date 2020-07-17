@@ -10,6 +10,7 @@
     if(isset($_GET['modo'])){
       $modo = $_GET['modo'];
   }
+  //TODO: revisar con los datos de SIVCM-UCN si es que corresponde que vea esta pagina para la actividad.
 ?>
 <!DOCTYPE html>
 <html lang="en">
