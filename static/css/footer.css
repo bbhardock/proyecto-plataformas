@@ -8,7 +8,7 @@
     border-top: lightslategrey;
 }
 .footer .acreditacion{
-    width: 400px;
+    width: 350px;
     height: 90px;
 }
 .footer .contacto{
@@ -32,7 +32,7 @@
 
 @media(max-width:600px){
     .footer .acreditacion{
-        width: 280px;
-        height: 60px;
+        width: 290px;
+        height: 65px;
     }
 }
