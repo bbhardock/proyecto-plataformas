@@ -1,4 +1,4 @@
-@import url(menu.css?v1.0);
+@import url(menu.css?v1.4);
 @import url(table.css?v1.4);
 @import url(titles.css?v1.4);
 @import url(buttons.css?v1.1);
@@ -24,7 +24,8 @@ body{
 header{
     width: 100%;
     height: 50px;
-    background: linear-gradient(rgba(24, 30, 82, 1),rgba(24, 30, 82, 0.95));
+    background: linear-gradient(rgba(35, 65, 91, 1),rgba(35, 65, 91, 0.95));
+    border-bottom: rgb(247, 216, 162);
     color: white;
     box-sizing: border-box;
     border: 1px solid lightgrey;
