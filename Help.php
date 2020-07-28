@@ -6,10 +6,7 @@
         header("Location: dashboard.php");
         exit();
     }
-    $modo="";
-    if(isset($_GET['modo'])){
-      $modo = $_GET['modo'];
-  }
+    $modo = $_GET['modo'];
   //TODO: revisar con los datos de SIVCM-UCN si es que corresponde que vea esta pagina para la actividad.
 ?>
 <!DOCTYPE html>
@@ -159,6 +156,7 @@
           </form> 
         </div>
       </div>
+      <?php //EMPIEZA INGRESO DE SOLICITUD DE AYUDA ?>
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
         <form action="includes/ingresoAyuda.inc.php" method="POST" id = "Ingresar_Ayuda">
@@ -184,15 +182,15 @@
             ?>
             <div class="form-group">
               <label for="objective-activity">Objetivo de la Actividad:</label>
-              <input type="text" class="form-control" id="objective-activity" placeholder="Escriba el objetivo de la actividad">
+              <input type="text" class="form-control" id="objective-activity" name="objective-activity" placeholder="Escriba el objetivo de la actividad">
             </div>
             <div class="form-group">
               <label for="impact">Indicador de Impacto:</label>
-              <textarea class="form-control" id="impact" rows="3" placeholder="Explique como medira el impacto"></textarea>
+              <textarea class="form-control" id="impact" name="impact" rows="3" placeholder="Explique como medira el impacto"></textarea>
             </div>          
             <div class="form-group">
               <label for="logistic-support">Apoyo en la logística:</label>
-              <select multiple="true" class="form-control"  id="logistic-support" aria-describedby="selectHelp">
+              <select multiple="true" class="form-control"  id="logistic-support" name="logistic-support[]" aria-describedby="selectHelp">
                 <option>-Ninguno-</option>
                 <option>-Pendón FAMED</option>
                 <option>-Pendón C. Enfermería</option>
@@ -237,11 +235,11 @@
             </fieldset>  
             <div class="form-group">
               <label for="number-participants">Cantidad aproximada de participantes:</label>
-              <input type="number" class="form-control" id="number-participants" placeholder="Cantidad aproximada de participantes">
+              <input type="number" class="form-control" id="number-participants" name="number-participants" placeholder="Cantidad aproximada de participantes">
             </div>
             <div class="form-group">
               <label for="type-activity">Tipo de actividad</label>
-              <select class="form-control" id="type-activity">
+              <select class="form-control" id="type-activity" name="type-activity">
                 <option>-Vacio-</option>
                 <option>-Congreso</option>
                 <option>-Jornada</option>
@@ -256,7 +254,7 @@
             </div>
             <div class="form-group ">
               <label for="other-activity">Si eligio en tipo de actividad "Otro", indicar cual es:</label>
-              <input type="text" class="form-control" id="other-activity" placeholder="Nombre del tipo de actividad deseada">
+              <input type="text" class="form-control" id="other-activity" name="other-activity" placeholder="Nombre del tipo de actividad deseada">
             </div>
             <fieldset class="form-group">
               <div class="row">
@@ -280,30 +278,30 @@
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="suplie-bandejas">Cantidad de bandejas necesarias:</label>
-                  <input type="number" class="form-control" id="suplie-bandejas" placeholder="Número de bandejas">
+                  <input type="number" class="form-control" id="suplie-bandejas" name="suplie-bandejas" placeholder="Número de bandejas">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="suplie-tapetes">Cantidad de tapetes necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-tapetes" placeholder="Número de tapetes">
+                  <input type="number" class="form-control" id="suplie-tapetes" name="suplie-tapetes" placeholder="Número de tapetes">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="suplie-sillas">Cantidad de sillas necesarias:</label>
-                  <input type="number" class="form-control" id="suplie-sillas" placeholder="Número de sillas">
+                  <input type="number" class="form-control" id="suplie-sillas" name="suplie-sillas" placeholder="Número de sillas">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="suplie-paneles">Cantidad de paneles necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-paneles" placeholder="Número de paneles">
+                  <input type="number" class="form-control" id="suplie-paneles" name="suplie-paneles" placeholder="Número de paneles">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="suplie-toldos">Cantidad de toldos necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-toldos" placeholder="Número de toldos">
+                  <input type="number" class="form-control" id="suplie-toldos" name="suplie-toldos" placeholder="Número de toldos">
                 </div>
               </div>     
               <div class="form-group">
                 <label for="suplie-otros">Otro:</label>
-                <textarea class="form-control" id="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite"></textarea>
+                <textarea class="form-control" id="suplie-otros" name="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite"></textarea>
               </div>
             </fieldset>
             <?php
