@@ -105,7 +105,6 @@
                                         <?php
                                         if($_SESSION['user_admin_status']=='N'){
                                             echo '<th rowspan="2">Solicitar ayuda</th>';
-                                            echo '<th rowspan="2">Cerrar Actividad</th>';
                                         }
                                         ?>
                                     </tr>
@@ -128,7 +127,6 @@
                                         <?php
                                         if($_SESSION['user_admin_status']=='N'){
                                             echo '<td><a href="help.php?id=id_act&modo=ingresar" class="icon-form">Ayuda</a></td>';
-                                            echo '<td><a href="closeActivity.php?id=id_act" class="icon-form">Cerrar</a></td>';
                                         }
                                         ?>
                                     </tr>                    
