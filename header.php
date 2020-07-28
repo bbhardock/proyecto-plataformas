@@ -12,7 +12,7 @@
         <header>
             <div class="contenedor">
                 <img class="logo" src="static/images/logo.png" alt="">
-                <h2 class="title">Vinculación con el medio</h2>
+                <h2 class="title">Vinculación con el medio FACMED</h2>
 
                 <input type = "checkbox" id = "btn-menu">
                 <label class = "icon-menu" for="btn-menu"></label>

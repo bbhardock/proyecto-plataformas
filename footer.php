@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6">
-            <img class="acreditacion" src="static/images/medi_ucn_cna.png" alt="">
+            <img class="acreditacion" src="static/images/acreditacion_sin_fondo.png" alt="">
         </div>            
         <div class="contacto col-md-12 col-lg-4">  
             <h5><strong>Vinculación con el Medio:</strong></h5>

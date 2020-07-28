@@ -1,15 +1,27 @@
+header{
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(rgba(35, 65, 91, 1),rgba(35, 65, 91, 0.95));
+    color: white;
+    border-bottom: 5px solid rgb(247, 216, 162);
+
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
 
 header .logo{
+    padding: 2px;
     width: 50px;
     height: 50px;
     float: left;
     margin-left: 20px;
+    margin-right: 4px;
     margin-top: 3px;
 }
 header .title{
-    margin: 7px 15px;
+    margin: 7px auto;
     float: left;
-    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
     color: rgb(255, 255, 255, 0.8);
 }
 
@@ -50,8 +62,12 @@ header label:hover{
 }
 
 @media (max-width:1050px){
-    header label {
+    header label, .title, .logo{
         display: block;
+    }
+    header .title{
+        margin-top: 15px;
+        font-size: 25px;
     }
     .menu {
         position: absolute;
