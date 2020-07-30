@@ -118,7 +118,7 @@
               </div>
               <label for="beneficiario-interno">Listado de Beneficiarios Internos:</label>
               <div class="table-responsive">
-                <table class="table table-bordered" id="beneficiario-interno">
+                <table class="table table-bordered tableA" id="beneficiario-interno">
                     <thead>
                       <th>Tipo Público</th>
                       <th>Beneficiarios directos</th>
@@ -130,7 +130,7 @@
               </div>
               <label for="beneficiario-externo">Listado de Beneficiarios Externos:</label>
               <div class="table-responsive">
-                <table class="table table-bordered" id="beneficiario-externo">
+                <table class="table table-bordered tableA" id="beneficiario-externo">
                     <thead>
                       <th>Tipo Público</th>
                       <th>Beneficiarios directos</th>
@@ -143,7 +143,7 @@
               </div>
               <label for="socios-estrategicos">Listado de Socios estratégicos:</label>
               <div class="table-responsive">
-                <table class="table table-bordered" id="socios-estrategicos">
+                <table class="table table-bordered tableA" id="socios-estrategicos">
                     <thead>
                       <th>Socio estratégico</th>
                     </thead>
@@ -173,6 +173,12 @@
                 <small>Solicitud a Vinculación con el Medio</small>
               </div>
             </div>
+            <fieldset disabled="disabled">
+              <div class="form-group">
+                <label for="code-activity">Código de Actividad:</label>
+                <input type="text" class="form-control" id="code-activity" placeholder="Escriba el código de la actividad">
+              </div>        
+            </fieldset>
             <?php
               if($modo == 'ver'){
                 echo "<fieldset disabled>";
@@ -180,100 +186,88 @@
                 echo "<fieldset>";
               }
             ?>
-            <div class="form-group">
-              <label for="objective-activity">Objetivo de la Actividad:</label>
-              <input type="text" class="form-control" id="objective-activity" name="objective-activity" placeholder="Escriba el objetivo de la actividad">
-            </div>
-            <div class="form-group">
-              <label for="impact">Indicador de Impacto:</label>
-              <textarea class="form-control" id="impact" name="impact" rows="3" placeholder="Explique como medira el impacto"></textarea>
-            </div>          
-            <div class="form-group">
-              <label for="logistic-support">Apoyo en la logística:</label>
-              <select multiple="true" class="form-control"  id="logistic-support" name="logistic-support[]" aria-describedby="selectHelp">
-                <option>-Ninguno-</option>
-                <option>-Pendón FAMED</option>
-                <option>-Pendón C. Enfermería</option>
-                <option>-Pendón C. Kinesiología</option>
-                <option>-Pendón C. Medicina</option>
-                <option>-Pendón C. Nutrición</option>
-                <option>-Constancia Impresa</option>
-                <option>-Constancia Digital</option>    
-              </select>
-              <small id="selectHelp" class="form-text text-muted">Para seleccionar mas de un valor presione ctrl+click.</small>
-            </div>
-            <fieldset class="form-group">
-              <legend class="col-form-label col-md-12">Requiere reunión de coordinación:</legend>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="btn-radio" id="meeting-yes" value="1">
-                    <label class="form-check-label" for="meeting-yes">
-                      Si
-                    </label>      
-                    <div class="need-reunion">
-                      <div class="form-row">
-                        <div class="col-md-6">
-                          <label for="hour-reunion">Hora de la reunion</label>
-                          <input type="time" class="form-control" placeholder="Hora: hh:mm" name="hour-reunion">   
-                        </div>
-                        <div class="col-md-6">
-                          <label for="date-reunion">Fecha de la reunion</label>
-                          <input type="date" class="form-control" placeholder="Fecha: dd/mm/yyyy" name="date-reunion">   
-                        </div>
-                      </div> 
-                    </div>                    
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2">
-                    <label class="form-check-label" for="meeting-no">
-                      No
-                    </label>
-                  </div>
-                </div>                          
-              </div>      
-            </fieldset>  
-            <div class="form-group">
-              <label for="number-participants">Cantidad aproximada de participantes:</label>
-              <input type="number" class="form-control" id="number-participants" name="number-participants" placeholder="Cantidad aproximada de participantes">
-            </div>
-            <div class="form-group">
-              <label for="type-activity">Tipo de actividad</label>
-              <select class="form-control" id="type-activity" name="type-activity">
-                <option>-Congreso</option>
-                <option>-Jornada</option>
-                <option>-Feria</option>
-                <option>-Charla</option>
-                <option>-Taller</option>
-                <option>-Curso</option>
-                <option>-Explo UCN</option>
-                <option>-Diplomado</option>
-                <option>-Otro</option>
-              </select>
-            </div>
-            <div class="form-group ">
-              <label for="other-activity">Si eligio en tipo de actividad "Otro", indicar cual es:</label>
-              <input type="text" class="form-control" id="other-activity" name="other-activity" placeholder="Nombre del tipo de actividad deseada">
-            </div>
-            <fieldset class="form-group">
-              <div class="row">
-                <legend class="col-form-label col-sm-5">¿Requiere apoyo de la Departamento de Comunicación y Admisión de la UCN?</legend>
-                <div class="col-sm-7">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="btn-radio1" id="support-yes" value="3">
-                    <label class="form-check-label" for="support-yes">
-                      Si
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4">
-                    <label class="form-check-label" for="support-no">
-                      No
-                    </label>
-                  </div>
-                </div>                          
-              </div>   
-            </fieldset>   
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="correo">Correo:</label>
+                  <input type="text" class="form-control" id="correo" placeholder="Ejemplo: ejemplo@ucn.cl">
+                </div>    
+                <div class="form-group col-md-6">
+                  <label for="telefono">Teléfono:</label>
+                  <input type="text" class="form-control" id="telefono" placeholder="Ejemplo: +56 9 8756 4523">
+                </div>   
+              </div>  
+              <div class="form-group">
+                <label for="logistic-support">Apoyo en la logística:</label>
+                <select multiple="true" class="form-control"  id="logistic-support" name="logistic-support[]" aria-describedby="selectHelp">
+                  <option>-Ninguno-</option>
+                  <option>-Pendón FAMED</option>
+                  <option>-Pendón C. Enfermería</option>
+                  <option>-Pendón C. Kinesiología</option>
+                  <option>-Pendón C. Medicina</option>
+                  <option>-Pendón C. Nutrición</option>   
+                  <option>-Constancia Impresa</option>
+                  <option>-Constancia Digital</option>  
+                </select>
+                <small id="selectHelp" class="form-text text-muted">Para seleccionar mas de un valor presione ctrl+click.</small>
+              </div>
+              <fieldset class="form-group">
+                <legend class="col-form-label col-md-12">Requiere reunión de coordinación:</legend>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-yes" value="1">
+                      <label class="form-check-label" for="meeting-yes">
+                        Si
+                      </label>      
+                      <div class="need-reunion">
+                        <div class="form-row">
+                          <div class="col-md-6">
+                            <label for="hour-reunion">Hora de la reunion</label>
+                            <input type="time" class="form-control" placeholder="Hora: hh:mm" name="hour-reunion">   
+                          </div>
+                          <div class="col-md-6">
+                            <label for="date-reunion">Fecha de la reunion</label>
+                            <input type="date" class="form-control" placeholder="Fecha: dd/mm/yyyy" name="date-reunion">   
+                          </div>
+                        </div> 
+                      </div>                    
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2">
+                      <label class="form-check-label" for="meeting-no">
+                        No
+                      </label>
+                    </div>
+                  </div>                          
+                </div>      
+              </fieldset>  
+              <div class="form-group">
+                <label for="number-participants">Cantidad aproximada de participantes:</label>
+                <input type="number" class="form-control" id="number-participants" name="number-participants" placeholder="Cantidad aproximada de participantes">
+              </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-12">¿Requiere apoyo de la Departamento de Comunicación y Admisión de la UCN?</legend>
+                  <div class="col-sm-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="btn-radio1" id="support-yes" value="3">
+                      <label class="form-check-label" for="support-yes">
+                        Si
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4">
+                      <label class="form-check-label" for="support-no">
+                        No
+                      </label>
+                    </div>
+                  </div>                          
+                </div>   
+              </fieldset>
+              <div class="form-group">
+                <label for="need-support">Necesidad de Apoyo Tecnico:</label>
+                <textarea class="form-control" id="need-support" name="need-support" rows="3" placeholder="Especifique que apoyo tecnico necesita"></textarea>
+              </div> 
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="suplie-bandejas">Cantidad de bandejas necesarias:</label>
