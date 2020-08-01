@@ -6,7 +6,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css">
-        <link rel="stylesheet" href="static/css/Styles.css?v1.3">
+        <link rel="stylesheet" href="static/css/Styles.css?v1.4">
     </head>
     <body>
         <header>
@@ -22,7 +22,6 @@
                         <?php
                             if(!isset($_SESSION['user_id'])){
                                 echo '<li><a href="/login.php">Iniciar Sesión</a></li>';
-                                echo '<li><a href="/registro.php">Registro</a></li>';    
                             }
                             else if($_SESSION['user_admin_status']=='S'){
                                 echo '<li><a href="/dashboard.php">Todas las actividades</a></li>';

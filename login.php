@@ -7,7 +7,7 @@
         <meta charset="utf-8" />
         <title>Ingreso Academico</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link href="static/css/registrar.css?v1.2" rel="stylesheet"> 
+        <link href="static/css/ingresar.css?v1.2" rel="stylesheet"> 
     </head>
     <body>
     <div class="container">
@@ -77,7 +77,6 @@
                 <input type="submit" value="Ingresar" name="login-submit">
     
                 <p> Si quieres volver al Inicio click en <a href="index.php">Inicio</a></p>
-                <p>¿No te has registrado? <a href="registro.php">Click aqui</a></p>
             </form>
         </div>
             </div>
