@@ -170,7 +170,7 @@
             <fieldset disabled="disabled">
               <div class="form-group">
                 <label for="code-activity">Código de Actividad:</label>
-                <input type="text" class="form-control" id="code-activity" placeholder="Escriba el código de la actividad">
+                <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad">
               </div>        
             </fieldset>
             <?php
