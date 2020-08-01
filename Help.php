@@ -170,7 +170,7 @@
             <fieldset disabled="disabled">
               <div class="form-group">
                 <label for="code-activity">Código de Actividad:</label>
-                <input type="text" class="form-control" id="code-activity" placeholder="Escriba el código de la actividad">
+                <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad">
               </div>        
             </fieldset>
             <?php
@@ -182,16 +182,16 @@
             ?>
               <div class="form-group">
                 <label for="solicitante">Solicitante de ayuda:</label>
-                <input type="text" class="form-control" id="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda">
+                <input type="text" class="form-control" id="solicitante" name="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="correo">Correo:</label>
-                  <input type="text" class="form-control" id="correo" placeholder="Ejemplo: ejemplo@ucn.cl">
+                  <input type="text" class="form-control" id="correo" name="correo" placeholder="Ejemplo: ejemplo@ucn.cl">
                 </div>    
                 <div class="form-group col-md-6">
                   <label for="telefono">Teléfono:</label>
-                  <input type="text" class="form-control" id="telefono" placeholder="Ejemplo: +56 9 8756 4523">
+                  <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo: +56 9 8756 4523">
                 </div>   
               </div>  
               <div class="form-group">

@@ -1,0 +1,59 @@
+
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
+function enviarMail($numero_peticion){
+
+    if(isset($_POST['registrar-ayuda-submit'])){
+        require '..\PHPMailer\src\Exception.php';
+        require '..\PHPMailer\src\PHPMailer.php';
+        require '..\PHPMailer\src\SMTP.php';
+
+        //Create a new PHPMailer instance
+        $mail = new PHPMailer;
+
+        //Tell PHPMailer to use SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+
+        /* Username (email address). */
+        $mail->Username = 'brian.pardo@alumnos.ucn.cl';
+
+        /* Google account password. */
+        $mail->Password = 'yosoy123';
+
+        //Set who the message is to be sent from
+        $mail->setFrom('brian.pardo@alumnos.ucn.cl', 'SIVCM-FACMED bot');
+
+        //Set who the message is to be sent to
+        $mail->addAddress('brian.pardo@alumnos.ucn.cl', 'Usuario');
+
+        /* Set the subject. */
+        $mail->Subject = 'Solicitud de ayuda No: '.$numero_peticion;
+
+        /* Set the mail message body. */
+        $mail->Body = "Se ha ingresado el formulario de ayuda con número: ".$numero_peticion." al SIVCM-FACMED
+        
+        
+        
+        Este es un mensaje generado automáticamente.";
+
+        /* Finally send the mail. */
+        if (!$mail->send()){
+        /* PHPMailer error. */
+        echo $mail->ErrorInfo;
+        } else {
+            echo 'Message sent!';
+            exit();
+        }
+    }else{
+        header("Location ../dashboard.php");
+        exit();
+    }
+}
