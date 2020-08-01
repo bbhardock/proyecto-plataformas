@@ -33,7 +33,7 @@ function obtenerUsuariosPermitidos(){
 }
 function obtenerUsuariosDenegados(){
     require 'databaseHandler.inc.php';
-    $sql = "SELECT id_code,rut,nombre,correo_electronico FROM usuarios WHERE estado='D'";
+    $sql = "SELECT id_code,rut FROM usuarios WHERE estado='D'";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         return NULL;
@@ -46,7 +46,7 @@ function obtenerUsuariosDenegados(){
         }
         $JSONrespuesta = json_encode($rows);
         return $JSONrespuesta; 
-    } 
+    }
 }
 function permitirAccesoUsuario($idUsuario){
     require 'databaseHandler.inc.php';

@@ -47,8 +47,6 @@
                                                     <input type="checkbox" class="hidden" name="check[]" value="'.$result->id_code.'" id="chk'.$result->id_code.'">'.$indice.'
                                                 </td>
                                                 <td>'.$result->rut.'</td>
-                                                <td>'.$result->nombre.'</td>
-                                                <td>'.$result->correo_electronico.'</td>
                                                 <td>'.($result->es_admin == 'S' ? "Sí" : "No").'</td>
                                                 </tr>';
                                                 $indice++;
@@ -64,7 +62,7 @@
                 </div>
                 <div class="col-sm-12 col-md-5">
                     <div class="subtitle">
-                        <h3>Solicitudes de ingreso</h3>
+                        <h3>Usuarios Denegados</h3>
                     </div>  
                     <form method="post">
                         <div class="table-responsive ">
@@ -76,15 +74,13 @@
                                 <tbody style="cursor:pointer">
                                     <?php
                                         $indice = 1;
-                                        $json_decoded = json_decode(obtenerUsuariosPendientes());
+                                        $json_decoded = json_decode(obtenerUsuariosDenegados());
                                         foreach($json_decoded as $result){
                                             echo'<tr onclick="selectionP(this,'.$result->id_code.')">
                                                 <td>
                                                     <input type="checkbox" class="hidden" name="checkP[]" value="'.$result->id_code.'" id="chkP'.$result->id_code.'">'.$indice.'
                                                 </td>
                                                 <td>'.$result->rut.'</td>
-                                                <td>'.$result->nombre.'</td>
-                                                <td>'.$result->correo_electronico.'</td>
                                                 </tr>';
                                                 $indice++;
                                         }
@@ -92,8 +88,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <input type="submit" class ="btn btn-success" value="Permitir acceso" name="btn-access">
-                        <input type="submit" class ="btn btn-danger" value="No permitir" name="btn-denied">        
+                        <input type="submit" class ="btn btn-success" value="Permitir acceso" name="btn-access">    
                     </form>                        
                 </div>     
             </div>
@@ -174,7 +169,7 @@
         if(isset($_POST['btn-pop'])){
             if(isset($_POST['check'])){
                 foreach($_POST['check'] as $valor){
-                    eliminarUsuario($valor);
+                    denegarAccesoUsuario($valor);
                 }
                 $secondsWait = 0;
                 echo '<meta http-equiv="refresh" content="'.$secondsWait.'">';
