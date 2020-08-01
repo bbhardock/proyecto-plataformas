@@ -1,4 +1,15 @@
 <?php
+function insertarUsuario($rut){
+    require 'databaseHandler.inc.php';
+    $sql = "INSERT INTO usuarios(rut,estado,es_admin)
+    VALUES (?,'A','N')";
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return null;
+    } else {
+        mysqli_stmt_bind_param($stmt, "s", $rut);
+        mysqli_stmt_execute($stmt);
+    }                
+}
 function obtenerUsuariosPermitidos(){
     require 'databaseHandler.inc.php';
     $sql = "SELECT id_code,rut,nombre,correo_electronico,es_admin FROM usuarios WHERE estado='A'";

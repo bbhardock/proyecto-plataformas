@@ -2,11 +2,14 @@
 if(isset($_POST['registrar-submit'])){
 
     require 'databaseHandler.inc.php';
+    
 
     $rut = $_POST['rut'];
     $nombre = $_POST['nombre'];
-    $telefono = $_POST['telefono'];
-    $email = $_POST['email'];
+    
+    #$telefono = $_POST['telefono'];
+    #$email = $_POST['email'];
+    
 
     if(!preg_match("/^[0-9kK]*$/",$rut) && !filter_var($email, FILTER_VALIDATE_EMAIL)){
         header("Location: ../registro.php?error=rutemailinvalido&nombre=".$nombre."&telefono=".$telefono);
@@ -15,6 +18,7 @@ if(isset($_POST['registrar-submit'])){
     else if(!preg_match("/^[0-9kK]*$/",$rut)){
         header("Location: ../registro.php?error=rutinvalido&nombre=".$nombre."&telefono=".$telefono."&email=".$email);
         exit();
+    /*
     }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         header("Location: ../registro.php?error=emailinvalido&rut=".$rut."&nombre=".$nombre."&telefono=".$telefono);
         exit();
@@ -22,6 +26,7 @@ if(isset($_POST['registrar-submit'])){
         header("Location: ../registro.php?error=telefonoinvalido&rut=".$rut."&nombre=".$nombre."&email=".$email);
         exit(); 
     }
+    */
     else{
         $sql = "SELECT id_code FROM usuarios WHERE UPPER(rut)=?";
         $stmt = mysqli_stmt_init($conn);
