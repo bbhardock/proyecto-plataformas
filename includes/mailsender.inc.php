@@ -23,16 +23,16 @@ function enviarMail($numero_peticion){
         $mail->SMTPSecure = 'tls';
 
         /* Username (email address). */
-        $mail->Username = 'brian.pardo@alumnos.ucn.cl';
+        $mail->Username = 'cuenta';
 
         /* Google account password. */
-        $mail->Password = 'yosoy123';
+        $mail->Password = 'password';
 
         //Set who the message is to be sent from
-        $mail->setFrom('brian.pardo@alumnos.ucn.cl', 'SIVCM-FACMED bot');
+        $mail->setFrom('cuenta', 'SIVCM-FACMED bot');
 
         //Set who the message is to be sent to
-        $mail->addAddress('brian.pardo@alumnos.ucn.cl', 'Usuario');
+        $mail->addAddress('cuenta', 'Usuario');
 
         /* Set the subject. */
         $mail->Subject = 'Solicitud de ayuda No: '.$numero_peticion;
