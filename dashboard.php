@@ -7,9 +7,10 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang = "es"><head>
+<html lang = "es">
+    <head>
         <meta charset="utf-8" />
-        <title>Manejo de Usuarios</title>
+        <title>Manejo de Actividades</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css?v1.6">

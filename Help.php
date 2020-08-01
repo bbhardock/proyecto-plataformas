@@ -42,16 +42,10 @@
                 <label for="unity">Unidad:</label>
                 <input type="text" class="form-control" id="unity">
               </div>     
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="coordinador">Coordinador de la actividad:</label>
-                  <input type="text" class="form-control" id="coordinador" placeholder="Escriba el nombre del coordinador de la actividad">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="phone-coordinador">Telefono del coordinador</label>
-                  <input type="text" class="form-control" id="phone-coordinador" placeholder="Ejemplo: +56985671485">
-                </div>
-              </div> 
+              <div class="form-group">
+                <label for="coordinador">Coordinador de la actividad:</label>
+                <input type="text" class="form-control" id="coordinador" placeholder="Escriba el nombre del coordinador de la actividad">
+              </div>
               <div class="form-row">     
                 <div class="form-group col-md-6">
                   <label for="start-date">Fecha de inicio:</label>
