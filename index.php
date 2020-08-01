@@ -12,10 +12,27 @@
         <meta charset="utf-8" />
         <title>Vinculación con el medio</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="static/css/fontello.css?v1.6">
-        <link rel="stylesheet" href="static/css/Styles.css?v3.6">
-        <link rel='stylesheet' href='static/css/main.css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
+        <link rel="stylesheet" href="static/css/Styles.css?v3.6"/>
+        <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
+        <link href='static/fullcalendar/daygrid/main.css' rel='stylesheet' />
+
+        <script src='static/fullcalendar/core/main.js'></script>
+        <script src='static/fullcalendar/daygrid/main.js'></script>
+        
+        <script>
+           document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar');
+
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'dayGrid' ]
+                });
+
+                calendar.render();
+            });
+
+        </script>
     </head>
     <body>
         <section class="main">
@@ -23,7 +40,7 @@
                 <div class="row">
                     <div class="col"></div>
                     <div class="col-7">
-                        <div id='CalendarioWeb'></div>
+                        <div id='calendar'></div>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -32,23 +49,8 @@
         <?php
             require 'footer.php';
         ?>
-        <script>
-
-            document.addEventListener('DOMContentLoaded', function() {
-                var calendarEl = document.getElementById('CalendarioWeb');
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-                    left: 'today prev,next', // will normally be on the left. if RTL, will be on the right
-                    center: 'title',
-                    right: 'prevYear,nextYear,dayGridMonth' // will normally be on the right. if RTL, will be on the left
-                });
-                calendar.render();
-            });
-
-        </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src='static/fullcalendar/main.js'></script>
-        <script src='static/fullcalendar/es.js'></script>
     </body>
 </html>

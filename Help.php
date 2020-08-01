@@ -182,21 +182,21 @@
             ?>
               <div class="form-group">
                 <label for="solicitante">Solicitante de ayuda:</label>
-                <input type="text" class="form-control" id="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda">
+                <input type="text" class="form-control" id="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda" required="">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="correo">Correo:</label>
-                  <input type="text" class="form-control" id="correo" placeholder="Ejemplo: ejemplo@ucn.cl">
+                  <input type="text" class="form-control" id="correo" placeholder="Ejemplo: ejemplo@ucn.cl" required="">
                 </div>    
                 <div class="form-group col-md-6">
                   <label for="telefono">Teléfono:</label>
-                  <input type="text" class="form-control" id="telefono" placeholder="Ejemplo: +56 9 8756 4523">
+                  <input type="text" class="form-control" id="telefono" placeholder="Ejemplo: +56 9 8756 4523" required="">
                 </div>   
               </div>  
               <div class="form-group">
                 <label for="logistic-support">Apoyo en la logística:</label>
-                <select multiple="true" class="form-control"  id="logistic-support" name="logistic-support[]" aria-describedby="selectHelp">
+                <select multiple="true" class="form-control"  id="logistic-support" name="logistic-support[]" aria-describedby="selectHelp" required="">
                   <option>-Ninguno-</option>
                   <option>-Pendón FAMED</option>
                   <option>-Pendón C. Enfermería</option>
@@ -231,7 +231,7 @@
                       </div>                    
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2">
+                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2" checked>
                       <label class="form-check-label" for="meeting-no">
                         No
                       </label>
@@ -241,7 +241,7 @@
               </fieldset>  
               <div class="form-group">
                 <label for="number-participants">Cantidad aproximada de participantes:</label>
-                <input type="number" class="form-control" id="number-participants" name="number-participants" placeholder="Cantidad aproximada de participantes">
+                <input type="number" class="form-control" id="number-participants" name="number-participants" placeholder="Cantidad aproximada de participantes" required="">
               </div>
               <fieldset class="form-group">
                 <div class="row">
@@ -252,9 +252,9 @@
                       <label class="form-check-label" for="support-yes">
                         Si
                       </label>
-                    </div>
+                    </div> 
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4">
+                      <input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4" checked>
                       <label class="form-check-label" for="support-no">
                         No
                       </label>
@@ -264,30 +264,30 @@
               </fieldset>
               <div class="form-group">
                 <label for="need-support">Necesidad de Apoyo Tecnico:</label>
-                <textarea class="form-control" id="need-support" name="need-support" rows="3" placeholder="Especifique que apoyo tecnico necesita"></textarea>
+                <textarea class="form-control" id="need-support" name="need-support" rows="3" placeholder="Especifique que apoyo tecnico necesita" required=""></textarea>
               </div> 
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="suplie-bandejas">Cantidad de bandejas necesarias:</label>
-                  <input type="number" class="form-control" id="suplie-bandejas" name="suplie-bandejas" placeholder="Número de bandejas">
+                  <input type="number" class="form-control" id="suplie-bandejas" name="suplie-bandejas" placeholder="Número de bandejas" required="">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="suplie-tapetes">Cantidad de tapetes necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-tapetes" name="suplie-tapetes" placeholder="Número de tapetes">
+                  <input type="number" class="form-control" id="suplie-tapetes" name="suplie-tapetes" placeholder="Número de tapetes" required="">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="suplie-sillas">Cantidad de sillas necesarias:</label>
-                  <input type="number" class="form-control" id="suplie-sillas" name="suplie-sillas" placeholder="Número de sillas">
+                  <input type="number" class="form-control" id="suplie-sillas" name="suplie-sillas" placeholder="Número de sillas" required="">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="suplie-paneles">Cantidad de paneles necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-paneles" name="suplie-paneles" placeholder="Número de paneles">
+                  <input type="number" class="form-control" id="suplie-paneles" name="suplie-paneles" placeholder="Número de paneles" required="">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="suplie-toldos">Cantidad de toldos necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-toldos" name="suplie-toldos" placeholder="Número de toldos">
+                  <input type="number" class="form-control" id="suplie-toldos" name="suplie-toldos" placeholder="Número de toldos" required="">
                 </div>
               </div>     
               <div class="form-group">
