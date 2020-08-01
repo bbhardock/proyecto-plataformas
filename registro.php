@@ -95,13 +95,7 @@
 
                 <label for="name">Nombre</label>
                 <input type="text" placeholder="Ingrese su Nombre" required="" name="nombre" value="<?php echo $nombre; ?>" >
-
-                <label for="telefono">Teléfono</label>
-                <input maxlength="12" minlength="8" type="text" placeholder="Numero telefonico" required="" name="telefono" value="<?php echo $telefono; ?>">
-
-                <label for="correo">Correo Electrónico</label>
-                <input type="text" placeholder="Ingrese su correo" required="" name="email" value="<?php echo $correo_electronico; ?>">
-
+               
                 <input type="checkbox" name="honorario" id="btn-pass">
                 <label for="btn-pass">¿No posee cuenta online UCN?</label>
 
