@@ -18,7 +18,7 @@ function login_tongoy($rut,$pass){
     $data = json_decode($result); //como llega en json hay que convertirlo
     return $data->status;
 }
-function iniciar_sesion($rut,$pass,$row){
+function iniciar_sesion($rut,$password,$row){
     $resultado = login_tongoy($rut,$password);
     if($resultado == 'ok'){
         session_start();
@@ -33,6 +33,7 @@ function iniciar_sesion($rut,$pass,$row){
     }
 }
 function obtener_datos_usuario($rut){
+    require 'databaseHandler.inc.php';
     $sql = "SELECT * FROM usuarios WHERE rut=?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -44,32 +45,31 @@ function obtener_datos_usuario($rut){
         $result = mysqli_stmt_get_result($stmt);
         if($row = mysqli_fetch_assoc($result)){
             return $row;
-        else{
-            return null;
+        }else{
+            return NULL;
         }
+    }
 }
 if (isset($_POST['login-submit'])){
     require 'queries.inc.php';
-    require 'databaseHandler.inc.php';
 
     $rut = $_POST['rut'];
     $password = $_POST['password'];
 
     $row = obtener_datos_usuario($rut);
-    if(!is_null($datos_usuario)){//AQUÍ ENTRA SI EL USUARIO EXISTE
+
+    if(isset($row)){//AQUÍ ENTRA SI EL USUARIO EXISTE
         $estado_usuario = $row['estado'];
         if($estado_usuario == 'A'){
-            iniciar_sesion($rut,$pass,$row);
+            iniciar_sesion($rut,$password,$row);
         }else if($estado_usuario == 'D'){
             header("Location: ../login.php?error=usuarioDenegado");
             exit();
         }
     }else{//SI NO ESTÁ INGRESADO, DEBERÍA SER INGRESADO A LA BASE DE DATOS
         insertarUsuario($rut);
-        $row = obtener_datos_usuario($rut); //no revisar porque el usuario recien insertado tiene permisos
-        iniciar_sesion($rut,$pass,$row);
-    }
-
+        $row = obtener_datos_usuario($rut); //no revisar porque el usuario recien insertado tiene permiso
+        iniciar_sesion($rut,$password,$row);
     }
 
 }else{

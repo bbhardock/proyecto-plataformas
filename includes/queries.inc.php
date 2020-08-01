@@ -3,8 +3,9 @@ function insertarUsuario($rut){
     require 'databaseHandler.inc.php';
     $sql = "INSERT INTO usuarios(rut,estado,es_admin)
     VALUES (?,'A','N')";
+    $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     } else {
         mysqli_stmt_bind_param($stmt, "s", $rut);
         mysqli_stmt_execute($stmt);
@@ -12,12 +13,12 @@ function insertarUsuario($rut){
 }
 function obtenerUsuariosPermitidos(){
     require 'databaseHandler.inc.php';
-    $sql = "SELECT id_code,rut,nombre,correo_electronico,es_admin FROM usuarios WHERE estado='A'";
+    $sql = "SELECT id_code,rut,es_admin FROM usuarios WHERE estado='A'";
     $stmt = mysqli_stmt_init($conn);
     $respuesta = new \stdClass();
     $JSONrespuesta;
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     }else{
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
@@ -30,12 +31,12 @@ function obtenerUsuariosPermitidos(){
         return $JSONrespuesta; 
     }
 }
-function obtenerUsuariosPendientes(){
+function obtenerUsuariosDenegados(){
     require 'databaseHandler.inc.php';
-    $sql = "SELECT id_code,rut,nombre,correo_electronico FROM usuarios WHERE estado='P'";
+    $sql = "SELECT id_code,rut,nombre,correo_electronico FROM usuarios WHERE estado='D'";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     }else{
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
@@ -52,7 +53,7 @@ function permitirAccesoUsuario($idUsuario){
     $sql = "UPDATE usuarios SET estado='A' WHERE id_code=?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     }else{
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
@@ -63,7 +64,7 @@ function denegarAccesoUsuario($idUsuario){
     $sql = "UPDATE usuarios SET estado='D' WHERE id_code=?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     }else{
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
@@ -74,7 +75,7 @@ function hacerAdminUsuarioPermitido($idUsuario){
     $sql = "UPDATE usuarios SET es_admin='S' WHERE id_code=?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     }else{
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
@@ -85,7 +86,7 @@ function deshacerAdminUsuarioPermitido($idUsuario){
     $sql = "UPDATE usuarios SET es_admin='N' WHERE id_code=?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     }else{
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
@@ -96,7 +97,7 @@ function eliminarUsuario($idUsuario){
     $sql = "DELETE FROM usuarios WHERE id_code=?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        return null;
+        return NULL;
     }else{
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
