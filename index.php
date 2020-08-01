@@ -14,11 +14,31 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css?v1.6">
-        <link rel="stylesheet" href="static/css/Styles.css?v3.5">
+        <link rel="stylesheet" href="static/css/Styles.css?v3.6">
+        <link rel='stylesheet' href='static/css/main.css'>
+        <script src='static/fullcalendar/main.js'></script>
+        <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+            });
+            calendar.render();
+        });
+
+        </script>
     </head>
     <body>
         <section class="main">
             <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-7">
+                        <div id='calendar'></div>
+                    </div>
+                    <div class="col"></div>
+                </div>
             </div>
         </section>
         <?php
