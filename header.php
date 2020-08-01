@@ -22,7 +22,6 @@
                         <?php
                             if(!isset($_SESSION['user_id'])){
                                 echo '<li><a href="/login.php">Iniciar Sesión</a></li>';
-                                echo '<li><a href="/registro.php">Registro</a></li>';    
                             }
                             else if($_SESSION['user_admin_status']=='S'){
                                 echo '<li><a href="/dashboard.php">Todas las actividades</a></li>';

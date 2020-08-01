@@ -180,6 +180,10 @@
                 echo "<fieldset>";
               }
             ?>
+              <div class="form-group">
+                <label for="solicitante">Solicitante de ayuda:</label>
+                <input type="text" class="form-control" id="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda">
+              </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="correo">Correo:</label>
