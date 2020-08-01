@@ -20,7 +20,7 @@ if(isset($_POST['registrar-ayuda-submit'])){
     $suplie_otros = $_POST["suplie-otros"];
 
 
-    enviarMail($code_activity);
+    //enviarMail($code_activity);
     header("Location: ../dashboard.php?");
     exit();
 }else{
