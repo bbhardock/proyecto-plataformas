@@ -7,6 +7,7 @@
     color: rgba(58, 43, 43, 0.5);
     background: linear-gradient(rgb(255, 255, 255),rgb(211, 211, 211,0.5) );
     border-top: lightslategrey;
+    font-family: 'Myriad Pro', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
 }
 .footer .acreditacion{
     top: 15px ;

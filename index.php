@@ -35,17 +35,15 @@
         </script>
     </head>
     <body>
-        <section class="main">
-            <div class="container">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-7">
-                        <div id='calendar'></div>
-                    </div>
-                    <div class="col"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-7">
+                    <div id='calendar'></div>
                 </div>
+                <div class="col"></div>
             </div>
-        </section>
+        </div>
         <?php
             require 'footer.php';
         ?>
