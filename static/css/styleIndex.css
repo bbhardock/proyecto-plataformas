@@ -1,5 +1,4 @@
 @import url(menu.css?v1.9);
-@import url(table.css?v1.5);
 @import url(titles.css?v1.4);
 @import url(buttons.css?v1.1);
 @import url(footer.css?v1.14);
@@ -31,25 +30,4 @@ body{
     height: auto;
     margin: 10px auto;
     width: 90%;
-}
-.hidden{
-    display: none;
-}
-
-.form-group{
-    margin-top: 10px;
-}
-.square-ok{
-    margin: auto;
-    background: rgb(2, 163, 2);
-    border-radius: 10px;
-    color: white;
-    width: 60%;
-}
-.square-cancel{
-    margin: auto;
-    background: red;
-    border-radius: 10px;
-    color: white;
-    width: 60%;
 }
