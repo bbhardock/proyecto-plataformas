@@ -32,24 +32,7 @@ function iniciar_sesion($rut,$password,$row){
         exit();
     }
 }
-function obtener_datos_usuario($rut){
-    require 'databaseHandler.inc.php';
-    $sql = "SELECT * FROM usuarios WHERE rut=?";
-    $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt, $sql)){
-        header("Location: ../login.php?error=sqlerror");
-        exit();
-    }else{    
-        mysqli_stmt_bind_param($stmt,"s",$rut);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        if($row = mysqli_fetch_assoc($result)){
-            return $row;
-        }else{
-            return NULL;
-        }
-    }
-}
+
 if (isset($_POST['login-submit'])){
     require 'queries.inc.php';
 
@@ -67,9 +50,15 @@ if (isset($_POST['login-submit'])){
             exit();
         }
     }else{//SI NO ESTÁ INGRESADO, DEBERÍA SER INGRESADO A LA BASE DE DATOS
-        insertarUsuario($rut);
-        $row = obtener_datos_usuario($rut); //no revisar porque el usuario recien insertado tiene permiso
-        iniciar_sesion($rut,$password,$row);
+        $status = login_tongoy($rut,$password);
+        if($status == 'ok'){
+            insertarUsuario($rut);
+            $row = obtener_datos_usuario($rut); //no revisar porque el usuario recien insertado tiene permiso
+            iniciar_sesion($rut,$password,$row);
+        }else{
+            header("Location: ../login.php?error=passincorrecta");
+            exit();
+        }
     }
 
 }else{
