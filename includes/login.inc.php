@@ -50,9 +50,15 @@ if (isset($_POST['login-submit'])){
             exit();
         }
     }else{//SI NO ESTÁ INGRESADO, DEBERÍA SER INGRESADO A LA BASE DE DATOS
-        insertarUsuario($rut);
-        $row = obtener_datos_usuario($rut); //no revisar porque el usuario recien insertado tiene permiso
-        iniciar_sesion($rut,$password,$row);
+        $status = login_tongoy($rut,$password);
+        if($status == 'ok'){
+            insertarUsuario($rut);
+            $row = obtener_datos_usuario($rut); //no revisar porque el usuario recien insertado tiene permiso
+            iniciar_sesion($rut,$password,$row);
+        }else{
+            header("Location: ../login.php?error=passincorrecta");
+            exit();
+        }
     }
 
 }else{
