@@ -16,7 +16,7 @@
       <meta name="viewport" content="width = device-width, user-scalable = no">
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.1">
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.2">
   </head>
   <body>
     <section class="main">
@@ -196,17 +196,15 @@
               </div>  
               <div class="form-group">
                 <label for="logistic-support">Apoyo en la logística:</label>
-                <select multiple="true" class="form-control"  id="logistic-support" name="logistic-support[]" aria-describedby="selectHelp" required="">
-                  <option>-Ninguno-</option>
-                  <option>-Pendón FAMED</option>
-                  <option>-Pendón C. Enfermería</option>
-                  <option>-Pendón C. Kinesiología</option>
-                  <option>-Pendón C. Medicina</option>
-                  <option>-Pendón C. Nutrición</option>   
-                  <option>-Constancia Impresa</option>
-                  <option>-Constancia Digital</option>  
-                </select>
-                <small id="selectHelp" class="form-text text-muted">Para seleccionar mas de un valor presione ctrl+click.</small>
+                <ul class="apoyo_seleccion">
+                  <li><input type="checkbox" name="" id="FAMED"><label for="FAMED">Pendón FAMED</label></li>
+                  <li><input type="checkbox" name="" id="Enfermeria"><label for="Enfermeria">Pendón C. Enfermería</label></li>
+                  <li><input type="checkbox" name="" id="Kinesiologia"><label for="Kinesiologia">Pendón C. Kinesiología</label></li>
+                  <li><input type="checkbox" name="" id="Medicina"><label for="Medicina">Pendón C. Medicina</label></li>
+                  <li><input type="checkbox" name="" id="Nutricion"><label for="Nutricion">Pendón C. Nutrición</label></li>
+                  <li><input type="checkbox" name="" id="Impresa"><label for="Impresa">Constancia Impresa</label></li>
+                  <li><input type="checkbox" name="" id="Digital"><label for="Digital">Constancia Digital</label></li>
+                </ul>        
               </div>
               <fieldset class="form-group">
                 <legend class="col-form-label col-md-12">Requiere reunión de coordinación:</legend>
@@ -252,6 +250,17 @@
                       <label class="form-check-label" for="support-yes">
                         Si
                       </label>
+                      <div class="need-reunion">
+                        <div class="form-row">
+                          <div class="col-md-12">
+                            <label for="link-meeting">Link formulario del Departamento de Comunicación:</label>
+                          </div>
+                          <div class="col-md-12">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVFJJ1Ucet7rqNi_Jrb9IdbOZ9bjHk8W_7YSvWX5IJ-pmKjA/viewform?c=0&w=1" target="null">
+                            Click aqui para ingresar al formulario</a>                       
+                          </div>
+                        </div> 
+                      </div>   
                     </div> 
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4" checked>
