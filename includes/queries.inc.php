@@ -9,7 +9,8 @@ function insertarUsuario($rut){
     } else {
         mysqli_stmt_bind_param($stmt, "s", $rut);
         mysqli_stmt_execute($stmt);
-    }                
+    }
+    mysqli_close($conn);                
 }
 function obtener_datos_usuario($rut){
     require 'databaseHandler.inc.php';
@@ -28,6 +29,7 @@ function obtener_datos_usuario($rut){
             return NULL;
         }
     }
+    mysqli_close($conn);
 }
 function obtenerUsuariosPermitidos(){
     require 'databaseHandler.inc.php';
@@ -48,6 +50,7 @@ function obtenerUsuariosPermitidos(){
         $JSONrespuesta = json_encode($rows);
         return $JSONrespuesta; 
     }
+    mysqli_close($conn);
 }
 function obtenerUsuariosDenegados(){
     require 'databaseHandler.inc.php';
@@ -65,6 +68,7 @@ function obtenerUsuariosDenegados(){
         $JSONrespuesta = json_encode($rows);
         return $JSONrespuesta; 
     }
+    mysqli_close($conn);
 }
 function permitirAccesoUsuario($idUsuario){
     require 'databaseHandler.inc.php';
@@ -76,6 +80,7 @@ function permitirAccesoUsuario($idUsuario){
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
     }
+    mysqli_close($conn);
 }
 function denegarAccesoUsuario($idUsuario){
     require 'databaseHandler.inc.php';
@@ -87,6 +92,7 @@ function denegarAccesoUsuario($idUsuario){
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
     }
+    mysqli_close($conn);
 }
 function hacerAdminUsuarioPermitido($idUsuario){
     require 'databaseHandler.inc.php';
@@ -98,6 +104,7 @@ function hacerAdminUsuarioPermitido($idUsuario){
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
     }
+    mysqli_close($conn);
 }
 function deshacerAdminUsuarioPermitido($idUsuario){
     require 'databaseHandler.inc.php';
@@ -109,6 +116,7 @@ function deshacerAdminUsuarioPermitido($idUsuario){
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
     }
+    mysqli_close($conn);
 }
 function eliminarUsuario($idUsuario){
     require 'databaseHandler.inc.php';
@@ -120,8 +128,30 @@ function eliminarUsuario($idUsuario){
         mysqli_stmt_bind_param($stmt,"i",$idUsuario);
         mysqli_stmt_execute($stmt);
     }
+    mysqli_close($conn);
 }
-/*
-header("Location: ../index.php"); //redirige para que no se acceda a este archivo
-exit();
-*/
+
+function insertarActividad($code_activity,$nombre,$correo,$telefono,$requiere_reunion,$hour_reunion,$date_reunion,$number_participants,
+    $requiere_apoyo_com,$apoyo_tecnico,$suplie_bandejas,$suplie_tapetes,$suplie_sillas,$suplie_paneles,$suplie_toldos,$suplie_otros,
+    $pendon_famed,$pendon_enfermeria,$pendon_kine,$pendon_medi,$pendon_nutri,$constancia_impresa,$constancia_digital){
+    
+    require 'databaseHandler.inc.php';
+    $sql = 'INSERT INTO actividades (id_vinculacion,nombre_solicitante,correo,telefono,logistica_pendon_famed_S_N,logistica_pendon_kine_S_N,
+    logistica_pendon_medi_S_N,logistica_pendon_nutri_S_N,logistica_const_impresa_S_N,logistica_const_digital_S_N,requiere_reunion_S_N,fecha_reunion,
+    hora_reunion,cantidad_aprox_participantes,cant_insumo_bandejas,cant_insumo_tapetes,cant_insumo_sillas,cant_insumo_paneles,
+    cant_insumo_toldos,cant_insumo_otros) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return NULL;
+    } else {
+        mysqli_stmt_bind_param($stmt, "sssssssssssssiiiiiii", $code_activity,$nombre,$correo,$telefono,$pendon_famed,$pendon_kine,$pendon_medi,$pendon_nutri,
+        $constancia_impresa,$constancia_digital,$requiere_reunion,$date_reunion,$hour_reunion,$number_participants,$suplie_bandejas,$suplie_tapetes,$suplie_sillas,
+        $suplie_paneles,$suplie_toldos,$suplie_otros);
+        mysqli_stmt_execute($stmt);
+        return mysqli_stmt_error($stmt);
+    }
+    mysqli_close($conn);                
+}
+
+
