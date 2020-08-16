@@ -195,13 +195,13 @@
               <div class="form-group">
                 <label for="logistic-support">Apoyo en la logística:</label>
                 <ul class="apoyo_seleccion">
-                  <li><input type="checkbox" name="FAMED" id="FAMED"><label for="FAMED">Pendón FAMED</label></li>
-                  <li><input type="checkbox" name="Enfermeria" id="Enfermeria"><label for="Enfermeria">Pendón C. Enfermería</label></li>
-                  <li><input type="checkbox" name="Kinesiologia" id="Kinesiologia"><label for="Kinesiologia">Pendón C. Kinesiología</label></li>
-                  <li><input type="checkbox" name="Medicina" id="Medicina"><label for="Medicina">Pendón C. Medicina</label></li>
-                  <li><input type="checkbox" name="Nutricion" id="Nutricion"><label for="Nutricion">Pendón C. Nutrición</label></li>
-                  <li><input type="checkbox" name="Impresa" id="Impresa"><label for="Impresa">Constancia Impresa</label></li>
-                  <li><input type="checkbox" name="Digital" id="Digital"><label for="Digital">Constancia Digital</label></li>
+                  <li><input type="checkbox" name="logistic[]" id="FAMED" value="FAMED"><label for="FAMED">Pendón FAMED</label></li>
+                  <li><input type="checkbox" name="logistic[]"  id="Enfermeria" value="Enfermeria"><label for="Enfermeria">Pendón C. Enfermería</label></li>
+                  <li><input type="checkbox" name="logistic[]"  id="Kinesiologia" value="Kinesiologia"><label for="Kinesiologia">Pendón C. Kinesiología</label></li>
+                  <li><input type="checkbox" name="logistic[]"  id="Medicina" value="Medicina"><label for="Medicina">Pendón C. Medicina</label></li>
+                  <li><input type="checkbox" name="logistic[]"  id="Nutricion" value="Nutricion"><label for="Nutricion">Pendón C. Nutrición</label></li>
+                  <li><input type="checkbox" name="logistic[]"  id="Impresa" value="Impresa"><label for="Impresa">Constancia Impresa</label></li>
+                  <li><input type="checkbox" name="logistic[]"  id="Digital" value="Digital"><label for="Digital">Constancia Digital</label></li>
                 </ul>        
               </div>
               <fieldset class="form-group">
