@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require "header.php";
     require 'includes/queries.inc.php';
     if(!isset($_SESSION['user_id']) || !isset($_GET['modo'])){
         header("Location: dashboard.php");
@@ -18,7 +17,10 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="static/css/styleActivitie.css?v2.2">
   </head>
-  <body>
+  <body> 
+    <?php
+      require "header.php";
+    ?>  
     <section class="main">
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">

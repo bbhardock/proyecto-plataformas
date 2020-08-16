@@ -4,7 +4,6 @@
         header("Location: dashboard.php");
         exit();
     }
-    require "header.php";
 ?>
 <!DOCTYPE html> 
 <html>
@@ -19,31 +18,58 @@
         <link href='static/fullcalendar/daygrid/main.css' rel='stylesheet' />
 
         <script src='static/fullcalendar/core/main.js'></script>
+        <script src='static/fullcalendar/core/locales/es.js'></script>
         <script src='static/fullcalendar/daygrid/main.js'></script>
+        <script src='static/fullcalendar/moment/main.js'></script>
         
         <script>
            document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
 
                 var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: [ 'dayGrid' ]
+                    plugins: ['bootstrap', 'interaction', 'dayGrid', 'timeGrid'],
+                    header: {
+                        left: 'title',
+                        center: '',
+                        right: 'today prev,next',
+                        
+                    },
+                    events:[
+                        {
+                            title: 'Actividad 1, Junta con hospital de coquimbo',
+                            start: '2020-08-19',
+                            end: '2020-08-23'
+                        },
+                        {
+                            title: 'Actividad 1, Junta con hospital de coquimbo',
+                            start: '2020-08-24',
+                            end: '2020-08-26'
+                        }
+                    ],
+                    editable: false, //Los eventos en el calendario no pueden ser editable
+                    droppable: true, //Permite que los eventos puedan dropear en el calendario
+                    locale: 'es', //Los dias del calendario las deja en español
+                    themeSystem: 'standard' //Se utiliza el theme standar
+                    
                 });
-
-                calendar.render();
+            calendar.render();
             });
-
         </script>
     </head>
     <body>
+    <?php
+        require "header.php";
+    ?>  
+    <section class="main">
         <div class="container">
             <div class="row">
                 <div class="col"></div>
-                <div class="col-7">
+                <div class="col-5">
                     <div id='calendar'></div>
                 </div>
-                <div class="col"></div>
             </div>
-        </div>
+        </div>    
+    </section>
         <?php
             require 'footer.php';
         ?>

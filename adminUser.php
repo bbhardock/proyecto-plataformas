@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require "header.php";
     require 'includes/queries.inc.php';
     if(!isset($_SESSION['user_id']) || $_SESSION['user_admin_status'] != 'S'){
         header("Location: dashboard.php");
@@ -18,6 +17,9 @@
         <link rel="stylesheet" href="static/css/Styles.css?v2.11">
     </head>
     <body>
+        <?php
+        require "header.php";
+        ?>  
         <section class="main">
             <div class="container-Title">
                 <div class="container row col-md-12">

@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require "header.php";
     if(!isset($_SESSION['user_id'])){
         header("Location: index.php");
         exit();
@@ -14,9 +13,12 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css?v1.6">
-        <link rel="stylesheet" href="static/css/Styles.css?v3.8">
+        <link rel="stylesheet" href="static/css/Styles.css?v3.12">
     </head>
     <body>
+        <?php
+            require "header.php";
+        ?>  
         <section class="main">
             <div class="container-Title">
                 <div class="container row col-md-12">
@@ -94,7 +96,7 @@
                         </select>
                         <button class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
                         <div class="table-responsive ">
-                            <table class="table-bordered tableA">
+                            <table class="table-bordered tableDash tableA">
                                 <thead>
                                     <tr>      
                                         <th rowspan="2">Codigo</th>
@@ -177,7 +179,7 @@
                             echo '    </select>';
                             echo '    <button class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>';
                             echo '    <div class="table-responsive ">';
-                            echo '        <table class="table-bordered tableA">';
+                            echo '        <table class="tableDash table-bordered tableA">';
                             echo '            <thead>';
                             echo '                <tr>';
                             echo '                    <th>Nombre Encargado</th>';
