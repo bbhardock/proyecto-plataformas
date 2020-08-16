@@ -8,9 +8,9 @@ use PHPMailer\PHPMailer\Exception;
 function enviarMail($numero_peticion){
 
     if(isset($_POST['registrar-ayuda-submit'])){
-        require '..\PHPMailer\src\Exception.php';
-        require '..\PHPMailer\src\PHPMailer.php';
-        require '..\PHPMailer\src\SMTP.php';
+        require '..\static\PHPMailer\src\Exception.php';
+        require '..\static\PHPMailer\src\PHPMailer.php';
+        require '..\static\PHPMailer\src\SMTP.php';
 
         //Create a new PHPMailer instance
         $mail = new PHPMailer;

@@ -167,12 +167,10 @@
                 <small>Solicitud a Vinculación con el Medio</small>
               </div>
             </div>
-            <fieldset disabled="disabled">
-              <div class="form-group">
-                <label for="code-activity">Código de Actividad:</label>
-                <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad">
-              </div>        
-            </fieldset>
+            <div class="form-group">
+              <label for="code-activity">Código de Actividad:</label>
+              <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad" readonly="readonly" <?php echo 'value='.$_GET['id']?>>
+            </div>
             <?php
               if($modo == 'ver'){
                 echo "<fieldset disabled>";
@@ -182,28 +180,28 @@
             ?>
               <div class="form-group">
                 <label for="solicitante">Solicitante de ayuda:</label>
-                <input type="text" class="form-control" id="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda" required="">
+                <input type="text" class="form-control" id="solicitante" name="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda" required="">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="correo">Correo:</label>
-                  <input type="text" class="form-control" id="correo" placeholder="Ejemplo: ejemplo@ucn.cl" required="">
+                  <input type="text" class="form-control" id="correo" name="correo" placeholder="Ejemplo: ejemplo@ucn.cl" required="">
                 </div>    
                 <div class="form-group col-md-6">
                   <label for="telefono">Teléfono:</label>
-                  <input type="text" class="form-control" id="telefono" placeholder="Ejemplo: +56 9 8756 4523" required="">
+                  <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo: +56 9 8756 4523" required="">
                 </div>   
               </div>  
               <div class="form-group">
                 <label for="logistic-support">Apoyo en la logística:</label>
                 <ul class="apoyo_seleccion">
-                  <li><input type="checkbox" name="" id="FAMED"><label for="FAMED">Pendón FAMED</label></li>
-                  <li><input type="checkbox" name="" id="Enfermeria"><label for="Enfermeria">Pendón C. Enfermería</label></li>
-                  <li><input type="checkbox" name="" id="Kinesiologia"><label for="Kinesiologia">Pendón C. Kinesiología</label></li>
-                  <li><input type="checkbox" name="" id="Medicina"><label for="Medicina">Pendón C. Medicina</label></li>
-                  <li><input type="checkbox" name="" id="Nutricion"><label for="Nutricion">Pendón C. Nutrición</label></li>
-                  <li><input type="checkbox" name="" id="Impresa"><label for="Impresa">Constancia Impresa</label></li>
-                  <li><input type="checkbox" name="" id="Digital"><label for="Digital">Constancia Digital</label></li>
+                  <li><input type="checkbox" name="FAMED" id="FAMED"><label for="FAMED">Pendón FAMED</label></li>
+                  <li><input type="checkbox" name="Enfermeria" id="Enfermeria"><label for="Enfermeria">Pendón C. Enfermería</label></li>
+                  <li><input type="checkbox" name="Kinesiologia" id="Kinesiologia"><label for="Kinesiologia">Pendón C. Kinesiología</label></li>
+                  <li><input type="checkbox" name="Medicina" id="Medicina"><label for="Medicina">Pendón C. Medicina</label></li>
+                  <li><input type="checkbox" name="Nutricion" id="Nutricion"><label for="Nutricion">Pendón C. Nutrición</label></li>
+                  <li><input type="checkbox" name="Impresa" id="Impresa"><label for="Impresa">Constancia Impresa</label></li>
+                  <li><input type="checkbox" name="Digital" id="Digital"><label for="Digital">Constancia Digital</label></li>
                 </ul>        
               </div>
               <fieldset class="form-group">
