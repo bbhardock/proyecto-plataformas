@@ -1,11 +1,11 @@
 <?php
-    session_start();
-    require 'includes/queries.inc.php';
-    if(!isset($_SESSION['user_id']) || !isset($_GET['modo'])){
-        header("Location: dashboard.php");
-        exit();
-    }
-    $modo = $_GET['modo'];
+  session_start();
+  require 'includes/queries.inc.php';
+  if(!isset($_SESSION['user_id']) || !isset($_GET['modo'])){
+      header("Location: dashboard.php");
+      exit();
+  }
+  $modo = $_GET['modo'];
   //TODO: revisar con los datos de SIVCM-UCN si es que corresponde que vea esta pagina para la actividad.
 ?>
 <!DOCTYPE html>
