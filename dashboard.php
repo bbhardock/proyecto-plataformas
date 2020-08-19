@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css?v1.6">
-        <link rel="stylesheet" href="static/css/Styles.css?v3.12">
+        <link rel="stylesheet" href="static/css/Styles.css?v3.13">
     </head>
     <body>
         <?php
