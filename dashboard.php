@@ -136,12 +136,16 @@
                                 </tbody>
                             </table>
                         </div>
-                        <?php
+                    </form>
+                    <?php
                             if($_SESSION['user_admin_status']=='S'){
-                                echo '<button class="btn btn-success btn-lg icon-file-excel">Reporte</button>';
+                                //<button type="submit" name="reporte-submit" class="btn btn-success btn-lg icon-file-excel">Reporte</button>
+                                //<input type="submit" value="Generar reporte Excel" name="reporte-submit">
+                                echo '<form action="includes/reporte.inc.php" method="POST" id="Ingresar">
+                                <button type="submit" name="reporte-submit" class="btn btn-success btn-lg icon-file-excel">Reporte</button>
+                                </form>';
                             }
-                        ?>
-                    </form>   
+                    ?>   
                     <?php
                         if($_SESSION['user_admin_status']=='N'){
                             echo '<form action="" class="form-inline" id="form2">';

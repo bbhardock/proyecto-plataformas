@@ -18,7 +18,7 @@ if(isset($_POST['registrar-submit'])){
     else if(!preg_match("/^[0-9kK]*$/",$rut)){
         header("Location: ../registro.php?error=rutinvalido&nombre=".$nombre."&telefono=".$telefono."&email=".$email);
         exit();
-    /*
+    }/*
     }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         header("Location: ../registro.php?error=emailinvalido&rut=".$rut."&nombre=".$nombre."&telefono=".$telefono);
         exit();
