@@ -12,9 +12,14 @@
     margin-top: 40px;
     padding: 10px;
     text-align: center;
-    background: rgba(35, 65, 91, 0.85);
     color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
+}
+.Title-Subtitle .red{
+    background: rgb(169, 63, 43);
+}
+.Title-Subtitle .blue{
+    background: rgb(126, 155, 191);
 }
 .container-Title .container{
     padding: 10px;
