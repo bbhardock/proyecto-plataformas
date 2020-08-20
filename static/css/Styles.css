@@ -58,3 +58,48 @@ body{
     background: rgb(0, 0, 0,0.3);
     color: white;
 }
+.info-resumen .container{
+    margin: 10px 15px;
+    min-height: 300px;
+    min-width: 480px;
+    padding:60px;
+    border-radius: 10px;
+    transition: all 0.8s ease-in;
+    -webkit-transition: all 0.8s ease-in;
+    -moz-transition: all 0.8s ease-in;
+}
+.info-resumen .blue{
+    background: rgb(0, 128, 128, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
+.info-resumen .brown{
+    background: rgb(169, 63, 43,0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
+.info-resumen .bluelight{
+    background: rgba(35, 65, 91, 0.7);
+    color: rgba(255, 255, 255, 0.9);
+}
+.info-resumen .browndark{
+    background: rgb(188, 106, 38,0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
+.info-resumen .blue:hover{
+    margin: 20px auto;
+    opacity: 1;
+    transform: scale(1.1);
+}
+.info-resumen .brown:hover{
+    margin: 20px auto;
+    opacity: 1;
+    transform: scale(1.1);
+}.info-resumen .bluelight:hover{
+    margin: 20px auto;
+    opacity: 1;
+    transform: scale(1.1);
+}
+.info-resumen .browndark:hover{
+    margin: 20px auto;
+    opacity: 1;
+    transform: scale(1.1);
+}

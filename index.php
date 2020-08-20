@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
-        <link rel="stylesheet" href="static/css/Styles.css?v5.0"/>
+        <link rel="stylesheet" href="static/css/Styles.css?v5.3"/>
 
         <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
         <link href='static/fullcalendar/daygrid/main.css' rel='stylesheet' />
@@ -108,14 +108,53 @@
                 <div class="row">
                     <div class="col-lg-12 Title-Subtitle">
                         <div class="container blue">
-                            <h2>Resumen de Actividades</h2>
+                            <h3>Resumen de Actividades</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="info-resumen">
+                            <div class="container blue">
+                                <h4>Datos de vinculacion</h4>
+                                <h4>Nuestra cantidad de actividades realizadas en este año han sido</h4>
+                                <h2>200</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="info-resumen ">
+                            <div class="container brown">
+                                <h4>Datos de vinculacion</h4>
+                                <h4>Nuestros beneficiarios que han participado con nosotros son en total</h4>
+                                <h2>135</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div> <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="info-resumen">
+                            <div class="container bluelight">
+                                <h4>Datos de vinculacion</h4>
+                                <h4>Nuestra cantidad de actividades realizadas en este año han sido</h4>
+                                <h2>200</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="info-resumen ">
+                            <div class="container browndark">
+                                <h4>Datos de vinculacion</h4>
+                                <h4>Nuestros beneficiarios que han participado con nosotros son en total</h4>
+                                <h2>135</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 Title-Subtitle">
                         <div class="container red">
-                            <h2>Resumen de Actividades de manera Grafica</h2>
+                            <h3>Resumen de Actividades de manera Grafica</h3>
                         </div>
                     </div>
                 </div>
