@@ -1,6 +1,6 @@
 @import url(buttons.css?v1.4);
 @import url(titles.css?1.0);
-@import url(menu.css?v1.9);
+@import url(menu.css?v1.10);
 
 body{
     margin: 0;
@@ -8,6 +8,17 @@ body{
     font-family: 'Myriad Pro', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
     background: rgba(24, 30, 82, 0.5);
 
+}
+header{
+    width: 100%;
+    background: linear-gradient(rgba(35, 65, 91, 1),rgba(35, 65, 91, 0.95));
+    color: white;
+    border-bottom: 5px solid rgb(247, 216, 162);
+    height: 63px;
+
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 .apoyo_seleccion {
     
