@@ -38,6 +38,10 @@ if (isset($_POST['login-submit'])){
 
     $rut = $_POST['rut'];
     $password = $_POST['password'];
+    if(!preg_match("/^[0-9kK]*$/",$rut)){ //el rut debe ser ingresado sin puntos ni guión
+        header("Location: ../login.php?error=formatoincorrecto");
+        exit();
+    }
 
     $row = obtener_datos_usuario($rut);
 
