@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v1.1"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v1.5"/>
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
 
         <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
@@ -29,7 +29,7 @@
         <script src='static/fullcalendar/core/locales/es.js'></script>
         <script src='static/fullcalendar/daygrid/main.js'></script>
         <script src='static/fullcalendar/moment/main.js'></script>
-        
+        <!-- Generador del calendario y actividades-->
         <script>
            document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
@@ -49,6 +49,7 @@
                                 start: '2020-08-19',
                                 end: '2020-08-23',
                                 extendedProps: {
+                                    unidad: 'FAMED',
                                     areaVinculacion: 'Salud Publica',
                                     lugar: 'Hospital de coquimbo',
                                     fechaInicio: '19-08-2020',
@@ -60,6 +61,7 @@
                                 start: '2020-08-21',
                                 end: '2020-08-26',
                                 extendedProps: {
+                                    unidad: 'FAMED',
                                     areaVinculacion: 'Salud Privada',
                                     lugar: 'Clinica de la serena',
                                     fechaInicio: '24-08-2020',
@@ -73,6 +75,7 @@
                     
                     eventClick:function(actividadInfo){
                         $('#tituloActividad').html(actividadInfo.event.title);
+                        $('#unidad').val(actividadInfo.event.extendedProps.unidad);
                         $('#areaVinculacion').val(actividadInfo.event.extendedProps.areaVinculacion);
                         $('#lugar').val(actividadInfo.event.extendedProps.lugar);
                         $('#fechaInicio').val(actividadInfo.event.extendedProps.fechaInicio);
@@ -314,6 +317,10 @@
                     <div class="modal-body">
                         <fieldset disabled="disabled">
                             <div class="form-group">
+                                <label for="unidad">Unidad participante:</label>
+                                <input type="text" class="form-control" id="unidad" placeholder="">
+                            </div>
+                            <div class="form-group">
                                 <label for="areaVinculacion">Area de Vinculación:</label>
                                 <input type="text" class="form-control" id="areaVinculacion" placeholder="">
                             </div>
@@ -345,6 +352,7 @@
         <script>
             // Radialize the colors
             Highcharts.setOptions({
+                
                 colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
                     return {
                         radialGradient: {
@@ -382,6 +390,14 @@
                         valueSuffix: '%'
                     }
                 },
+                colors:[
+                    'rgb(169, 63, 43)',
+                    'rgb(35, 91, 84)',
+                    'rgb(39, 116, 32)',
+                    'rgb(197, 160, 38)',
+                    'rgb(169, 93, 43)',
+                    'rgba(35, 65, 91)'
+                ],
                 plotOptions: {
                     pie: {
                         allowPointSelect: true,
