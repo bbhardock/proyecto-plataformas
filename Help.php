@@ -15,7 +15,7 @@
       <meta name="viewport" content="width = device-width, user-scalable = no">
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.2">
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.4">
   </head>
   <body> 
     <?php
