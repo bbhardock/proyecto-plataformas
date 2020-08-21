@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
-        <link rel="stylesheet" href="static/css/Styles.css?v5.3"/>
+        <link rel="stylesheet" href="static/css/Styles.css?v5.7"/>
 
         <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
         <link href='static/fullcalendar/daygrid/main.css' rel='stylesheet' />
@@ -106,10 +106,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12 Title-Subtitle">
-                        <div class="container blue">
-                            <h3>Resumen de Actividades</h3>
-                        </div>
+                    <div class="col-lg-12">
+                        <span class="border">
+                            <div class="Title-SubtitleBlue">
+                                <div class="container blue">
+                                    <h5>Resumen de Actividades</h5>
+                                </div>
+                            </div>
+                        </span>
                     </div>
                 </div>
                 <div class="row">
@@ -152,16 +156,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12 Title-Subtitle">
-                        <div class="container red">
-                            <h3>Resumen de Actividades de manera Grafica</h3>
+                    <div class="col-lg-12">
+                        <div class="Title-SubtitleRed">
+                            <div class="container red">
+                                <h5>Resumen de Actividades de manera Grafica</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="graficos">
-                        <div class="container">
+                            <div class="container">
                                 <div class="titulo">
                                     <h6>Actividades Publicas</h6>
                                 </div>

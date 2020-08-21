@@ -3,23 +3,42 @@
     text-align: center;
     margin: 30px 0px;
     margin-left: 40px;
-    background: rgba(35, 65, 91, 0.85);
-    color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+    background: rgba(35, 65, 91);
+    color: rgba(246, 246, 246);
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 1px rgb(128, 128, 128, 0.5);
 }
-.Title-Subtitle .container{
+.Title-SubtitleBlue{
     width: 100%;
-    margin-top: 40px;
-    padding: 10px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+    margin:0px auto;
+    border-bottom: 6px solid rgba(35, 65, 91);
 }
-.Title-Subtitle .red{
+.Title-SubtitleRed{
+    width: 100%;
+    margin:0px auto;
+    border-bottom: 6px solid rgb(169, 63, 43);
+}
+.Title-SubtitleBlue .container{
+    width: 25%;
+    margin: 40px auto 0px 30px;
+    padding: 5px;
+    text-align: center;
+    color: rgba(246, 246, 246);
+    border-radius: 10px 10px 0px 0px;
+}
+.Title-SubtitleRed .container{
+    width: 40%;
+    margin: 40px 30px 0px auto;
+    padding: 5px;
+    text-align: center;
+    color: rgba(246, 246, 246);
+    border-radius: 10px 10px 0px 0px;
+}
+.Title-SubtitleRed .red{
     background: rgb(169, 63, 43);
 }
-.Title-Subtitle .blue{
-    background: rgb(126, 155, 191);
+.Title-SubtitleBlue .blue{
+    background: rgba(35, 65, 91,1);
 }
 .container-Title .container{
     padding: 10px;
