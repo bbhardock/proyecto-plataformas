@@ -41,33 +41,32 @@
             <div class="container row col-md-12">
                 <?php
                     if($_SESSION['user_admin_status']=='N'){
-                        echo '<div class="containerSubmenu col-md-12 col-lg-2">';
-                        echo '    <nav class="submenu">';
-                        echo '        <ul>';
-                        echo '            <li><input type="radio" name="radioActivity" onClick="table(1)" id="allActivity" checked><label for="allActivity">Mis Actividades</label></li>';
-                        echo '            <li><input type="radio" name="radioActivity" onClick="table(2)" id="activity"><label for="activity">Todas las Actividades</label></li>';
-                        echo '        </ul>';
-                        echo '    </nav>';
-                        echo '</div>';
-                        echo '<script>';
-                        echo '    function table(x){';
-                        echo '        if(x==1){';
-                        echo '            document.getElementById("form1").style.display="flex";';
-                        echo '            document.getElementById("form2").style.display="none";';
-                        echo '        }else{';
-                        echo '            document.getElementById("form2").style.display="flex";';
-                        echo '            document.getElementById("form1").style.display="none";';
-                        echo '        }';
-                        echo '    }';
-                        echo '</script>';
-                        echo '<div class="col-md-12 col-lg-10">';
+                        echo '<div class="containerSubmenu col-md-12 col-lg-2">
+                                <nav class="submenu">
+                                    <ul>
+                                        <li><input type="radio" name="radioActivity" onClick="table(1)" id="allActivity" checked><label for="allActivity">Mis Actividades</label></li>
+                                        <li><input type="radio" name="radioActivity" onClick="table(2)" id="activity"><label for="activity">Todas las Actividades</label></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <script>
+                                function table(x){
+                                    if(x==1){
+                                        document.getElementById("form1").style.display="flex";
+                                        document.getElementById("form2").style.display="none";
+                                    }else{
+                                        document.getElementById("form2").style.display="flex";
+                                        document.getElementById("form1").style.display="none";
+                                    }
+                                }
+                            </script>
+                            <div class="col-md-12 col-lg-10">';
                     }
                 ?>
                 <?php
                     if($_SESSION['user_admin_status']=='S'){
                         echo '<div class="col-md-12 col-lg-12">';
                     }
-                    //falta hacer el action y que te tire el post, luego arriba obtenemos el post y filtramos
                 ?>      
                     <form action="" class="form-inline" name="filtros" method="POST">
                         <label class="my-1 mr-2" for="area">Periodo</label>
@@ -158,34 +157,34 @@
                         </div>
                         <?php
                             if($_SESSION['user_admin_status']=='N'){
-                                echo '<div id="form2">';
-                                echo '    <div class="table-responsive ">';
-                                echo '        <table class="tableDash table-bordered tableA">';
-                                echo '            <thead>';
-                                echo '                <tr>';
-                                echo '                    <th>Nombre Encargado</th>';
-                                echo '                    <th>Nombre Actividad</th>';
-                                echo '                    <th>Area de Vinculación</th>';
-                                echo '                    <th>Fecha de Inicio</th>';
-                                echo '                    <th>Fecha de Termino</th>';
-                                echo '                    <th>Lugar de realización</th>';
-                                echo '                    <th>Socios Estrategicos</th>    ';
-                                echo '                </tr>';
-                                echo '            </thead>';
-                                echo '            <tbody>';
-                                echo '                <tr>';
-                                echo '                    <td>Nombre Encargado</td>';
-                                echo '                    <td>Nombre Actividad</td>';
-                                echo '                    <td>Area de Vinculación</td>';
-                                echo '                    <td>Fecha de Inicio</td>';
-                                echo '                    <td>Fecha de Termino</td>';
-                                echo '                    <td>Lugar de realización</td>';
-                                echo '                    <td>Socios Estrategicos</td>';
-                                echo '                </tr>                    ';
-                                echo '            </tbody>';
-                                echo '        </table>';
-                                echo '    </div>';
-                                echo '</div>  ';
+                                echo '<div id="form2">
+                                        <div class="table-responsive ">
+                                            <table class="tableDash table-bordered tableA">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Nombre Encargado</th>
+                                                        <th>Nombre Actividad</th>
+                                                        <th>Area de Vinculación</th>
+                                                        <th>Fecha de Inicio</th>
+                                                        <th>Fecha de Termino</th>
+                                                        <th>Lugar de realización</th>
+                                                        <th>Socios Estrategicos</th>    
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Nombre Encargado</td>
+                                                        <td>Nombre Actividad</td>
+                                                        <td>Area de Vinculación</td>
+                                                        <td>Fecha de Inicio</td>
+                                                        <td>Fecha de Termino</td>
+                                                        <td>Lugar de realización</td>
+                                                        <td>Socios Estrategicos</td>
+                                                    </tr>                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>';
                             }
                         ?>
                     </form>
