@@ -19,7 +19,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css?v1.6">
-        <link rel="stylesheet" href="static/css/Styles.css?v3.13">
+        <link rel="stylesheet" href="static/css/Styles.css?v3.16">
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
     </head>
     <body>
@@ -28,7 +28,7 @@
         ?>  
         <section class="main">
             <div class="container-Title">
-                <div class="container row col-md-12">
+                <div class="container row">
                     <?php
                     if($_SESSION['user_admin_status']=='S'){
                         echo "<h2>Todas las actividades</h2>";
@@ -113,7 +113,7 @@
                         <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
                         <?php echo '<p> Periodo seleccionado actualmente: '.$periodo.'</p>' ?>
                         <div id="form1">
-                            <div class="table-responsive ">
+                            <div class="table-responsive">
                                 <table class="table-bordered tableDash tableA">
                                     <thead>
                                         <tr>      
