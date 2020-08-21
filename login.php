@@ -7,7 +7,8 @@
         <meta charset="utf-8" />
         <title>Ingreso Academico</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link href="static/css/ingresar.css?v1.2" rel="stylesheet"> 
+        <link href="static/css/ingresar.css?v1.2" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css"> 
     </head>
     <body>
     <div class="container">

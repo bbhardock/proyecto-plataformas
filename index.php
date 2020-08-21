@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
         <link rel="stylesheet" href="static/css/styleIndex.css?v1.1"/>
+        <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
 
         <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
         <link href='static/fullcalendar/daygrid/main.css' rel='stylesheet' />
@@ -331,7 +332,7 @@
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
