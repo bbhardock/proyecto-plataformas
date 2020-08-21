@@ -4,6 +4,7 @@
         header("Location: index.php");
         exit();
     }
+    $periodo=date('Y');
 ?>
 <!DOCTYPE html>
 <html lang = "es">
@@ -60,6 +61,7 @@
                     if($_SESSION['user_admin_status']=='S'){
                         echo '<div class="col-md-12 col-lg-12">';
                     }
+                    //falta hacer el action y que te tire el post, luego arriba obtenemos el post y filtramos
                 ?>      
                     <form action="" class="form-inline" id="form1">
                         <label class="my-1 mr-2" for="area">Area de interes:</label>
