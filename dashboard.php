@@ -28,7 +28,7 @@
         ?>  
         <section class="main">
             <div class="container-Title">
-                <div class="container row">
+                <div class="container row col-md-12">
                     <?php
                     if($_SESSION['user_admin_status']=='S'){
                         echo "<h2>Todas las actividades</h2>";
@@ -112,53 +112,50 @@
                         -->
                         <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
                         <?php echo '<p> Periodo seleccionado actualmente: '.$periodo.'</p>' ?>
-                        <div id="form1">
-                            <div class="table-responsive">
-                                <table class="table-bordered tableDash tableA">
-                                    <thead>
-                                        <tr>      
-                                            <th rowspan="2">Codigo</th>
-                                            <th rowspan="2">Responsable</th>
-                                            <th rowspan="2">Nombre Actividad</th>
-                                            <th rowspan="2">Fecha Ejecución</th>
-                                            <th colspan="3">Estado</th>
-                                            <th rowspan="2">Ver actividad</th>
-                                            <?php
-                                            if($_SESSION['user_admin_status']=='N'){
-                                                echo '<th rowspan="2">Solicitar ayuda</th>';
-                                            }
-                                            ?>
-                                        </tr>
-                                        <tr>     
-                                            <th>En proceso</th>
-                                            <th>Ejecutada y no evaluada</th>
-                                            <th>Evaluada</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>ID</td>
-                                            <td>Nombre</td>
-                                            <td>Nombre Actividad</td>
-                                            <td>Fecha</td>
-                                            <td><div class="icon-ok square-ok"></div></td>
-                                            <td><div class="icon-ok square-ok"></div></td>
-                                            <td><div class="icon-cancel square-cancel"></div></td>
-                                            <td><a href="help.php?id=id_act&modo=ver" class="icon-search">Ver</a></td>
-                                            <?php
-                                            if($_SESSION['user_admin_status']=='N'){
-                                                echo '<td><a href="help.php?id=id_act&modo=ingresar" class="icon-form">Ayuda</a></td>';
-                                            }
-                                            ?>
-                                        </tr>                    
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        <div id="form1" class="table-responsive">
+                            <table class="table-bordered tableDash tableA">
+                                <thead>
+                                    <tr>      
+                                        <th rowspan="2">Codigo</th>
+                                        <th rowspan="2">Responsable</th>
+                                        <th rowspan="2">Nombre Actividad</th>
+                                        <th rowspan="2">Fecha Ejecución</th>
+                                        <th colspan="3">Estado</th>
+                                        <th rowspan="2">Ver actividad</th>
+                                        <?php
+                                        if($_SESSION['user_admin_status']=='N'){
+                                            echo '<th rowspan="2">Solicitar ayuda</th>';
+                                        }
+                                        ?>
+                                    </tr>
+                                    <tr>     
+                                        <th>En proceso</th>
+                                        <th>Ejecutada y no evaluada</th>
+                                        <th>Evaluada</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Nombre</td>
+                                        <td>Nombre Actividad</td>
+                                        <td>Fecha</td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>
+                                        <td><a href="help.php?id=id_act&modo=ver" class="icon-search">Ver</a></td>
+                                        <?php
+                                        if($_SESSION['user_admin_status']=='N'){
+                                            echo '<td><a href="help.php?id=id_act&modo=ingresar" class="icon-form">Ayuda</a></td>';
+                                        }
+                                        ?>
+                                    </tr>                    
+                                </tbody>
+                            </table>
+                        </div>                      
                         <?php
                             if($_SESSION['user_admin_status']=='N'){
-                                echo '<div id="form2">
-                                        <div class="table-responsive ">
+                                echo '  <div id="form2" class="table-responsive ">
                                             <table class="tableDash table-bordered tableA">
                                                 <thead>
                                                     <tr>
@@ -183,8 +180,7 @@
                                                     </tr>                    
                                                 </tbody>
                                             </table>
-                                        </div>
-                                    </div>';
+                                        </div>';
                             }
                         ?>
                     </form>
