@@ -52,7 +52,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>';
-                    }if($cod_error == "formatoincorecto"){
+                    }if($cod_error == "formatoincorrecto"){
                         echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                     Error de formato. El rut debe ser ingresado <strong>sin puntos ni guión.</strong>
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
