@@ -12,7 +12,7 @@
         
         $options = array(
             'http' => array(
-                'header'  => "Authorization: BASIC".$VALUE_AUTH."\r\n",
+                'header'  => "Authorization: BASIC ".$VALUE_AUTH."\r\n",
                 'method'  => 'GET'
             )
         );
@@ -21,20 +21,19 @@
         if ($result === FALSE) {
             return 'sin_resultado para'.$query;
         }
-        $data = json_decode($result); //como llega en json hay que convertirlo
-        return $data;
+        return $result;
     }
 
     function listarActividadesXRut($rut,$periodo){
         $query = 'api/famed/ListarActividadesxRut/'.$rut.'/'.$periodo;
-        obtenerDatos($query);
+        return obtenerDatos($query);
     }
 
     function listarTodasActividades($periodo){
         $query = 'api/famed/ListarActividades/'.$periodo;
-        obtenerDatos($query);
+        return obtenerDatos($query);
     }
     function verificarActividad($rut,$periodo){
         $query = 'api/famed/VerificarSiTieneActividades/'.$rut.'/'.$periodo;
-        obtenerDatos($query);
+        return obtenerDatos($query);
     }

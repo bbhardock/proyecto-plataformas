@@ -66,7 +66,6 @@
                     if($_SESSION['user_admin_status']=='S'){
                         echo '<div class="col-md-12 col-lg-12">';
                     }
-                    //falta hacer el action y que te tire el post, luego arriba obtenemos el post y filtramos
                 ?>      
                     <form action="" class="form-inline" name="filtros" method="POST">
                         <label class="my-1 mr-2" for="area">Periodo</label>
