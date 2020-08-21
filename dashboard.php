@@ -4,7 +4,12 @@
         header("Location: index.php");
         exit();
     }
-    $periodo=date('Y');
+    $periodo="";
+    if(isset($_POST['filtro-submit'])){
+        $periodo=$_POST['periodo'];
+    }else{
+        $periodo="2020";
+    }
 ?>
 <!DOCTYPE html>
 <html lang = "es">
@@ -63,8 +68,16 @@
                     }
                     //falta hacer el action y que te tire el post, luego arriba obtenemos el post y filtramos
                 ?>      
-                    <form action="" class="form-inline" id="form1">
-                        <label class="my-1 mr-2" for="area">Area de interes:</label>
+                    <form action="" class="form-inline" id="form1" name="filtros" method="POST">
+                        <label class="my-1 mr-2" for="area">Periodo</label>
+                        <select class="custom-select my-1 mr-sm-2" id="periodo" name="periodo">
+                            <option value="" selected disabled hidden> Seleccione periodo </option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                        <!--
                         <select class="custom-select my-1 mr-sm-2" id="area">
                             <option>-Vacio-</option>
                             <option>Vinculación Académica de pre y postgrado</option>
@@ -75,7 +88,7 @@
                             <option>Vinculación con Sector Escolar</option>
                             <option>Vinculación para la Internacionalización</option>
                             <option>Vinculación con Egresados</option>
-                        </select>
+                        </select>    
                         <label class="my-1 mr-2" for="type-activity">Tipo de actividad:</label>
                         <select class="custom-select my-1 mr-sm-2" id="type-activity">
                             <option>-Vacio-</option>
@@ -96,7 +109,9 @@
                             <option>No evaluada</option>
                             <option>Evaluada</option>
                         </select>
-                        <button class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
+                        -->
+                        <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
+                        <?php echo '<p> Periodo seleccionado actualmente: '.$periodo.'</p>' ?>
                         <div class="table-responsive ">
                             <table class="table-bordered tableDash tableA">
                                 <thead>
@@ -144,6 +159,7 @@
                                 //<button type="submit" name="reporte-submit" class="btn btn-success btn-lg icon-file-excel">Reporte</button>
                                 //<input type="submit" value="Generar reporte Excel" name="reporte-submit">
                                 echo '<form action="includes/reporte.inc.php" method="POST" id="Ingresar">
+                                <input id="periodo" name="periodo" type="hidden" value="'.$periodo.'">
                                 <button type="submit" name="reporte-submit" class="btn btn-success btn-lg icon-file-excel">Reporte</button>
                                 </form>';
                             }
@@ -151,39 +167,18 @@
                     <?php
                         if($_SESSION['user_admin_status']=='N'){
                             echo '<form action="" class="form-inline" id="form2">';
-                            echo '    <label class="my-1 mr-2" for="area">Area de interes:</label>';
-                            echo '    <select class="custom-select my-1 mr-sm-2" id="area">';
-                            echo '        <option>-Vacio-</option>';
-                            echo '        <option>Vinculación Académica de pre y postgrado</option>';
-                            echo '        <option>Vinculación Artística, Cultural, Patrimonial y Calidad de Vida</option>';
-                            echo '        <option>Vinculación Medio Productivo y de Servicio</option>';
-                            echo '        <option>Vinculación Vocacion Socual y Comunitaria</option>';
-                            echo '        <option>Vinculación Medio Público y Ciudadanía</option>';
-                            echo '        <option>Vinculación con Sector Escolar</option>';
-                            echo '        <option>Vinculación para la Internacionalización</option>';
-                            echo '        <option>Vinculación con Egresados</option>';
-                            echo '    </select>';
-                            echo '    <label class="my-1 mr-2" for="type-activity">Tipo de actividad:</label>';
-                            echo '    <select class="custom-select my-1 mr-sm-2" id="type-activity">';
-                            echo '        <option>-Vacio-</option>';
-                            echo '        <option>Congreso</option>';
-                            echo '        <option>Jornada</option>';
-                            echo '        <option>Feria</option>';
-                            echo '        <option>Charla</option>';
-                            echo '        <option>Taller</option>';
-                            echo '        <option>Curso</option>';
-                            echo '        <option>Explo UCN</option>';
-                            echo '        <option>Diplomado</option>';
-                            echo '        <option>Otro</option>';
-                            echo '    </select>';
-                            echo '    <label class="my-1 mr-2" for="state-activity">Estado:</label>';
-                            echo '    <select class="custom-select my-1 mr-sm-2" id="state-activity">';
-                            echo '        <option>-Vacio-</option>';
-                            echo '        <option>En Proceso</option>';
-                            echo '        <option>No evaluada</option>';
-                            echo '        <option>Evaluada</option>';
-                            echo '    </select>';
-                            echo '    <button class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>';
+                            /*
+                            echo '  <label class="my-1 mr-2" for="area">Periodo</label>
+                                        <select class="custom-select my-1 mr-sm-2" id="periodo" name="periodo" form="form1">
+                                        <option value="" selected disabled hidden> Seleccione periodo </option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        </select>
+                                        <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>';
+                            */
+                            echo '<label class="my-1 mr-2" for="area">Periodo seleccionado actualmente: '.$periodo.'</label>';
                             echo '    <div class="table-responsive ">';
                             echo '        <table class="tableDash table-bordered tableA">';
                             echo '            <thead>';
