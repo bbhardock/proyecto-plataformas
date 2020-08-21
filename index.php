@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
-        <link rel="stylesheet" href="static/css/Styles.css?v5.7"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v1.1"/>
 
         <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
         <link href='static/fullcalendar/daygrid/main.css' rel='stylesheet' />
@@ -119,38 +119,112 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
                         <div class="info-resumen">
-                            <div class="container blue">
-                                <h4>Datos de vinculacion</h4>
-                                <h4>Nuestra cantidad de actividades realizadas en este año han sido</h4>
-                                <h2>200</h2>
+                            <div class="containerBig container blue">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="titulo">
+                                            <h4>Nuestros beneficiarios</h4>
+                                            <h5>Han participado con nosotros son en total</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <h2>200</h2>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="fondoUnidad">
+                                            <h5>"Unidad vinculada"</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-6">
                         <div class="info-resumen ">
-                            <div class="container brown">
-                                <h4>Datos de vinculacion</h4>
-                                <h4>Nuestros beneficiarios que han participado con nosotros son en total</h4>
-                                <h2>135</h2>
+                            <div class="containerBig container brown">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="titulo">
+                                            <h4>Nuestros beneficiarios</h4>
+                                            <h5>Han participado con nosotros son en total</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <h2>135</h2>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="fondoUnidad">
+                                            <h5>"Unidad vinculada"</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div> <div class="row">
-                    <div class="col-md-12 col-lg-6">
+                    <div class="col-md-12 col-lg-4">
                         <div class="info-resumen">
-                            <div class="container bluelight">
-                                <h4>Datos de vinculacion</h4>
-                                <h4>Nuestra cantidad de actividades realizadas en este año han sido</h4>
-                                <h2>200</h2>
+                            <div class="containerSmall container bluelight">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="titulo">
+                                            <h4>Nuestros beneficiarios</h4>
+                                            <h5>Han participado con nosotros son en total</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <h2>135</h2>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="fondoUnidad">
+                                            <h5>"Unidad vinculada"</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 col-lg-6">
+                    <div class="col-md-12 col-lg-4">
                         <div class="info-resumen ">
-                            <div class="container browndark">
-                                <h4>Datos de vinculacion</h4>
-                                <h4>Nuestros beneficiarios que han participado con nosotros son en total</h4>
-                                <h2>135</h2>
+                            <div class="containerSmall container browndark">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="titulo">
+                                            <h4>Nuestros beneficiarios</h4>
+                                            <h5>Han participado con nosotros son en total</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <h2>135</h2>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="fondoUnidad">
+                                            <h5>"Unidad vinculada"</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <div class="info-resumen ">
+                            <div class="containerSmall container bluelight">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="titulo">
+                                            <h4>Nuestros beneficiarios</h4>
+                                            <h5>Han participado con nosotros son en total</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <h2>135</h2>
+                                    </div>
+                                    <div class="col-sm-6 col-md-8">
+                                        <div class="fondoUnidad">
+                                            <h5>"Unidad vinculada"</h5>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

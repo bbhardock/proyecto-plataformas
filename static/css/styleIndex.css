@@ -1,0 +1,115 @@
+@import url(menu.css?v1.10);
+@import url(table.css?v1.8);
+@import url(titles.css?v1.9);
+@import url(footer.css?v1.14);
+@import url(submenu.css?v1.0);
+@import url(calendario.css?v1.0);
+@import url(graficos.css?v1.1);
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+}
+header{
+    width: 100%;
+    background: linear-gradient(rgba(35, 65, 91, 1),rgba(35, 65, 91, 0.95));
+    color: white;
+    border-bottom: 5px solid rgb(247, 216, 162);
+    height: 63px;
+
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+body{
+    margin: 0;
+    left: 0;
+    font-family: 'Avenir Next Cyrillic Regu WhatFontIs.com','Myriad Pro', 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-seri';
+    background-color: rgba(35, 65, 91,0.2);
+}
+.main{
+    top: 0;
+    min-height: calc(100vh - 63px - 130px);
+}
+
+.contenedor{
+    width: 100%;
+    margin: auto;
+}
+.container{
+    background: rgba(255, 255, 255, 0.7);
+    height: auto;
+    margin: 10px auto;
+    width: 95%;
+}
+
+.form-group{
+    margin-top: 10px;
+}
+
+.modal-header{
+    width: 100%;
+    background: rgb(0, 0, 0,0.3);
+    color: white;
+}
+.info-resumen .containerBig{
+    margin: 10px auto;
+    min-height: auto;
+    min-width: auto;
+    padding:40px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    box-shadow: 0px 0px 5px 5px rgb(128, 128, 128, 0.2);
+}
+.info-resumen .containerSmall{
+    margin: 10px auto;
+    min-height: auto;
+    min-width: auto;
+    padding:40px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    box-shadow: 0px 0px 5px 5px rgb(128, 128, 128, 0.2);
+}
+.info-resumen .blue{
+    background: rgba(35, 65, 91, 1);
+    color: rgba(246, 246, 246);
+}
+.info-resumen .brown{
+    background: rgb(169, 63, 43,1);
+    color: rgba(246, 246, 246);
+}
+.info-resumen .bluelight{
+    background: rgb(0, 128, 128, 1);
+    color: rgba(246, 246, 246);
+}
+.info-resumen .browndark{
+    background: rgb(188, 106, 38,1);
+    color: rgba(246, 246, 246);
+}
+.info-resumen .container:hover{
+    margin: 20px auto;
+    opacity: 1;
+    transform: scale(1.1);
+}
+.info-resumen .titulo h4{
+    font-size: 20px;
+}
+.info-resumen .titulo h5{
+    font-size: 15px;
+    color: rgba(246, 246, 246,0.8);
+}
+.info-resumen .fondoUnidad{
+    background: rgb(0, 0, 0,0.3);
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+.info-resumen .fondoUnidad h5{
+    font-size: 12px;
+}
