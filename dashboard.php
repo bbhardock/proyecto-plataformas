@@ -68,7 +68,7 @@
                     }
                     //falta hacer el action y que te tire el post, luego arriba obtenemos el post y filtramos
                 ?>      
-                    <form action="" class="form-inline" id="form1" name="filtros" method="POST">
+                    <form action="" class="form-inline" name="filtros" method="POST">
                         <label class="my-1 mr-2" for="area">Periodo</label>
                         <select class="custom-select my-1 mr-sm-2" id="periodo" name="periodo">
                             <option value="" selected disabled hidden> Seleccione periodo </option>
@@ -112,47 +112,81 @@
                         -->
                         <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
                         <?php echo '<p> Periodo seleccionado actualmente: '.$periodo.'</p>' ?>
-                        <div class="table-responsive ">
-                            <table class="table-bordered tableDash tableA">
-                                <thead>
-                                    <tr>      
-                                        <th rowspan="2">Codigo</th>
-                                        <th rowspan="2">Responsable</th>
-                                        <th rowspan="2">Nombre Actividad</th>
-                                        <th rowspan="2">Fecha Ejecución</th>
-                                        <th colspan="3">Estado</th>
-                                        <th rowspan="2">Ver actividad</th>
-                                        <?php
-                                        if($_SESSION['user_admin_status']=='N'){
-                                            echo '<th rowspan="2">Solicitar ayuda</th>';
-                                        }
-                                        ?>
-                                    </tr>
-                                    <tr>     
-                                        <th>En proceso</th>
-                                        <th>Ejecutada y no evaluada</th>
-                                        <th>Evaluada</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>Nombre</td>
-                                        <td>Nombre Actividad</td>
-                                        <td>Fecha</td>
-                                        <td><div class="icon-ok square-ok"></div></td>
-                                        <td><div class="icon-ok square-ok"></div></td>
-                                        <td><div class="icon-cancel square-cancel"></div></td>
-                                        <td><a href="help.php?id=id_act&modo=ver" class="icon-search">Ver</a></td>
-                                        <?php
-                                        if($_SESSION['user_admin_status']=='N'){
-                                            echo '<td><a href="help.php?id=id_act&modo=ingresar" class="icon-form">Ayuda</a></td>';
-                                        }
-                                        ?>
-                                    </tr>                    
-                                </tbody>
-                            </table>
+                        <div id="form1">
+                            <div class="table-responsive ">
+                                <table class="table-bordered tableDash tableA">
+                                    <thead>
+                                        <tr>      
+                                            <th rowspan="2">Codigo</th>
+                                            <th rowspan="2">Responsable</th>
+                                            <th rowspan="2">Nombre Actividad</th>
+                                            <th rowspan="2">Fecha Ejecución</th>
+                                            <th colspan="3">Estado</th>
+                                            <th rowspan="2">Ver actividad</th>
+                                            <?php
+                                            if($_SESSION['user_admin_status']=='N'){
+                                                echo '<th rowspan="2">Solicitar ayuda</th>';
+                                            }
+                                            ?>
+                                        </tr>
+                                        <tr>     
+                                            <th>En proceso</th>
+                                            <th>Ejecutada y no evaluada</th>
+                                            <th>Evaluada</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ID</td>
+                                            <td>Nombre</td>
+                                            <td>Nombre Actividad</td>
+                                            <td>Fecha</td>
+                                            <td><div class="icon-ok square-ok"></div></td>
+                                            <td><div class="icon-ok square-ok"></div></td>
+                                            <td><div class="icon-cancel square-cancel"></div></td>
+                                            <td><a href="help.php?id=id_act&modo=ver" class="icon-search">Ver</a></td>
+                                            <?php
+                                            if($_SESSION['user_admin_status']=='N'){
+                                                echo '<td><a href="help.php?id=id_act&modo=ingresar" class="icon-form">Ayuda</a></td>';
+                                            }
+                                            ?>
+                                        </tr>                    
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+                        <?php
+                            if($_SESSION['user_admin_status']=='N'){
+                                echo '<div id="form2">';
+                                echo '    <div class="table-responsive ">';
+                                echo '        <table class="tableDash table-bordered tableA">';
+                                echo '            <thead>';
+                                echo '                <tr>';
+                                echo '                    <th>Nombre Encargado</th>';
+                                echo '                    <th>Nombre Actividad</th>';
+                                echo '                    <th>Area de Vinculación</th>';
+                                echo '                    <th>Fecha de Inicio</th>';
+                                echo '                    <th>Fecha de Termino</th>';
+                                echo '                    <th>Lugar de realización</th>';
+                                echo '                    <th>Socios Estrategicos</th>    ';
+                                echo '                </tr>';
+                                echo '            </thead>';
+                                echo '            <tbody>';
+                                echo '                <tr>';
+                                echo '                    <td>Nombre Encargado</td>';
+                                echo '                    <td>Nombre Actividad</td>';
+                                echo '                    <td>Area de Vinculación</td>';
+                                echo '                    <td>Fecha de Inicio</td>';
+                                echo '                    <td>Fecha de Termino</td>';
+                                echo '                    <td>Lugar de realización</td>';
+                                echo '                    <td>Socios Estrategicos</td>';
+                                echo '                </tr>                    ';
+                                echo '            </tbody>';
+                                echo '        </table>';
+                                echo '    </div>';
+                                echo '</div>  ';
+                            }
+                        ?>
                     </form>
                     <?php
                             if($_SESSION['user_admin_status']=='S'){
@@ -164,50 +198,7 @@
                                 </form>';
                             }
                     ?>   
-                    <?php
-                        if($_SESSION['user_admin_status']=='N'){
-                            echo '<form action="" class="form-inline" id="form2">';
-                            /*
-                            echo '  <label class="my-1 mr-2" for="area">Periodo</label>
-                                        <select class="custom-select my-1 mr-sm-2" id="periodo" name="periodo" form="form1">
-                                        <option value="" selected disabled hidden> Seleccione periodo </option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        </select>
-                                        <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>';
-                            */
-                            echo '<label class="my-1 mr-2" for="area">Periodo seleccionado actualmente: '.$periodo.'</label>';
-                            echo '    <div class="table-responsive ">';
-                            echo '        <table class="tableDash table-bordered tableA">';
-                            echo '            <thead>';
-                            echo '                <tr>';
-                            echo '                    <th>Nombre Encargado</th>';
-                            echo '                    <th>Nombre Actividad</th>';
-                            echo '                    <th>Area de Vinculación</th>';
-                            echo '                    <th>Fecha de Inicio</th>';
-                            echo '                    <th>Fecha de Termino</th>';
-                            echo '                    <th>Lugar de realización</th>';
-                            echo '                    <th>Socios Estrategicos</th>    ';
-                            echo '                </tr>';
-                            echo '            </thead>';
-                            echo '            <tbody>';
-                            echo '                <tr>';
-                            echo '                    <td>Nombre Encargado</td>';
-                            echo '                    <td>Nombre Actividad</td>';
-                            echo '                    <td>Area de Vinculación</td>';
-                            echo '                    <td>Fecha de Inicio</td>';
-                            echo '                    <td>Fecha de Termino</td>';
-                            echo '                    <td>Lugar de realización</td>';
-                            echo '                    <td>Socios Estrategicos</td>';
-                            echo '                </tr>                    ';
-                            echo '            </tbody>';
-                            echo '        </table>';
-                            echo '    </div>';
-                            echo '</form>  ';
-                        }
-                    ?>
+                    
                 </div> 
             </div>    
         </section>
