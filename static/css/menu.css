@@ -13,7 +13,15 @@ header .title{
     float: left;
     color: rgb(255, 255, 255, 0.8);
 }
-
+.menu-fixed{
+    width: 100%;
+    background: linear-gradient(rgba(35, 65, 91, 1),rgba(35, 65, 91, 0.95));
+    color: white;
+    border-bottom: 5px solid rgb(247, 216, 162);
+    height: 63px;
+    position: fixed;
+    z-index: 3000;
+}
 #btn-menu{
     display: none;
 }

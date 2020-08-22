@@ -1,5 +1,5 @@
 <header>
-    <div class="contenedor">
+    <div class="menu-fixed contenedor">
         <img class="logo" src="static/images/logo.png" alt="">
         <h2 class="title">Vinculación con el medio FACMED</h2>
         
@@ -10,7 +10,10 @@
             <ul>
                 <?php
                     if(!isset($_SESSION['user_id'])){
-                        echo '<li><a href="/login.php">Iniciar Sesión</a></li>';
+                        echo '  <li><a data-scroll href="#calendario">Calendario</a></li>
+                                <li><a data-scroll href="#informacion">Información</a></li>
+                                <li><a data-scroll href="#graficos">Graficos</a></li>
+                                <li><a href="/login.php">Iniciar Sesión</a></li>';
                     }
                     else if($_SESSION['user_admin_status']=='S'){
                         echo '<li><a href="/dashboard.php">Todas las actividades</a></li>
