@@ -1,3 +1,6 @@
+.graficos .container{
+    background: rgba(255, 255, 255, 0.7);
+}
 .graficos .titulo{
     margin-left: 50px;
     width: 40%;
