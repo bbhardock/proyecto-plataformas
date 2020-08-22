@@ -187,5 +187,3 @@ function verificarPermisoActividad($rut,$periodo,$codigo){
     }
     return false;
 }
-
-//echo verificarPermisoActividad("20006268k","2020","VCM221"); 
