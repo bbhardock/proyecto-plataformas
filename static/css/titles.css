@@ -2,7 +2,7 @@
     padding: 120px 45px;
     text-align: center;
     margin: 50px 0px;
-    margin-left: 40px;
+    margin-left: 20px;
     background: rgba(35, 65, 91);
     color: rgba(246, 246, 246);
     border-radius: 2px;
@@ -35,7 +35,7 @@
     border-radius: 10px 10px 0px 0px;
 }
 .Title-SubtitleRed .red{
-    background: rgb(169, 93, 43);
+    background: rgb(169, 63, 43);
 }
 .Title-SubtitleBlue .blue{
     background: rgba(35, 65, 91,1);
