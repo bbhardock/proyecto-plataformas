@@ -159,17 +159,17 @@ SISTEMA INTERNO DE VINCULACIÓN CON EL MEDIO
 A NIVEL UNIVERSITARIO
 */
 function apiListarActividadesXRut($rut,$periodo){
-    require 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
 
     return listarActividadesXRut($rut,$periodo);
 }
 function apiListarTodasActividades($periodo){
-    require 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
     
     return listarTodasActividades($periodo);
 }
 function apiverificarActividad($rut,$periodo){
-    require 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
 
     return verificarActividad($rut,$periodo);
 }
