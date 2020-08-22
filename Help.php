@@ -10,13 +10,12 @@
   $periodo = $_GET['periodo'];
 
   $actividad = json_decode(obtenerActividad($periodo,$id));
-  echo $actividad->FechaInicio;
 
   if(!$actividad){//verificar que actividad exista
     header("Location: dashboard.php");
     exit(); 
   }
-  
+
   if ($_SESSION['user_admin_status'] =='N' && strcmp($actividad->RutUsuario,$_SESSION['user_rut']) != 0 ){ //el usuario solo puede ver o editar las acciones que le pertenecen
     header("Location: dashboard.php");
     exit(); 
@@ -53,37 +52,37 @@
             <fieldset disabled>         
               <div class="form-group">
                 <label for="code-activity">Código de Actividad:</label>
-                <input type="text" class="form-control" id="code-activity" value=<?php echo $actividad->CodigoActividad?> placeholder="Escriba el código de la actividad">
+                <input type="text" class="form-control" id="code-activity" value="<?php echo $actividad->CodigoActividad?>" placeholder="Escriba el código de la actividad">
               </div>        
               <div class="form-group">
                 <label for="name-activity">Nombre de Actividad:</label>
-                <input type="text" class="form-control" id="name-activity" value=<?php echo $actividad->NombreActividad?> placeholder="Escriba el nombre de la actividad">
+                <input type="text" class="form-control" id="name-activity" value="<?php echo $actividad->NombreActividad?>" placeholder="Escriba el nombre de la actividad">
               </div>              
               <div class="form-group">
                 <label for="unity">Unidad:</label>
-                <input type="text" class="form-control" value=<?php echo $actividad->Unidad?> id="unity">
+                <input type="text" class="form-control" value="<?php echo $actividad->Unidad?>" id="unity">
               </div>     
               <div class="form-group">
                 <label for="coordinador">Coordinador de la actividad:</label>
-                <input type="text" class="form-control" id="coordinador" value=<?php echo $actividad->NombreUsuario?> placeholder="Escriba el nombre del coordinador de la actividad">
+                <input type="text" class="form-control" id="coordinador" value="<?php echo $actividad->NombreUsuario?>" placeholder="Escriba el nombre del coordinador de la actividad">
               </div>
               <div class="form-row">     
                 <div class="form-group col-md-6">
                   <label for="start-date">Fecha de inicio:</label>
-                  <input type="date" class="form-control" value=<?php echo $actividad->FechaInicio." "?> id="start-date" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" value="<?php $fechaInicio = date_create($actividad->FechaInicio); echo date_format($fechaInicio, 'Y-m-d');?>" id="start-date" placeholder="dd/mm/yyyy">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="end-date">Fecha de termino:</label>
-                  <input type="date" class="form-control" value=<?php echo $actividad->FechaTermino." "?> id="end-date" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" value="<?php $fechaTermino = date_create($actividad->FechaTermino); echo date_format($fechaTermino, 'Y-m-d');?>" id="end-date" placeholder="dd/mm/yyyy">
                 </div>
               </div>       
               <div class="form-group">
                 <label for="service">Servicio:</label>
-                <input type="text" class="form-control" value=<?php echo $actividad->Servicio." "?> id="service">
+                <input type="text" class="form-control" value="<?php echo $actividad->Servicio?>" id="service">
               </div>         
               <div class="form-group">
                 <label for="product">Producto:</label>
-                <input type="text" class="form-control" value=<?php echo $actividad->Producto." "?> id="product">
+                <input type="text" class="form-control" value="<?php echo $actividad->Producto?>" id="product">
               </div>              
               <div class="form-group">
                 <label for="area">Area de Vinculación:</label>
@@ -201,7 +200,7 @@
             </div>
             <div class="form-group">
               <label for="code-activity">Código de Actividad:</label>
-              <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad" readonly="readonly" <?php echo 'value='.$_GET['id']?>>
+              <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad" readonly="readonly" <?php echo 'value='.$id?>>
             </div>
             <?php
               if($modo == 'ver'){
