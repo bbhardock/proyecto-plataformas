@@ -4,7 +4,7 @@
 .graficos .titulo{
     margin-left: 50px;
     width: 40%;
-    background-color: rgb(169, 63, 43,0.95);
+    background-color: rgba(35, 65, 91);
     border-radius: 10px 10px 0px 0px;
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
@@ -15,11 +15,11 @@
 }
 .graficos .torta{
     padding: 10px;
-    background: rgb(169, 63, 43,0.95);
+    background: rgba(35, 65, 91);
     border-radius: 10px;
 }
 .graficos:hover ~ .graficos .titulo{
-    border: 2px solid rgb(169, 63, 43,0.95);
+    border: 2px solid rgba(35, 65, 91);
     background: rgba(246, 246, 246);
-    color: rgb(169, 63, 43,0.95);
+    color: rgba(35, 65, 91);
 }

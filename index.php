@@ -13,7 +13,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v1.5"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v1.16"/>
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
 
         <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
@@ -390,14 +390,6 @@
                         valueSuffix: '%'
                     }
                 },
-                colors:[
-                    'rgb(169, 63, 43)',
-                    'rgb(35, 91, 84)',
-                    'rgb(39, 116, 32)',
-                    'rgb(197, 160, 38)',
-                    'rgb(169, 93, 43)',
-                    'rgba(35, 65, 91)'
-                ],
                 plotOptions: {
                     pie: {
                         allowPointSelect: true,
