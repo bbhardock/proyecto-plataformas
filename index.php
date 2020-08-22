@@ -1,9 +1,12 @@
 <?php
+    require 'includes/queries.inc.php';
     session_start();
     if(isset($_SESSION['user_id'])){
         header("Location: dashboard.php");
         exit();
     }
+    $periodo = date("Y");
+    $actividades = json_decode(apiListarTodasActividades($periodo));
 ?>
 <!DOCTYPE html> 
 <html>
@@ -44,30 +47,27 @@
                     },
                     eventSources:[{
                         events:[
-                            {
-                                title: 'Actividad 1, Junta con hospital de coquimbo',
-                                start: '2020-08-19',
-                                end: '2020-08-23',
-                                extendedProps: {
-                                    unidad: 'FAMED',
-                                    areaVinculacion: 'Salud Publica',
-                                    lugar: 'Hospital de coquimbo',
-                                    fechaInicio: '19-08-2020',
-                                    fechaTermino: '23-08-2020'
-                                }
-                            },
-                            {
-                                title: 'Actividad 2, Junta con Clinica del Elqui',
-                                start: '2020-08-21',
-                                end: '2020-08-26',
-                                extendedProps: {
-                                    unidad: 'FAMED',
-                                    areaVinculacion: 'Salud Privada',
-                                    lugar: 'Clinica de la serena',
-                                    fechaInicio: '24-08-2020',
-                                    fechaTermino: '26-08-2020'
-                                }
+                            <?php foreach ($actividades as $actividad){
+                                /*
+                                    start: "'.$actividad->FechaInicio.'",
+                                    end: "'.$actividad->FechaTermino.'",
+                                */
+                                $fechaInicio = date_create($actividad->FechaInicio);
+                                $fechaTermino = date_create($actividad->FechaTermino);
+                                echo '                            {
+                                    title: "'.$actividad->NombreActividad.'",
+                                    start: "'.date_format($fechaInicio,'Y-m-d').'",
+                                    end: "'.date_format($fechaTermino,'Y-m-d').'",
+                                    extendedProps: {
+                                        unidad: "'.$actividad->Unidad.'",
+                                        areaVinculacion: "'.$actividad->AreaVinculacion.'",
+                                        lugar: "'.$actividad->LugarRealizacion[0]->LugarRealizacion.'",
+                                        fechaInicio: "'.$actividad->FechaInicio.'",
+                                        fechaTermino: "'.$actividad->FechaTermino.'"
+                                    }
+                                },';
                             }
+                            ?>
                         ],
                         color: "rgb(247, 216, 162)",
                         textColor: "rgba(0, 0, 0, 0.6)"
