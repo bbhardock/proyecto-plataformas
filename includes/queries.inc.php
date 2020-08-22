@@ -173,16 +173,17 @@ function apiverificarActividad($rut,$periodo){
 
     return verificarActividad($rut,$periodo);
 }
-function verificarPermisoActividad($rut,$periodo,$codigo){
-    require_once 'apiSIVCMmock.inc.php';
 
-    $actividadesPeriodo = listarActividadesXRut($rut,$periodo);
+function obtenerActividad($periodo,$codigo){
+    require_once 'apiSIVCMmock.inc.php';
+    
+    $actividadesPeriodo = listarTodasActividades($periodo);
 
     $actividadesPeriodoConvertido = json_decode($actividadesPeriodo);
 
     foreach($actividadesPeriodoConvertido as $actividad){
         if(strcmp($actividad->CodigoActividad,$codigo) == 0){
-            return true;
+            return json_encode($actividad);
         }
     }
     return false;
