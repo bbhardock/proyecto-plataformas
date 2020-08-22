@@ -1,5 +1,12 @@
 <header>
-    <div class="menu-fixed contenedor">
+    <?php 
+        if(!isset($_SESSION['user_id'])){
+            echo '<div class="menu-fixed contenedor">';
+        }
+        else{
+            echo '<div class="contenedor">';
+        }    
+    ?>
         <img class="logo" src="static/images/logo.png" alt="">
         <h2 class="title">Vinculación con el medio FACMED</h2>
         
