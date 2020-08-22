@@ -14,7 +14,7 @@ function insertarUsuario($rut){
 }
 function obtener_datos_usuario($rut){
     require 'databaseHandler.inc.php';
-    $sql = "SELECT * FROM usuarios WHERE rut=?";
+    $sql = "SELECT * FROM usuarios WHERE UPPER(rut)=UPPER(?)";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("Location: ../login.php?error=sqlerror");
@@ -173,3 +173,19 @@ function apiverificarActividad($rut,$periodo){
 
     return verificarActividad($rut,$periodo);
 }
+function verificarPermisoActividad($rut,$periodo,$codigo){
+    require_once 'apiSIVCMmock.inc.php';
+
+    $actividadesPeriodo = listarActividadesXRut($rut,$periodo);
+
+    $actividadesPeriodoConvertido = json_decode($actividadesPeriodo);
+
+    foreach($actividadesPeriodoConvertido as $actividad){
+        if(strcmp($actividad->CodigoActividad,$codigo) == 0){
+            return true;
+        }
+    }
+    return false;
+}
+
+//echo verificarPermisoActividad("20006268k","2020","VCM221"); 

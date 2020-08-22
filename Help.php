@@ -1,13 +1,21 @@
 <?php
   session_start();
   require 'includes/queries.inc.php';
-  if(!isset($_SESSION['user_id']) || !isset($_GET['modo'])){
+  if(!isset($_SESSION['user_id']) || !isset($_GET['modo']) || !isset($_GET['periodo'])){ //comprobacion del get
       header("Location: dashboard.php");
       exit();
   }
   $modo = $_GET['modo'];
   $id = $_GET['id'];
-  //TODO: revisar con los datos de SIVCM-UCN si es que corresponde que vea esta pagina para la actividad.
+  $periodo = $_GET['periodo'];
+  
+  if ($_SESSION['user_admin_status'] =='N' && !verificarPermisoActividad($_SESSION['user_rut'],$periodo,$id)){ //el usuario solo puede ver o editar las acciones que le pertenecen
+    header("Location: dashboard.php");
+    exit(); 
+  }else if ($_SESSION['user_admin_status'] == 'S' && strcmp($modo,"ingresar") == 0){ //el admin solo puede ver todas las actividades
+    header("Location: dashboard.php");
+    exit(); 
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

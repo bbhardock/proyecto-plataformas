@@ -167,9 +167,9 @@
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-cancel square-cancel"></div></td>
-                                        <td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ver" class="icon-search">Ver</a></td>';
+                                        <td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ver&periodo='.$periodo.'" class="icon-search">Ver</a></td>';
                                     if($_SESSION['user_admin_status'] == 'N'){
-                                    echo '<td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ingresar" class="icon-form">Ayuda</a></td>';
+                                    echo '<td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ingresar&periodo='.$periodo.'" class="icon-form">Ayuda</a></td>';
                                     }
                                 }
                                 ?>
