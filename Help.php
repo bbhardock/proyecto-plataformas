@@ -131,7 +131,14 @@
                       <th>Beneficiarios directos</th>
                     </thead>
                     <tbody>
-                
+                      <?php
+                        foreach($actividad->ListadoBeneficiariosInternos as $beneInternos){
+                          echo '<tr>
+                          <td>'.$beneInternos->DescripcionBeneficiarioInterno.'</td>
+                          <td>'.$beneInternos->CantidadBeneficiariosDirectos.'</td>
+                          </tr>';
+                        }
+                      ?>
                     </tbody>
                 </table>
               </div>
@@ -144,7 +151,15 @@
                       <th>Beneficiarios indirectos</th>
                     </thead>
                     <tbody>
-
+                    <?php
+                        foreach($actividad->ListadoBeneficiariosExternos as $beneExternos){
+                          echo '<tr>
+                          <td>'.$beneExternos->DescripcionBeneficiarioExterno.'</td>
+                          <td>'.$beneExternos->CantidadBeneficiariosDirectos.'</td>
+                          <td>'.$beneExternos->CantidadBeneficiariosIndirectos.'</td>
+                          </tr>';
+                        }
+                      ?>
                     </tbody>
                 </table>
               </div>
@@ -155,7 +170,11 @@
                       <th>Socio estratégico</th>
                     </thead>
                     <tbody>
-
+                      <?php
+                        foreach($actividad->ListadoSocios as $socio){
+                          echo '<td>'.$socio->DescripcionSocio.'</td>';
+                      }
+                      ?>
                     </tbody>
                 </table>
               </div>
