@@ -8,14 +8,22 @@
   $modo = $_GET['modo'];
   $id = $_GET['id'];
   $periodo = $_GET['periodo'];
-  
-  if ($_SESSION['user_admin_status'] =='N' && !verificarPermisoActividad($_SESSION['user_rut'],$periodo,$id)){ //el usuario solo puede ver o editar las acciones que le pertenecen
+
+  $actividad = json_decode(obtenerActividad($periodo,$id));
+
+  if(!$actividad){//verificar que actividad exista
+    header("Location: dashboard.php");
+    exit(); 
+  }
+
+  if ($_SESSION['user_admin_status'] =='N' && strcmp($actividad->RutUsuario,$_SESSION['user_rut']) != 0 ){ //el usuario solo puede ver o editar las acciones que le pertenecen
     header("Location: dashboard.php");
     exit(); 
   }else if ($_SESSION['user_admin_status'] == 'S' && strcmp($modo,"ingresar") == 0){ //el admin solo puede ver todas las actividades
     header("Location: dashboard.php");
     exit(); 
   }
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,50 +52,42 @@
             <fieldset disabled>         
               <div class="form-group">
                 <label for="code-activity">Código de Actividad:</label>
-                <input type="text" class="form-control" id="code-activity" placeholder="Escriba el código de la actividad">
+                <input type="text" class="form-control" id="code-activity" value="<?php echo $actividad->CodigoActividad?>" placeholder="Escriba el código de la actividad">
               </div>        
               <div class="form-group">
                 <label for="name-activity">Nombre de Actividad:</label>
-                <input type="text" class="form-control" id="name-activity" placeholder="Escriba el nombre de la actividad">
+                <input type="text" class="form-control" id="name-activity" value="<?php echo $actividad->NombreActividad?>" placeholder="Escriba el nombre de la actividad">
               </div>              
               <div class="form-group">
                 <label for="unity">Unidad:</label>
-                <input type="text" class="form-control" id="unity">
+                <input type="text" class="form-control" value="<?php echo $actividad->Unidad?>" id="unity">
               </div>     
               <div class="form-group">
                 <label for="coordinador">Coordinador de la actividad:</label>
-                <input type="text" class="form-control" id="coordinador" placeholder="Escriba el nombre del coordinador de la actividad">
+                <input type="text" class="form-control" id="coordinador" value="<?php echo $actividad->NombreUsuario?>" placeholder="Escriba el nombre del coordinador de la actividad">
               </div>
               <div class="form-row">     
                 <div class="form-group col-md-6">
                   <label for="start-date">Fecha de inicio:</label>
-                  <input type="date" class="form-control" id="start-date" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" value="<?php $fechaInicio = date_create($actividad->FechaInicio); echo date_format($fechaInicio, 'Y-m-d');?>" id="start-date" placeholder="dd/mm/yyyy">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="end-date">Fecha de termino:</label>
-                  <input type="date" class="form-control" id="end-date" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" value="<?php $fechaTermino = date_create($actividad->FechaTermino); echo date_format($fechaTermino, 'Y-m-d');?>" id="end-date" placeholder="dd/mm/yyyy">
                 </div>
               </div>       
               <div class="form-group">
                 <label for="service">Servicio:</label>
-                <input type="text" class="form-control" id="service">
+                <input type="text" class="form-control" value="<?php echo $actividad->Servicio?>" id="service">
               </div>         
               <div class="form-group">
                 <label for="product">Producto:</label>
-                <input type="text" class="form-control" id="product">
+                <input type="text" class="form-control" value="<?php echo $actividad->Producto?>" id="product">
               </div>              
               <div class="form-group">
                 <label for="area">Area de Vinculación:</label>
                 <select class="form-control" id="area">
-                  <option>-Vacio-</option>
-                  <option>Vinculación Académica de pre y postgrado</option>
-                  <option>Vinculación Artística, Cultural, Patrimonial y Calidad de Vida</option>
-                  <option>Vinculación Medio Productivo y de Servicio</option>
-                  <option>Vinculación Vocacion Socual y Comunitaria</option>
-                  <option>Vinculación Medio Público y Ciudadanía</option>
-                  <option>Vinculación con Sector Escolar</option>
-                  <option>Vinculación para la Internacionalización</option>
-                  <option>Vinculación con Egresados</option>
+                  <option> <?php echo $actividad->AreaVinculacion ?> </option>
                 </select>
               </div>
               <div class="form-group">
@@ -130,7 +130,14 @@
                       <th>Beneficiarios directos</th>
                     </thead>
                     <tbody>
-
+                      <?php
+                        foreach($actividad->ListadoBeneficiariosInternos as $beneInternos){
+                          echo '<tr>
+                          <td>'.$beneInternos->DescripcionBeneficiarioInterno.'</td>
+                          <td>'.$beneInternos->CantidadBeneficiariosDirectos.'</td>
+                          </tr>';
+                        }
+                      ?>
                     </tbody>
                 </table>
               </div>
@@ -143,7 +150,15 @@
                       <th>Beneficiarios indirectos</th>
                     </thead>
                     <tbody>
-
+                    <?php
+                        foreach($actividad->ListadoBeneficiariosExternos as $beneExternos){
+                          echo '<tr>
+                          <td>'.$beneExternos->DescripcionBeneficiarioExterno.'</td>
+                          <td>'.$beneExternos->CantidadBeneficiariosDirectos.'</td>
+                          <td>'.$beneExternos->CantidadBeneficiariosIndirectos.'</td>
+                          </tr>';
+                        }
+                      ?>
                     </tbody>
                 </table>
               </div>
@@ -154,7 +169,11 @@
                       <th>Socio estratégico</th>
                     </thead>
                     <tbody>
-
+                      <?php
+                        foreach($actividad->ListadoSocios as $socio){
+                          echo '<td>'.$socio->DescripcionSocio.'</td>';
+                      }
+                      ?>
                     </tbody>
                 </table>
               </div>
@@ -181,7 +200,7 @@
             </div>
             <div class="form-group">
               <label for="code-activity">Código de Actividad:</label>
-              <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad" readonly="readonly" <?php echo 'value='.$_GET['id']?>>
+              <input type="text" class="form-control" id="code-activity" name="code-activity" placeholder="Escriba el código de la actividad" readonly="readonly" <?php echo 'value='.$id?>>
             </div>
             <?php
               if($modo == 'ver'){
