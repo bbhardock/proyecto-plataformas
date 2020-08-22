@@ -117,7 +117,7 @@ function obtenerDatosBase(){
         array(array("DescripcionSocio"=> "Escuela de Ingenieria"))
     );
 
-    $actividad4=array( "CodigoActividad" => "VCM221",
+    $actividad4=array( "CodigoActividad" => "VCM200",
         "NombreActividad" => "Actividad1",
         "NombreUsuario" => "Rodrigo Hurtado",
         "RutUsuario" => "19032849k",
@@ -155,7 +155,7 @@ function obtenerDatosBase(){
         "ListadoSocios" =>
             array(array("DescripcionSocio"=> "Coquimbo Unido"))
     );
-    $actividad5=array( "CodigoActividad" => "VCM221",
+    $actividad5=array( "CodigoActividad" => "VCM212",
     "NombreActividad" => "Actividad1",
     "NombreUsuario" => "Nicolás Sepúlveda",
     "RutUsuario" => "198640913",
