@@ -6,6 +6,7 @@
       exit();
   }
   $modo = $_GET['modo'];
+  $id = $_GET['id'];
   //TODO: revisar con los datos de SIVCM-UCN si es que corresponde que vea esta pagina para la actividad.
 ?>
 <!DOCTYPE html>

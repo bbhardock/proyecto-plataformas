@@ -153,5 +153,23 @@ function insertarActividad($code_activity,$nombre,$correo,$telefono,$requiere_re
     }
     mysqli_close($conn);                
 }
+/*
+FUNCIONES DEPENDIENTES DE LA API DEL
+SISTEMA INTERNO DE VINCULACIÓN CON EL MEDIO
+A NIVEL UNIVERSITARIO
+*/
+function apiListarActividadesXRut($rut,$periodo){
+    require_once 'apiSIVCMmock.inc.php';
 
+    return listarActividadesXRut($rut,$periodo);
+}
+function apiListarTodasActividades($periodo){
+    require_once 'apiSIVCMmock.inc.php';
+    
+    return listarTodasActividades($periodo);
+}
+function apiverificarActividad($rut,$periodo){
+    require_once 'apiSIVCMmock.inc.php';
 
+    return verificarActividad($rut,$periodo);
+}

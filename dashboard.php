@@ -10,6 +10,7 @@
     }else{
         $periodo="2020";
     }
+    require 'includes/queries.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang = "es">
@@ -62,9 +63,7 @@
                             </script>
                             <div class="col-md-12 col-lg-10">';
                     }
-                ?>
-                <?php
-                    if($_SESSION['user_admin_status']=='S'){
+                    else if($_SESSION['user_admin_status']=='S'){
                         echo '<div class="col-md-12 col-lg-12">';
                     }
                 ?>      
@@ -119,7 +118,7 @@
                                         <th rowspan="2">Codigo</th>
                                         <th rowspan="2">Responsable</th>
                                         <th rowspan="2">Nombre Actividad</th>
-                                        <th rowspan="2">Fecha Ejecución</th>
+                                        <th rowspan="2">Fecha de Inicio y Término</th>
                                         <th colspan="3">Estado</th>
                                         <th rowspan="2">Ver actividad</th>
                                         <?php
@@ -135,6 +134,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <!--
                                     <tr>
                                         <td>ID</td>
                                         <td>Nombre</td>
@@ -149,7 +149,30 @@
                                             echo '<td><a href="help.php?id=id_act&modo=ingresar" class="icon-form">Ayuda</a></td>';
                                         }
                                         ?>
-                                    </tr>                    
+                                    </tr>
+                                -->
+                                <?php //MUESTRA DE DATOS EN TABLA PRINCIPAL (VISTA ADMINISTRADOR Y "MIS ACTIVIDADES" DE USUARIO)
+                                $actividadesTablaPrincipal;
+                                if($_SESSION['user_admin_status'] == 'N'){
+                                    $actividadesTablaPrincipal = json_decode(apiListarActividadesXRut($_SESSION['user_rut'],$periodo));
+                                }else if ($_SESSION['user_admin_status'] == 'S'){
+                                    $actividadesTablaPrincipal = json_decode(apiListarTodasActividades($periodo));
+                                }
+                                foreach($actividadesTablaPrincipal as $actividad){
+                                    echo '<tr>
+                                        <td>'.$actividad->CodigoActividad.'</td>
+                                        <td>'.$actividad->NombreUsuario.'</td>
+                                        <td>'.$actividad->NombreActividad.'</td>
+                                        <td>'.$actividad->FechaInicio.' al '.$actividad->FechaTermino.'</td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>
+                                        <td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ver" class="icon-search">Ver</a></td>';
+                                    if($_SESSION['user_admin_status'] == 'N'){
+                                    echo '<td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ingresar" class="icon-form">Ayuda</a></td>';
+                                    }
+                                }
+                                ?>
                                 </tbody>
                             </table>
                         </div>                      
@@ -168,19 +191,25 @@
                                                         <th>Socios Estrategicos</th>    
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Nombre Encargado</td>
-                                                        <td>Nombre Actividad</td>
-                                                        <td>Area de Vinculación</td>
-                                                        <td>Fecha de Inicio</td>
-                                                        <td>Fecha de Termino</td>
-                                                        <td>Lugar de realización</td>
-                                                        <td>Socios Estrategicos</td>
-                                                    </tr>                    
-                                                </tbody>
-                                            </table>
-                                        </div>';
+                                                <tbody>';
+                                $actividadesTablaSecundaria = json_decode(apiListarTodasActividades($periodo));
+                                foreach ($actividadesTablaSecundaria as $actividad){
+                                    echo '<tr>
+                                        <td>'.$actividad->NombreUsuario.'</td>
+                                        <td>'.$actividad->NombreActividad.'</td>
+                                        <td>'.$actividad->AreaVinculacion.'</td>
+                                        <td>'.$actividad->FechaInicio.'</td>
+                                        <td>'.$actividad->FechaTermino.'</td>';
+                                        foreach($actividad->LugarRealizacion as $lugar){
+                                            echo '<td>'.$lugar->LugarRealizacion.'</td>';    
+                                        }
+                                        foreach($actividad->ListadoSocios as $socio){
+                                            echo '<td>'.$socio->DescripcionSocio.'</td>';
+                                        }
+                                }
+                                echo    '</tbody>
+                                    </table>
+                                </div>';
                             }
                         ?>
                     </form>
