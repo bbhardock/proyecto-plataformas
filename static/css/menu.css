@@ -20,7 +20,7 @@ header .title{
     border-bottom: 5px solid rgb(247, 216, 162);
     height: 63px;
     position: fixed;
-    z-index: 3000;
+    z-index: 150;
 }
 #btn-menu{
     display: none;

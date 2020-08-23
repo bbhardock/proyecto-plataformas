@@ -9,7 +9,7 @@
     min-height: auto;
     min-width: auto;
     padding:40px;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: all 0.5s ease-in;
     -webkit-transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
@@ -22,7 +22,7 @@
     min-height: auto;
     min-width: auto;
     padding:40px;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: all 0.5s ease-in;
     -webkit-transition: all 0.5s ease-in;
     -moz-transition: all 0.5s ease-in;
@@ -53,26 +53,26 @@
     margin: 0px;
 }
 .info-resumen .blue{
-    background: rgba(35, 65, 91, 1);
+    background: radial-gradient(rgba(35, 65, 91, 0.9),rgba(35, 65, 91, 1));
     color: rgba(246, 246, 246);
 }
 .info-resumen .brown{
-    background: rgb(169, 63, 43,1);
+    background: radial-gradient(rgb(169, 63, 43,0.9),rgb(169, 63, 43,1));
     color: rgba(246, 246, 246);
 }
 .info-resumen .bluelight{
-    background: rgb(0, 128, 128, 1);
+    background: radial-gradient(rgb(0, 128, 128, 0.9),rgb(0, 128, 128, 1));
     color: rgba(246, 246, 246);
 }
 .info-resumen .browndark{
-    background: rgb(188, 106, 38,1);
+    background: radial-gradient(rgb(188, 106, 38,0.9),rgb(188, 106, 38,1));
     color: rgba(246, 246, 246);
 }
 .info-resumen .yellow{
-    background: linear-gradient(rgb(209, 212, 26),rgb(209, 212, 26,0.8));
+    background: radial-gradient(rgb(209, 212, 26,0.9),rgb(209, 212, 26));
     color: rgba(246, 246, 246);
 }
 .info-resumen .purple{
-    background: linear-gradient(rgb(110, 6, 93),rgb(110, 6, 93,0.8));
+    background: radial-gradient(rgb(110, 6, 93,0.9),rgb(110, 6, 93));
     color: rgba(246, 246, 246);
 }

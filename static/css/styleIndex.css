@@ -1,11 +1,12 @@
-@import url(menu.css?v1.12);
+@import url(menu.css?v1.13);
 @import url(table.css?v1.8);
-@import url(titles.css?v1.10);
+@import url(titles.css?v1.11);
 @import url(footer.css?v1.14);
 @import url(submenu.css?v1.0);
 @import url(calendario.css?v1.0);
 @import url(graficos.css?v1.2);
 @import url(cuadrosAnimados.css?v1.2);
+@import url(botton-arriba.css);
 html{
     scroll-behavior: smooth;
 }
@@ -43,7 +44,7 @@ body{
     background: rgba(255, 255, 255, 0.7);
     height: auto;
     margin: 10px auto;
-    width: 100%;
+    width: 95%;
 }
 .form-group{
     margin-top: 10px;
@@ -53,32 +54,4 @@ body{
     width: 100%;
     background: rgb(169, 63, 43,0.8);
     color: white;
-}
-
-
-.animadoDer, .animadoIzq{
-    opacity: 0;
-    transition: all 0.5s;
-}
-.mostrarDerecha{
-    animation: mostrarDerecha 1s;
-}
-.mostrarIzquierda{
-    animation: mostrarIzquierda 1s;
-}
-@keyframes mostrarDerecha{
-    0% {
-        transform: translateX(-60px);
-    }
-    100% {
-        transform: translateX(0px);
-    }
-}
-@keyframes mostrarIzquierda{
-    0% {
-        transform: translateX(60px);
-    }
-    100% {
-        transform: translateX(0px);
-    }
 }

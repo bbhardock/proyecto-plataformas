@@ -15,8 +15,9 @@
         <title>Vinculación con el medio</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="static/css/fontello.css?v1.6"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v1.22"/>
+        <link rel="stylesheet" href="static/css/fontello.css?v1.7"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v1.29"/>
+        <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
 
         <!-- Calendario -->
@@ -99,7 +100,12 @@
     <body>
         <?php
             require "header.php";
-        ?>  
+        ?> 
+        <div class="ir-arriba">
+            <div class="ir-arriba-button">
+                <i class="icon-up"></i>
+            </div>
+        </div>
         <section class="main">
             <div class="container">
                 <section id="calendario">
@@ -117,13 +123,11 @@
                 <section  id="informacion">
                     <div class="row">
                         <div class="col-lg-12">
-                            <span class="border">
-                                <div class="Title-SubtitleBlue">
-                                    <div class="container blue">
-                                        <h5>Resumen de Actividades</h5>
-                                    </div>
+                            <div class="Title-SubtitleBlue">
+                                <div class="container blue">
+                                    <h5>Resumen de Actividades</h5>
                                 </div>
-                            </span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -332,74 +336,6 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="row">
-                        <div class="col-md-12 col-lg-4">
-                            <div class="info-resumen">
-                                <div class="animadoDer containerSmall container purple">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <h2>135</h2>
-                                        </div>
-                                        <div class="col-sm-6 col-md-8">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-4">
-                            <div class="info-resumen ">
-                                <div class="animadoDer containerSmall container browndark">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <h2>135</h2>
-                                        </div>
-                                        <div class="col-sm-6 col-md-8">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-4">
-                            <div class="info-resumen ">
-                                <div class="animadoIzq containerSmall container bluelight">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <h2>135</h2>
-                                        </div>
-                                        <div class="col-sm-6 col-md-8">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </section>
                 <section  id="graficos">
                     <div class="row">
@@ -519,27 +455,19 @@
             require 'footer.php';
         ?>
         <script>
-            let animadoDer = document.querySelectorAll(".animadoDer");
-            let animadoIzq = document.querySelectorAll(".animadoIzq");
-
-            function mostrarScroll() {
-                let scrollTop = document.documentElement.scrollTop;
-                for (var i = 0; i < animadoDer.length; i++){
-                    let alturaAnimado = animadoDer[i].offsetTop;
-                    if(alturaAnimado -1000< scrollTop){
-                        animadoDer[i].style.opacity = 1;
-                        animadoDer[i].classList.add("mostrarDerecha");
-                    }
+            window.onscroll = function(){
+                if(document.documentElement.scrollTop > 100){
+                    document.querySelector('.ir-arriba').classList.add('show');
+                }else{
+                    document.querySelector('.ir-arriba').classList.remove('show');
                 }
-                for (var i = 0; i < animadoIzq.length; i++){
-                    let alturaAnimado = animadoIzq[i].offsetTop;
-                    if(alturaAnimado -1000 < scrollTop){
-                        animadoIzq[i].style.opacity = 1;
-                        animadoIzq[i].classList.add("mostrarIzquierda");
-                    }
-                }      
             }
-            window.addEventListener('scroll', mostrarScroll);
+            document.querySelector('.ir-arriba').addEventListener('click', ()=>{
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
         </script>
         <!-- Radializando colores -->
         <script>
