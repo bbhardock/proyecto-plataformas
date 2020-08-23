@@ -32,7 +32,7 @@
       <meta name="viewport" content="width = device-width, user-scalable = no">
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.4">
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.5">
       <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
   </head>
   <body> 
@@ -90,38 +90,46 @@
                   <option> <?php echo $actividad->AreaVinculacion ?> </option>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="area">Tipos de Impactos:</label>
-                <select multiple class="form-control" id="area">
-                  <option disabled>No se puede elegir impactos internos y externos a la vez</option>
-                  <optgroup label="Impacto interno">
-                    <option>A) Contribuir al logro de los perfiles de egreso de los estudiantes en las carreras y programas de postgrado</option>
-                    <option>B) Pertinencia de los perfiles de egreso de acuerdo a requerimientos del mercado laboral</option>
-                    <option>C) Asegurar la Formación integral de los Estudiantes de Pregrado y Postgrado</option>
-                    <option>D) Vincular Investigación con Docencia generando nuevo conocimiento en áreas del Desarrollo Territorial</option>
-                    <option>E) Realizar proyectos I+D+i+e que respondan a las necesidades del entorno</option>
-                  </optgroup>
-                  <optgroup label="Impacto externo">
-                    <option>1) Fin de la pobreza</option>
-                    <option>2) Hambre cero</option>
-                    <option>3) Salud y Bienestar</option>
-                    <option>4) Educación de calidad</option>
-                    <option>5) Igualdad de Género</option>
-                    <option>6) Agua limpia y saneamiento</option>
-                    <option>7) Energía asequible y no contaminante</option>
-                    <option>8) Trabajo decente y crecimiento económico</option>
-                    <option>9) Industria, Innovacion e Infraestrucutra</option>
-                    <option>10) Reducción de las desigualdades</option>
-                    <option>11) Ciudades y Comunidades sostenibles</option>
-                    <option>12) Producción y consumo responsables</option>
-                    <option>13)Acción por el clima</option>
-                    <option>14) Vida submarina</option>
-                    <option>15) Vida de ecosistemas terrestres</option>
-                    <option>16) Paz, Justicia e Insituciones solidas</option>
-                    <option>17) Alianzas para lograr los objetivos</option>
-                  </optgroup>   
-                </select>
-              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="tipos-impacto">Impactos Internos relacionados:</label>
+                  <div class="table-responsive">
+                    <table class="table table-bordered tableA" id="tipos-impacto">
+                        <thead>
+                          <th>Impacto Interno</th>
+                        </thead>
+                        <tbody>
+                          <?php
+                            foreach($actividad->ListadoBeneficiariosInternos as $beneInternos){
+                              echo '<tr>
+                              <td>'.$beneInternos->CantidadBeneficiariosDirectos.'</td>
+                              </tr>';
+                            }
+                          ?>
+                        </tbody>
+                    </table>
+                  </div>  
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="tipos-impacto">Impactos Externos relacionados:</label>
+                  <div class="table-responsive">
+                    <table class="table table-bordered tableA" id="tipos-impacto">
+                        <thead>
+                          <th>Impacto Externo</th>
+                        </thead>
+                        <tbody>
+                          <?php
+                            foreach($actividad->ListadoBeneficiariosInternos as $beneInternos){
+                              echo '<tr>
+                              <td>'.$beneInternos->CantidadBeneficiariosDirectos.'</td>
+                              </tr>';
+                            }
+                          ?>
+                        </tbody>
+                    </table>
+                  </div> 
+                </div>
+              </div>           
               <label for="beneficiario-interno">Listado de Beneficiarios Internos:</label>
               <div class="table-responsive">
                 <table class="table table-bordered tableA" id="beneficiario-interno">

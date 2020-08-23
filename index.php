@@ -16,7 +16,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.7"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v1.29"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v2.4"/>
         <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
 

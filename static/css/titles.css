@@ -7,6 +7,7 @@
     color: rgba(246, 246, 246);
     border-radius: 2px;
     box-shadow: 0px 0px 5px 1px rgb(128, 128, 128, 0.5);
+    border: 2px solid rgb(0, 0, 0,0.2);
 }
 .Title-SubtitleBlue{
     width: 100%;
