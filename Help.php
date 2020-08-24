@@ -19,7 +19,7 @@
   if ($_SESSION['user_admin_status'] =='N' && strcmp($actividad->RutUsuario,$_SESSION['user_rut']) != 0 ){ //el usuario solo puede ver o editar las acciones que le pertenecen
     header("Location: dashboard.php");
     exit(); 
-  }else if ($_SESSION['user_admin_status'] == 'S' && strcmp($modo,"ingresar") == 0){ //el admin solo puede ver todas las actividades
+  }else if ($_SESSION['user_admin_status'] == 'S' && strcmp($modo,"ver") != 0){ //el admin solo puede ver todas las actividades
     header("Location: dashboard.php");
     exit(); 
   }
