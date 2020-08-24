@@ -227,36 +227,77 @@
                 echo "<fieldset disabled>";
                 echo ' <div class="form-group">
                 <label for="solicitante">Solicitante de ayuda:</label>
-                <input type="text" class="form-control" id="solicitante" name="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda" required="">
+                <input type="text" class="form-control" id="solicitante" value="'.$solicitudAyuda->nombre_solicitante.'" name="solicitante" placeholder="Escriba el nombre de quien solicita la ayuda" required="">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="correo">Correo:</label>
-                  <input type="text" class="form-control" id="correo" name="correo" placeholder="Ejemplo: ejemplo@ucn.cl" required="">
+                  <input type="text" class="form-control" id="correo" value="'.$solicitudAyuda->correo.'" name="correo" placeholder="Ejemplo: ejemplo@ucn.cl" required="">
                 </div>    
                 <div class="form-group col-md-6">
                   <label for="telefono">Teléfono:</label>
-                  <input type="text" class="form-control" id="telefono"  name="telefono" placeholder="Ejemplo: +56 9 8756 4523" required="">
+                  <input type="text" class="form-control" id="telefono" value="'.$solicitudAyuda->telefono.'" name="telefono" placeholder="Ejemplo: +56 9 8756 4523" required="">
                 </div>   
               </div>  
               <div class="form-group">
                 <label for="logistic-support">Apoyo en la logística:</label>
-                <ul class="apoyo_seleccion">
-                  <li><input type="checkbox" name="logistic[]" id="FAMED" value="FAMED"><label for="FAMED">Pendón FAMED</label></li>
-                  <li><input type="checkbox" name="logistic[]"  id="Enfermeria" value="Enfermeria"><label for="Enfermeria">Pendón C. Enfermería</label></li>
-                  <li><input type="checkbox" name="logistic[]"  id="Kinesiologia" value="Kinesiologia"><label for="Kinesiologia">Pendón C. Kinesiología</label></li>
-                  <li><input type="checkbox" name="logistic[]"  id="Medicina" value="Medicina"><label for="Medicina">Pendón C. Medicina</label></li>
-                  <li><input type="checkbox" name="logistic[]"  id="Nutricion" value="Nutricion"><label for="Nutricion">Pendón C. Nutrición</label></li>
-                  <li><input type="checkbox" name="logistic[]"  id="Impresa" value="Impresa"><label for="Impresa">Constancia Impresa</label></li>
-                  <li><input type="checkbox" name="logistic[]"  id="Digital" value="Digital"><label for="Digital">Constancia Digital</label></li>
+                <ul class="apoyo_seleccion">';
+                if($solicitudAyuda->logistica_pendon_famed_S_N == "S"){
+                  echo '<li><input type="checkbox" name="logistic[]" id="FAMED" value="FAMED" checked><label for="FAMED">Pendón FAMED</label></li>';  
+                }else{
+                  echo '<li><input type="checkbox" name="logistic[]" id="FAMED" value="FAMED"><label for="FAMED">Pendón FAMED</label></li>';
+                }
+
+                if($solicitudAyuda->logistica_pendon_enfermeria_S_N == "S"){
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Enfermeria" value="Enfermeria" checked><label for="Enfermeria">Pendón C. Enfermería</label></li>';
+                }else{
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Enfermeria" value="Enfermeria"><label for="Enfermeria">Pendón C. Enfermería</label></li>';
+                }
+
+                if($solicitudAyuda->logistica_pendon_kine_S_N == 'S'){
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Kinesiologia" value="Kinesiologia" checked><label for="Kinesiologia">Pendón C. Kinesiología</label></li>';
+                }else{
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Kinesiologia" value="Kinesiologia"><label for="Kinesiologia">Pendón C. Kinesiología</label></li>';
+                }
+
+                if($solicitudAyuda->logistica_pendon_medi_S_N == 'S'){
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Medicina" value="Medicina" checked><label for="Medicina">Pendón C. Medicina</label></li>';
+                }else{
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Medicina" value="Medicina"><label for="Medicina">Pendón C. Medicina</label></li>';
+                }
+
+                if($solicitudAyuda->logistica_pendon_nutri_S_N == 'S'){
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Nutricion" value="Nutricion" checked><label for="Nutricion">Pendón C. Nutrición</label></li>';
+                }else{
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Nutricion" value="Nutricion"><label for="Nutricion">Pendón C. Nutrición</label></li>';
+                }
+
+                if($solicitudAyuda->logistica_const_impresa_S_N == 'S'){
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Impresa" value="Impresa" checked><label for="Impresa">Constancia Impresa</label></li>';
+                }else{
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Impresa" value="Impresa" checked><label for="Impresa">Constancia Impresa</label></li>';
+                }
+
+                if($solicitudAyuda->logistica_const_digital_S_N == 'S'){
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Digital" value="Digital" checked><label for="Digital">Constancia Digital</label></li>';
+                }else{
+                  echo '<li><input type="checkbox" name="logistic[]"  id="Digital" value="Digital"><label for="Digital">Constancia Digital</label></li>';
+                }
+
+                echo '
                 </ul>        
               </div>
               <fieldset class="form-group">
                 <legend class="col-form-label col-md-12">Requiere reunión de coordinación:</legend>
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-yes" value="1">
+                    <div class="form-check">';
+                    if ($solicitudAyuda->requiere_reunion_S_N == "S"){
+                      echo '<input class="form-check-input" type="radio" name="btn-radio" id="meeting-yes" value="1" checked>';  
+                    }else{
+                      echo '<input class="form-check-input" type="radio" name="btn-radio" id="meeting-yes" value="1">';  
+                    }
+                    echo '
                       <label class="form-check-label" for="meeting-yes">
                         Si
                       </label>      
@@ -264,17 +305,22 @@
                         <div class="form-row">
                           <div class="col-md-6">
                             <label for="hour-reunion">Hora de la reunion</label>
-                            <input type="time" class="form-control" placeholder="Hora: hh:mm" name="hour-reunion">   
+                            <input type="time" class="form-control" placeholder="Hora: hh:mm" name="hour-reunion" value="'.$solicitudAyuda->hora_reunion.'">   
                           </div>
                           <div class="col-md-6">
                             <label for="date-reunion">Fecha de la reunion</label>
-                            <input type="date" class="form-control" placeholder="Fecha: dd/mm/yyyy" name="date-reunion">   
+                            <input type="date" class="form-control" placeholder="Fecha: dd/mm/yyyy" name="date-reunion" value="'.$solicitudAyuda->fecha_reunion.'">   
                           </div>
                         </div> 
                       </div>                    
                     </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2" checked>
+                    <div class="form-check">';
+                    if ($solicitudAyuda->requiere_reunion_S_N == "N"){
+                      echo '<input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2" checked>';
+                    }else{
+                      echo '<input class="form-check-input" type="radio" name="btn-radio" id="meeting-no" value="2">'; 
+                    }
+                    echo '
                       <label class="form-check-label" for="meeting-no">
                         No
                       </label>
@@ -284,14 +330,19 @@
               </fieldset>  
               <div class="form-group">
                 <label for="number-participants">Cantidad aproximada de participantes:</label>
-                <input type="number" class="form-control" id="number-participants" name="number-participants" placeholder="Cantidad aproximada de participantes" required="">
+                <input type="number" class="form-control" id="number-participants" value="'.$solicitudAyuda->cantidad_aprox_participantes.'" name="number-participants" placeholder="Cantidad aproximada de participantes" required="">
               </div>
               <fieldset class="form-group">
                 <div class="row">
                   <legend class="col-form-label col-sm-12">¿Requiere apoyo de la Departamento de Comunicación y Admisión de la UCN?</legend>
                   <div class="col-sm-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="btn-radio1" id="support-yes" value="3">
+                    <div class="form-check">';
+                    if ($solicitudAyuda->requiere_apoyo_com_S_N == "S"){
+                      echo '<input class="form-check-input" type="radio" name="btn-radio1" id="support-yes" value="3" checked>';  
+                    }else{
+                      echo '<input class="form-check-input" type="radio" name="btn-radio1" id="support-yes" value="3"';   
+                    }
+                    echo '
                       <label class="form-check-label" for="support-yes">
                         Si
                       </label>
@@ -307,8 +358,13 @@
                         </div> 
                       </div>   
                     </div> 
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4" checked>
+                    <div class="form-check">';
+                    if ($solicitudAyuda->requiere_apoyo_com_S_N == "N"){
+                      echo '<input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4" checked>';  
+                    }else{
+                      echo '<input class="form-check-input" type="radio" name="btn-radio1" id="support-no" value="4">'; 
+                    }
+                    echo '
                       <label class="form-check-label" for="support-no">
                         No
                       </label>
@@ -318,35 +374,35 @@
               </fieldset>
               <div class="form-group">
                 <label for="need-support">Necesidad de Apoyo Tecnico:</label>
-                <textarea class="form-control" id="need-support" name="need-support" rows="3" placeholder="Especifique que apoyo tecnico necesita" required=""></textarea>
+                <textarea class="form-control" id="need-support" name="need-support" rows="3" placeholder="Especifique que apoyo tecnico necesita" required="">'.$solicitudAyuda->apoyo_tecnico.'</textarea>
               </div> 
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="suplie-bandejas">Cantidad de bandejas necesarias:</label>
-                  <input type="number" class="form-control" id="suplie-bandejas" name="suplie-bandejas" placeholder="Número de bandejas" required="">
+                  <input type="number" class="form-control" id="suplie-bandejas" value="'.$solicitudAyuda->cant_insumo_bandejas.'" name="suplie-bandejas" placeholder="Número de bandejas" required="">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="suplie-tapetes">Cantidad de tapetes necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-tapetes" name="suplie-tapetes" placeholder="Número de tapetes" required="">
+                  <input type="number" class="form-control" id="suplie-tapetes" value="'.$solicitudAyuda->cant_insumo_tapetes.'" name="suplie-tapetes" placeholder="Número de tapetes" required="">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="suplie-sillas">Cantidad de sillas necesarias:</label>
-                  <input type="number" class="form-control" id="suplie-sillas" name="suplie-sillas" placeholder="Número de sillas" required="">
+                  <input type="number" class="form-control" id="suplie-sillas" value="'.$solicitudAyuda->cant_insumo_sillas.'" name="suplie-sillas" placeholder="Número de sillas" required="">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="suplie-paneles">Cantidad de paneles necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-paneles" name="suplie-paneles" placeholder="Número de paneles" required="">
+                  <input type="number" class="form-control" id="suplie-paneles" value="'.$solicitudAyuda->cant_insumo_paneles.'" name="suplie-paneles" placeholder="Número de paneles" required="">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="suplie-toldos">Cantidad de toldos necesarios:</label>
-                  <input type="number" class="form-control" id="suplie-toldos" name="suplie-toldos" placeholder="Número de toldos" required="">
+                  <input type="number" class="form-control" id="suplie-toldos" value="'.$solicitudAyuda->cant_insumo_toldos.'" name="suplie-toldos" placeholder="Número de toldos" required="">
                 </div>
               </div>     
               <div class="form-group">
                 <label for="suplie-otros">Otro:</label>
-                <textarea class="form-control" id="suplie-otros" name="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite"></textarea>
+                <textarea class="form-control" id="suplie-otros" name="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite">'.$solicitudAyuda->cant_insumo_otros.'</textarea>
               </div>
             </fieldset>';
             echo '
