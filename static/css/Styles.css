@@ -12,6 +12,7 @@ html, body{
     height: 100%;
 }
 header{
+    font-family: 'IBM Plex Sans', sans-serif;
     width: 100%;
     background: linear-gradient(rgb(71, 76, 82),rgba(35, 65, 91, 0.95));
     color: white;

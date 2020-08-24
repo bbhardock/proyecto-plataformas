@@ -1,15 +1,43 @@
-.Title-Index .container{
-    padding: 120px 45px;
-    text-align: center;
-    margin: 50px 0px;
+.Title-Index{
+    padding: 100px 45px;
+    margin: 30px 0px;
     margin-left: 20px;
     background: rgba(35, 65, 91);
     color: rgba(246, 246, 246);
     border-radius: 2px;
     box-shadow: 0px 0px 5px 1px rgb(128, 128, 128, 0.5);
-    border: 2px solid rgb(0, 0, 0,0.2);
+    border: 2px solid rgb(247, 216, 162);
+
 }
-.Title-SubtitleBlue{
+    .Title-Index .container{
+        text-align: center;
+        height: 160px;
+        font-size: 47px;
+        background: rgba(35, 65, 91);
+        font-family: 'IBM Plex Sans', sans-serif;
+        border-bottom: 5px solid rgb(246, 101, 23,0.8);
+        padding: 0;
+        margin: auto;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+    .Title-Index ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        animation: cambiar 15s ease-in infinite;
+    }
+@keyframes cambiar{
+    0%{ margin-top: 0;}
+    30%{ margin-top: 0;}
+
+    35%{margin-top: -160px;}
+    75%{margin-top: -160px;}
+
+    80%{margin-top: 0;}
+    100%{margin-top: 0;}
+}
+.Title-SubtitleBlue,.Title-SubtitleBlueCalendar{
     width: 100%;
     margin:0px auto;
     border-bottom: 6px solid rgba(35, 65, 91);
@@ -19,28 +47,40 @@
     margin:0px auto;
     border-bottom: 6px solid rgb(169, 63, 43);
 }
-.Title-SubtitleBlue .container{
-    width: 25%;
-    margin: 40px auto 0px 30px;
-    padding: 5px;
-    text-align: center;
-    color: rgba(246, 246, 246);
-    border-radius: 10px 10px 0px 0px;
-}
-.Title-SubtitleRed .container{
-    width: 40%;
-    margin: 40px 30px 0px auto;
-    padding: 5px;
-    text-align: center;
-    color: rgba(246, 246, 246);
-    border-radius: 10px 10px 0px 0px;
-}
-.Title-SubtitleRed .red{
-    background: rgb(169, 63, 43);
-}
-.Title-SubtitleBlue .blue{
-    background: rgba(35, 65, 91,1);
-}
+    .Title-SubtitleBlueCalendar .container,
+    .Title-SubtitleBlue .container,
+    .Title-SubtitleRed .container{
+        padding: 5px;
+        text-align: center;
+        color: rgba(246, 246, 246);
+        border-radius: 10px 10px 0px 0px;
+    }
+    .Title-SubtitleBlueCalendar .container{
+        width: 50%;
+        margin: 10px 10px 0px auto;
+    }
+    .Title-SubtitleBlue .container{
+        width: 25%;
+        margin: 20px auto 0px 30px;
+    }
+    .Title-SubtitleRed .container{
+        width: 40%;
+        margin: 20px 30px 0px auto;
+    }
+    .Title-SubtitleRed .red{
+        background: rgb(169, 63, 43);
+    }
+    .Title-SubtitleBlue .blue,.Title-SubtitleBlueCalendar .blue{
+        background: rgba(35, 65, 91,1);
+    }
+    .Title-SubtitleBlue h5,.Title-SubtitleRed h5{
+        margin-bottom: 0;
+    }
+    .Title-SubtitleBlueCalendar h5{
+        font-size: 15px;
+        margin-bottom: 0;
+    }
+
 .container-Title .container{
     padding: 10px;
     background: rgba(35, 65, 91, 0.85);
@@ -68,8 +108,35 @@
 }
 
 @media (max-width:1000px){
-    .Title-Index .container{
+    .Title-Index {
         padding: 40px 45px;
         margin: 20px 5px;
+    }
+}
+@media (max-width:1199px){
+    .Title-Index .container{
+        height: 180px;
+        font-size: 40px;
+        margin: auto;
+    }
+    @keyframes cambiar{
+        0%{ margin-top: 0;}
+        30%{ margin-top: 0;}
+    
+        35%{margin-top: -180px;}
+        75%{margin-top: -180px;}
+    
+        80%{margin-top: 0;}
+        100%{margin-top: 0;}
+    }
+}
+@media (max-width:998px){
+    .Title-Index .container{
+        margin-top: 40px;
+    }
+}
+@media (max-width:768px){
+    .Title-Index .container{
+        margin: auto;
     }
 }

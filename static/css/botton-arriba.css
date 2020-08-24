@@ -27,20 +27,20 @@
     color: white;
     transition: .2s;
 }
-.show{
+.mostrar{
     z-index: 10;
 }
-.show .ir-arriba-button{
-    animation: popup .3s ease-in-out;
+.mostrar .ir-arriba-button{
+    animation: aparecer .3s ease-in-out;
     width: 4.6rem;
     height: 4.6rem;
     z-index: 11;
 }
-.show i{
+.mostrar i{
     transform: translate(-50%,-50%) scale(1);
 }
 
-@keyframes popup{
+@keyframes aparecer{
     0%{
         width: 0rem;
         height: 0rem;
@@ -65,7 +65,7 @@
         width: 3.6rem;
         height: 3.6rem;
     }
-    @keyframes popup{
+    @keyframes aparecer{
         0%{
             width: 0rem;
             height: 0rem;
@@ -90,7 +90,7 @@
         width: 2.6rem;
         height: 2.6rem;
     }
-    @keyframes popup{
+    @keyframes aparecer{
         0%{
             width: 0rem;
             height: 0rem;

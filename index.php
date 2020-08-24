@@ -16,9 +16,10 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.7"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v2.4"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v2.9"/>
         <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap">
 
         <!-- Calendario -->
         <link href='static/fullcalendar/core/main.css' rel='stylesheet' />
@@ -112,10 +113,18 @@
                     <div class="row">
                         <div class="col Title-Index">
                             <div class="container">
-                                <h1>VINCULACION CON EL MEDIO FAMED COQUIMBO</h1>
+                                <ul>
+                                    <li>Vinculación con el Medio FAMED Coquimbo</li>
+                                    <li>Universidad Católica del Norte Coquimbo</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-5">
+                            <div class="Title-SubtitleBlueCalendar">
+                                <div class="container blue">
+                                    <h5>Calendario de Actividades</h5>
+                                </div>
+                            </div>
                             <div id='calendar'></div>
                         </div>
                     </div>
@@ -454,12 +463,13 @@
         <?php
             require 'footer.php';
         ?>
+        <!-- Funcionalidad del boton de subida -->
         <script>
             window.onscroll = function(){
                 if(document.documentElement.scrollTop > 100){
-                    document.querySelector('.ir-arriba').classList.add('show');
+                    document.querySelector('.ir-arriba').classList.add('mostrar');
                 }else{
-                    document.querySelector('.ir-arriba').classList.remove('show');
+                    document.querySelector('.ir-arriba').classList.remove('mostrar');
                 }
             }
             document.querySelector('.ir-arriba').addEventListener('click', ()=>{

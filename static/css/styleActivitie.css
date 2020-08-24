@@ -11,6 +11,7 @@ body{
 
 }
 header{
+    font-family: 'IBM Plex Sans', sans-serif;
     width: 100%;
     background: linear-gradient(rgba(35, 65, 91, 1),rgba(35, 65, 91, 0.95));
     color: white;
