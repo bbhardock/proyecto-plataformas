@@ -16,6 +16,12 @@
     exit(); 
   }
 
+  $solicitudAyuda = obtenerSolicitudAyuda($id);
+
+  if ($solicitudAyuda && strcmp($modo,"ingresar") == 0 ){
+    $modo = "ver";
+  }
+
   if ($_SESSION['user_admin_status'] =='N' && strcmp($actividad->RutUsuario,$_SESSION['user_rut']) != 0 ){ //el usuario solo puede ver o editar las acciones que le pertenecen
     header("Location: dashboard.php");
     exit(); 

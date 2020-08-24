@@ -149,9 +149,27 @@ function insertarActividad($code_activity,$nombre,$correo,$telefono,$requiere_re
         $constancia_impresa,$constancia_digital,$requiere_reunion,$date_reunion,$hour_reunion,$number_participants,$suplie_bandejas,$suplie_tapetes,$suplie_sillas,
         $suplie_paneles,$suplie_toldos,$suplie_otros);
         mysqli_stmt_execute($stmt);
-        return mysqli_stmt_error($stmt);
     }
     mysqli_close($conn);                
+}
+function obtenerSolicitudAyuda($codActividad){
+    require 'databaseHandler.inc.php';
+
+    $sql = 'SELECT * FROM actividades WHERE id_vinculacion=?';
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return NULL;
+    } else {
+        mysqli_stmt_bind_param($stmt,"s",$codActividad);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if(mysqli_num_rows($result) > 0){
+            return json_encode(mysqli_fetch_assoc($result));
+        }else{
+            return false;
+        }
+    }
+    mysqli_close($conn);
 }
 /*
 FUNCIONES DEPENDIENTES DE LA API DEL
@@ -188,3 +206,4 @@ function obtenerActividad($periodo,$codigo){
     }
     return false;
 }
+
