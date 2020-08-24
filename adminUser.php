@@ -15,7 +15,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello/fontello.css">
         <link rel="stylesheet" href="static/css/Styles.css?v2.11">
+        <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap">
+
     </head>
     <body>
         <?php

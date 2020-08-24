@@ -33,7 +33,10 @@
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="static/css/styleActivitie.css?v2.5">
+
+      <!-- Fuente -->
       <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap">
   </head>
   <body> 
     <?php
