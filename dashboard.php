@@ -167,7 +167,8 @@
                                         <td>'.$actividad->CodigoActividad.'</td>
                                         <td>'.$actividad->NombreUsuario.'</td>
                                         <td>'.$actividad->NombreActividad.'</td>
-                                        <td>'.$actividad->FechaInicio.' al '.$actividad->FechaTermino.'</td>
+                                        <td>'.$actividad->FechaInicio.' al '.$actividad->FechaTermino.'</td>';
+                                    echo '
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-cancel square-cancel"></div></td>
