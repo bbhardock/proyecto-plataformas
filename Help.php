@@ -47,7 +47,19 @@
       //TODO: AGREGAR PANTALLAS DE AVISO
       if ($solicitudAyuda && strcmp($modo,"ingresar") == 0){ //LA SOLICITUD DE AYUDA YA EXISTE. PUEDE VER LOS DETALLES DE LA MISMA EN ESTE FORMULARIO
         $modo = "ver";
+        echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong> La solicitud de ayuda que desea ingresar ya existe. Se mostrarán los detalles de la misma en el formulario </strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>';
       }else if (!$solicitudAyuda && strcmp($modo,"ver") == 0){ //LA SOLICITUD DE AYUDA NO EXISTE. PUEDE INGRESAR LA SOLICITUD EN ESTE FORMULARIO
+          echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>La solicitud de ayuda que desea ver no existe aún </strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>';
         $modo = "ingresar";
       }
     ?>  
@@ -410,7 +422,11 @@
               <a class = "btn btn-danger btn-md btn-izq" href="dashboard.php">Volver</a>
             </div>'; 
               }else if($modo == 'ingresar'){
-                echo "<fieldset>";
+                if($_SESSION['user_admin_status'] == 'S'){
+                  echo "<fieldset disabled>";
+                }else{
+                  echo "<fieldset>";
+                }
                 echo '
                 <div class="form-group">
                   <label for="solicitante">Solicitante de ayuda:</label>
@@ -536,6 +552,7 @@
                   <textarea class="form-control" id="suplie-otros" name="suplie-otros" rows="3" placeholder="Escriba el nombre el insumo que necesite"></textarea>
                 </div>
               </fieldset>';
+              if($_SESSION['user_admin_status'] == "N")
               echo '<div class="container row">
               <div class="col-sm-12 col-md-6"> 
                 <a class = "btn btn-danger btn-md btn-izq" href="dashboard.php">Cancelar</a>
@@ -543,7 +560,13 @@
               <div class="col-sm-12 col-md-6">
                 <input type="submit" class = "btn btn-primary btn-md btn-der" value="Solicitar" name="registrar-ayuda-submit">
               </div>
-            </div>'; 
+            </div>';
+            else{
+              echo '
+              <div class="col-md-12">
+                <a class = "btn btn-danger btn-md btn-izq" href="dashboard.php">Volver</a>
+              </div>'; 
+            } 
               }
             ?>
           </form>
