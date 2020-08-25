@@ -112,9 +112,9 @@
                         </thead>
                         <tbody>
                           <?php
-                            foreach($actividad->ListadoBeneficiariosInternos as $beneInternos){
+                            foreach($actividad->ListaImpactosInternos as $impInternos){
                               echo '<tr>
-                              <td>'.$beneInternos->CantidadBeneficiariosDirectos.'</td>
+                              <td>'.$impInternos->DescripcionImpacto.'</td>
                               </tr>';
                             }
                           ?>
@@ -131,9 +131,9 @@
                         </thead>
                         <tbody>
                           <?php
-                            foreach($actividad->ListadoBeneficiariosInternos as $beneInternos){
+                            foreach($actividad->ListaImpactosExternos as $impExternos){
                               echo '<tr>
-                              <td>'.$beneInternos->CantidadBeneficiariosDirectos.'</td>
+                              <td>'.$impExternos->DescripcionImpacto.'</td>
                               </tr>';
                             }
                           ?>
