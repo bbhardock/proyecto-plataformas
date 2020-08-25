@@ -48,7 +48,7 @@
       if ($solicitudAyuda && strcmp($modo,"ingresar") == 0){ //LA SOLICITUD DE AYUDA YA EXISTE. PUEDE VER LOS DETALLES DE LA MISMA EN ESTE FORMULARIO
         $modo = "ver";
         echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong> La solicitud de ayuda que desea ingresar ya existe. Se mostrarán los detalles de la misma en el formulario </strong>
+        <strong> La solicitud de ayuda que desea ingresar ya existe. Se mostrarán los detalles de la misma en el formulario. </strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
