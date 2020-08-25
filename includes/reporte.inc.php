@@ -22,7 +22,7 @@ if(isset($_POST['reporte-submit'])){
         $impactosExternos = "";
         $sociosEstrategicos = "";
         foreach($actividad->ListadoBeneficiariosInternos as $benInternos){
-            $listadoBeneficiariosInternos = $listadoBeneficiariosInternos.$benInternos->DescripcionBeneficiarioInterno." (".$benInternos->CantidadBeneficiariosDirectos.") / \n ";
+            $listadoBeneficiariosInternos = $listadoBeneficiariosInternos.$benInternos->DescripcionBeneficiarioInterno." (".$benInternos->CantidadBeneficiariosDirectos.") / ";
         }
         $filaNueva[] = $listadoBeneficiariosInternos;
 
