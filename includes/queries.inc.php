@@ -136,22 +136,40 @@ function insertarActividad($code_activity,$nombre,$correo,$telefono,$requiere_re
     $pendon_famed,$pendon_enfermeria,$pendon_kine,$pendon_medi,$pendon_nutri,$constancia_impresa,$constancia_digital){
     
     require 'databaseHandler.inc.php';
-    $sql = 'INSERT INTO actividades (id_vinculacion,nombre_solicitante,correo,telefono,logistica_pendon_famed_S_N,logistica_pendon_kine_S_N,
+    $sql = 'INSERT INTO actividades (id_vinculacion,nombre_solicitante,correo,telefono,logistica_pendon_famed_S_N,logistica_pendon_enfermeria_S_N,logistica_pendon_kine_S_N,
     logistica_pendon_medi_S_N,logistica_pendon_nutri_S_N,logistica_const_impresa_S_N,logistica_const_digital_S_N,requiere_reunion_S_N,fecha_reunion,
     hora_reunion,cantidad_aprox_participantes,cant_insumo_bandejas,cant_insumo_tapetes,cant_insumo_sillas,cant_insumo_paneles,
-    cant_insumo_toldos,cant_insumo_otros) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    cant_insumo_toldos,cant_insumo_otros,apoyo_tecnico,requiere_apoyo_com_S_N) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         return NULL;
     } else {
-        mysqli_stmt_bind_param($stmt, "sssssssssssssiiiiiii", $code_activity,$nombre,$correo,$telefono,$pendon_famed,$pendon_kine,$pendon_medi,$pendon_nutri,
+        mysqli_stmt_bind_param($stmt, "ssssssssssssssiiiiiiiss", $code_activity,$nombre,$correo,$telefono,$pendon_famed,$pendon_enfermeria,$pendon_kine,$pendon_medi,$pendon_nutri,
         $constancia_impresa,$constancia_digital,$requiere_reunion,$date_reunion,$hour_reunion,$number_participants,$suplie_bandejas,$suplie_tapetes,$suplie_sillas,
-        $suplie_paneles,$suplie_toldos,$suplie_otros);
+        $suplie_paneles,$suplie_toldos,$suplie_otros,$apoyo_tecnico,$requiere_apoyo_com);
         mysqli_stmt_execute($stmt);
-        return mysqli_stmt_error($stmt);
     }
     mysqli_close($conn);                
+}
+function obtenerSolicitudAyuda($codActividad){
+    require 'databaseHandler.inc.php';
+
+    $sql = 'SELECT * FROM actividades WHERE id_vinculacion=?';
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        return NULL;
+    } else {
+        mysqli_stmt_bind_param($stmt,"s",$codActividad);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if(mysqli_num_rows($result) > 0){
+            return json_encode(mysqli_fetch_assoc($result));
+        }else{
+            return false;
+        }
+    }
+    mysqli_close($conn);
 }
 /*
 FUNCIONES DEPENDIENTES DE LA API DEL
@@ -188,3 +206,4 @@ function obtenerActividad($periodo,$codigo){
     }
     return false;
 }
+

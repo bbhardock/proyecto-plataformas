@@ -5,8 +5,8 @@
         exit();
     }
     $periodo="";
-    if(isset($_POST['filtro-submit'])){
-        $periodo=$_POST['periodo'];
+    if(isset($_GET['periodo'])){
+        $periodo=$_GET['periodo'];
     }else{
         $periodo="2020";
     }
@@ -71,8 +71,8 @@
                         echo '<div class="col-md-12 col-lg-12">';
                     }
                 ?>      
-                    <form action="" class="form-inline" name="filtros" method="POST">
-                        <label class="my-1 mr-2" for="periodo">Periodo</label>
+                    <form action="" class="form-inline" name="filtros" method="GET">
+                        <label class="my-1 mr-2" for="area">Periodo</label>
                         <select class="custom-select my-1 mr-sm-2" id="periodo" name="periodo">
                             <option value="" selected disabled hidden> Seleccione periodo </option>
                             <option value="2020">2020</option>
@@ -80,41 +80,8 @@
                             <option value="2022">2022</option>
                             <option value="2023">2023</option>
                         </select>
-                        <!--
-                        <select class="custom-select my-1 mr-sm-2" id="area">
-                            <option>-Vacio-</option>
-                            <option>Vinculación Académica de pre y postgrado</option>
-                            <option>Vinculación Artística, Cultural, Patrimonial y Calidad de Vida</option>
-                            <option>Vinculación Medio Productivo y de Servicio</option>
-                            <option>Vinculación Vocacion Socual y Comunitaria</option>
-                            <option>Vinculación Medio Público y Ciudadanía</option>
-                            <option>Vinculación con Sector Escolar</option>
-                            <option>Vinculación para la Internacionalización</option>
-                            <option>Vinculación con Egresados</option>
-                        </select>    
-                        <label class="my-1 mr-2" for="type-activity">Tipo de actividad:</label>
-                        <select class="custom-select my-1 mr-sm-2" id="type-activity">
-                            <option>-Vacio-</option>
-                            <option>Congreso</option>
-                            <option>Jornada</option>
-                            <option>Feria</option>
-                            <option>Charla</option>
-                            <option>Taller</option>
-                            <option>Curso</option>
-                            <option>Explo UCN</option>
-                            <option>Diplomado</option>
-                            <option>Otro</option>
-                        </select>
-                        <label class="my-1 mr-2" for="state-activity">Estado:</label>
-                        <select class="custom-select my-1 mr-sm-2" id="state-activity">
-                            <option>-Vacio-</option>
-                            <option>En Proceso</option>
-                            <option>No evaluada</option>
-                            <option>Evaluada</option>
-                        </select>
-                        -->
-                        <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
-                        <?php echo '<label class="my-1 mr-2 periodo">Periodo seleccionado actualmente: '.$periodo.'</label>' ?>
+                        <button type="submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
+                        <?php echo '<p> Periodo seleccionado actualmente: '.$periodo.'</p>' ?>
                         <div id="form1" class="table-responsive">
                             <table class="table-bordered tableDash tableA">
                                 <thead>
@@ -133,28 +100,11 @@
                                     </tr>
                                     <tr>     
                                         <th>En proceso</th>
-                                        <th>Ejecutada y no evaluada</th>
+                                        <th>Ejecutada</th>
                                         <th>Evaluada</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <!--
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>Nombre</td>
-                                        <td>Nombre Actividad</td>
-                                        <td>Fecha</td>
-                                        <td><div class="icon-ok square-ok"></div></td>
-                                        <td><div class="icon-ok square-ok"></div></td>
-                                        <td><div class="icon-cancel square-cancel"></div></td>
-                                        <td><a href="help.php?id=id_act&modo=ver" class="icon-search">Ver</a></td>
-                                        <?php
-                                        if($_SESSION['user_admin_status']=='N'){
-                                            echo '<td><a href="help.php?id=id_act&modo=ingresar" class="icon-form">Ayuda</a></td>';
-                                        }
-                                        ?>
-                                    </tr>
-                                -->
                                 <?php //MUESTRA DE DATOS EN TABLA PRINCIPAL (VISTA ADMINISTRADOR Y "MIS ACTIVIDADES" DE USUARIO)
                                 $actividadesTablaPrincipal;
                                 if($_SESSION['user_admin_status'] == 'N'){
@@ -167,10 +117,31 @@
                                         <td>'.$actividad->CodigoActividad.'</td>
                                         <td>'.$actividad->NombreUsuario.'</td>
                                         <td>'.$actividad->NombreActividad.'</td>
-                                        <td>'.$actividad->FechaInicio.' al '.$actividad->FechaTermino.'</td>
-                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td>'.$actividad->FechaInicio.' al '.$actividad->FechaTermino.'</td>';
+                                    $dateFechaInicio = date_create($actividad->FechaInicio);
+                                    $dateFechaTermino = date_create($actividad->FechaTermino);
+                                    $ahora = date_create("now");
+
+                                    if($dateFechaInicio > $ahora){
+                                        //NO HA EMPEZADO
+                                        echo '
+                                        <td><div class="icon-cancel square-cancel></div></td>
+                                        <td><div class="icon-cancel square-cancel></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>';
+                                    }else if($dateFechaInicio < $ahora && $dateFechaTermino > $ahora){
+                                        //ESTA EN PROCESO
+                                        echo '
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-cancel square-cancel"></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>';
+                                    }else if($dateFechaTermino < $ahora){
+                                        //ESTA EJECUTADA
+                                        echo '
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>';
+                                    }
+                                    echo '
                                         <td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ver&periodo='.$periodo.'" class="icon-search">Ver</a></td>';
                                     if($_SESSION['user_admin_status'] == 'N'){
                                     echo '<td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ingresar&periodo='.$periodo.'" class="icon-form">Ayuda</a></td>';
