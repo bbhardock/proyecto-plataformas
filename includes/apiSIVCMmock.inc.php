@@ -9,7 +9,7 @@ function obtenerDatosBase(){
         "Servicio" => "Servicio act1",
         "Producto" => "Producto act1",
         "Periodo" => "2020",
-        "FechaInicio" => "22-08-2020",
+        "FechaInicio" => "27-08-2020",
         "FechaTermino" => "09-10-2020",
         "EstadoActividad" => "Estado act1",
         "LugarRealizacion" =>

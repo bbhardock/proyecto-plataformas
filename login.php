@@ -63,6 +63,14 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>';
+                    }if($cod_error == "noactividades"){
+                        echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        El usuario <strong>no registra actividades en el periodo de este año o el pasado.</strong>
+                        No se permite el acceso a la página.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';   
                     }
                 }else if(isset($_GET['signup'])){
                     if($_GET['signup'] == "success"){
