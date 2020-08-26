@@ -61,9 +61,13 @@
                                 $fechaInicio = date_create_from_format($formatoFecha,$actividad->FechaInicio);
                                 $fechaTermino = date_create_from_format($formatoFecha,$actividad->FechaTermino);
                                 $stringLugaresRealizacion = "";
-                                foreach($actividad->LugarRealizacion as $lugar){
-                                    $stringLugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
-                                }
+                                if($actividad->LugarRealizacion != null){
+                                    foreach($actividad->LugarRealizacion as $lugar){
+                                        $stringLugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
+                                    }
+                                }else{
+                                    $stringLugaresRealizacion = "No ha sido informado";
+                                }   
                                 $stringLugaresRealizacion = rtrim($stringLugaresRealizacion, " / ");
                                 echo '                            {
                                     title: "'.$actividad->NombreActividad.'",
