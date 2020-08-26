@@ -113,6 +113,9 @@
                                 }else if ($_SESSION['user_admin_status'] == 'S'){
                                     $actividadesTablaPrincipal = json_decode(apiListarTodasActividades($periodo));
                                 }
+                                if(isset($actividadesTablaPrincipal->RespuestaSolicitud) && strcmp($actividadesTablaPrincipal->RespuestaSolicitud,"Sin Actividades") == 0){
+                                    $actividadesTablaPrincipal = array();
+                                }
                                 foreach($actividadesTablaPrincipal as $actividad){
                                     echo '<tr>
                                         <td>'.$actividad->CodigoActividad.'</td>
@@ -169,6 +172,9 @@
                                                 </thead>
                                                 <tbody>';
                                 $actividadesTablaSecundaria = json_decode(apiListarTodasActividades($periodo));
+                                if(isset($actividadesTablaSecundaria->RespuestaSolicitud) && strcmp($actividadesTablaSecundaria->RespuestaSolicitud,"Sin Actividades") == 0){
+                                    $actividadesTablaSecundaria = array();
+                                }
                                 foreach ($actividadesTablaSecundaria as $actividad){
                                     echo '<tr>
                                         <td>'.$actividad->NombreUsuario.'</td>

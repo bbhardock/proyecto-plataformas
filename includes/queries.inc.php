@@ -180,7 +180,7 @@ function apiListarActividadesXRut($rut,$periodo){
     require_once 'apiSIVCM.inc.php';
 
     $rut = substr($rut, 0, -1);//requiere quitar el digito verificador
-    $rut = "12214367";
+    //$rut = "12214367";
     return listarActividadesXRut($rut,$periodo);
 }
 function apiListarTodasActividades($periodo){
@@ -192,7 +192,7 @@ function apiverificarActividad($rut,$periodo){
     require_once 'apiSIVCM.inc.php';
 
     $rut = substr($rut, 0, -1);
-    $rut = "12214367";
+    //$rut = "12214367";
     return verificarActividad($rut,$periodo);
 }
 

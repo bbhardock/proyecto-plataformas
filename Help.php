@@ -18,15 +18,23 @@
 
   $solicitudAyuda = json_decode(obtenerSolicitudAyuda($id));
 
-  if ($_SESSION['user_admin_status'] =='N' && strcmp($actividad->RutUsuario,$_SESSION['user_rut']) != 0 ){ //el usuario solo puede ver o editar las acciones que le pertenecen
+  /*
+  El usuario solo puede ver o editar las acciones que le pertenecen.
+  La comprobación para el usuario debe ser entre el rut de la actividad y el rut del usuario en sesión (SIN DIGITO VERIFICADOR)
+  */
+  if ($_SESSION['user_admin_status'] =='N' && strcmp($actividad->RutUsuario,substr($_SESSION['user_rut'], 0, -1)) != 0){
     header("Location: dashboard.php");
-    exit(); 
-  }else if ($_SESSION['user_admin_status'] == 'S' && strcmp($modo,"ver") != 0){ //el admin solo puede ver todas las actividades
+    exit();
+  /*
+  El admin solo puede ver todas las actividades (no ingresarlas)
+  */
+  }else if ($_SESSION['user_admin_status'] == 'S' && strcmp($modo,"ver") != 0){
     header("Location: dashboard.php");
     exit(); 
   }
 
   $formatoFecha = "d/m/Y";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
