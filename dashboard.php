@@ -125,8 +125,8 @@
                                     if($dateFechaInicio > $ahora){
                                         //NO HA EMPEZADO
                                         echo '
-                                        <td><div class="icon-cancel square-cancel></div></td>
-                                        <td><div class="icon-cancel square-cancel></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>
+                                        <td><div class="icon-cancel square-cancel"></div></td>
                                         <td><div class="icon-cancel square-cancel"></div></td>';
                                     }else if($dateFechaInicio < $ahora && $dateFechaTermino > $ahora){
                                         //ESTA EN PROCESO
