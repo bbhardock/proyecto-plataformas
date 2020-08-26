@@ -7,6 +7,7 @@
     }
     $periodo = date("Y");
     $actividades = json_decode(apiListarTodasActividades($periodo));
+    $formatoFecha = "d/m/Y";
 ?>
 <!DOCTYPE html> 
 <html>
@@ -57,8 +58,13 @@
                                     start: "'.$actividad->FechaInicio.'",
                                     end: "'.$actividad->FechaTermino.'",
                                 */
-                                $fechaInicio = date_create($actividad->FechaInicio);
-                                $fechaTermino = date_create($actividad->FechaTermino);
+                                $fechaInicio = date_create_from_format($formatoFecha,$actividad->FechaInicio);
+                                $fechaTermino = date_create_from_format($formatoFecha,$actividad->FechaTermino);
+                                $stringLugaresRealizacion = "";
+                                foreach($actividad->LugarRealizacion as $lugar){
+                                    $stringLugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
+                                }
+                                $stringLugaresRealizacion = rtrim($stringLugaresRealizacion, " / ");
                                 echo '                            {
                                     title: "'.$actividad->NombreActividad.'",
                                     start: "'.date_format($fechaInicio,'Y-m-d').'",
@@ -66,7 +72,7 @@
                                     extendedProps: {
                                         unidad: "'.$actividad->Unidad.'",
                                         areaVinculacion: "'.$actividad->AreaVinculacion.'",
-                                        lugar: "'.$actividad->LugarRealizacion[0]->LugarRealizacion.'",
+                                        lugar: "'.$stringLugaresRealizacion.'",
                                         fechaInicio: "'.$actividad->FechaInicio.'",
                                         fechaTermino: "'.$actividad->FechaTermino.'"
                                     }

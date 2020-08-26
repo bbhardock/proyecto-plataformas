@@ -25,7 +25,8 @@
     header("Location: dashboard.php");
     exit(); 
   }
-  
+
+  $formatoFecha = "d/m/Y";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,11 +100,11 @@
               <div class="form-row">     
                 <div class="form-group col-md-6">
                   <label for="start-date">Fecha de inicio:</label>
-                  <input type="date" class="form-control" value="<?php $fechaInicio = date_create($actividad->FechaInicio); echo date_format($fechaInicio, 'Y-m-d');?>" id="start-date" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" value="<?php $fechaInicio = date_create_from_format($formatoFecha,$actividad->FechaInicio); echo date_format($fechaInicio, 'Y-m-d');?>" id="start-date" placeholder="dd/mm/yyyy">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="end-date">Fecha de termino:</label>
-                  <input type="date" class="form-control" value="<?php $fechaTermino = date_create($actividad->FechaTermino); echo date_format($fechaTermino, 'Y-m-d');?>" id="end-date" placeholder="dd/mm/yyyy">
+                  <input type="date" class="form-control" value="<?php $fechaTermino = date_create_from_format($formatoFecha,$actividad->FechaTermino); echo date_format($fechaTermino, 'Y-m-d');?>" id="end-date" placeholder="dd/mm/yyyy">
                 </div>
               </div>       
               <div class="form-group">
@@ -209,7 +210,9 @@
                     <tbody>
                       <?php
                         foreach($actividad->ListadoSocios as $socio){
-                          echo '<td>'.$socio->DescripcionSocio.'</td>';
+                          echo '<tr>
+                          <td>'.$socio->DescripcionSocio.'</td>
+                          </tr>';
                       }
                       ?>
                     </tbody>

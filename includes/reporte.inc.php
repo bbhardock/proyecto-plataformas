@@ -14,7 +14,14 @@ if(isset($_POST['reporte-submit'])){
     ];
     foreach($actividades as $actividad){
         $filaNueva = [$actividad->Unidad, $actividad->NombreUsuario, $actividad->CodigoActividad, $actividad->NombreActividad, $actividad->AreaVinculacion, $actividad->Servicio, $actividad->Producto,
-        $actividad->FechaInicio.' al '.$actividad->FechaTermino, $actividad->LugarRealizacion[0]->LugarRealizacion." - ".$actividad->LugarRealizacion[0]->CiudadLocalidad." - ".$actividad->LugarRealizacion[0]->Comuna];  
+        $actividad->FechaInicio.' al '.$actividad->FechaTermino];  
+
+        $lugaresRealizacion = "";
+        foreach($actividad->LugarRealizacion as $lugar){
+            $lugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
+        }
+        $lugaresRealizacion = rtrim($lugaresRealizacion, " / ");
+        $filaNueva[] = $lugaresRealizacion;
 
         $listadoBeneficiariosInternos = "";
         $listadoBeneficiariosExternos = "";

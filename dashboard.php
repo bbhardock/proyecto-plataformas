@@ -10,6 +10,7 @@
     }else{
         $periodo="2020";
     }
+    $formatoFecha = "d/m/Y";
     require 'includes/queries.inc.php';
 ?>
 <!DOCTYPE html>
@@ -118,8 +119,8 @@
                                         <td>'.$actividad->NombreUsuario.'</td>
                                         <td>'.$actividad->NombreActividad.'</td>
                                         <td>'.$actividad->FechaInicio.' al '.$actividad->FechaTermino.'</td>';
-                                    $dateFechaInicio = date_create($actividad->FechaInicio);
-                                    $dateFechaTermino = date_create($actividad->FechaTermino);
+                                    $dateFechaInicio = date_create_from_format($formatoFecha,$actividad->FechaInicio);
+                                    $dateFechaTermino = date_create_from_format($formatoFecha,$actividad->FechaTermino);
                                     $ahora = date_create("now");
 
                                     if($dateFechaInicio > $ahora){
