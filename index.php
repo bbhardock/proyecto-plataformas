@@ -7,6 +7,7 @@
     }
     $periodo = date("Y");
     $actividades = json_decode(apiListarTodasActividades($periodo));
+    $formatoFecha = "d/m/Y";
 ?>
 <!DOCTYPE html> 
 <html>
@@ -57,8 +58,8 @@
                                     start: "'.$actividad->FechaInicio.'",
                                     end: "'.$actividad->FechaTermino.'",
                                 */
-                                $fechaInicio = date_create($actividad->FechaInicio);
-                                $fechaTermino = date_create($actividad->FechaTermino);
+                                $fechaInicio = date_create_from_format($formatoFecha,$actividad->FechaInicio);
+                                $fechaTermino = date_create_from_format($formatoFecha,$actividad->FechaTermino);
                                 echo '                            {
                                     title: "'.$actividad->NombreActividad.'",
                                     start: "'.date_format($fechaInicio,'Y-m-d').'",
