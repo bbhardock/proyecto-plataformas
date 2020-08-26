@@ -4,6 +4,9 @@
 .icon-ok:before { content: '\e802'; } /* '' */
 .icon-cancel:before { content: '\e803'; } /* '' */
 .icon-up:before { content: '\e804'; } /* '' */
+.icon-gmail:before { content: '\e805'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-filter:before { content: '\f0b0'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-instagram:before { content: '\f16d'; } /* '' */
 .icon-file-excel:before { content: '\f1c3'; } /* '' */

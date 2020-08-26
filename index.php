@@ -15,8 +15,8 @@
         <title>Vinculación con el medio</title>
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="static/css/fontello.css?v1.7"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v2.9"/>
+        <link rel="stylesheet" href="static/css/fontello.css?v1.8"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v3.2"/>
         <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap">
@@ -108,15 +108,53 @@
             </div>
         </div>
         <section class="main">
-            <div class="container">
+            <div class="container">                
                 <section id="calendario">
                     <div class="row">
                         <div class="col Title-Index">
-                            <div class="container">
-                                <ul>
-                                    <li>Vinculación con el Medio FAMED Coquimbo</li>
-                                    <li>Universidad Católica del Norte Coquimbo</li>
-                                </ul>
+                            <div id="slideNoticias" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="slideTitulo carousel-item active">
+                                        <div class="container">
+                                            <ul>
+                                                <li>Vinculación con el Medio FAMED Coquimbo</li>
+                                                <li>Universidad Católica del Norte Coquimbo</li>
+                                            </ul>
+                                        </div>
+                                        <div class="carousel-caption d-none d-md-block">
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a target="null" href="https://medicina.ucn.cl/ucn-se-integra-a-la-red-publica-de-laboratorios-universitarios-para-diagnostico-covid-19-en-coquimbo/">
+                                            <img src="static/images/ucncoquimbo2.jpg" class="imagenClaro d-block w-100" alt="">
+                                        </a>
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <a target="null" href="https://medicina.ucn.cl/ucn-se-integra-a-la-red-publica-de-laboratorios-universitarios-para-diagnostico-covid-19-en-coquimbo/">
+                                                <h5>Second slide label</h5>
+                                                <p>Noticias respecto al covid-19 en la facultad de Medicina</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a target="null" href="https://medicina.ucn.cl/becas-especialidades-medicas/">
+                                            <img src="static/images/ucncoquimbo2.jpg" class="imagenClaro d-block w-100" alt="">
+                                        </a>
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <a target="null" href="https://medicina.ucn.cl/becas-especialidades-medicas/">
+                                                <h5>Third slide label</h5>
+                                                <p>Conoce mas de nuestras Becas de Especialidades Médicas</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#slideNoticias" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#slideNoticias" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-5">
@@ -139,14 +177,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6">
+                    <div id="animado" class="row">
+                        <div class="col-md-12 col-lg-4">
                                 <div class="info-resumen">
-                                    <div class="animadoDer containerBig container blue">
+                                    <div class="animadoDer containerBig container green">
                                         <div class="row">
-                                            <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-12 col-md-12">                                                
+                                                <div class="fondoUnidad">
+                                                    <h5>"Unidad vinculada"</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
                                                 <div class="titulo">
-                                                    <h4>Nuestros beneficiarios</h4>
+                                                    <h4>Beneficiarios Internos</h4>
+                                                    <h5>Han participado con nosotros son en total</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="titulo">
+                                                    <h4>Beneficiarios Externos</h4>
                                                     <h5>Han participado con nosotros son en total</h5>
                                                 </div>
                                             </div>
@@ -154,55 +203,38 @@
                                                 <h2>200</h2>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
-                                                <div class="fondoUnidad">
-                                                    <h5>"Unidad vinculada"</h5>
-                                                </div>
+                                                <h2>400</h2>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                         </div>
-                        <div class="col-md-12 col-lg-6">
+                        <div class="col-md-12 col-lg-4">
                             <div class="info-resumen ">
-                                <div class="animadoIzq containerBig container brown">
+                                <div class="animadoIzq containerBig container bluelight">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">                                                
+                                            <div class="fondoUnidad">
+                                                <h5>"Unidad vinculada"</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
+                                                <h4>Beneficiarios Internos</h4>
                                                 <h5>Han participado con nosotros son en total</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
-                                            <h2>135</h2>
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Externos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
-                                            </div>
+                                            <h2>200</h2>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-md-12 col-lg-4">
-                            <div class="info-resumen">
-                                <div class="animadoDer containerSmall container bluelight">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <h2>135</h2>
-                                        </div>
-                                        <div class="col-sm-6 col-md-8">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
-                                            </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>400</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -210,43 +242,30 @@
                         </div>
                         <div class="col-md-12 col-lg-4">
                             <div class="info-resumen ">
-                                <div class="animadoDer containerSmall container browndark">
+                                <div class="animadoIzq containerBig container green">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <h2>135</h2>
-                                        </div>
-                                        <div class="col-sm-6 col-md-8">
+                                        <div class="col-sm-12 col-md-12">                                                
                                             <div class="fondoUnidad">
                                                 <h5>"Unidad vinculada"</h5>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-4">
-                            <div class="info-resumen ">
-                                <div class="animadoIzq containerSmall container yellow">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
+                                                <h4>Beneficiarios Internos</h4>
                                                 <h5>Han participado con nosotros son en total</h5>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <h2>135</h2>
-                                        </div>
-                                        <div class="col-sm-6 col-md-8">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Externos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
                                             </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>200</h2>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>400</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -254,13 +273,88 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 col-lg-5">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="info-resumen ">
+                                <div class="animadoDer containerSmall container brown">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12">                                                
+                                            <div class="fondoUnidad">
+                                                <h5>"Unidad vinculada"</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Internos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Externos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>200</h2>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>400</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="info-resumen ">
+                                <div class="animadoIzq containerSmall container blue">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12">                                                
+                                            <div class="fondoUnidad">
+                                                <h5>"Unidad vinculada"</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Internos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Externos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>200</h2>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>400</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-4">
                                 <div class="info-resumen">
                                     <div class="animadoDer containerBig container purple">
                                         <div class="row">
-                                            <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-12 col-md-12">                                                
+                                                <div class="fondoUnidad">
+                                                    <h5>"Unidad vinculada"</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
                                                 <div class="titulo">
-                                                    <h4>Nuestros beneficiarios</h4>
+                                                    <h4>Beneficiarios Internos</h4>
+                                                    <h5>Han participado con nosotros son en total</h5>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <div class="titulo">
+                                                    <h4>Beneficiarios Externos</h4>
                                                     <h5>Han participado con nosotros son en total</h5>
                                                 </div>
                                             </div>
@@ -268,77 +362,69 @@
                                                 <h2>200</h2>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
-                                                <div class="fondoUnidad">
-                                                    <h5>"Unidad vinculada"</h5>
-                                                </div>
+                                                <h2>400</h2>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                         </div>
-                        <div class="col-md-12 col-lg-7">
+                        <div class="col-md-12 col-lg-4">
                             <div class="info-resumen ">
-                                <div class="animadoIzq containerBig container brown">
+                                <div class="animadoIzq containerBig container browndark">
                                     <div class="row">
-                                        <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">                                                
+                                            <div class="fondoUnidad">
+                                                <h5>"Unidad vinculada"</h5>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
+                                                <h4>Beneficiarios Internos</h4>
                                                 <h5>Han participado con nosotros son en total</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
-                                            <h2>135</h2>
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Externos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
-                                            </div>
+                                            <h2>200</h2>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>400</h2>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6">
-                                <div class="info-resumen">
-                                    <div class="animadoDer containerBig container bluelight">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-12">
-                                                <div class="titulo">
-                                                    <h4>Nuestros beneficiarios</h4>
-                                                    <h5>Han participado con nosotros son en total</h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6">
-                                                <h2>200</h2>
-                                            </div>
-                                            <div class="col-sm-6 col-md-6">
-                                                <div class="fondoUnidad">
-                                                    <h5>"Unidad vinculada"</h5>
-                                                </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="info-resumen ">
+                                <div class="animadoIzq containerBig container purple">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12">                                                
+                                            <div class="fondoUnidad">
+                                                <h5>"Unidad vinculada"</h5>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="info-resumen ">
-                                <div class="animadoIzq containerBig container yellow">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
-                                                <h4>Nuestros beneficiarios</h4>
+                                                <h4>Beneficiarios Internos</h4>
                                                 <h5>Han participado con nosotros son en total</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
-                                            <h2>135</h2>
+                                            <div class="titulo">
+                                                <h4>Beneficiarios Externos</h4>
+                                                <h5>Han participado con nosotros son en total</h5>
+                                            </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
-                                            <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
-                                            </div>
+                                            <h2>200</h2>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <h2>400</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -361,7 +447,7 @@
                             <div class="animadoDer graficos">
                                 <div class="container">
                                     <div class="titulo">
-                                        <h6>Actividades Publicas</h6>
+                                        <h6>Area de Actividades</h6>
                                     </div>
                                     <div class="torta">
                                         <figure class="highcarts-figure">
@@ -375,7 +461,7 @@
                             <div class="animadoIzq graficos">
                             <div class="container">
                                     <div class="titulo">
-                                        <h6>Actividades Privadas</h6>
+                                        <h6>Socios Estrategicos</h6>
                                     </div>
                                     <div class="torta">
                                         <figure class="highcarts-figure">
@@ -391,7 +477,7 @@
                             <div class="graficos">
                             <div class="container">
                                     <div class="titulo">
-                                        <h6>Beneficiarios</h6>
+                                        <h6>Impacto Interno</h6>
                                     </div>
                                     <div class="torta">
                                         <figure class="highcarts-figure">
@@ -405,11 +491,41 @@
                             <div class="graficos">
                                 <div class="container">
                                     <div class="titulo">
-                                        <h6>Area de Vinculacion</h6>
+                                        <h6>Impacto Externo</h6>
                                     </div>
                                     <div class="torta">
                                         <figure class="highcarts-figure">
                                             <div id='graficaTorta3'></div>
+                                        </figure>
+                                    </div>                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="graficos">
+                            <div class="container">
+                                    <div class="titulo">
+                                        <h6>Producto</h6>
+                                    </div>
+                                    <div class="torta">
+                                        <figure class="highcarts-figure">
+                                            <div id='graficaTorta4'></div>
+                                        </figure>
+                                    </div>                               
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="graficos">
+                                <div class="container">
+                                    <div class="titulo">
+                                        <h6>Estado</h6>
+                                    </div>
+                                    <div class="torta">
+                                        <figure class="highcarts-figure">
+                                            <div id='graficaTorta5'></div>
                                         </figure>
                                     </div>                               
                                 </div>
@@ -450,7 +566,15 @@
                             <div class="form-group">
                                 <label for="fechaTermino">Fecha de Termino:</label>
                                 <input type="text" class="form-control" id="fechaTermino" placeholder="">
-                            </div>  
+                            </div>
+                            <div class="form-group">
+                                <p>Para mayor información contactarse a:</p>
+                                <div class="container">
+                                    <p><label class="correo icon-gmail"></label> vinculacionfamed@ucn.cl</p>
+                                    <p><label class="facebook icon-facebook"></label>Facultad de Medicina UCN</p>
+                                    <p> <label class="instagram icon-instagram"></label>FACULTADMEDICINAUCN</p>
+                                </div>
+                            </div>    
                         </fieldset>
                     </div>
                     <div class="modal-footer">
@@ -463,6 +587,30 @@
         <?php
             require 'footer.php';
         ?>
+        <!-- Intento de animacion al cargar pagina
+        <script>
+            let animadoDer = document.querySelectorAll(".animadoDer");
+            let animadoIzq = document.querySelectorAll(".animadoIzq");
+            function mostrarScroll(){
+                let scrollTop = document.documentElement.scrollTop;
+                for (var i = 0; i < animadoDer.length; i++){
+                    let alturaAnimado = animadoDer[i].offsetTop;
+                    if(alturaAnimado  < scrollTop){
+                        animadoDer[i].style.opacity = 1;
+                        animadoDer[i].classList.add("mostrarDerecha");
+                    }
+                }
+                for (var i = 0; i < animadoIzq.length; i++){
+                    let alturaAnimado = animadoIzq[i].offsetTop;
+                    if(alturaAnimado - 100 < scrollTop){
+                        animadoIzq[i].style.opacity = 1;
+                        animadoIzq[i].classList.add("mostrarIzquierda");
+                    }
+                }
+            }
+            window.addEventListener('scroll',mostrarScroll);
+        </script>
+        -->
         <!-- Funcionalidad del boton de subida -->
         <script>
             window.onscroll = function(){
@@ -511,7 +659,7 @@
                     type: 'pie'
                 },
                 title: {
-                    text: 'Actividades de caracter publico en 2020'
+                    text: 'Todas las Actividades segun su Area'
                 },
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -556,7 +704,7 @@
                     type: 'pie'
                 },
                 title: {
-                    text: 'Actividades de caracter privado en 2020'
+                    text: 'Cantidad de Actividades segun los socios involucrados'
                 },
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -601,7 +749,7 @@
                     type: 'pie'
                 },
                 title: {
-                    text: 'Cantidad y tipos de beneficiarios, 2020'
+                    text: 'Cantidad de Actividades segun su tipo de Impacto Interno'
                 },
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -646,7 +794,7 @@
                     type: 'pie'
                 },
                 title: {
-                    text: 'Distintas Areas de Vinculacion trabajadas, 2020'
+                    text: 'Cantidad de Actividades segun su tipo de Impacto Externo'
                 },
                 tooltip: {
                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -678,7 +826,100 @@
                 }]
             });
         </script>
-        
+        <!-- Grafico Torta 5 -->
+        <script>
+            // Build the chart
+            Highcharts.chart('graficaTorta4', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Cantidad de Actividades segun el Producto otorgado'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            connectorColor: 'silver'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Share',
+                    data: [
+                        { name: 'Chrome', y: 61.41 },
+                        { name: 'Internet Explorer', y: 11.84 },
+                        { name: 'Firefox', y: 10.85 },
+                        { name: 'Edge', y: 4.67 },
+                        { name: 'Safari', y: 4.18 },
+                        { name: 'Other', y: 7.05 }
+                    ]
+                }]
+            });
+        </script>
+        <!-- Grafico Torta 6 -->
+        <script>
+            // Build the chart
+            Highcharts.chart('graficaTorta5', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Cantidad de Actividades dependiendo de su Estado actual'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                    point: {
+                        valueSuffix: '%'
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            connectorColor: 'silver'
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Share',
+                    data: [
+                        { name: 'Chrome', y: 61.41 },
+                        { name: 'Internet Explorer', y: 11.84 },
+                        { name: 'Firefox', y: 10.85 },
+                        { name: 'Edge', y: 4.67 }
+                    ]
+                }]
+            });
+        </script>
+        <!-- Tiempo en hacer un slide del carrusel -->
+        <script>
+            $('.carousel').carousel({
+                interval: 2000
+            })
+        </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

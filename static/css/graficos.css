@@ -1,7 +1,10 @@
+.graficos .container{
+    background: rgba(255, 255, 255, 0.1);
+}
 .graficos .titulo{
     margin-left: 50px;
     width: 40%;
-    background-color: rgba(35, 65, 91);
+    background-color: rgb(2, 73, 89);
     border-radius: 10px 10px 0px 0px;
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
@@ -12,11 +15,14 @@
 }
 .graficos .torta{
     padding: 10px;
-    background: rgba(35, 65, 91);
+    background: rgb(2, 73, 89);
     border-radius: 10px;
 }
-.graficos:hover ~ .graficos .titulo{
-    border: 2px solid rgba(35, 65, 91);
+.graficos .torta:hover{
+    border: 2px solid rgb(2, 73, 89);
     background: rgba(246, 246, 246);
-    color: rgba(35, 65, 91);
+    color: rgb(2, 73, 89);
+}
+.highcarts-figure{
+    margin-bottom: 0px;
 }

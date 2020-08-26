@@ -8,7 +8,7 @@
     margin: 10px auto;
     min-height: auto;
     min-width: auto;
-    padding:40px;
+    padding:30px;
     border-radius: 5px;
     transition: all 0.5s ease-in;
     -webkit-transition: all 0.5s ease-in;
@@ -47,13 +47,14 @@
     padding: 10px;
     border-radius: 15px;
     text-align: center;
+    margin-bottom: 10px;
 }
 .info-resumen .fondoUnidad h5{
-    font-size: 12px;
+    font-size: 18px;
     margin: 0px;
 }
 .info-resumen .blue{
-    background: radial-gradient(rgba(35, 65, 91, 0.9),rgba(35, 65, 91, 1));
+    background: radial-gradient(rgb(2, 73, 89,0.9),rgb(2, 73, 89));
     color: rgba(246, 246, 246);
 }
 .info-resumen .brown{
@@ -68,8 +69,8 @@
     background: radial-gradient(rgb(188, 106, 38,0.9),rgb(188, 106, 38,1));
     color: rgba(246, 246, 246);
 }
-.info-resumen .yellow{
-    background: radial-gradient(rgb(209, 212, 26,0.9),rgb(209, 212, 26));
+.info-resumen .green{
+    background: radial-gradient(rgba(16, 170, 2, 0.9),rgb(16, 170, 2));
     color: rgba(246, 246, 246);
 }
 .info-resumen .purple{

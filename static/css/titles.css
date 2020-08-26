@@ -1,5 +1,5 @@
 .Title-Index{
-    padding: 100px 45px;
+    padding: 20px 10px;
     margin: 30px 0px;
     margin-left: 20px;
     background: rgba(35, 65, 91);
@@ -16,9 +16,10 @@
         background: rgba(35, 65, 91);
         font-family: 'IBM Plex Sans', sans-serif;
         border-bottom: 5px solid rgb(246, 101, 23,0.8);
+        position: relative;
         padding: 0;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 120px;
         overflow: hidden;
     }
     .Title-Index ul{
@@ -106,37 +107,77 @@
     border-bottom: 1px solid rgb(0, 0, 0, 0.5);
     border-top: 1px solid rgb(0, 0, 0, 0.5);
 }
-
-@media (max-width:1000px){
-    .Title-Index {
-        padding: 40px 45px;
-        margin: 20px 5px;
-    }
+.periodo{
+    border-bottom: 2px solid rgb(0, 128, 128);
 }
 @media (max-width:1199px){
     .Title-Index .container{
-        height: 180px;
-        font-size: 40px;
+        height: 145px;
+        font-size: 44px;
         margin: auto;
+        margin-top: 80px;
     }
     @keyframes cambiar{
         0%{ margin-top: 0;}
         30%{ margin-top: 0;}
     
-        35%{margin-top: -180px;}
-        75%{margin-top: -180px;}
+        35%{margin-top: -145px;}
+        75%{margin-top: -145px;}
     
         80%{margin-top: 0;}
         100%{margin-top: 0;}
     }
 }
-@media (max-width:998px){
+@media (max-width:999px){
     .Title-Index .container{
-        margin-top: 40px;
+        margin-top: 120px;
+        height: 142px;
+        font-size: 42px;
+    }
+    @keyframes cambiar{
+        0%{ margin-top: 0;}
+        30%{ margin-top: 0;}
+    
+        35%{margin-top: -142px;}
+        75%{margin-top: -142px;}
+    
+        80%{margin-top: 0;}
+        100%{margin-top: 0;}
     }
 }
-@media (max-width:768px){
+@media (max-width:989px){
     .Title-Index .container{
-        margin: auto;
+        margin-top: 60px;
+        height: 160px;
+        font-size: 35px;
+    }
+    @keyframes cambiar{
+        0%{ margin-top: 0;}
+        30%{ margin-top: 0;}
+    
+        35%{margin-top: -160px;}
+        75%{margin-top: -160px;}
+    
+        80%{margin-top: 0;}
+        100%{margin-top: 0;}
+    }
+}
+@media (max-width:785px){
+    .Title-Index{
+        margin: 10px 10px;
+    }.Title-Index .container{
+        margin-top: 10px;
+        height: 220px;
+        font-size: 48px;
+    }
+    @keyframes cambiar{
+        0%{ margin-top: 0;}
+        30%{ margin-top: 0;}
+    
+        35%{margin-top: -220px;}
+        75%{margin-top: -220px;}
+    
+        80%{margin-top: 0;}
+        100%{margin-top: 0;}
     }
 }

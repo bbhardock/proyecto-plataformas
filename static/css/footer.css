@@ -1,7 +1,7 @@
 
 .footer{
     font-family: "Myriad Pro";
-    height: 120px;
+    height: 160px;
     padding: 20px 100px;
     width: 100%;
     color: rgba(58, 43, 43, 0.5);
@@ -11,21 +11,22 @@
 }
 .footer .acreditacion{
     top: 15px ;
-    width: 300px;
-    height: 60px;
+    width: 320px;
+    height: 75px;
 }
 .footer .contacto{
     top: 10px;
 }
 .footer h5{
-    font-size: 13px;
+    font-size: 18px;
 }
 .footer h6{
-    font-size: 12px;
+    font-size: 13px;
 }
 @media(max-width:1000px){
     .footer{
         height: 300px;
+        text-align: center;
     }
     .footer .acreditacion{
         width: 350px;

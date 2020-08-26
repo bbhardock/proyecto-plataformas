@@ -20,7 +20,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css?v1.6">
-        <link rel="stylesheet" href="static/css/Styles.css?v3.16">
+        <link rel="stylesheet" href="static/css/Styles.css?v3.17">
         
         <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
@@ -72,7 +72,7 @@
                     }
                 ?>      
                     <form action="" class="form-inline" name="filtros" method="POST">
-                        <label class="my-1 mr-2" for="area">Periodo</label>
+                        <label class="my-1 mr-2" for="periodo">Periodo</label>
                         <select class="custom-select my-1 mr-sm-2" id="periodo" name="periodo">
                             <option value="" selected disabled hidden> Seleccione periodo </option>
                             <option value="2020">2020</option>
@@ -114,7 +114,7 @@
                         </select>
                         -->
                         <button type="submit" name="filtro-submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
-                        <?php echo '<p> Periodo seleccionado actualmente: '.$periodo.'</p>' ?>
+                        <?php echo '<label class="my-1 mr-2 periodo">Periodo seleccionado actualmente: '.$periodo.'</label>' ?>
                         <div id="form1" class="table-responsive">
                             <table class="table-bordered tableDash tableA">
                                 <thead>
