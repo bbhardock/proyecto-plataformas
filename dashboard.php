@@ -175,13 +175,21 @@
                                         <td>'.$actividad->NombreActividad.'</td>
                                         <td>'.$actividad->AreaVinculacion.'</td>
                                         <td>'.$actividad->FechaInicio.'</td>
-                                        <td>'.$actividad->FechaTermino.'</td>';
-                                        foreach($actividad->LugarRealizacion as $lugar){
-                                            echo '<td>'.$lugar->LugarRealizacion.'</td>';    
+                                        <td>'.$actividad->FechaTermino.'</td>
+                                        <td>';
+                                        if($actividad->LugarRealizacion != null){
+                                            foreach($actividad->LugarRealizacion as $lugar){
+                                                echo $lugar->LugarRealizacion.'<br><br>';    
+                                            }
+                                        }else{
+                                            echo "No se ha informado";
                                         }
+                                        echo '</td>
+                                        <td>';
                                         foreach($actividad->ListadoSocios as $socio){
-                                            echo '<td>'.$socio->DescripcionSocio.'</td>';
+                                            echo $socio->DescripcionSocio.'<br><br>';
                                         }
+                                        echo '</td>';
                                 }
                                 echo    '</tbody>
                                     </table>
