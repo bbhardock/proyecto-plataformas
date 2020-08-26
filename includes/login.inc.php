@@ -19,22 +19,27 @@ function login_tongoy($rut,$pass){
     return $data->status;
 }
 function iniciar_sesion($rut,$password,$row){
+    require_once 'queries.inc.php';
     $resultado = login_tongoy($rut,$password);
-    if($resultado == 'ok'){
+    $estadoActividades = apiverificarActividad($rut,date('Y')) || apiverificarActividad($rut,date('Y', strtotime('-1 year'))); //revisar actividad de este año o el pasado
+    if($resultado == 'ok' && $estadoActividades){
         session_start();
         $_SESSION[user_id]= $row['id_code'];
         $_SESSION[user_rut]= $row['rut'];
         $_SESSION[user_admin_status]= $row['es_admin'];
         header("Location: ../dashboard.php");
         exit();
-    }else{
+    }else if ($resultado != 'ok'){
         header("Location: ../login.php?error=passincorrecta");
+        exit();
+    }else if (!$estadoActividades){
+        header("Location: ../login.php?error=noactividades");
         exit();
     }
 }
 
 if (isset($_POST['login-submit'])){
-    require 'queries.inc.php';
+    require_once 'queries.inc.php';
 
     $rut = $_POST['rut'];
     $password = $_POST['password'];
