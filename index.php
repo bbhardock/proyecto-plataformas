@@ -184,19 +184,19 @@
                                         <div class="row">
                                             <div class="col-sm-12 col-md-12">                                                
                                                 <div class="fondoUnidad">
-                                                    <h5>"Unidad vinculada"</h5>
+                                                    <h5>Vinculación Académica de pre y postgrado</h5>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="titulo">
                                                     <h4>Beneficiarios Internos</h4>
-                                                    <h5>Han participado con nosotros son en total</h5>
+                                                    <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="titulo">
                                                     <h4>Beneficiarios Externos</h4>
-                                                    <h5>Han participado con nosotros son en total</h5>
+                                                    <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
@@ -215,19 +215,19 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">                                                
                                             <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
+                                                <h5>Vinculación Artistica, Cultural, Patrimonial y Calidad de Vida</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Internos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Externos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
@@ -246,19 +246,19 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">                                                
                                             <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
+                                                <h5>Vinculación Medio Productivo y de Servicio</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Internos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Externos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
@@ -279,19 +279,19 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">                                                
                                             <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
+                                                <h5>Vinculación Vocación Social y Comunitaria</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Internos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Externos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
@@ -310,19 +310,19 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">                                                
                                             <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
+                                                <h5>Vinculación Medio Público y Ciudadanía</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Internos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Externos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
@@ -343,19 +343,19 @@
                                         <div class="row">
                                             <div class="col-sm-12 col-md-12">                                                
                                                 <div class="fondoUnidad">
-                                                    <h5>"Unidad vinculada"</h5>
+                                                    <h5>Vinculación con Sector Escolar</h5>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="titulo">
                                                     <h4>Beneficiarios Internos</h4>
-                                                    <h5>Han participado con nosotros son en total</h5>
+                                                    <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
                                                 <div class="titulo">
                                                     <h4>Beneficiarios Externos</h4>
-                                                    <h5>Han participado con nosotros son en total</h5>
+                                                    <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6 col-md-6">
@@ -374,19 +374,19 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">                                                
                                             <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
+                                                <h5>Vinculación para la Internacionalización</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Internos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Externos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
@@ -405,19 +405,19 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">                                                
                                             <div class="fondoUnidad">
-                                                <h5>"Unidad vinculada"</h5>
+                                                <h5>Vinculación con Egresados</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Internos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
                                             <div class="titulo">
                                                 <h4>Beneficiarios Externos</h4>
-                                                <h5>Han participado con nosotros son en total</h5>
+                                                <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-6">
