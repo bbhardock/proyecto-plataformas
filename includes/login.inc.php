@@ -21,8 +21,12 @@ function login_tongoy($rut,$pass){
 function iniciar_sesion($rut,$password,$row){
     require_once 'queries.inc.php';
     $resultado = login_tongoy($rut,$password);
-    $estadoActividades = apiverificarActividad($rut,date('Y')) || apiverificarActividad($rut,date('Y', strtotime('-1 year'))); //revisar actividad de este año o el pasado
-    if($resultado == 'ok' && $estadoActividades){
+
+    $verificacionPeriodoPasado = strcmp(json_decode(apiverificarActividad($rut,date('Y')))->RespuestaSolicitud,"True") == 0;
+    $verificacionPeriodoAnterior = strcmp(json_decode(apiverificarActividad($rut,date('Y',strtotime('-1 year'))))->RespuestaSolicitud,"True") == 0;
+
+    $estadoActividades = $verificacionPeriodoPasado || $verificacionPeriodoAnterior;
+    if(($resultado == 'ok' && $estadoActividades) || ($resultado == 'ok' && $row['es_admin'] == 'S')){
         session_start();
         $_SESSION[user_id]= $row['id_code'];
         $_SESSION[user_rut]= $row['rut'];

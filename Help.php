@@ -204,7 +204,9 @@
                     <tbody>
                       <?php
                         foreach($actividad->ListadoSocios as $socio){
-                          echo '<td>'.$socio->DescripcionSocio.'</td>';
+                          echo '<tr>
+                          <td>'.$socio->DescripcionSocio.'</td>
+                          </tr>';
                       }
                       ?>
                     </tbody>
