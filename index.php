@@ -662,7 +662,7 @@
                     text: 'Todas las Actividades segun su Area'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -675,7 +675,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            format: '<b>{point.name}</b>: {point.y:.0f}',
                             connectorColor: 'silver'
                         }
                     }
@@ -683,12 +683,12 @@
                 series: [{
                     name: 'Share',
                     data: [
-                        { name: 'Chrome', y: 61.41 },
-                        { name: 'Internet Explorer', y: 11.84 },
-                        { name: 'Firefox', y: 10.85 },
-                        { name: 'Edge', y: 4.67 },
-                        { name: 'Safari', y: 4.18 },
-                        { name: 'Other', y: 7.05 }
+                        { name: 'Chrome', y: 5 },
+                        { name: 'Internet Explorer', y: 7 },
+                        { name: 'Firefox', y: 10 },
+                        { name: 'Edge', y: 6 },
+                        { name: 'Safari', y: 25 },
+                        { name: 'Other', y: 3 }
                     ]
                 }]
             });
