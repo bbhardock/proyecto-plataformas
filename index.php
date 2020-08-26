@@ -17,7 +17,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.8"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v3.4"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v3.6"/>
         <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap">

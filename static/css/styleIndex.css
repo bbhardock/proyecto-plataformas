@@ -6,7 +6,7 @@
 @import url(calendario.css?v1.1);
 @import url(graficos.css?v1.4);
 @import url(cuadrosAnimados.css?v1.4);
-@import url(botton-arriba.css?v1.2);
+@import url(botton-arriba.css?v1.4);
 
 html{
     scroll-behavior: smooth;
