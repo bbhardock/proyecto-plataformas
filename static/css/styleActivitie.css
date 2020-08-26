@@ -51,3 +51,6 @@ header{
     display: block;
     height: auto;
 }
+.close{
+    margin: auto;
+}

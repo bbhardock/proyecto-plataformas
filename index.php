@@ -717,7 +717,7 @@
                     text: 'Cantidad de Actividades segun los socios involucrados'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -730,7 +730,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            format: '<b>{point.name}</b>: {point.y:.0f} ',
                             connectorColor: 'silver'
                         }
                     }
@@ -762,7 +762,7 @@
                     text: 'Cantidad de Actividades segun su tipo de Impacto Interno'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -775,7 +775,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            format: '<b>{point.name}</b>: {point.y:.0f}',
                             connectorColor: 'silver'
                         }
                     }
@@ -807,7 +807,7 @@
                     text: 'Cantidad de Actividades segun su tipo de Impacto Externo'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}: <b>{point.percentage:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -820,7 +820,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            format: '<b>{point.name}</b>: {point.percentage:.0f}',
                             connectorColor: 'silver'
                         }
                     }
@@ -850,7 +850,7 @@
                     text: 'Cantidad de Actividades segun el Producto otorgado'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}: <b>{point.percentage:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -863,7 +863,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            format: '<b>{point.name}</b>: {point.percentage:.0f}',
                             connectorColor: 'silver'
                         }
                     }
@@ -895,7 +895,7 @@
                     text: 'Cantidad de Actividades dependiendo de su Estado actual'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    pointFormat: '{series.name}: <b>{point.percentage:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -908,7 +908,7 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            format: '<b>{point.name}</b>: {point.percentage:.0f}',
                             connectorColor: 'silver'
                         }
                     }

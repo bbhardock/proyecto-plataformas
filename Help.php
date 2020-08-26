@@ -35,7 +35,7 @@
       <meta name="viewport" content="width = device-width, user-scalable = no">
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.5">
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.6">
 
       <!-- Fuente -->
       <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
@@ -55,12 +55,18 @@
         </button>
     </div>';
       }else if (!$solicitudAyuda && strcmp($modo,"ver") == 0){ //LA SOLICITUD DE AYUDA NO EXISTE. PUEDE INGRESAR LA SOLICITUD EN ESTE FORMULARIO
-          echo '  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>La solicitud de ayuda que desea ver no existe aún </strong>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>';
+          echo '  <div class="row">
+                    <div class="col"></div>
+                    <div class="col-md-9">
+                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          <strong>La solicitud de ayuda que desea ver no existe aún </strong>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                    </div>
+                    <div class="col"></div>
+                  </div>';
         $modo = "ingresar";
       }
     ?>  
