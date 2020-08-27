@@ -263,96 +263,36 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="graficos">
-                                <div class="container">
-                                    <div class="titulo">
-                                        <h6>Area de Actividades</h6>
-                                    </div>
-                                    <div class="torta">
-                                        <figure class="highcarts-figure">
-                                            <div id='graficaTorta'></div>
-                                        </figure>
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="graficos">
-                            <div class="container">
-                                    <div class="titulo">
-                                        <h6>Socios Estrategicos</h6>
-                                    </div>
-                                    <div class="torta">
-                                        <figure class="highcarts-figure">
-                                            <div id='graficaTorta1'></div>
-                                        </figure>
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="graficos">
-                            <div class="container">
-                                    <div class="titulo">
-                                        <h6>Impacto Interno</h6>
-                                    </div>
-                                    <div class="torta">
-                                        <figure class="highcarts-figure">
-                                            <div id='graficaTorta2'></div>
-                                        </figure>
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="graficos">
-                                <div class="container">
-                                    <div class="titulo">
-                                        <h6>Impacto Externo</h6>
-                                    </div>
-                                    <div class="torta">
-                                        <figure class="highcarts-figure">
-                                            <div id='graficaTorta3'></div>
-                                        </figure>
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="graficos">
-                            <div class="container">
-                                    <div class="titulo">
-                                        <h6>Producto</h6>
-                                    </div>
-                                    <div class="torta">
-                                        <figure class="highcarts-figure">
-                                            <div id='graficaTorta4'></div>
-                                        </figure>
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="graficos">
-                                <div class="container">
-                                    <div class="titulo">
-                                        <h6>Estado</h6>
-                                    </div>
-                                    <div class="torta">
-                                        <figure class="highcarts-figure">
-                                            <div id='graficaTorta5'></div>
-                                        </figure>
-                                    </div>                               
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                        $arrayTitulo = array("Area de Actividades","Socios Estrategicos","Impacto Interno","Impacto Externo","Producto","Estado");
+                        $arrayId = array("graficaTorta","graficaTorta1","graficaTorta2","graficaTorta3","graficaTorta4","graficaTorta5");
+                        $contador = 0;
+                        foreach($arrayTitulo as $titulo){
+                            if($contador == 0 || $contador == 2 || $contador == 4){
+                                echo ' <div class="row">';
+                            }
+                            echo '  <div class="col-md-6">
+                                        <div class="graficos">
+                                            <div class="container">
+                                                <div class="titulo">
+                                                    <h6>'.$titulo.'</h6>
+                                                </div>
+                                                <div class="torta">
+                                                    <figure class="highcarts-figure">
+                                                        <div id='.$arrayId[$contador].'></div>
+                                                    </figure>
+                                                </div>                               
+                                            </div>
+                                        </div>
+                                    </div>';
+                            if($contador == 1 || $contador == 3 || $contador == 5){
+                                echo ' </div>';
+                            }
+                            $contador++;
+                            $contador = $contador % 6;
+                        }
+                    ?>
+                    
                 </section>               
             </div>    
         </section>
@@ -734,12 +674,6 @@
                     ]
                 }]
             });
-        </script>
-        <!-- Tiempo en hacer un slide del carrusel -->
-        <script>
-            $('.carousel').carousel({
-                interval: 2000
-            })
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
