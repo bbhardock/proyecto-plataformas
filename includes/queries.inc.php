@@ -210,4 +210,34 @@ function obtenerActividad($periodo,$codigo){
     }
     return false;
 }
+function obtenerDatosBeneficiariosResumen($periodo){
+    $actividadesJson = apiListarTodasActividades("2020");
+    $actividades = json_decode($actividadesJson);
+
+    $datos = array();
+    foreach($actividades as $actividad){
+        if(isset($actividad->AreaVinculacion)){
+            if(!array_key_exists($actividad->AreaVinculacion,$datos)){
+                $datos[$actividad->AreaVinculacion] = array("BeneficiariosInternos" => 0, "BeneficiariosExternos" => 0);
+            }
+            if(isset($actividad->ListadoBeneficiariosInternos)){
+                foreach($actividad->ListadoBeneficiariosInternos as $benInternos){
+                    if(isset($benInternos->CantidadBeneficiariosDirectos)){
+                        $datos[$actividad->AreaVinculacion]["BeneficiariosInternos"] += $benInternos->CantidadBeneficiariosDirectos;
+                    }
+                }
+            }
+            if(isset($actividad->ListadoBeneficiariosExternos)){
+                foreach($actividad->ListadoBeneficiariosExternos as $benExternos){
+                    if(isset($benExternos->CantidadBeneficiariosDirectos)  && isset($benExternos->CantidadBeneficiariosIndirectos)){
+                        $datos[$actividad->AreaVinculacion]["BeneficiariosExternos"] += $benExternos->CantidadBeneficiariosDirectos + $benExternos->CantidadBeneficiariosIndirectos;
+                    }
+                }
+            }
+        }
+    }
+
+    return json_encode($datos);
+}
+
 
