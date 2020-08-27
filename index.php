@@ -9,6 +9,7 @@
     $actividades = json_decode(apiListarTodasActividades($periodo));
     $formatoFecha = "d/m/Y";
     $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
+    $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo));
 ?>
 <!DOCTYPE html> 
 <html>
@@ -503,14 +504,11 @@
                 },
                 series: [{
                     name: 'Share',
-                    data: [
-                        { name: 'Chrome', y: 5 },
-                        { name: 'Internet Explorer', y: 7 },
-                        { name: 'Firefox', y: 10 },
-                        { name: 'Edge', y: 6 },
-                        { name: 'Safari', y: 25 },
-                        { name: 'Other', y: 3 }
-                    ]
+                    data: [<?php
+                        foreach($resumenGraficos -> {"ActividadesxArea"} as $nombre => $valor){
+                            echo "{name: '".$nombre."', y: ".$valor."},";
+                        }
+                        ?>]
                 }]
             });
         </script>
