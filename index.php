@@ -5,7 +5,7 @@
         header("Location: dashboard.php");
         exit();
     }
-    $periodo = date("Y");//todo en base al año actual
+    $periodo = date("Y");//todo en base al año actual. Si se quiere cambiar el periodo para hacer todo este resumen, esta es la variable a modificar
     $actividades = json_decode(apiListarTodasActividades($periodo));
     $formatoFecha = "d/m/Y";
     $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
