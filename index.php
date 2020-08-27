@@ -183,7 +183,7 @@
                         <div class="col-lg-12">
                             <div class="Title-SubtitleBlue">
                                 <div class="container blue">
-                                    <h5>Resumen de Actividades <?php echo "Periodo ".$periodo; ?> </h5>
+                                    <h5>Cantidad de Beneficiarios <?php echo "Periodo ".$periodo; ?> </h5>
                                 </div>
                             </div>
                         </div>
