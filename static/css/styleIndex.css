@@ -93,3 +93,6 @@ body{
 .imagenClaro{
     opacity: 0.5;
 }
+.contenedorAlerta{
+    margin-top: 20px;
+}

@@ -18,7 +18,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="static/css/fontello.css?v1.8"/>
-        <link rel="stylesheet" href="static/css/styleIndex.css?v3.6"/>
+        <link rel="stylesheet" href="static/css/styleIndex.css?v3.7"/>
         <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap">
@@ -189,61 +189,70 @@
                         </div>
                     </div>
                     <?php
-                    /*
-                    Generación de Datos resumen de beneficiarios
-                    */
-                    if(empty((array) $resumenBeneficiarios)){
-                        echo '<h5> Aún no existen datos para este periodo </h5>';
-                    }
-                    else{
-                        $arrayContainers = array("animadoDer containerBig container green", "animadoIzq containerBig container bluelight", "animadoIzq containerBig container green",
-                        "animadoDer containerSmall container brown", "animadoIzq containerSmall container blue", "animadoDer containerBig container purple", "animadoIzq containerBig container browndark",
-                        "animadoIzq containerBig container purple");
-                        $contador = 0;
-                        foreach($resumenBeneficiarios as $areaVinculacion => $cantidades){
-                            if($contador == 0 || $contador == 3 || $contador ==5){
-                                echo '<div class="row">';
-                            }   
-                            echo '<div class="col-md-12 col-lg-4">
-                                    <div class="info-resumen">
-                                        <div class="'.$arrayContainers[$contador].'">
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-12">                                                
-                                                    <div class="fondoUnidad">
-                                                        <h5>'.$areaVinculacion.'</h5>
+                        /*
+                        Generación de Datos resumen de beneficiarios
+                        */
+                        if(empty((array) $resumenBeneficiarios)){
+                            echo '  <div class="contenedorAlerta">
+                                        <div class="alert alert-info" role="alert">
+                                            <h5> Aún no existen datos para este periodo </h5>
+                                        </div>
+                                    </div>';
+                        }
+                        else{
+                            $arrayContainers = array("containerBig container green", "containerBig container bluelight", "containerBig container green",
+                            "containerSmall container brown", "containerSmall container blue", "containerBig container purple", "containerBig container browndark",
+                            "containerBig container purple");
+                            $contador = 0;
+                            foreach($resumenBeneficiarios as $areaVinculacion => $cantidades){
+                                if($contador == 0 || $contador ==5){
+                                    echo '<div class="row">
+                                            <div class="col-md-12 col-lg-4">';
+                                }
+                                elseif($contador == 3){
+                                    echo '<div class="row">
+                                            <div class="col-md-12 col-lg-6">';
+                                }
+                                echo '  <div class="info-resumen">
+                                            <div class="'.$arrayContainers[$contador].'">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-md-12">                                                
+                                                        <div class="fondoUnidad">
+                                                            <h5>'.$areaVinculacion.'</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6">
-                                                    <div class="titulo">
-                                                        <h4>Beneficiarios Internos</h4>
-                                                        <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="titulo">
+                                                            <h4>Beneficiarios Internos</h4>
+                                                            <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6">
-                                                    <div class="titulo">
-                                                        <h4>Beneficiarios Externos</h4>
-                                                        <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <div class="titulo">
+                                                            <h4>Beneficiarios Externos</h4>
+                                                            <h5>Cantidad de beneficiarios que participaron con nosotros</h5>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6">
-                                                    <h2>'.$cantidades->BeneficiariosInternos.'</h2>
-                                                </div>
-                                                <div class="col-sm-6 col-md-6">
-                                                    <h2>'.$cantidades->BeneficiariosExternos.'</h2>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <h2>'.$cantidades->BeneficiariosInternos.'</h2>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <h2>'.$cantidades->BeneficiariosExternos.'</h2>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                            </div>';
-                            if($contador == 2 || $contador == 4 || $contador == 7){
-                                echo '</div>';
-                            }
+                                </div>';
+                                if($contador == 2 || $contador == 4 || $contador == 7){
+                                    echo '</div>';
+                                }
 
-                            $contador++;
-                            $contador = $contador % 8;
+                                $contador++;
+                                $contador = $contador % 8;
+                            }
                         }
-                    }
                     ?>
+                </section>
                 <section  id="graficos">
                     <div class="row">
                         <div class="col-lg-12">
@@ -256,7 +265,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="animadoDer graficos">
+                            <div class="graficos">
                                 <div class="container">
                                     <div class="titulo">
                                         <h6>Area de Actividades</h6>
@@ -270,7 +279,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="animadoIzq graficos">
+                            <div class="graficos">
                             <div class="container">
                                     <div class="titulo">
                                         <h6>Socios Estrategicos</h6>
