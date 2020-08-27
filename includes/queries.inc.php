@@ -242,3 +242,87 @@ function obtenerDatosBeneficiariosResumen($periodo){
 
     return json_encode($datos);
 }
+function obtenerDatosGraficosResumen($periodo){
+    $actividadesJson = apiListarTodasActividades($periodo);
+    $actividades = json_decode($actividadesJson);
+
+    $datos = array("ActividadesxArea" => array(),
+    "ActividadesxSocios" => array(),
+    "ActividadesxImpactoInt" => array(),
+    "ActividadesxImpactoExt" => array(),
+    "ActividadesxProducto" => array(),
+    "ActividadesxEstado" => array());
+
+    foreach($actividades as $actividad){
+        $areaVinculacionActual = ucwords(strtolower($actividad->AreaVinculacion));
+        $productoActual = ucwords(strtolower($actividad->Producto));
+        $estadoActual = ucwords(strtolower($actividad->EstadoActividad));
+
+        $listaSocios = $actividad->ListadoSocios;
+        $listaImpactosInternos = $actividad->ListaImpactosInternos;
+        $listaImpactosExternos = $actividad->ListaImpactosExternos;
+
+        if(isset($actividad ->CodigoActividad)){ // para evitar posibles errores si es que no existen actividades en el periodo
+
+            if(isset($areaVinculacionActual) && $areaVinculacionActual != ""){
+                if(!array_key_exists($areaVinculacionActual,$datos["ActividadesxArea"])){
+                    $datos["ActividadesxArea"][$areaVinculacionActual] = 1;
+                }else{
+                    $datos["ActividadesxArea"][$areaVinculacionActual] += 1;
+                }
+            }
+
+            if(isset($productoActual) && $productoActual != ""){
+                if(!array_key_exists($productoActual,$datos["ActividadesxProducto"])){
+                    $datos["ActividadesxProducto"][$productoActual] = 1;
+                }else{
+                    $datos["ActividadesxProducto"][$productoActual] += 1;
+                }
+            }
+
+            if(isset($estadoActual) && $estadoActual != ""){
+                if(!array_key_exists($estadoActual, $datos["ActividadesxEstado"])){
+                    $datos["ActividadesxEstado"][$estadoActual] = 1;
+                }else{
+                    $datos["ActividadesxEstado"][$estadoActual] += 1;
+                }
+            }
+            
+            if(isset($listaSocios)){
+                foreach ($listaSocios as $socio){
+                    $descripcionSocioActual = ucwords(strtolower($socio->DescripcionSocio));
+                    if(!array_key_exists($descripcionSocioActual,$datos["ActividadesxSocios"])){
+                        $datos["ActividadesxSocios"][$descripcionSocioActual] = 1;
+                    }else{
+                        $datos["ActividadesxSocios"][$descripcionSocioActual] += 1;
+                    }
+                }
+            }
+
+            if(isset($listaImpactosInternos)){
+                foreach ($listaImpactosInternos as $impInternos){
+                    $descripcionImpactoActual = ucwords(strtolower($impInternos->DescripcionImpacto));
+                    if(!array_key_exists($descripcionImpactoActual, $datos["ActividadesxImpactoInt"])){
+                        $datos["ActividadesxImpactoInt"][$descripcionImpactoActual] = 1;
+                    }else{
+                        $datos["ActividadesxImpactoInt"][$descripcionImpactoActual] += 1;
+                    }
+                }
+            }
+
+            if(isset($listaImpactosInternos)){
+                foreach ($listaImpactosExternos as $impExternos){
+                    $descripcionImpactoActual = ucwords(strtolower($impExternos->DescripcionImpacto));
+                    if(!array_key_exists($descripcionImpactoActual, $datos["ActividadesxImpactoExt"])){
+                        $datos["ActividadesxImpactoExt"][$descripcionImpactoActual] = 1;
+                    }else{
+                        $datos["ActividadesxImpactoExt"][$descripcionImpactoActual] += 1;
+                    }
+                }
+            }
+            
+
+        }
+    }
+    return json_encode($datos);
+}
