@@ -203,34 +203,37 @@ function obtenerActividad($periodo,$codigo){
 
     $actividadesPeriodoConvertido = json_decode($actividadesPeriodo);
 
-    foreach($actividadesPeriodoConvertido as $actividad){
-        if(strcmp($actividad->CodigoActividad,$codigo) == 0){
-            return json_encode($actividad);
+    if(!isset($actividadesPeriodoConvertido->RespuestaSolicitud)){
+        foreach($actividadesPeriodoConvertido as $actividad){
+            if(strcmp($actividad->CodigoActividad,$codigo) == 0){
+                return json_encode($actividad);
+            }
         }
+        return false;
     }
-    return false;
 }
 function obtenerDatosBeneficiariosResumen($periodo){
-    $actividadesJson = apiListarTodasActividades("2020");
+    $actividadesJson = apiListarTodasActividades($periodo);
     $actividades = json_decode($actividadesJson);
 
     $datos = array();
     foreach($actividades as $actividad){
         if(isset($actividad->AreaVinculacion)){
-            if(!array_key_exists($actividad->AreaVinculacion,$datos)){
-                $datos[$actividad->AreaVinculacion] = array("BeneficiariosInternos" => 0, "BeneficiariosExternos" => 0);
+            $indice = ucwords(strtolower($actividad->AreaVinculacion)); //para que no haya conflictos del tipo AReA != Area. El formato queda , por ejemplo como "Area De Vinculacion"
+            if(!array_key_exists($indice,$datos)){
+                $datos[$indice] = array("BeneficiariosInternos" => 0, "BeneficiariosExternos" => 0);
             }
             if(isset($actividad->ListadoBeneficiariosInternos)){
                 foreach($actividad->ListadoBeneficiariosInternos as $benInternos){
                     if(isset($benInternos->CantidadBeneficiariosDirectos)){
-                        $datos[$actividad->AreaVinculacion]["BeneficiariosInternos"] += $benInternos->CantidadBeneficiariosDirectos;
+                        $datos[$indice]["BeneficiariosInternos"] += $benInternos->CantidadBeneficiariosDirectos;
                     }
                 }
             }
             if(isset($actividad->ListadoBeneficiariosExternos)){
                 foreach($actividad->ListadoBeneficiariosExternos as $benExternos){
                     if(isset($benExternos->CantidadBeneficiariosDirectos)  && isset($benExternos->CantidadBeneficiariosIndirectos)){
-                        $datos[$actividad->AreaVinculacion]["BeneficiariosExternos"] += $benExternos->CantidadBeneficiariosDirectos + $benExternos->CantidadBeneficiariosIndirectos;
+                        $datos[$indice]["BeneficiariosExternos"] += $benExternos->CantidadBeneficiariosDirectos + $benExternos->CantidadBeneficiariosIndirectos;
                     }
                 }
             }
@@ -239,5 +242,3 @@ function obtenerDatosBeneficiariosResumen($periodo){
 
     return json_encode($datos);
 }
-
-
