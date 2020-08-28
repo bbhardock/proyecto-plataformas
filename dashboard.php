@@ -21,7 +21,7 @@
         <meta name="viewport" content="width = device-width, user-scalable = no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="static/css/fontello.css?v1.6">
-        <link rel="stylesheet" href="static/css/Styles.css?v3.17">
+        <link rel="stylesheet" href="static/css/Styles.css?v3.18">
         
         <!-- Fuente -->
         <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
@@ -82,7 +82,10 @@
                             <option value="2023">2023</option>
                         </select>
                         <button type="submit" class="btn btn-primary btn-sm icon-filter">Aplicar Filtro</button>
-                        <?php echo '<p> Periodo seleccionado actualmente: '.$periodo.'</p>' ?>
+                        <?php echo '<label class="contenedor-filtro my-1 mr-2">
+                                        <p> Periodo seleccionado actualmente: '.$periodo.'</p>
+                                    </label>';
+                        ?>
                         <div id="form1" class="table-responsive">
                             <table class="table-bordered tableDash tableA">
                                 <thead>

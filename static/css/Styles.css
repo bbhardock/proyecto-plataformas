@@ -51,3 +51,11 @@ body{
 .form-group{
     margin-top: 10px;
 }
+.contenedor-filtro{
+    padding: 5px;
+    border-radius: 4px;
+    background: rgb(255, 165, 0,0.8);
+}
+.contenedor-filtro p{
+    margin-bottom: 0;
+}
