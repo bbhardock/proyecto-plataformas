@@ -184,7 +184,7 @@ function apiListarActividadesXRut($rut,$periodo){
     return listarActividadesXRut($rut,$periodo);
 }
 function apiListarTodasActividades($periodo){
-    require_once 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCM.inc.php';
     
     return listarTodasActividades($periodo);
 }
@@ -310,8 +310,7 @@ function obtenerDatosGraficosResumen($periodo){
                     }
                 }
             }
-
-            if(isset($listaImpactosInternos)){
+            if(isset($listaImpactosExternos)){
                 foreach ($listaImpactosExternos as $impExternos){
                     $descripcionImpactoActual = ucwords(strtolower($impExternos->DescripcionImpacto));
                     if(!array_key_exists($descripcionImpactoActual, $datos["ActividadesxImpactoExt"])){
@@ -322,7 +321,6 @@ function obtenerDatosGraficosResumen($periodo){
                 }
             }
             */
-
         }
     }
     return json_encode($datos);

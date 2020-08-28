@@ -502,6 +502,7 @@
             });
         </script>
         <!-- Grafico Torta 3 -->
+        <!--
         <script>
             // Build the chart
             Highcharts.chart('graficaTorta2', {
@@ -535,15 +536,13 @@
                 },
                 series: [{
                     name: 'Share',
-                    data: [<?php
-                        foreach($resumenGraficos->ActividadesxSocios as $nombre => $valor){
-                            echo "{name: '".$nombre."', y: ".$valor."},";
-                        }
-                        ?>]
+                    data: []
                 }]
             });
         </script>
+        -->
         <!-- Grafico Torta 4 -->
+        <!--
         <script>
             // Build the chart
             Highcharts.chart('graficaTorta3', {
@@ -577,14 +576,11 @@
                 },
                 series: [{
                     name: 'Share',
-                    data: [<?php
-                        foreach($resumenGraficos->ActividadesxSocios as $nombre => $valor){
-                            echo "{name: '".$nombre."', y: ".$valor."},";
-                        }
-                        ?>]
+                    data: []
                 }]
             });
         </script>
+        -->
         <!-- Grafico Torta 5 -->
         <script>
             // Build the chart
