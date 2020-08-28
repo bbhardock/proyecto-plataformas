@@ -181,3 +181,22 @@
         100%{margin-top: 0;}
     }
 }
+@media (max-width:448px){
+    .Title-Index{
+        margin: 10px 10px;
+    }.Title-Index .container{
+        margin-top: 10px;
+        height: 180px;
+        font-size: 38px;
+    }
+    @keyframes cambiar{
+        0%{ margin-top: 0;}
+        30%{ margin-top: 0;}
+    
+        35%{margin-top: -180px;}
+        75%{margin-top: -180px;}
+    
+        80%{margin-top: 0;}
+        100%{margin-top: 0;}
+    }
+}

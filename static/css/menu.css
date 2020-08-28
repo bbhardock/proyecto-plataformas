@@ -89,11 +89,11 @@ header label:hover{
 }
 @media(max-width:512px){
     header .title{
-        margin-top: 10px;
-        font-size: 20px;
+        margin-top: 15px;
+        font-size: 22px;
     }
 }
-@media(max-width:450px){
+@media(max-width:466px){
     header .title{
         margin-top: 15px;
         font-size: 18px;
