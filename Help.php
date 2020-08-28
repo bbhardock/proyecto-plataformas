@@ -43,7 +43,8 @@
       <meta name="viewport" content="width = device-width, user-scalable = no">
       <title>Solicitar ayuda</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.6">
+        <link rel="stylesheet" href="static/css/fontello.css?v1.0"/>
+      <link rel="stylesheet" href="static/css/styleActivitie.css?v2.7">
 
       <!-- Fuente -->
       <link rel="stylesheet" href="https://use.typekit.net/jyw0mhj.css">
