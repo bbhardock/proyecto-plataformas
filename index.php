@@ -205,13 +205,14 @@
                             "containerBig container purple");
                             $contador = 0;
                             foreach($resumenBeneficiarios as $areaVinculacion => $cantidades){
-                                if($contador == 0 || $contador ==5){
-                                    echo '<div class="row">
-                                            <div class="col-md-12 col-lg-4">';
+                                if($contador == 0 || $contador == 3 || $contador ==5){
+                                    echo '<div class="row">';
                                 }
-                                elseif($contador == 3){
-                                    echo '<div class="row">
-                                            <div class="col-md-12 col-lg-6">';
+                                if($contador == 3 || $contador == 4){
+                                    echo '<div class="col-md-12 col-lg-6">';
+                                }
+                                else{
+                                    echo '<div class="col-md-12 col-lg-4">';
                                 }
                                 echo '  <div class="info-resumen">
                                             <div class="'.$arrayContainers[$contador].'">
