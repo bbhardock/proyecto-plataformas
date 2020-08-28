@@ -9,6 +9,7 @@
     $actividades = json_decode(apiListarTodasActividades($periodo));
     $formatoFecha = "d/m/Y";
     $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
+    $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo)); //como array funciona
 ?>
 <!DOCTYPE html> 
 <html>
@@ -204,6 +205,7 @@
                             "containerSmall container brown", "containerSmall container blue", "containerBig container purple", "containerBig container browndark",
                             "containerBig container purple");
                             $contador = 0;
+                            $contadorDivs = 0;
                             foreach($resumenBeneficiarios as $areaVinculacion => $cantidades){
                                 if($contador == 0 || $contador == 3 || $contador ==5){
                                     echo '<div class="row">';
@@ -246,6 +248,11 @@
                                 </div>';
                                 if($contador == 2 || $contador == 4 || $contador == 7){
                                     echo '</div>';
+                                    $contadorDivs--;
+                                }if($contadorDivs>0){
+                                    for($i= 0; $i<$contadorDivs; $i++){
+                                        echo '</div>';
+                                    }
                                 }
 
                                 $contador++;
@@ -444,14 +451,11 @@
                 },
                 series: [{
                     name: 'Share',
-                    data: [
-                        { name: 'Chrome', y: 5 },
-                        { name: 'Internet Explorer', y: 7 },
-                        { name: 'Firefox', y: 10 },
-                        { name: 'Edge', y: 6 },
-                        { name: 'Safari', y: 25 },
-                        { name: 'Other', y: 3 }
-                    ]
+                    data: [<?php
+                        foreach($resumenGraficos->ActividadesxArea as $nombre => $valor){
+                            echo "{name: '".$nombre."', y: ".$valor."},";
+                        }
+                        ?>]
                 }]
             });
         </script>
@@ -489,14 +493,11 @@
                 },
                 series: [{
                     name: 'Share',
-                    data: [
-                        { name: 'Chrome', y: 61.41 },
-                        { name: 'Internet Explorer', y: 11.84 },
-                        { name: 'Firefox', y: 10.85 },
-                        { name: 'Edge', y: 4.67 },
-                        { name: 'Safari', y: 4.18 },
-                        { name: 'Other', y: 7.05 }
-                    ]
+                    data: [<?php
+                        foreach($resumenGraficos->ActividadesxSocios as $nombre => $valor){
+                            echo "{name: '".$nombre."', y: ".$valor."},";
+                        }
+                        ?>]
                 }]
             });
         </script>
@@ -534,14 +535,11 @@
                 },
                 series: [{
                     name: 'Share',
-                    data: [
-                        { name: 'Chrome', y: 61.41 },
-                        { name: 'Internet Explorer', y: 11.84 },
-                        { name: 'Firefox', y: 10.85 },
-                        { name: 'Edge', y: 4.67 },
-                        { name: 'Safari', y: 4.18 },
-                        { name: 'Other', y: 7.05 }
-                    ]
+                    data: [<?php
+                        foreach($resumenGraficos->ActividadesxSocios as $nombre => $valor){
+                            echo "{name: '".$nombre."', y: ".$valor."},";
+                        }
+                        ?>]
                 }]
             });
         </script>
@@ -559,7 +557,7 @@
                     text: 'Cantidad de Actividades segun su tipo de Impacto Externo'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.0f}</b>'
+                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -572,19 +570,18 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.0f}',
+                            format: '<b>{point.name}</b>: {point.y:.0f}',
                             connectorColor: 'silver'
                         }
                     }
                 },
                 series: [{
                     name: 'Share',
-                    data: [
-                        { name: 'Chrome', y: 61.41 },
-                        { name: 'Internet Explorer', y: 11.84 },
-                        { name: 'Firefox', y: 10.85 },
-                        { name: 'Edge', y: 4.67 }
-                    ]
+                    data: [<?php
+                        foreach($resumenGraficos->ActividadesxSocios as $nombre => $valor){
+                            echo "{name: '".$nombre."', y: ".$valor."},";
+                        }
+                        ?>]
                 }]
             });
         </script>
@@ -602,7 +599,7 @@
                     text: 'Cantidad de Actividades segun el Producto otorgado'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.0f}</b>'
+                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -615,21 +612,18 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.0f}',
+                            format: '<b>{point.name}</b>: {point.y:.0f}',
                             connectorColor: 'silver'
                         }
                     }
                 },
                 series: [{
                     name: 'Share',
-                    data: [
-                        { name: 'Chrome', y: 61.41 },
-                        { name: 'Internet Explorer', y: 11.84 },
-                        { name: 'Firefox', y: 10.85 },
-                        { name: 'Edge', y: 4.67 },
-                        { name: 'Safari', y: 4.18 },
-                        { name: 'Other', y: 7.05 }
-                    ]
+                    data: [<?php
+                        foreach($resumenGraficos->ActividadesxProducto as $nombre => $valor){
+                            echo "{name: '".$nombre."', y: ".$valor."},";
+                        }
+                        ?>]
                 }]
             });
         </script>
@@ -647,7 +641,7 @@
                     text: 'Cantidad de Actividades dependiendo de su Estado actual'
                 },
                 tooltip: {
-                    pointFormat: '{series.name}: <b>{point.percentage:.0f}</b>'
+                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
                 },
                 accessibility: {
                     point: {
@@ -660,19 +654,18 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.0f}',
+                            format: '<b>{point.name}</b>: {point.y:.0f}',
                             connectorColor: 'silver'
                         }
                     }
                 },
                 series: [{
                     name: 'Share',
-                    data: [
-                        { name: 'Chrome', y: 61.41 },
-                        { name: 'Internet Explorer', y: 11.84 },
-                        { name: 'Firefox', y: 10.85 },
-                        { name: 'Edge', y: 4.67 }
-                    ]
+                    data: [<?php
+                        foreach($resumenGraficos->ActividadesxEstado as $nombre => $valor){
+                            echo "{name: '".$nombre."', y: ".$valor."},";
+                        }
+                        ?>]
                 }]
             });
         </script>

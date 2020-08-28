@@ -184,7 +184,7 @@ function apiListarActividadesXRut($rut,$periodo){
     return listarActividadesXRut($rut,$periodo);
 }
 function apiListarTodasActividades($periodo){
-    require_once 'apiSIVCM.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
     
     return listarTodasActividades($periodo);
 }
@@ -251,7 +251,8 @@ function obtenerDatosGraficosResumen($periodo){
     "ActividadesxImpactoInt" => array(),
     "ActividadesxImpactoExt" => array(),
     "ActividadesxProducto" => array(),
-    "ActividadesxEstado" => array());
+    "ActividadesxEstado" => array()
+    );
 
     foreach($actividades as $actividad){
         $areaVinculacionActual = ucwords(strtolower($actividad->AreaVinculacion));
@@ -298,7 +299,7 @@ function obtenerDatosGraficosResumen($periodo){
                     }
                 }
             }
-
+            /*
             if(isset($listaImpactosInternos)){
                 foreach ($listaImpactosInternos as $impInternos){
                     $descripcionImpactoActual = ucwords(strtolower($impInternos->DescripcionImpacto));
@@ -320,7 +321,7 @@ function obtenerDatosGraficosResumen($periodo){
                     }
                 }
             }
-            
+            */
 
         }
     }
