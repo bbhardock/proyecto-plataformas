@@ -272,8 +272,8 @@
                         </div>
                     </div>
                     <?php 
-                        $arrayTitulo = array("Area de Actividades","Socios Estrategicos","Impacto Interno","Impacto Externo","Producto","Estado");
-                        $arrayId = array("graficaTorta","graficaTorta1","graficaTorta2","graficaTorta3","graficaTorta4","graficaTorta5");
+                        $arrayTitulo = array("Area de Actividades","Socios Estrategicos","Producto","Estado");
+                        $arrayId = array("graficaTorta","graficaTorta1","graficaTorta4","graficaTorta5");
                         $contador = 0;
                         foreach($arrayTitulo as $titulo){
                             if($contador == 0 || $contador == 2 || $contador == 4){
