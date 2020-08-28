@@ -17,8 +17,10 @@ if(isset($_POST['reporte-submit'])){
         $actividad->FechaInicio.' al '.$actividad->FechaTermino];  
 
         $lugaresRealizacion = "";
-        foreach($actividad->LugarRealizacion as $lugar){
-            $lugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
+        if(isset($actividad->LugarRealizacion)){
+            foreach($actividad->LugarRealizacion as $lugar){
+                $lugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
+            }            
         }
         $lugaresRealizacion = rtrim($lugaresRealizacion, " / ");
         $filaNueva[] = $lugaresRealizacion;
@@ -28,29 +30,40 @@ if(isset($_POST['reporte-submit'])){
         $impactosInternos = "";
         $impactosExternos = "";
         $sociosEstrategicos = "";
-        foreach($actividad->ListadoBeneficiariosInternos as $benInternos){
-            $listadoBeneficiariosInternos = $listadoBeneficiariosInternos.$benInternos->DescripcionBeneficiarioInterno." (".$benInternos->CantidadBeneficiariosDirectos.") / ";
+        if(isset($actividad->ListadoBeneficiariosInternos)){
+            foreach($actividad->ListadoBeneficiariosInternos as $benInternos){
+                $listadoBeneficiariosInternos = $listadoBeneficiariosInternos.$benInternos->DescripcionBeneficiarioInterno." (".$benInternos->CantidadBeneficiariosDirectos.") / ";
+            }
         }
         $filaNueva[] = $listadoBeneficiariosInternos;
 
-        foreach($actividad->ListadoBeneficiariosExternos as $benExternos){
-            $listadoBeneficiariosExternos = $listadoBeneficiariosExternos.$benExternos->DescripcionBeneficiarioExterno." (".$benExternos->CantidadBeneficiariosDirectos." directos - ".
-            $benExternos->CantidadBeneficiariosIndirectos." externos) / ";
+        if(isset($actividad->ListadoBeneficiariosExternos)){
+            foreach($actividad->ListadoBeneficiariosExternos as $benExternos){
+                $listadoBeneficiariosExternos = $listadoBeneficiariosExternos.$benExternos->DescripcionBeneficiarioExterno." (".$benExternos->CantidadBeneficiariosDirectos." directos - ".
+                $benExternos->CantidadBeneficiariosIndirectos." externos) / ";
+            }
         }
+
         $filaNueva[] = $listadoBeneficiariosExternos;
 
-        foreach($actividad->ListaImpactosInternos as $impInternos){
-            $impactosInternos = $impactosInternos.$impInternos->DescripcionImpacto." / ";
+        if(isset($actividad->ListaImpactoInternos)){
+            foreach($actividad->ListaImpactosInternos as $impInternos){
+                $impactosInternos = $impactosInternos.$impInternos->DescripcionImpacto." / ";
+            }
         }
         $filaNueva[] = $impactosInternos;
 
-        foreach($actividad->ListaImpactosExternos as $impExternos){
-            $impactosExternos = $impactosExternos.$impExternos->DescripcionImpacto." / ";
+        if(isset($actividad->ListaImpactosExternos)){
+            foreach($actividad->ListaImpactosExternos as $impExternos){
+                $impactosExternos = $impactosExternos.$impExternos->DescripcionImpacto." / ";
+            }
         }
         $filaNueva[] = $impactosExternos;
 
-        foreach($actividad->ListadoSocios as $socio){
-            $sociosEstrategicos = $sociosEstrategicos.$socio->DescripcionSocio." / ";
+        if(isset($actividad->ListadoSocios)){
+            foreach($actividad->ListadoSocios as $socio){
+                $sociosEstrategicos = $sociosEstrategicos.$socio->DescripcionSocio." / ";
+            }
         }
         $filaNueva[] = $sociosEstrategicos;
         $filaNueva[] = $actividad->EstadoActividad;
