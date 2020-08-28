@@ -111,7 +111,7 @@ function obtenerDatosBase(){
         array(array("DescripcionImpacto" => "Impacto1"),
         array("DescripcionImpacto" => "Impacto2")),
     "ListadoSocios" =>
-        array(array("DescripcionSocio"=> "Escuela de Ingenieria"))
+        array(array("DescripcionSocio"=> "Escuela de Ingeniería"))
     );
 
     $actividad4=array( "CodigoActividad" => "VCM200",
