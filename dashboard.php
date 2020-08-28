@@ -186,7 +186,7 @@
                                         <td>'.$actividad->FechaInicio.'</td>
                                         <td>'.$actividad->FechaTermino.'</td>
                                         <td>';
-                                        if($actividad->LugarRealizacion != null){
+                                        if(isset($actividad->LugarRealizacion)){
                                             foreach($actividad->LugarRealizacion as $lugar){
                                                 echo $lugar->LugarRealizacion.'<br><br>';    
                                             }
@@ -195,8 +195,12 @@
                                         }
                                         echo '</td>
                                         <td>';
-                                        foreach($actividad->ListadoSocios as $socio){
-                                            echo $socio->DescripcionSocio.'<br><br>';
+                                        if(isset($actividad->ListadoSocios)){
+                                            foreach($actividad->ListadoSocios as $socio){
+                                                echo $socio->DescripcionSocio.'<br><br>';
+                                            }
+                                        }else{
+                                            echo "No se ha informado";
                                         }
                                         echo '</td>';
                                 }
