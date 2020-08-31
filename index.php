@@ -137,10 +137,13 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
+                                        <!-- link al cual ira vinculada al clickear la imagen -->
                                         <a target="null" href="https://medicina.ucn.cl/ucn-se-integra-a-la-red-publica-de-laboratorios-universitarios-para-diagnostico-covid-19-en-coquimbo/">
+                                        <!-- Dirección del directorio de donde se encuentra la imagen (El formato ideal es usar imagenes de 670x390) -->
                                             <img src="static/images/ucncoquimbo2.jpg" class="imagenClaro d-block w-100" alt="">
                                         </a>
                                         <div class="carousel-caption d-none d-md-block">
+                                            <!-- link al cual ira vinculada al clickear el texto (Es el mismo que el de la imagen) -->
                                             <a target="null" href="https://medicina.ucn.cl/ucn-se-integra-a-la-red-publica-de-laboratorios-universitarios-para-diagnostico-covid-19-en-coquimbo/">
                                                 <h5>Second slide label</h5>
                                                 <p>Noticias respecto al covid-19 en la facultad de Medicina</p>

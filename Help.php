@@ -239,10 +239,10 @@
               <div class="container col-md-12">
                 <?php
                     if($modo == 'ver'){
-                      echo "<h2>Ver Solicitud de Ayuda Ingresada en SIVCM-FACMED</h2>";
+                      echo "<h2>Ver Solicitud de Apoyo Ingresada en SIVCM-FACMED</h2>";
                     }
                     else if($modo == 'ingresar'){
-                      echo "<h2>Ingresar formulario de ayuda</h2>";
+                      echo "<h2>Ingresar formulario de apoyo</h2>";
                     }
                 ?>
                 <small>Solicitud a Vinculación con el Medio</small>
