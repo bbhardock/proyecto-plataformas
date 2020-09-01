@@ -22,21 +22,21 @@ function iniciar_sesion($rut,$password,$row){
     require_once 'queries.inc.php';
     $resultado = login_tongoy($rut,$password);
 
-    $verificacionPeriodoPasado = strcmp(json_decode(apiverificarActividad($rut,date('Y')))->RespuestaSolicitud,"True") == 0;
-    $verificacionPeriodoAnterior = strcmp(json_decode(apiverificarActividad($rut,date('Y',strtotime('-1 year'))))->RespuestaSolicitud,"True") == 0;
+    $verificacionPeriodoPasado = strcmp(json_decode(apiverificarActividad($rut,date('Y')))->RespuestaSolicitud,"True") == 0; //si tiene actividades este año
+    $verificacionPeriodoAnterior = strcmp(json_decode(apiverificarActividad($rut,date('Y',strtotime('-1 year'))))->RespuestaSolicitud,"True") == 0; //si tiene actividades el año pasado
 
     $estadoActividades = $verificacionPeriodoPasado || $verificacionPeriodoAnterior;
-    if(($resultado == 'ok' && $estadoActividades) || ($resultado == 'ok' && $row['es_admin'] == 'S')){
+    if(($resultado == 'ok' && $estadoActividades) || ($resultado == 'ok' && $row['es_admin'] == 'S')){ //Pasadas todas las comprobaciones, iniciar sesión.
         session_start();
         $_SESSION[user_id]= $row['id_code'];
         $_SESSION[user_rut]= $row['rut'];
         $_SESSION[user_admin_status]= $row['es_admin'];
         header("Location: ../dashboard.php");
         exit();
-    }else if ($resultado != 'ok'){
+    }else if ($resultado != 'ok'){ //La api de tongoy no autenticó, credenciales incorrectas
         header("Location: ../login.php?error=passincorrecta");
         exit();
-    }else if (!$estadoActividades){
+    }else if (!$estadoActividades){//No existen actividades, se deniega el acceso. Esto se puede revocar por un administrador en su pantalla de administradores.
         denegarAccesoUsuario($row['id_code']);
         header("Location: ../login.php?error=noactividades");
         exit();
