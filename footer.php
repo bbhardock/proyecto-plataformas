@@ -5,7 +5,7 @@
             </div>            
             <div class="contacto col-md-12 col-lg-3">  
                 <h5><strong>Vinculación con el Medio:</strong></h5>
-                <h6>Actividades relacionadas a la Facultad de Medicina (FACMED)</h6>
+                <h6>Actividades relacionadas a la Facultad de Medicina (FAMED)</h6>
                 <h6>Universidad Católica del Norte</h6>
             </div>       
             <div class="contacto col-md-12 col-lg-3">            

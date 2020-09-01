@@ -6,7 +6,7 @@
         $PWD = 'testFamed';
     
         $VALUE_AUTH = base64_encode($USER.':'.$PWD);
-
+        
         $url_query = $URL.$query;
         
         $options = array(

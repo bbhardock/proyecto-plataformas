@@ -37,6 +37,7 @@ function iniciar_sesion($rut,$password,$row){
         header("Location: ../login.php?error=passincorrecta");
         exit();
     }else if (!$estadoActividades){
+        denegarAccesoUsuario($row['id_code']);
         header("Location: ../login.php?error=noactividades");
         exit();
     }
@@ -52,7 +53,7 @@ if (isset($_POST['login-submit'])){
         exit();
     }
 
-    $row = obtener_datos_usuario($rut);
+    $row = obtener_datos_usuario($rut); //fila representativa de la base de datos de usuarios
 
     if(isset($row)){//AQUÍ ENTRA SI EL USUARIO EXISTE
         $estado_usuario = $row['estado'];

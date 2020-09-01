@@ -147,6 +147,11 @@
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-ok square-ok"></div></td>
                                         <td><div class="icon-cancel square-cancel"></div></td>';
+                                    }else if(strcmp($actividad->Estado,"EVALUADA") == 0){
+                                        echo '
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-ok square-ok"></div></td>
+                                        <td><div class="icon-ok-square-ok"></div></td>';
                                     }
                                     echo '
                                         <td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ver&periodo='.$periodo.'" class="icon-search">Ver</a></td>';

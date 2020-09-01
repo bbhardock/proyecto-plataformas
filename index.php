@@ -9,7 +9,7 @@
     $actividades = json_decode(apiListarTodasActividades($periodo));
     $formatoFecha = "d/m/Y";
     $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
-    $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo)); //como array funciona
+    $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo)); 
 ?>
 <!DOCTYPE html> 
 <html>

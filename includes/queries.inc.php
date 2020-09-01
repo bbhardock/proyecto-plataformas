@@ -180,7 +180,6 @@ function apiListarActividadesXRut($rut,$periodo){
     require_once 'apiSIVCM.inc.php';
 
     $rut = substr($rut, 0, -1);//requiere quitar el digito verificador
-    //$rut = "12214367";
     return listarActividadesXRut($rut,$periodo);
 }
 function apiListarTodasActividades($periodo){
@@ -192,7 +191,6 @@ function apiverificarActividad($rut,$periodo){
     require_once 'apiSIVCM.inc.php';
 
     $rut = substr($rut, 0, -1);
-    //$rut = "12214367";
     return verificarActividad($rut,$periodo);
 }
 
@@ -299,28 +297,6 @@ function obtenerDatosGraficosResumen($periodo){
                     }
                 }
             }
-            /*
-            if(isset($listaImpactosInternos)){
-                foreach ($listaImpactosInternos as $impInternos){
-                    $descripcionImpactoActual = ucwords(strtolower($impInternos->DescripcionImpacto));
-                    if(!array_key_exists($descripcionImpactoActual, $datos["ActividadesxImpactoInt"])){
-                        $datos["ActividadesxImpactoInt"][$descripcionImpactoActual] = 1;
-                    }else{
-                        $datos["ActividadesxImpactoInt"][$descripcionImpactoActual] += 1;
-                    }
-                }
-            }
-            if(isset($listaImpactosExternos)){
-                foreach ($listaImpactosExternos as $impExternos){
-                    $descripcionImpactoActual = ucwords(strtolower($impExternos->DescripcionImpacto));
-                    if(!array_key_exists($descripcionImpactoActual, $datos["ActividadesxImpactoExt"])){
-                        $datos["ActividadesxImpactoExt"][$descripcionImpactoActual] = 1;
-                    }else{
-                        $datos["ActividadesxImpactoExt"][$descripcionImpactoActual] += 1;
-                    }
-                }
-            }
-            */
         }
     }
     return json_encode($datos);

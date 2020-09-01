@@ -23,22 +23,22 @@ function enviarMail($numero_peticion){
         $mail->SMTPSecure = 'tls';
 
         /* Username (email address). */
-        $mail->Username = 'cuenta';
+        $mail->Username = 'vinculacionfamed@ucn.cl';
 
         /* Google account password. */
-        $mail->Password = 'password';
+        $mail->Password = 'vinculacion2020';
 
         //Set who the message is to be sent from
-        $mail->setFrom('cuenta', 'SIVCM-FACMED bot');
+        $mail->setFrom('vinculacionfamed@ucn.cl');
 
         //Set who the message is to be sent to
-        $mail->addAddress('cuenta', 'Usuario');
+        $mail->addAddress('vinculacionfamed@ucn.cl');
 
         /* Set the subject. */
         $mail->Subject = 'Solicitud de ayuda No: '.$numero_peticion;
 
         /* Set the mail message body. */
-        $mail->Body = "Se ha ingresado el formulario de ayuda con número: ".$numero_peticion." al SIVCM-FACMED
+        $mail->Body = "Se ha ingresado el formulario de ayuda relacionado con el codigo de actividad: ".$numero_peticion." al SIVCM-FACMED
         
         
         

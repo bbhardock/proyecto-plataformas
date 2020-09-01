@@ -231,7 +231,7 @@
           </form> 
         </div>
       </div>
-      <?php //EMPIEZA INGRESO DE SOLICITUD DE AYUDA ?>
+      <!-- //EMPIEZA INGRESO DE SOLICITUD DE APOYO -->
       <div class="container container-Form shadow p-3 mb-5 bg-white rounded row">
         <div class="col-md-12">
         <form action="includes/ingresoAyuda.inc.php" method="POST" id = "Ingresar_Ayuda">
