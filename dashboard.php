@@ -98,7 +98,7 @@
                                         <th rowspan="2">Ver actividad</th>
                                         <?php
                                         if($_SESSION['user_admin_status']=='N'){
-                                            echo '<th rowspan="2">Solicitar ayuda</th>';
+                                            echo '<th rowspan="2">Solicitar apoyo</th>';
                                         }
                                         ?>
                                     </tr>
@@ -156,7 +156,7 @@
                                     echo '
                                         <td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ver&periodo='.$periodo.'" class="icon-search">Ver</a></td>';
                                     if($_SESSION['user_admin_status'] == 'N'){
-                                    echo '<td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ingresar&periodo='.$periodo.'" class="icon-form">Ayuda</a></td>';
+                                    echo '<td><a href="help.php?id='.$actividad->CodigoActividad.'&modo=ingresar&periodo='.$periodo.'" class="icon-form">Apoyo</a></td>';
                                     }
                                 }
                                 ?>
@@ -174,8 +174,7 @@
                                                         <th>Area de Vinculación</th>
                                                         <th>Fecha de Inicio</th>
                                                         <th>Fecha de Termino</th>
-                                                        <th>Lugar de realización</th>
-                                                        <th>Socios Estrategicos</th>    
+                                                        <th>Lugar de realización</th>  
                                                     </tr>
                                                 </thead>
                                                 <tbody>';
@@ -194,15 +193,6 @@
                                         if(isset($actividad->LugarRealizacion)){
                                             foreach($actividad->LugarRealizacion as $lugar){
                                                 echo $lugar->LugarRealizacion.'<br><br>';    
-                                            }
-                                        }else{
-                                            echo "No se ha informado";
-                                        }
-                                        echo '</td>
-                                        <td>';
-                                        if(isset($actividad->ListadoSocios)){
-                                            foreach($actividad->ListadoSocios as $socio){
-                                                echo $socio->DescripcionSocio.'<br><br>';
                                             }
                                         }else{
                                             echo "No se ha informado";
