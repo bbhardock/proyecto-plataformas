@@ -72,7 +72,7 @@
                                 }   
                                 $stringLugaresRealizacion = rtrim($stringLugaresRealizacion, " / ");
                                 echo '                            {
-                                    title: "'.$actividad->NombreActividad.'",
+                                    title: "'.str_replace ('"','', $actividad->NombreActividad).'",
                                     start: "'.date_format($fechaInicio,'Y-m-d').'",
                                     end: "'.date_format($fechaTermino,'Y-m-d').'",
                                     extendedProps: {
@@ -359,30 +359,6 @@
         <?php
             require 'footer.php';
         ?>
-        <!-- Intento de animacion al cargar pagina
-        <script>
-            let animadoDer = document.querySelectorAll(".animadoDer");
-            let animadoIzq = document.querySelectorAll(".animadoIzq");
-            function mostrarScroll(){
-                let scrollTop = document.documentElement.scrollTop;
-                for (var i = 0; i < animadoDer.length; i++){
-                    let alturaAnimado = animadoDer[i].offsetTop;
-                    if(alturaAnimado  < scrollTop){
-                        animadoDer[i].style.opacity = 1;
-                        animadoDer[i].classList.add("mostrarDerecha");
-                    }
-                }
-                for (var i = 0; i < animadoIzq.length; i++){
-                    let alturaAnimado = animadoIzq[i].offsetTop;
-                    if(alturaAnimado - 100 < scrollTop){
-                        animadoIzq[i].style.opacity = 1;
-                        animadoIzq[i].classList.add("mostrarIzquierda");
-                    }
-                }
-            }
-            window.addEventListener('scroll',mostrarScroll);
-        </script>
-        -->
         <!-- Funcionalidad del boton de subida -->
         <script>
             window.onscroll = function(){
@@ -504,86 +480,6 @@
                 }]
             });
         </script>
-        <!-- Grafico Torta 3 -->
-        <!--
-        <script>
-            // Build the chart
-            Highcharts.chart('graficaTorta2', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Cantidad de Actividades segun su tipo de Impacto Interno'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
-                },
-                accessibility: {
-                    point: {
-                        valueSuffix: '%'
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.y:.0f}',
-                            connectorColor: 'silver'
-                        }
-                    }
-                },
-                series: [{
-                    name: 'Share',
-                    data: []
-                }]
-            });
-        </script>
-        -->
-        <!-- Grafico Torta 4 -->
-        <!--
-        <script>
-            // Build the chart
-            Highcharts.chart('graficaTorta3', {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Cantidad de Actividades segun su tipo de Impacto Externo'
-                },
-                tooltip: {
-                    pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
-                },
-                accessibility: {
-                    point: {
-                        valueSuffix: '%'
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            format: '<b>{point.name}</b>: {point.y:.0f}',
-                            connectorColor: 'silver'
-                        }
-                    }
-                },
-                series: [{
-                    name: 'Share',
-                    data: []
-                }]
-            });
-        </script>
-        -->
         <!-- Grafico Torta 5 -->
         <script>
             // Build the chart

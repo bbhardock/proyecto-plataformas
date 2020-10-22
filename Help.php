@@ -96,7 +96,7 @@
               </div>        
               <div class="form-group">
                 <label for="name-activity">Nombre de Actividad:</label>
-                <input type="text" class="form-control" id="name-activity" value="<?php echo $actividad->NombreActividad?>" placeholder="Escriba el nombre de la actividad">
+                <input type="text" class="form-control" id="name-activity" value="<?php echo str_replace ('"','', $actividad->NombreActividad)?>" placeholder="Escriba el nombre de la actividad">
               </div>              
               <div class="form-group">
                 <label for="unity">Unidad:</label>
