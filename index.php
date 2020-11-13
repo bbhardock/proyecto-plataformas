@@ -71,8 +71,10 @@
                                     $stringLugaresRealizacion = "No ha sido informado";
                                 }   
                                 $stringLugaresRealizacion = rtrim($stringLugaresRealizacion, " / ");
-                                echo '                            {
-                                    title: "'.str_replace ('"','', $actividad->NombreActividad).'",
+                                $replace = array("\r\n", "\n", "\r", "\"");
+                                echo '                            
+                                {
+                                    title: "'.str_replace($replace,'', $actividad->NombreActividad).'",
                                     start: "'.date_format($fechaInicio,'Y-m-d').'",
                                     end: "'.date_format($fechaTermino,'Y-m-d').'",
                                     extendedProps: {
