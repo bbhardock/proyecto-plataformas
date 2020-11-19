@@ -80,7 +80,7 @@
                                     extendedProps: {
                                         unidad: "'.$actividad->Unidad.'",
                                         areaVinculacion: "'.$actividad->AreaVinculacion.'",
-                                        lugar: "'.$stringLugaresRealizacion.'",
+                                        lugar: "'.str_replace($replace,'', $stringLugaresRealizacion).'",
                                         fechaInicio: "'.$actividad->FechaInicio.'",
                                         fechaTermino: "'.$actividad->FechaTermino.'"
                                     }
