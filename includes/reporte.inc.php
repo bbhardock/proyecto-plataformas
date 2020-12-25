@@ -19,7 +19,7 @@ if(isset($_POST['reporte-submit'])){
         $lugaresRealizacion = "";
         if(isset($actividad->LugarRealizacion)){
             foreach($actividad->LugarRealizacion as $lugar){
-                $lugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
+                $lugaresRealizacion = $lugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
             }            
         }
         $lugaresRealizacion = rtrim($lugaresRealizacion, " / ");

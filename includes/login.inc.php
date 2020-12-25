@@ -28,9 +28,9 @@ function iniciar_sesion($rut,$password,$row){
     $estadoActividades = $verificacionPeriodoPasado || $verificacionPeriodoAnterior;
     if(($resultado == 'ok' && $estadoActividades) || ($resultado == 'ok' && $row['es_admin'] == 'S')){ //Pasadas todas las comprobaciones, iniciar sesión.
         session_start();
-        $_SESSION[user_id]= $row['id_code'];
-        $_SESSION[user_rut]= $row['rut'];
-        $_SESSION[user_admin_status]= $row['es_admin'];
+        $_SESSION['user_id']= $row['id_code'];
+        $_SESSION['user_rut']= $row['rut'];
+        $_SESSION['user_admin_status']= $row['es_admin'];
         header("Location: ../dashboard.php");
         exit();
     }else if ($resultado != 'ok'){ //La api de tongoy no autenticó, credenciales incorrectas

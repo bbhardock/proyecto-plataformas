@@ -246,23 +246,13 @@ function obtenerDatosGraficosResumen($periodo){
 
     $datos = array("ActividadesxArea" => array(),
     "ActividadesxSocios" => array(),
-    "ActividadesxImpactoInt" => array(),
-    "ActividadesxImpactoExt" => array(),
     "ActividadesxProducto" => array(),
     "ActividadesxEstado" => array()
     );
 
     foreach($actividades as $actividad){
-        $areaVinculacionActual = ucwords(strtolower($actividad->AreaVinculacion));
-        $productoActual = ucwords(strtolower($actividad->Producto));
-        $estadoActual = ucwords(strtolower($actividad->EstadoActividad));
-
-        $listaSocios = $actividad->ListadoSocios;
-        $listaImpactosInternos = $actividad->ListaImpactosInternos;
-        $listaImpactosExternos = $actividad->ListaImpactosExternos;
-
         if(isset($actividad ->CodigoActividad)){ // para evitar posibles errores si es que no existen actividades en el periodo
-
+            /*
             if(isset($areaVinculacionActual) && $areaVinculacionActual != ""){
                 if(!array_key_exists($areaVinculacionActual,$datos["ActividadesxArea"])){
                     $datos["ActividadesxArea"][$areaVinculacionActual] = 1;
@@ -295,6 +285,29 @@ function obtenerDatosGraficosResumen($periodo){
                     }else{
                         $datos["ActividadesxSocios"][$descripcionSocioActual] += 1;
                     }
+                }
+            }
+            */
+            if(isset($actividad->AreaVinculacion) && $actividad->AreaVinculacion != ""){
+                $areaVinculacionActual = ucwords(strtolower($actividad->AreaVinculacion));
+                $datos["ActividadesxArea"][$areaVinculacionActual] += 1;
+            }
+
+            if(isset($actividad->Producto) && $actividad->Producto != ""){
+                $productoActual = ucwords(strtolower($actividad->Producto));
+                $datos["ActividadesxProducto"][$productoActual] += 1;
+            }
+
+            if(isset($actividad->EstadoActividad) && $actividad->EstadoActividad != ""){
+                $estadoActual = ucwords(strtolower($actividad->EstadoActividad));
+                $datos["ActividadesxEstado"][$estadoActual] += 1;
+            }
+            
+            if(isset($actividad->ListadoSocios)){
+                $listaSocios = $actividad->ListadoSocios;
+                foreach ($listaSocios as $socio){
+                    $descripcionSocioActual = ucwords(strtolower($socio->DescripcionSocio));
+                        $datos["ActividadesxSocios"][$descripcionSocioActual] += 1;
                 }
             }
         }
