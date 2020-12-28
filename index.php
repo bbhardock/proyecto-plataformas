@@ -8,6 +8,9 @@
     $periodo = date("Y");//todo en base al año actual. Si se quiere cambiar el periodo para hacer todo este resumen, esta es la variable a modificar
     $actividades = json_decode(apiListarTodasActividades($periodo));
     $formatoFecha = "d/m/Y";
+    if(intval(date("m")) <= 6){ //si el mes todavía no es 7, los resumenes seran del año pasado
+        $periodo = date("Y",strtotime("-1 year"));
+    }
     $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
     $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo)); 
 ?>

@@ -46,7 +46,7 @@ if(isset($_POST['reporte-submit'])){
 
         $filaNueva[] = $listadoBeneficiariosExternos;
 
-        if(isset($actividad->ListaImpactoInternos)){
+        if(isset($actividad->ListaImpactosInternos)){
             foreach($actividad->ListaImpactosInternos as $impInternos){
                 $impactosInternos = $impactosInternos.$impInternos->DescripcionImpacto." / ";
             }
