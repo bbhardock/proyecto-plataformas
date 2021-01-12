@@ -207,7 +207,7 @@ function obtenerDatosBase(){
     "ListadoBeneficiariosInternos" => 
         array(array()),
     "ListadoBeneficiariosExternos" =>
-        array(array()),aa
+        array(array()),
     "ListaImpactosInternos" =>
         array(array()),
     "ListaImpactosExternos" =>
