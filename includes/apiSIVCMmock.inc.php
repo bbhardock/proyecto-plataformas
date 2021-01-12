@@ -5,13 +5,13 @@ function obtenerDatosBase(){
         "NombreUsuario" => "Brian Pardo",
         "RutUsuario" => "20006268",
         "Unidad" => "Unidad act1",
-        "AreaVinculacion" => "AreaVinculaciOn act1",
+        "AreaVinculacion" => "Vinculación Social Y Comunitaria",
         "Servicio" => "Servicio act1",
-        "Producto" => "Producto act1",
+        "Producto" => "Organización de Seminarios con participación de la comunidad y actores público y privados",
         "Periodo" => "2020",
         "FechaInicio" => "27/08/2020",
         "FechaTermino" => "09/10/2020",
-        "EstadoActividad" => "Estado act1",
+        "EstadoActividad" => "Enviada a revisión Director Unidad de Participantes",
         "LugarRealizacion" =>
             array(array("Pais" => "Chile",
             "Comuna" => "Coquimbo",
@@ -41,13 +41,13 @@ function obtenerDatosBase(){
     "NombreUsuario" => "Brian Pardo",
     "RutUsuario" => "20006268",
     "Unidad" => "Unidad act2",
-    "AreaVinculacion" => "AreaVinculacion act2",
+    "AreaVinculacion" => "Vinculación con el Sistema Escolar",
     "Servicio" => "Servicio act2",
-    "Producto" => "Producto act2",
+    "Producto" => "Talleres e instancias formativas hacia la comunidad",
     "Periodo" => "2020",
     "FechaInicio" => "10/05/2020",
     "FechaTermino" => "09/08/2020",
-    "EstadoActividad" => "Estado act2",
+    "EstadoActividad" => "Enviada a revisión Director Unidad de Participantes",
     "LugarRealizacion" =>
         array(array("Pais" => "Chile",
         "Comuna" => "La Serena",
@@ -80,13 +80,13 @@ function obtenerDatosBase(){
     "NombreUsuario" => "Otra Persona",
     "RutUsuario" => "1111",
     "Unidad" => "Unidad act2",
-    "AreaVinculacion" => "AreaVinculacion act3",
+    "AreaVinculacion" => "Vinculación con el Medio Productivo",
     "Servicio" => "Servicio act3",
-    "Producto" => "Producto act3",
+    "Producto" => "Talleres e instancias formativas hacia la comunidad",
     "Periodo" => "2020",
     "FechaInicio" => "10/05/2020",
     "FechaTermino" => "09/08/2020",
-    "EstadoActividad" => "Estado act3",
+    "EstadoActividad" => "Aprobado por Director Unidad Responsable",
     "LugarRealizacion" =>
         array(array("Pais" => "Chile",
         "Comuna" => "La Serena",
@@ -119,13 +119,13 @@ function obtenerDatosBase(){
         "NombreUsuario" => "Rodrigo Hurtado",
         "RutUsuario" => "19032849",
         "Unidad" => "Unidad act4",
-        "AreaVinculacion" => "AreaVinculacion act4",
+        "AreaVinculacion" => "Vinculación con el Medio Productivo",
         "Servicio" => "Servicio act4",
-        "Producto" => "Producto act4",
+        "Producto" => "Apariciones en: páginas Web",
         "Periodo" => "2020",
         "FechaInicio" => "22/08/2020",
         "FechaTermino" => "09/10/2020",
-        "EstadoActividad" => "Estado act4",
+        "EstadoActividad" => "Creada",
         "LugarRealizacion" =>
             array(array("Pais" => "Chile",
             "Comuna" => "Coquimbo",
@@ -157,13 +157,13 @@ function obtenerDatosBase(){
     "NombreUsuario" => "Nicolás Sepúlveda",
     "RutUsuario" => "19864091",
     "Unidad" => "Unidad act5",
-    "AreaVinculacion" => "AreaVincUlacion act4",
+    "AreaVinculacion" => "Vinculación Social Y Comunitaria",
     "Servicio" => "Servicio act5",
-    "Producto" => "Producto act5",
+    "Producto" => "Apariciones en: páginas Web",
     "Periodo" => "2020",
     "FechaInicio" => "22/08/2020",
     "FechaTermino" => "09/10/2020",
-    "EstadoActividad" => "Estado act5",
+    "EstadoActividad" => "Aprobado por Director Unidad Responsable",
     "LugarRealizacion" =>
         array(array("Pais" => "Chile",
         "Comuna" => "Coquimbo",
@@ -189,6 +189,31 @@ function obtenerDatosBase(){
         array("DescripcionImpacto" => "Estrategias")),
     "ListadoSocios" =>
         array(array("DescripcionSocio"=> "Coquimbo Unido"))
+    );
+    $actividad6=array( "CodigoActividad" => "VCM200",
+    "NombreActividad" => "Asesoría Técnica y acompañamiento para iniciativa Almacén Solidario de Antofagasta.",
+    "NombreUsuario" => "MARCELA CATALINA ÑUNQUE GONZALEZ",
+    "RutUsuario" => "19032849",
+    "Unidad" => "Facultad de Medicina",
+    "AreaVinculacion" => NULL,
+    "Servicio" => NULL,
+    "Producto" => NULL,
+    "Periodo" => "2020",
+    "FechaInicio" => NULL,
+    "FechaTermino" => NULL,
+    "EstadoActividad" => "Creada",
+    "LugarRealizacion" =>
+        array(array()),
+    "ListadoBeneficiariosInternos" => 
+        array(array()),
+    "ListadoBeneficiariosExternos" =>
+        array(array()),
+    "ListaImpactosInternos" =>
+        array(array()),
+    "ListaImpactosExternos" =>
+        array(array()),
+    "ListadoSocios" =>
+        array(NULL)
 );
     /*
     $actividad1json = json_encode($actividad1);
@@ -201,7 +226,7 @@ function obtenerDatosBase(){
     }
     */
 
-    $datosBase=array($actividad1,$actividad2,$actividad3,$actividad4,$actividad5);
+    $datosBase=array($actividad1,$actividad2,$actividad3,$actividad4,$actividad5,$actividad6);
     $datosJson = json_encode($datosBase);
 
     $datosJsonConvertidos = json_decode($datosJson);

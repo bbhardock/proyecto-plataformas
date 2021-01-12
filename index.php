@@ -13,6 +13,8 @@
     }
     $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
     $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo)); 
+
+
 ?>
 <!DOCTYPE html> 
 <html>
@@ -150,8 +152,7 @@
                                         <div class="carousel-caption d-none d-md-block">
                                             <!-- link al cual ira vinculada al clickear el texto (Es el mismo que el de la imagen) -->
                                             <a target="null" href="https://medicina.ucn.cl/ucn-se-integra-a-la-red-publica-de-laboratorios-universitarios-para-diagnostico-covid-19-en-coquimbo/">
-                                                <h5>Second slide label</h5>
-                                                <p>Noticias respecto al covid-19 en la facultad de Medicina</p>
+                                                <h5>Noticias respecto al covid-19 en la facultad de Medicina</h5>
                                             </a>
                                         </div>
                                     </div>
@@ -161,8 +162,7 @@
                                         </a>
                                         <div class="carousel-caption d-none d-md-block">
                                             <a target="null" href="https://medicina.ucn.cl/becas-especialidades-medicas/">
-                                                <h5>Third slide label</h5>
-                                                <p>Conoce mas de nuestras Becas de Especialidades Médicas</p>
+                                                <h5>Conoce más de nuestras Becas de Especialidades Médicas</h5>
                                             </a>
                                         </div>
                                     </div>

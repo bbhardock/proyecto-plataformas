@@ -177,25 +177,25 @@ SISTEMA INTERNO DE VINCULACIÓN CON EL MEDIO
 A NIVEL UNIVERSITARIO
 */
 function apiListarActividadesXRut($rut,$periodo){
-    require_once 'apiSIVCM.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
 
     $rut = substr($rut, 0, -1);//requiere quitar el digito verificador
     return listarActividadesXRut($rut,$periodo);
 }
 function apiListarTodasActividades($periodo){
-    require_once 'apiSIVCM.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
     
     return listarTodasActividades($periodo);
 }
 function apiverificarActividad($rut,$periodo){
-    require_once 'apiSIVCM.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
 
     $rut = substr($rut, 0, -1);
     return verificarActividad($rut,$periodo);
 }
 
 function obtenerActividad($periodo,$codigo){
-    require_once 'apiSIVCM.inc.php';
+    require_once 'apiSIVCMmock.inc.php';
     
     $actividadesPeriodo = listarTodasActividades($periodo);
 
@@ -216,7 +216,7 @@ function obtenerDatosBeneficiariosResumen($periodo){
 
     $datos = array();
     foreach($actividades as $actividad){
-        if(isset($actividad->AreaVinculacion)){
+        if(isset($actividad->AreaVinculacion) && $actividad->AreaVinculacion != ""){
             $indice = ucwords(strtolower($actividad->AreaVinculacion)); //para que no haya conflictos del tipo AReA != Area. El formato queda , por ejemplo como "Area De Vinculacion"
             if(!array_key_exists($indice,$datos)){
                 $datos[$indice] = array("BeneficiariosInternos" => 0, "BeneficiariosExternos" => 0);
@@ -244,6 +244,8 @@ function obtenerDatosGraficosResumen($periodo){
     $actividadesJson = apiListarTodasActividades($periodo);
     $actividades = json_decode($actividadesJson);
 
+
+
     $datos = array("ActividadesxArea" => array(),
     "ActividadesxSocios" => array(),
     "ActividadesxProducto" => array(),
@@ -251,8 +253,12 @@ function obtenerDatosGraficosResumen($periodo){
     );
 
     foreach($actividades as $actividad){
+        $areaVinculacionActual = $actividad->AreaVinculacion;
+        $productoActual = $actividad->Producto;
+        $estadoActual = $actividad->EstadoActividad;
+        $listaSocios = $actividad->ListadoSocios;
+
         if(isset($actividad ->CodigoActividad)){ // para evitar posibles errores si es que no existen actividades en el periodo
-            /*
             if(isset($areaVinculacionActual) && $areaVinculacionActual != ""){
                 if(!array_key_exists($areaVinculacionActual,$datos["ActividadesxArea"])){
                     $datos["ActividadesxArea"][$areaVinculacionActual] = 1;
@@ -279,35 +285,14 @@ function obtenerDatosGraficosResumen($periodo){
             
             if(isset($listaSocios)){
                 foreach ($listaSocios as $socio){
-                    $descripcionSocioActual = ucwords(strtolower($socio->DescripcionSocio));
-                    if(!array_key_exists($descripcionSocioActual,$datos["ActividadesxSocios"])){
-                        $datos["ActividadesxSocios"][$descripcionSocioActual] = 1;
-                    }else{
-                        $datos["ActividadesxSocios"][$descripcionSocioActual] += 1;
+                    if(!empty($socio)){
+                        $descripcionSocioActual = ucwords(strtolower($socio->DescripcionSocio));
+                        if(!array_key_exists($descripcionSocioActual,$datos["ActividadesxSocios"])){
+                            $datos["ActividadesxSocios"][$descripcionSocioActual] = 1;
+                        }else{
+                            $datos["ActividadesxSocios"][$descripcionSocioActual] += 1;
+                        }
                     }
-                }
-            }
-            */
-            if(isset($actividad->AreaVinculacion) && $actividad->AreaVinculacion != ""){
-                $areaVinculacionActual = ucwords(strtolower($actividad->AreaVinculacion));
-                $datos["ActividadesxArea"][$areaVinculacionActual] += 1;
-            }
-
-            if(isset($actividad->Producto) && $actividad->Producto != ""){
-                $productoActual = ucwords(strtolower($actividad->Producto));
-                $datos["ActividadesxProducto"][$productoActual] += 1;
-            }
-
-            if(isset($actividad->EstadoActividad) && $actividad->EstadoActividad != ""){
-                $estadoActual = ucwords(strtolower($actividad->EstadoActividad));
-                $datos["ActividadesxEstado"][$estadoActual] += 1;
-            }
-            
-            if(isset($actividad->ListadoSocios)){
-                $listaSocios = $actividad->ListadoSocios;
-                foreach ($listaSocios as $socio){
-                    $descripcionSocioActual = ucwords(strtolower($socio->DescripcionSocio));
-                        $datos["ActividadesxSocios"][$descripcionSocioActual] += 1;
                 }
             }
         }
