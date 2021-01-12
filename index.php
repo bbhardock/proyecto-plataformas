@@ -7,13 +7,15 @@
     }
     $periodo = date("Y");//todo en base al año actual. Si se quiere cambiar el periodo para hacer todo este resumen, esta es la variable a modificar
     $actividades = json_decode(apiListarTodasActividades($periodo));
+    if(isset($actividades->RespuestaSolicitud)){
+        $actividades = array();
+    }
     $formatoFecha = "d/m/Y";
     if(intval(date("m")) <= 6){ //si el mes todavía no es 7, los resumenes seran del año pasado
         $periodo = date("Y",strtotime("-1 year"));
     }
     $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
     $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo)); 
-
 
 ?>
 <!DOCTYPE html> 
@@ -60,7 +62,8 @@
                     },
                     eventSources:[{
                         events:[
-                            <?php foreach ($actividades as $actividad){
+                            <?php 
+                            foreach ($actividades as $actividad){
                                 /*
                                     start: "'.$actividad->FechaInicio.'",
                                     end: "'.$actividad->FechaTermino.'",
@@ -120,7 +123,7 @@
     <body>
         <?php
             require "header.php";
-        ?> 
+        ?>
         <div class="ir-arriba">
             <div class="ir-arriba-button">
                 <i class="icon-up"></i>
@@ -275,6 +278,7 @@
                             <div class="Title-SubtitleRed">
                                 <div class="container red">
                                     <h5>Resumen de Actividades de manera Grafica</h5>
+                                    <h5> Periodo <?php echo $periodo ?> </h5>
                                 </div>
                             </div>
                         </div>
@@ -437,6 +441,8 @@
                     name: 'Share',
                     data: [<?php
                         foreach($resumenGraficos->ActividadesxArea as $nombre => $valor){
+                            $replace = array("\r\n", "\n", "\r", "\"","'");
+                            $nombre = str_replace($replace,'', $nombre);
                             echo "{name: '".$nombre."', y: ".$valor."},";
                         }
                         ?>]
@@ -479,6 +485,8 @@
                     name: 'Share',
                     data: [<?php
                         foreach($resumenGraficos->ActividadesxSocios as $nombre => $valor){
+                            $replace = array("\r\n", "\n", "\r", "\"","'");
+                            $nombre = str_replace($replace,'', $nombre);
                             echo "{name: '".$nombre."', y: ".$valor."},";
                         }
                         ?>]
@@ -521,6 +529,8 @@
                     name: 'Share',
                     data: [<?php
                         foreach($resumenGraficos->ActividadesxProducto as $nombre => $valor){
+                            $replace = array("\r\n", "\n", "\r", "\"","'");
+                            $nombre = str_replace($replace,'', $nombre);
                             echo "{name: '".$nombre."', y: ".$valor."},";
                         }
                         ?>]
@@ -563,6 +573,8 @@
                     name: 'Share',
                     data: [<?php
                         foreach($resumenGraficos->ActividadesxEstado as $nombre => $valor){
+                            $replace = array("\r\n", "\n", "\r", "\"","'");
+                            $nombre = str_replace($replace,'', $nombre);
                             echo "{name: '".$nombre."', y: ".$valor."},";
                         }
                         ?>]

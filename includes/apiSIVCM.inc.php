@@ -1,10 +1,16 @@
 <?php
 
     function obtenerDatos($query){
+        /*
         $URL = 'http://webservice.net.desa.ucn.cl/Web_Api_Sivcm_Famed/';
         $USER = 'usuariowebApiSivcmFamed';
         $PWD = 'testFamed';
-    
+        */
+
+        $URL = 'http://dgvcm.ucn.cl/Web_Api_Sivcm_Famed/';
+        $USER = 'usuariowebApiSivcmFamed';
+        $PWD = 'Rs0n173m926s670vxs32';
+
         $VALUE_AUTH = base64_encode($USER.':'.$PWD);
         
         $url_query = $URL.$query;

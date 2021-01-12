@@ -177,25 +177,25 @@ SISTEMA INTERNO DE VINCULACIÓN CON EL MEDIO
 A NIVEL UNIVERSITARIO
 */
 function apiListarActividadesXRut($rut,$periodo){
-    require_once 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCM.inc.php';
 
     $rut = substr($rut, 0, -1);//requiere quitar el digito verificador
     return listarActividadesXRut($rut,$periodo);
 }
 function apiListarTodasActividades($periodo){
-    require_once 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCM.inc.php';
     
     return listarTodasActividades($periodo);
 }
 function apiverificarActividad($rut,$periodo){
-    require_once 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCM.inc.php';
 
     $rut = substr($rut, 0, -1);
     return verificarActividad($rut,$periodo);
 }
 
 function obtenerActividad($periodo,$codigo){
-    require_once 'apiSIVCMmock.inc.php';
+    require_once 'apiSIVCM.inc.php';
     
     $actividadesPeriodo = listarTodasActividades($periodo);
 
@@ -213,6 +213,8 @@ function obtenerActividad($periodo,$codigo){
 function obtenerDatosBeneficiariosResumen($periodo){
     $actividadesJson = apiListarTodasActividades($periodo);
     $actividades = json_decode($actividadesJson);
+
+
 
     $datos = array();
     foreach($actividades as $actividad){
@@ -237,7 +239,7 @@ function obtenerDatosBeneficiariosResumen($periodo){
             }
         }
     }
-
+ 
     return json_encode($datos);
 }
 function obtenerDatosGraficosResumen($periodo){
