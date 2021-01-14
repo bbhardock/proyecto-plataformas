@@ -70,7 +70,7 @@ if(isset($_POST['reporte-submit'])){
 
         $data[] = $filaNueva;
     }
-    SimpleXLSXGen::fromArray( $data )->downloadAs('Reporte SIVCM-FACMED '.date("d-m-yy").'.xlsx');
+    SimpleXLSXGen::fromArray( $data )->downloadAs('Reporte SIVCM-FACMED '.date("d-m-Y").'.xlsx');
 }else{
     header("Location ../dashboard.php");
     exit();

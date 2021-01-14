@@ -216,31 +216,31 @@ function obtenerDatosBeneficiariosResumen($periodo){
 
 
 
-    $datos = array();
+    $datosBeneficiarios = array();
     foreach($actividades as $actividad){
         if(isset($actividad->AreaVinculacion) && $actividad->AreaVinculacion != ""){
             $indice = ucwords(strtolower($actividad->AreaVinculacion)); //para que no haya conflictos del tipo AReA != Area. El formato queda , por ejemplo como "Area De Vinculacion"
-            if(!array_key_exists($indice,$datos)){
-                $datos[$indice] = array("BeneficiariosInternos" => 0, "BeneficiariosExternos" => 0);
+            if(!array_key_exists($indice,$datosBeneficiarios)){
+                $datosBeneficiarios[$indice] = array("BeneficiariosInternos" => 0, "BeneficiariosExternos" => 0);
             }
             if(isset($actividad->ListadoBeneficiariosInternos)){
                 foreach($actividad->ListadoBeneficiariosInternos as $benInternos){
                     if(isset($benInternos->CantidadBeneficiariosDirectos)){
-                        $datos[$indice]["BeneficiariosInternos"] += $benInternos->CantidadBeneficiariosDirectos;
+                        $datosBeneficiarios[$indice]["BeneficiariosInternos"] += $benInternos->CantidadBeneficiariosDirectos;
                     }
                 }
             }
             if(isset($actividad->ListadoBeneficiariosExternos)){
                 foreach($actividad->ListadoBeneficiariosExternos as $benExternos){
                     if(isset($benExternos->CantidadBeneficiariosDirectos)  && isset($benExternos->CantidadBeneficiariosIndirectos)){
-                        $datos[$indice]["BeneficiariosExternos"] += $benExternos->CantidadBeneficiariosDirectos + $benExternos->CantidadBeneficiariosIndirectos;
+                        $datosBeneficiarios[$indice]["BeneficiariosExternos"] += $benExternos->CantidadBeneficiariosDirectos + $benExternos->CantidadBeneficiariosIndirectos;
                     }
                 }
             }
         }
     }
  
-    return json_encode($datos);
+    return json_encode($datosBeneficiarios);
 }
 function obtenerDatosGraficosResumen($periodo){
     $actividadesJson = apiListarTodasActividades($periodo);
