@@ -1,4 +1,23 @@
 <?php
+    function limpiarStringJSON ($stringJson){
+        //elimina caracteres no válidos
+        for ($i = 0; $i <= 31; ++$i) { 
+            $stringJson = str_replace(chr($i), "", $stringJson); 
+        }
+        $stringJson = str_replace(chr(127), "", $stringJson);
+
+        //Algunos archivos comienzan con 'efbbbf' para marcar el inicio del archivo (nivel binario)
+        //basicamente son los primeros tres caracteres, si están ahí, los elimina
+        if (0 === strpos(bin2hex($stringJson), 'efbbbf')) {
+            $stringJson = substr($stringJson, 3);
+        }
+
+        $datos = json_decode($stringJson);
+
+        return $datos;
+    }
+    
+    
     require 'includes/queries.inc.php';
     session_start();
     if(isset($_SESSION['user_id'])){
@@ -16,10 +35,8 @@
     }
     //Datos beneficiarios para cuadrados de cantidad beneficiarios
 
-    $datosJsonBeneficiarios = obtenerDatosBeneficiariosResumen($periodo);
-    $datosJsonBeneficiarios = str_replace("\xEF\xBB\xBF",'',$datosJsonBeneficiarios);
-    $datosJsonBeneficiarios = utf8_encode($datosJsonBeneficiarios);    
-    $resumenBeneficiarios = json_decode($datosJsonBeneficiarios);
+    //$datosJsonBeneficiarios = obtenerDatosBeneficiariosResumen($periodo);
+    $resumenBeneficiarios = limpiarStringJson(obtenerDatosBeneficiariosResumen($periodo));
     $errorBeneficiarios = json_last_error_msg();
     
     //datos graficos para resumen grafico

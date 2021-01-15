@@ -239,9 +239,6 @@ function obtenerDatosBeneficiariosResumen($periodo){
             }
         }
     }
-    if(empty($datosBeneficiarios)){
-        echo "Datos de beneficiarios vacíos";
-    }
     return json_encode($datosBeneficiarios);
 }
 function obtenerDatosGraficosResumen($periodo){
