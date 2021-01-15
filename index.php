@@ -14,8 +14,19 @@
     if(intval(date("m")) <= 6){ //si el mes todavía no es 7, los resumenes seran del año pasado
         $periodo = date("Y",strtotime("-1 year"));
     }
-    $resumenBeneficiarios = json_decode(obtenerDatosBeneficiariosResumen($periodo));
-    $resumenGraficos = json_decode(obtenerDatosGraficosResumen($periodo)); 
+    //Datos beneficiarios para cuadrados de cantidad beneficiarios
+
+    $datosJsonBeneficiarios = obtenerDatosBeneficiariosResumen($periodo);
+    $datosJsonBeneficiarios = str_replace("\xEF\xBB\xBF",'',$datosJsonBeneficiarios);
+    $datosJsonBeneficiarios = utf8_encode($datosJsonBeneficiarios);    
+    $resumenBeneficiarios = json_decode($datosJsonBeneficiarios);
+    $errorBeneficiarios = json_last_error_msg();
+    
+    //datos graficos para resumen grafico
+    $datosJsonGraficos = obtenerDatosGraficosResumen($periodo);
+    $resumenGraficos = json_decode($datosJsonGraficos);
+    $errorGraficos = json_last_error_msg();
+    
 
 ?>
 <!DOCTYPE html> 
@@ -64,35 +75,33 @@
                         events:[
                             <?php 
                             foreach ($actividades as $actividad){
-                                /*
-                                    start: "'.$actividad->FechaInicio.'",
-                                    end: "'.$actividad->FechaTermino.'",
-                                */
-                                $fechaInicio = date_create_from_format($formatoFecha,$actividad->FechaInicio);
-                                $fechaTermino = date_create_from_format($formatoFecha,$actividad->FechaTermino);
-                                $stringLugaresRealizacion = "";
-                                if($actividad->LugarRealizacion != null){
-                                    foreach($actividad->LugarRealizacion as $lugar){
-                                        $stringLugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
-                                    }
-                                }else{
-                                    $stringLugaresRealizacion = "No ha sido informado";
-                                }   
-                                $stringLugaresRealizacion = rtrim($stringLugaresRealizacion, " / ");
-                                $replace = array("\r\n", "\n", "\r", "\"");
-                                echo '                            
-                                {
-                                    title: "'.str_replace($replace,'', $actividad->NombreActividad).'",
-                                    start: "'.date_format($fechaInicio,'Y-m-d').'",
-                                    end: "'.date_format($fechaTermino,'Y-m-d').'",
-                                    extendedProps: {
-                                        unidad: "'.$actividad->Unidad.'",
-                                        areaVinculacion: "'.$actividad->AreaVinculacion.'",
-                                        lugar: "'.str_replace($replace,'', $stringLugaresRealizacion).'",
-                                        fechaInicio: "'.$actividad->FechaInicio.'",
-                                        fechaTermino: "'.$actividad->FechaTermino.'"
-                                    }
-                                },';
+                                if(isset($actividad->FechaInicio) && isset($actividad->FechaTermino)){
+                                    $fechaInicio = date_create_from_format($formatoFecha,$actividad->FechaInicio);
+                                    $fechaTermino = date_create_from_format($formatoFecha,$actividad->FechaTermino);
+                                    $stringLugaresRealizacion = "";
+                                    if($actividad->LugarRealizacion != null){
+                                        foreach($actividad->LugarRealizacion as $lugar){
+                                            $stringLugaresRealizacion = $stringLugaresRealizacion.$lugar->LugarRealizacion.", ".$lugar->CiudadLocalidad.", ".$lugar->Comuna.", ".$lugar->Pais." / ";
+                                        }
+                                    }else{
+                                        $stringLugaresRealizacion = "No ha sido informado";
+                                    }   
+                                    $stringLugaresRealizacion = rtrim($stringLugaresRealizacion, " / ");
+                                    $replace = array("\r\n", "\n", "\r", "\"");
+                                    echo '                            
+                                    {
+                                        title: "'.str_replace($replace,'', $actividad->NombreActividad).'",
+                                        start: "'.date_format($fechaInicio,'Y-m-d').'",
+                                        end: "'.date_format($fechaTermino,'Y-m-d').'",
+                                        extendedProps: {
+                                            unidad: "'.$actividad->Unidad.'",
+                                            areaVinculacion: "'.$actividad->AreaVinculacion.'",
+                                            lugar: "'.str_replace($replace,'', $stringLugaresRealizacion).'",
+                                            fechaInicio: "'.$actividad->FechaInicio.'",
+                                            fechaTermino: "'.$actividad->FechaTermino.'"
+                                        }
+                                    },';
+                                }
                             }
                             ?>
                         ],
@@ -208,10 +217,10 @@
                             echo '  <div class="contenedorAlerta">
                                         <div class="alert alert-info" role="alert">
                                             <h5> Aún no existen datos para este periodo </h5>
+                                            <h5>'.$errorBeneficiarios.'</h5>
                                         </div>
                                     </div>';
-                        }
-                        else{
+                        }else{
                             $arrayContainers = array("containerBig container green", "containerBig container bluelight", "containerBig container green",
                             "containerSmall container brown", "containerSmall container blue", "containerBig container purple", "containerBig container browndark",
                             "containerBig container purple");
