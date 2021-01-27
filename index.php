@@ -234,7 +234,6 @@
                             echo '  <div class="contenedorAlerta">
                                         <div class="alert alert-info" role="alert">
                                             <h5> Aún no existen datos para este periodo </h5>
-                                            <h5>'.$errorBeneficiarios.'</h5>
                                         </div>
                                     </div>';
                         }else{
