@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+
 function saltarLinea(){
     echo "<br><br><br><br>";
 }
@@ -30,7 +34,11 @@ function obtenerDatosBeneficiariosResumen($periodo){
     $datosBeneficiarios = array();
     foreach($actividades as $actividad){
         if(isset($actividad->AreaVinculacion) && $actividad->AreaVinculacion != ""){
+            print_r($actividad);
+            saltarLinea();
             $indice = ucwords(strtolower($actividad->AreaVinculacion)); //para que no haya conflictos del tipo AReA != Area. El formato queda , por ejemplo como "Area De Vinculacion"
+            print_r($indice);
+            saltarLinea(); 
             if(!array_key_exists($indice,$datosBeneficiarios) && (isset($actividad->ListadoBeneficiariosInternos) || isset($actividad->ListadoBeneficiariosExternos))){
                 $datosBeneficiarios[$indice] = array("BeneficiariosInternos" => 0, "BeneficiariosExternos" => 0);
             }
@@ -106,5 +114,5 @@ echo "<b> BONUS, ahora filtrado por tildes </b>";
 $resumenBeneficiariosSinTilde = limpiarStringJson(quitar_tildes(obtenerDatosBeneficiariosResumen($periodo)));
 print_r($resumenBeneficiariosSinTilde);
 saltarLinea();
-
 */
+
