@@ -36,7 +36,7 @@ function obtenerDatosBeneficiariosResumen($periodo){
         if(isset($actividad->AreaVinculacion) && $actividad->AreaVinculacion != ""){
             print_r($actividad);
             saltarLinea();
-            $indice = ucwords(strtolower($actividad->AreaVinculacion)); //para que no haya conflictos del tipo AReA != Area. El formato queda , por ejemplo como "Area De Vinculacion"
+            $indice = $actividad->AreaVinculacion; //esta normalizado, no deberian haber problemas
             print_r($indice);
             saltarLinea(); 
             if(!array_key_exists($indice,$datosBeneficiarios) && (isset($actividad->ListadoBeneficiariosInternos) || isset($actividad->ListadoBeneficiariosExternos))){
